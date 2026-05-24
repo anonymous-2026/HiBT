@@ -2,7 +2,7 @@
   <img src="docs/hibt-logo.svg" alt="HiBT logo" width="360">
 </p>
 
-<h1 align="center">HiBT: Hierarchical Concept Planning for Executable Behavior Tree Synthesis</h1>
+<h1 align="center">HiBT: From Hierarchical Concepts to Behavior Trees for Reliable Robot Task Planning</h1>
 
 <p align="center">
   <a href="https://github.com/anonymous-2026/HiBT">
