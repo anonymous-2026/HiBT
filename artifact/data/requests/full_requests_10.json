@@ -1,0 +1,42 @@
+[
+  {
+    "target": "is_inserted_to(gear3, shaft2)",
+    "world_state_path": "gearset/world_state.json"
+  },
+  {
+    "target": "is_inserted_to(gear3, shaft2)",
+    "world_state_path": "gearset/world_state.json"
+  },
+  {
+    "target": "is_inserted_to(gear3, shaft2)",
+    "world_state_path": "gearset/world_state.json"
+  },
+  {
+    "target": "is_inserted_to(gear3, shaft2)",
+    "world_state_path": "gearset/world_state.json"
+  },
+  {
+    "target": "is_inserted_to(gear3, shaft2)",
+    "world_state_path": "gearset/world_state.json"
+  },
+  {
+    "target": "is_inserted_to(gear3, shaft2)",
+    "world_state_path": "gearset/world_state.json"
+  },
+  {
+    "target": "is_inserted_to(gear3, shaft2)",
+    "world_state_path": "gearset/world_state.json"
+  },
+  {
+    "target": "is_inserted_to(gear3, shaft2)",
+    "world_state_path": "gearset/world_state.json"
+  },
+  {
+    "target": "is_inserted_to(gear3, shaft2)",
+    "world_state_path": "gearset/world_state.json"
+  },
+  {
+    "target": "is_inserted_to(gear3, shaft2)",
+    "world_state_path": "gearset/world_state.json"
+  }
+]

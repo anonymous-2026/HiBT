@@ -1,0 +1,315 @@
+{
+  "description": "Full-task-only candidate scan derived from plan_examples_v2.json. Difficulty labels are recomputed with the current artifact rules.",
+  "input_examples": "artifact/data/pyramids/plan_examples_v2.json",
+  "full_task_count": 24,
+  "counts": {
+    "by_domain": {
+      "gearset": 1,
+      "gearset1": 18,
+      "chair": 3,
+      "lamp": 2
+    },
+    "by_difficulty": {
+      "easy": 4,
+      "medium": 3,
+      "hard": 10,
+      "very_hard": 7
+    },
+    "by_domain_difficulty": {
+      "gearset": {
+        "easy": 0,
+        "medium": 0,
+        "hard": 1,
+        "very_hard": 0
+      },
+      "gearset1": {
+        "easy": 4,
+        "medium": 2,
+        "hard": 7,
+        "very_hard": 5
+      },
+      "chair": {
+        "easy": 0,
+        "medium": 1,
+        "hard": 1,
+        "very_hard": 1
+      },
+      "lamp": {
+        "easy": 0,
+        "medium": 0,
+        "hard": 1,
+        "very_hard": 1
+      }
+    }
+  },
+  "balanced_sampling_capacity": {
+    "per_difficulty_max": 3,
+    "max_balanced_total": 12
+  },
+  "samples": [
+    {
+      "sample_id": "chair_problem_000",
+      "domain": "chair",
+      "difficulty": "very_hard",
+      "target": "is_screwed_to(chairnut1, chairseatbolt1)",
+      "action_count": 4,
+      "has_tool_switch": true,
+      "has_put_down": true,
+      "has_putdown_unload_load_chain": true,
+      "source_path": "experiments/chair/problem_set/problem_000.json"
+    },
+    {
+      "sample_id": "chair_problem_001",
+      "domain": "chair",
+      "difficulty": "hard",
+      "target": "is_screwed_to(chairnut1, chairseatbolt1)",
+      "action_count": 3,
+      "has_tool_switch": true,
+      "has_put_down": false,
+      "has_putdown_unload_load_chain": false,
+      "source_path": "experiments/chair/problem_set/problem_001.json"
+    },
+    {
+      "sample_id": "chair_problem_002",
+      "domain": "chair",
+      "difficulty": "medium",
+      "target": "is_screwed_to(chairleg1, chairseatthread1)",
+      "action_count": 2,
+      "has_tool_switch": false,
+      "has_put_down": false,
+      "has_putdown_unload_load_chain": false,
+      "source_path": "experiments/chair/problem_set/problem_002.json"
+    },
+    {
+      "sample_id": "gearset1_problem_000",
+      "domain": "gearset1",
+      "difficulty": "very_hard",
+      "target": "is_inserted_to(shaft1, gearbase_hole1)",
+      "action_count": 5,
+      "has_tool_switch": true,
+      "has_put_down": true,
+      "has_putdown_unload_load_chain": true,
+      "source_path": "experiments/gearset1/problem_set/problem_000.json"
+    },
+    {
+      "sample_id": "gearset1_problem_001",
+      "domain": "gearset1",
+      "difficulty": "hard",
+      "target": "is_inserted_to(shaft1, gearbase_hole1)",
+      "action_count": 4,
+      "has_tool_switch": true,
+      "has_put_down": false,
+      "has_putdown_unload_load_chain": false,
+      "source_path": "experiments/gearset1/problem_set/problem_001.json"
+    },
+    {
+      "sample_id": "gearset1_problem_002",
+      "domain": "gearset1",
+      "difficulty": "medium",
+      "target": "is_inserted_to(gear2, shaft2)",
+      "action_count": 2,
+      "has_tool_switch": false,
+      "has_put_down": false,
+      "has_putdown_unload_load_chain": false,
+      "source_path": "experiments/gearset1/problem_set/problem_002.json"
+    },
+    {
+      "sample_id": "gearset1_problem_003",
+      "domain": "gearset1",
+      "difficulty": "very_hard",
+      "target": "is_inserted_to(gear2, shaft2)",
+      "action_count": 5,
+      "has_tool_switch": true,
+      "has_put_down": true,
+      "has_putdown_unload_load_chain": true,
+      "source_path": "experiments/gearset1/problem_set/problem_003.json"
+    },
+    {
+      "sample_id": "gearset1_problem_004",
+      "domain": "gearset1",
+      "difficulty": "very_hard",
+      "target": "is_inserted_to(gear3, shaft3)",
+      "action_count": 5,
+      "has_tool_switch": true,
+      "has_put_down": true,
+      "has_putdown_unload_load_chain": true,
+      "source_path": "experiments/gearset1/problem_set/problem_004.json"
+    },
+    {
+      "sample_id": "gearset1_problem_005",
+      "domain": "gearset1",
+      "difficulty": "hard",
+      "target": "is_inserted_to(gear3, shaft3)",
+      "action_count": 4,
+      "has_tool_switch": true,
+      "has_put_down": false,
+      "has_putdown_unload_load_chain": false,
+      "source_path": "experiments/gearset1/problem_set/problem_005.json"
+    },
+    {
+      "sample_id": "gearset1_problem_006",
+      "domain": "gearset1",
+      "difficulty": "medium",
+      "target": "is_inserted_to(gear3, shaft3)",
+      "action_count": 2,
+      "has_tool_switch": false,
+      "has_put_down": false,
+      "has_putdown_unload_load_chain": false,
+      "source_path": "experiments/gearset1/problem_set/problem_006.json"
+    },
+    {
+      "sample_id": "gearset1_problem_007",
+      "domain": "gearset1",
+      "difficulty": "hard",
+      "target": "is_inserted_to(gear1, shaft1)",
+      "action_count": 4,
+      "has_tool_switch": true,
+      "has_put_down": false,
+      "has_putdown_unload_load_chain": false,
+      "source_path": "experiments/gearset1/problem_set/problem_007.json"
+    },
+    {
+      "sample_id": "gearset1_problem_008",
+      "domain": "gearset1",
+      "difficulty": "easy",
+      "target": "is_inserted_to(gear1, shaft1)",
+      "action_count": 0,
+      "has_tool_switch": false,
+      "has_put_down": false,
+      "has_putdown_unload_load_chain": false,
+      "source_path": "experiments/gearset1/problem_set/problem_008.json"
+    },
+    {
+      "sample_id": "gearset1_problem_008_goal_already_satisfied",
+      "domain": "gearset1",
+      "difficulty": "easy",
+      "target": "is_inserted_to(gear1, shaft1)",
+      "action_count": 0,
+      "has_tool_switch": false,
+      "has_put_down": false,
+      "has_putdown_unload_load_chain": false,
+      "source_path": "experiments/gearset1/problem_set/problem_008.json"
+    },
+    {
+      "sample_id": "gearset1_problem_009",
+      "domain": "gearset1",
+      "difficulty": "hard",
+      "target": "is_inserted_to(gear3, shaft3)",
+      "action_count": 4,
+      "has_tool_switch": true,
+      "has_put_down": false,
+      "has_putdown_unload_load_chain": false,
+      "source_path": "experiments/gearset1/problem_set/problem_009.json"
+    },
+    {
+      "sample_id": "gearset1_problem_010",
+      "domain": "gearset1",
+      "difficulty": "very_hard",
+      "target": "is_inserted_to(shaft1, gearbase_hole1)",
+      "action_count": 4,
+      "has_tool_switch": true,
+      "has_put_down": true,
+      "has_putdown_unload_load_chain": true,
+      "source_path": "experiments/gearset1/problem_set/problem_010.json"
+    },
+    {
+      "sample_id": "gearset1_problem_011",
+      "domain": "gearset1",
+      "difficulty": "hard",
+      "target": "is_inserted_to(gear2, shaft2)",
+      "action_count": 3,
+      "has_tool_switch": true,
+      "has_put_down": false,
+      "has_putdown_unload_load_chain": false,
+      "source_path": "experiments/gearset1/problem_set/problem_011.json"
+    },
+    {
+      "sample_id": "gearset1_problem_012",
+      "domain": "gearset1",
+      "difficulty": "hard",
+      "target": "is_inserted_to(shaft3, gearbase_hole3)",
+      "action_count": 3,
+      "has_tool_switch": true,
+      "has_put_down": false,
+      "has_putdown_unload_load_chain": false,
+      "source_path": "experiments/gearset1/problem_set/problem_012.json"
+    },
+    {
+      "sample_id": "gearset1_problem_013",
+      "domain": "gearset1",
+      "difficulty": "very_hard",
+      "target": "is_inserted_to(shaft3, gearbase_hole3)",
+      "action_count": 4,
+      "has_tool_switch": true,
+      "has_put_down": true,
+      "has_putdown_unload_load_chain": true,
+      "source_path": "experiments/gearset1/problem_set/problem_013.json"
+    },
+    {
+      "sample_id": "gearset1_problem_014",
+      "domain": "gearset1",
+      "difficulty": "easy",
+      "target": "is_inserted_to(gear2, shaft2)",
+      "action_count": 0,
+      "has_tool_switch": false,
+      "has_put_down": false,
+      "has_putdown_unload_load_chain": false,
+      "source_path": "experiments/gearset1/problem_set/problem_014.json"
+    },
+    {
+      "sample_id": "gearset1_problem_015",
+      "domain": "gearset1",
+      "difficulty": "easy",
+      "target": "is_inserted_to(gear3, shaft3)",
+      "action_count": 0,
+      "has_tool_switch": false,
+      "has_put_down": false,
+      "has_putdown_unload_load_chain": false,
+      "source_path": "experiments/gearset1/problem_set/problem_015.json"
+    },
+    {
+      "sample_id": "gearset1_problem_016",
+      "domain": "gearset1",
+      "difficulty": "hard",
+      "target": "is_inserted_to(gear1, shaft1)",
+      "action_count": 3,
+      "has_tool_switch": true,
+      "has_put_down": false,
+      "has_putdown_unload_load_chain": false,
+      "source_path": "experiments/gearset1/problem_set/problem_016.json"
+    },
+    {
+      "sample_id": "gearset_insert_gear3_shaft2",
+      "domain": "gearset",
+      "difficulty": "hard",
+      "target": "is_inserted_to(gear3, shaft2)",
+      "action_count": 3,
+      "has_tool_switch": true,
+      "has_put_down": false,
+      "has_putdown_unload_load_chain": false,
+      "source_path": "experiments/gearset/world_state.json"
+    },
+    {
+      "sample_id": "lamp_problem_000",
+      "domain": "lamp",
+      "difficulty": "hard",
+      "target": "is_screwed_to(lampbulb, lampbase)",
+      "action_count": 3,
+      "has_tool_switch": true,
+      "has_put_down": false,
+      "has_putdown_unload_load_chain": false,
+      "source_path": "experiments/lamp/problem_set/problem_000.json"
+    },
+    {
+      "sample_id": "lamp_problem_001",
+      "domain": "lamp",
+      "difficulty": "very_hard",
+      "target": "is_screwed_to(lampbulb, lampbase)",
+      "action_count": 4,
+      "has_tool_switch": true,
+      "has_put_down": true,
+      "has_putdown_unload_load_chain": true,
+      "source_path": "experiments/lamp/problem_set/problem_001.json"
+    }
+  ]
+}

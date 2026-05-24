@@ -1,0 +1,75 @@
+{
+  "dataset_name": "plan_predictor_v3",
+  "format": "jsonl",
+  "fields_required_by_backend": [
+    "main_id",
+    "question",
+    "cot_answer",
+    "groundtruth"
+  ],
+  "counts": {
+    "all": 50,
+    "train": 30,
+    "eval": 8
+  },
+  "split_spec": "artifact/data/datasets/plan_predictor_v3_split.json",
+  "test_count": 12,
+  "splits": {
+    "train": [
+      "gearset1_problem_004",
+      "gearset1_problem_006",
+      "gearset1_problem_007",
+      "gearset1_problem_008_goal_already_satisfied",
+      "gearset1_problem_009",
+      "gearset1_problem_000_subtask_00",
+      "gearset1_problem_000_subtask_02",
+      "gearset1_problem_001_subtask_00",
+      "gearset1_problem_002_subtask_00",
+      "gearset1_problem_003_subtask_00",
+      "gearset1_problem_003_subtask_02",
+      "gearset1_problem_004_subtask_00",
+      "gearset1_problem_004_subtask_02",
+      "gearset1_problem_005_subtask_00",
+      "gearset1_problem_005_subtask_02",
+      "gearset1_problem_006_subtask_00",
+      "gearset1_problem_007_subtask_00",
+      "gearset1_problem_009_subtask_00",
+      "gearset1_problem_010",
+      "gearset1_problem_010_subtask_00",
+      "gearset1_problem_010_subtask_02",
+      "gearset1_problem_011",
+      "gearset1_problem_011_subtask_00",
+      "gearset1_problem_012",
+      "gearset1_problem_012_subtask_00",
+      "gearset1_problem_013",
+      "gearset1_problem_013_subtask_00",
+      "gearset1_problem_013_subtask_02",
+      "gearset1_problem_014",
+      "gearset1_problem_015"
+    ],
+    "eval": [
+      "gearset1_problem_016",
+      "gearset1_problem_016_subtask_00",
+      "chair_problem_000_subtask_00",
+      "chair_problem_000_subtask_02",
+      "chair_problem_001_subtask_00",
+      "chair_problem_002_subtask_00",
+      "lamp_problem_000_subtask_00",
+      "lamp_problem_001_subtask_00"
+    ],
+    "test": [
+      "chair_problem_000",
+      "chair_problem_001",
+      "chair_problem_002",
+      "gearset1_problem_000",
+      "gearset1_problem_001",
+      "gearset1_problem_002",
+      "gearset1_problem_003",
+      "gearset1_problem_005",
+      "gearset1_problem_008",
+      "gearset_insert_gear3_shaft2",
+      "lamp_problem_000",
+      "lamp_problem_001"
+    ]
+  }
+}

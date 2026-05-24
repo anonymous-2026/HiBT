@@ -1,0 +1,2914 @@
+{
+  "base_examples": 11,
+  "added_full": 13,
+  "added_subtasks": 26,
+  "skipped_validation_failures": [
+    {
+      "sample_id": "gearset1_problem_000_subtask_01",
+      "reason": {
+        "result": "failure",
+        "summary": "Behavior tree tick returns failure. The reason could be: A condition failed and an action to satisfy it is not present; An action node failed and no alternative is available; the node is against the definition in domain knowledge; The tree is not well-structured.",
+        "final_node": {
+          "summary": "precondition hold(left_hand, clampgripper)",
+          "identifier": 54,
+          "name": "precondition: hold(left_hand, clampgripper)",
+          "conditions": [
+            {
+              "object_name": "left_hand",
+              "property_name": "hold",
+              "property_value": "clampgripper",
+              "status": true
+            }
+          ]
+        },
+        "world_state": {
+          "objects": [
+            {
+              "name": "clampgripper",
+              "properties": [
+                "is_equippable",
+                "is_empty"
+              ]
+            },
+            {
+              "name": "parallelgripper",
+              "properties": [
+                "is_equippable",
+                "is_empty"
+              ]
+            },
+            {
+              "name": "inwardgripper",
+              "properties": [
+                "is_equippable",
+                "is_empty"
+              ]
+            },
+            {
+              "name": "outwardgripper",
+              "properties": []
+            },
+            {
+              "name": "defaultgripper",
+              "properties": [
+                "is_equippable",
+                "is_empty"
+              ]
+            },
+            {
+              "name": "gear1",
+              "properties": []
+            },
+            {
+              "name": "gear2",
+              "properties": []
+            },
+            {
+              "name": "gear3",
+              "properties": []
+            },
+            {
+              "name": "shaft1",
+              "properties": []
+            },
+            {
+              "name": "shaft2",
+              "properties": []
+            },
+            {
+              "name": "shaft3",
+              "properties": []
+            },
+            {
+              "name": "gearbase",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole1",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole3",
+              "properties": []
+            },
+            {
+              "name": "left_hand",
+              "properties": []
+            }
+          ],
+          "constraints": [
+            {
+              "source": "shaft3",
+              "name": "can_insert_to",
+              "target": "gearbase_hole3"
+            },
+            {
+              "source": "gear2",
+              "name": "can_insert_to",
+              "target": "shaft2"
+            },
+            {
+              "source": "gear1",
+              "name": "can_insert_to",
+              "target": "shaft1"
+            },
+            {
+              "source": "clampgripper",
+              "name": "can_manipulate",
+              "target": "shaft1"
+            },
+            {
+              "source": "gear3",
+              "name": "can_insert_to",
+              "target": "shaft3"
+            },
+            {
+              "source": "shaft1",
+              "name": "can_insert_to",
+              "target": "gearbase_hole1"
+            },
+            {
+              "source": "parallelgripper",
+              "name": "can_manipulate",
+              "target": "gear1"
+            },
+            {
+              "source": "outwardgripper",
+              "name": "can_manipulate",
+              "target": "gear3"
+            },
+            {
+              "source": "defaultgripper",
+              "name": "can_manipulate",
+              "target": "shaft3"
+            },
+            {
+              "source": "outwardgripper",
+              "name": "can_manipulate",
+              "target": "gear2"
+            }
+          ],
+          "relations": [
+            {
+              "source": "left_hand",
+              "name": "hold",
+              "target": "outwardgripper"
+            },
+            {
+              "source": "outwardgripper",
+              "name": "hold",
+              "target": "gear2"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sample_id": "gearset1_problem_001_subtask_01",
+      "reason": {
+        "result": "failure",
+        "summary": "Behavior tree tick returns failure. The reason could be: A condition failed and an action to satisfy it is not present; An action node failed and no alternative is available; the node is against the definition in domain knowledge; The tree is not well-structured.",
+        "final_node": {
+          "summary": "precondition hold(left_hand, clampgripper)",
+          "identifier": 99,
+          "name": "precondition: hold(left_hand, clampgripper)",
+          "conditions": [
+            {
+              "object_name": "left_hand",
+              "property_name": "hold",
+              "property_value": "clampgripper",
+              "status": true
+            }
+          ]
+        },
+        "world_state": {
+          "objects": [
+            {
+              "name": "clampgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "parallelgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "inwardgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "outwardgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "defaultgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "gear1",
+              "properties": []
+            },
+            {
+              "name": "gear2",
+              "properties": []
+            },
+            {
+              "name": "gear3",
+              "properties": []
+            },
+            {
+              "name": "shaft1",
+              "properties": []
+            },
+            {
+              "name": "shaft2",
+              "properties": []
+            },
+            {
+              "name": "shaft3",
+              "properties": []
+            },
+            {
+              "name": "gearbase",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole1",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole3",
+              "properties": []
+            },
+            {
+              "name": "left_hand",
+              "properties": []
+            }
+          ],
+          "constraints": [
+            {
+              "source": "shaft3",
+              "name": "can_insert_to",
+              "target": "gearbase_hole3"
+            },
+            {
+              "source": "gear2",
+              "name": "can_insert_to",
+              "target": "shaft2"
+            },
+            {
+              "source": "clampgripper",
+              "name": "can_manipulate",
+              "target": "shaft1"
+            },
+            {
+              "source": "gear1",
+              "name": "can_insert_to",
+              "target": "shaft1"
+            },
+            {
+              "source": "gear3",
+              "name": "can_insert_to",
+              "target": "shaft3"
+            },
+            {
+              "source": "shaft1",
+              "name": "can_insert_to",
+              "target": "gearbase_hole1"
+            },
+            {
+              "source": "parallelgripper",
+              "name": "can_manipulate",
+              "target": "gear1"
+            },
+            {
+              "source": "outwardgripper",
+              "name": "can_manipulate",
+              "target": "gear3"
+            },
+            {
+              "source": "defaultgripper",
+              "name": "can_manipulate",
+              "target": "shaft3"
+            },
+            {
+              "source": "outwardgripper",
+              "name": "can_manipulate",
+              "target": "gear2"
+            }
+          ],
+          "relations": [
+            {
+              "source": "left_hand",
+              "name": "hold",
+              "target": "outwardgripper"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sample_id": "gearset1_problem_003_subtask_01",
+      "reason": {
+        "result": "failure",
+        "summary": "Behavior tree tick returns failure. The reason could be: A condition failed and an action to satisfy it is not present; An action node failed and no alternative is available; the node is against the definition in domain knowledge; The tree is not well-structured.",
+        "final_node": {
+          "summary": "precondition hold(left_hand, outwardgripper)",
+          "identifier": 177,
+          "name": "precondition: hold(left_hand, outwardgripper)",
+          "conditions": [
+            {
+              "object_name": "left_hand",
+              "property_name": "hold",
+              "property_value": "outwardgripper",
+              "status": true
+            }
+          ]
+        },
+        "world_state": {
+          "objects": [
+            {
+              "name": "clampgripper",
+              "properties": []
+            },
+            {
+              "name": "parallelgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "inwardgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "outwardgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "defaultgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "gear1",
+              "properties": []
+            },
+            {
+              "name": "gear2",
+              "properties": []
+            },
+            {
+              "name": "gear3",
+              "properties": []
+            },
+            {
+              "name": "shaft1",
+              "properties": []
+            },
+            {
+              "name": "shaft2",
+              "properties": []
+            },
+            {
+              "name": "shaft3",
+              "properties": []
+            },
+            {
+              "name": "gearbase",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole1",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole3",
+              "properties": []
+            },
+            {
+              "name": "left_hand",
+              "properties": []
+            }
+          ],
+          "constraints": [
+            {
+              "source": "shaft3",
+              "name": "can_insert_to",
+              "target": "gearbase_hole3"
+            },
+            {
+              "source": "gear2",
+              "name": "can_insert_to",
+              "target": "shaft2"
+            },
+            {
+              "source": "gear1",
+              "name": "can_insert_to",
+              "target": "shaft1"
+            },
+            {
+              "source": "clampgripper",
+              "name": "can_manipulate",
+              "target": "shaft1"
+            },
+            {
+              "source": "gear3",
+              "name": "can_insert_to",
+              "target": "shaft3"
+            },
+            {
+              "source": "shaft1",
+              "name": "can_insert_to",
+              "target": "gearbase_hole1"
+            },
+            {
+              "source": "parallelgripper",
+              "name": "can_manipulate",
+              "target": "gear1"
+            },
+            {
+              "source": "outwardgripper",
+              "name": "can_manipulate",
+              "target": "gear3"
+            },
+            {
+              "source": "defaultgripper",
+              "name": "can_manipulate",
+              "target": "shaft3"
+            },
+            {
+              "source": "outwardgripper",
+              "name": "can_manipulate",
+              "target": "gear2"
+            }
+          ],
+          "relations": [
+            {
+              "source": "left_hand",
+              "name": "hold",
+              "target": "clampgripper"
+            },
+            {
+              "source": "clampgripper",
+              "name": "hold",
+              "target": "shaft1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sample_id": "gearset1_problem_004_subtask_01",
+      "reason": {
+        "result": "failure",
+        "summary": "Behavior tree tick returns failure. The reason could be: A condition failed and an action to satisfy it is not present; An action node failed and no alternative is available; the node is against the definition in domain knowledge; The tree is not well-structured.",
+        "final_node": {
+          "summary": "precondition hold(left_hand, outwardgripper)",
+          "identifier": 240,
+          "name": "precondition: hold(left_hand, outwardgripper)",
+          "conditions": [
+            {
+              "object_name": "left_hand",
+              "property_name": "hold",
+              "property_value": "outwardgripper",
+              "status": true
+            }
+          ]
+        },
+        "world_state": {
+          "objects": [
+            {
+              "name": "clampgripper",
+              "properties": []
+            },
+            {
+              "name": "parallelgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "inwardgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "outwardgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "defaultgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "gear1",
+              "properties": []
+            },
+            {
+              "name": "gear2",
+              "properties": []
+            },
+            {
+              "name": "gear3",
+              "properties": []
+            },
+            {
+              "name": "shaft1",
+              "properties": []
+            },
+            {
+              "name": "shaft2",
+              "properties": []
+            },
+            {
+              "name": "shaft3",
+              "properties": []
+            },
+            {
+              "name": "gearbase",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole1",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole3",
+              "properties": []
+            },
+            {
+              "name": "left_hand",
+              "properties": []
+            }
+          ],
+          "constraints": [
+            {
+              "source": "shaft3",
+              "name": "can_insert_to",
+              "target": "gearbase_hole3"
+            },
+            {
+              "source": "gear2",
+              "name": "can_insert_to",
+              "target": "shaft2"
+            },
+            {
+              "source": "gear1",
+              "name": "can_insert_to",
+              "target": "shaft1"
+            },
+            {
+              "source": "clampgripper",
+              "name": "can_manipulate",
+              "target": "shaft1"
+            },
+            {
+              "source": "gear3",
+              "name": "can_insert_to",
+              "target": "shaft3"
+            },
+            {
+              "source": "shaft1",
+              "name": "can_insert_to",
+              "target": "gearbase_hole1"
+            },
+            {
+              "source": "parallelgripper",
+              "name": "can_manipulate",
+              "target": "gear1"
+            },
+            {
+              "source": "outwardgripper",
+              "name": "can_manipulate",
+              "target": "gear3"
+            },
+            {
+              "source": "defaultgripper",
+              "name": "can_manipulate",
+              "target": "shaft3"
+            },
+            {
+              "source": "outwardgripper",
+              "name": "can_manipulate",
+              "target": "gear2"
+            }
+          ],
+          "relations": [
+            {
+              "source": "left_hand",
+              "name": "hold",
+              "target": "clampgripper"
+            },
+            {
+              "source": "clampgripper",
+              "name": "hold",
+              "target": "shaft1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sample_id": "gearset1_problem_005_subtask_01",
+      "reason": {
+        "result": "failure",
+        "summary": "Behavior tree tick returns failure. The reason could be: A condition failed and an action to satisfy it is not present; An action node failed and no alternative is available; the node is against the definition in domain knowledge; The tree is not well-structured.",
+        "final_node": {
+          "summary": "precondition hold(left_hand, outwardgripper)",
+          "identifier": 303,
+          "name": "precondition: hold(left_hand, outwardgripper)",
+          "conditions": [
+            {
+              "object_name": "left_hand",
+              "property_name": "hold",
+              "property_value": "outwardgripper",
+              "status": true
+            }
+          ]
+        },
+        "world_state": {
+          "objects": [
+            {
+              "name": "clampgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "parallelgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "inwardgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "outwardgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "defaultgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "gear1",
+              "properties": []
+            },
+            {
+              "name": "gear2",
+              "properties": []
+            },
+            {
+              "name": "gear3",
+              "properties": []
+            },
+            {
+              "name": "shaft1",
+              "properties": []
+            },
+            {
+              "name": "shaft2",
+              "properties": []
+            },
+            {
+              "name": "shaft3",
+              "properties": []
+            },
+            {
+              "name": "gearbase",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole1",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole3",
+              "properties": []
+            },
+            {
+              "name": "left_hand",
+              "properties": []
+            }
+          ],
+          "constraints": [
+            {
+              "source": "shaft3",
+              "name": "can_insert_to",
+              "target": "gearbase_hole3"
+            },
+            {
+              "source": "gear2",
+              "name": "can_insert_to",
+              "target": "shaft2"
+            },
+            {
+              "source": "clampgripper",
+              "name": "can_manipulate",
+              "target": "shaft1"
+            },
+            {
+              "source": "gear1",
+              "name": "can_insert_to",
+              "target": "shaft1"
+            },
+            {
+              "source": "gear3",
+              "name": "can_insert_to",
+              "target": "shaft3"
+            },
+            {
+              "source": "shaft1",
+              "name": "can_insert_to",
+              "target": "gearbase_hole1"
+            },
+            {
+              "source": "parallelgripper",
+              "name": "can_manipulate",
+              "target": "gear1"
+            },
+            {
+              "source": "outwardgripper",
+              "name": "can_manipulate",
+              "target": "gear3"
+            },
+            {
+              "source": "defaultgripper",
+              "name": "can_manipulate",
+              "target": "shaft3"
+            },
+            {
+              "source": "outwardgripper",
+              "name": "can_manipulate",
+              "target": "gear2"
+            }
+          ],
+          "relations": [
+            {
+              "source": "left_hand",
+              "name": "hold",
+              "target": "defaultgripper"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sample_id": "gearset1_problem_007_subtask_01",
+      "reason": {
+        "result": "failure",
+        "summary": "Behavior tree tick returns failure. The reason could be: A condition failed and an action to satisfy it is not present; An action node failed and no alternative is available; the node is against the definition in domain knowledge; The tree is not well-structured.",
+        "final_node": {
+          "summary": "precondition hold(left_hand, parallelgripper)",
+          "identifier": 369,
+          "name": "precondition: hold(left_hand, parallelgripper)",
+          "conditions": [
+            {
+              "object_name": "left_hand",
+              "property_name": "hold",
+              "property_value": "parallelgripper",
+              "status": true
+            }
+          ]
+        },
+        "world_state": {
+          "objects": [
+            {
+              "name": "clampgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "parallelgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "inwardgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "outwardgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "defaultgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "gear1",
+              "properties": []
+            },
+            {
+              "name": "gear2",
+              "properties": []
+            },
+            {
+              "name": "gear3",
+              "properties": []
+            },
+            {
+              "name": "shaft1",
+              "properties": []
+            },
+            {
+              "name": "shaft2",
+              "properties": []
+            },
+            {
+              "name": "shaft3",
+              "properties": []
+            },
+            {
+              "name": "gearbase",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole1",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole3",
+              "properties": []
+            },
+            {
+              "name": "left_hand",
+              "properties": []
+            }
+          ],
+          "constraints": [
+            {
+              "source": "shaft3",
+              "name": "can_insert_to",
+              "target": "gearbase_hole3"
+            },
+            {
+              "source": "gear2",
+              "name": "can_insert_to",
+              "target": "shaft2"
+            },
+            {
+              "source": "gear1",
+              "name": "can_insert_to",
+              "target": "shaft1"
+            },
+            {
+              "source": "clampgripper",
+              "name": "can_manipulate",
+              "target": "shaft1"
+            },
+            {
+              "source": "gear3",
+              "name": "can_insert_to",
+              "target": "shaft3"
+            },
+            {
+              "source": "shaft1",
+              "name": "can_insert_to",
+              "target": "gearbase_hole1"
+            },
+            {
+              "source": "parallelgripper",
+              "name": "can_manipulate",
+              "target": "gear1"
+            },
+            {
+              "source": "outwardgripper",
+              "name": "can_manipulate",
+              "target": "gear3"
+            },
+            {
+              "source": "defaultgripper",
+              "name": "can_manipulate",
+              "target": "shaft3"
+            },
+            {
+              "source": "outwardgripper",
+              "name": "can_manipulate",
+              "target": "gear2"
+            }
+          ],
+          "relations": [
+            {
+              "source": "shaft1",
+              "name": "is_inserted_to",
+              "target": "gearbase_hole1"
+            },
+            {
+              "source": "left_hand",
+              "name": "hold",
+              "target": "outwardgripper"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sample_id": "gearset1_problem_009_subtask_01",
+      "reason": {
+        "result": "failure",
+        "summary": "Behavior tree tick returns failure. The reason could be: A condition failed and an action to satisfy it is not present; An action node failed and no alternative is available; the node is against the definition in domain knowledge; The tree is not well-structured.",
+        "final_node": {
+          "summary": "precondition hold(left_hand, outwardgripper)",
+          "identifier": 410,
+          "name": "precondition: hold(left_hand, outwardgripper)",
+          "conditions": [
+            {
+              "object_name": "left_hand",
+              "property_name": "hold",
+              "property_value": "outwardgripper",
+              "status": true
+            }
+          ]
+        },
+        "world_state": {
+          "objects": [
+            {
+              "name": "clampgripper",
+              "properties": [
+                "is_equippable",
+                "is_empty"
+              ]
+            },
+            {
+              "name": "parallelgripper",
+              "properties": [
+                "is_equippable",
+                "is_empty"
+              ]
+            },
+            {
+              "name": "inwardgripper",
+              "properties": [
+                "is_equippable",
+                "is_empty"
+              ]
+            },
+            {
+              "name": "outwardgripper",
+              "properties": [
+                "is_equippable",
+                "is_empty"
+              ]
+            },
+            {
+              "name": "defaultgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "gear1",
+              "properties": []
+            },
+            {
+              "name": "gear2",
+              "properties": []
+            },
+            {
+              "name": "gear3",
+              "properties": []
+            },
+            {
+              "name": "shaft1",
+              "properties": []
+            },
+            {
+              "name": "shaft2",
+              "properties": []
+            },
+            {
+              "name": "shaft3",
+              "properties": []
+            },
+            {
+              "name": "gearbase",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole1",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole3",
+              "properties": []
+            },
+            {
+              "name": "left_hand",
+              "properties": []
+            }
+          ],
+          "constraints": [
+            {
+              "source": "shaft3",
+              "name": "can_insert_to",
+              "target": "gearbase_hole3"
+            },
+            {
+              "source": "gear2",
+              "name": "can_insert_to",
+              "target": "shaft2"
+            },
+            {
+              "source": "gear1",
+              "name": "can_insert_to",
+              "target": "shaft1"
+            },
+            {
+              "source": "clampgripper",
+              "name": "can_manipulate",
+              "target": "shaft1"
+            },
+            {
+              "source": "gear3",
+              "name": "can_insert_to",
+              "target": "shaft3"
+            },
+            {
+              "source": "shaft1",
+              "name": "can_insert_to",
+              "target": "gearbase_hole1"
+            },
+            {
+              "source": "parallelgripper",
+              "name": "can_manipulate",
+              "target": "gear1"
+            },
+            {
+              "source": "outwardgripper",
+              "name": "can_manipulate",
+              "target": "gear3"
+            },
+            {
+              "source": "defaultgripper",
+              "name": "can_manipulate",
+              "target": "shaft3"
+            },
+            {
+              "source": "outwardgripper",
+              "name": "can_manipulate",
+              "target": "gear2"
+            }
+          ],
+          "relations": [
+            {
+              "source": "shaft1",
+              "name": "is_inserted_to",
+              "target": "gearbase_hole1"
+            },
+            {
+              "source": "shaft3",
+              "name": "is_inserted_to",
+              "target": "gearbase_hole3"
+            },
+            {
+              "source": "gear1",
+              "name": "is_inserted_to",
+              "target": "shaft1"
+            },
+            {
+              "source": "left_hand",
+              "name": "hold",
+              "target": "defaultgripper"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sample_id": "gearset1_problem_010_subtask_01",
+      "reason": {
+        "result": "failure",
+        "summary": "Behavior tree tick returns failure. The reason could be: A condition failed and an action to satisfy it is not present; An action node failed and no alternative is available; the node is against the definition in domain knowledge; The tree is not well-structured.",
+        "final_node": {
+          "summary": "precondition hold(left_hand, clampgripper)",
+          "identifier": 467,
+          "name": "precondition: hold(left_hand, clampgripper)",
+          "conditions": [
+            {
+              "object_name": "left_hand",
+              "property_name": "hold",
+              "property_value": "clampgripper",
+              "status": true
+            }
+          ]
+        },
+        "world_state": {
+          "objects": [
+            {
+              "name": "clampgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "parallelgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "inwardgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "outwardgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "defaultgripper",
+              "properties": []
+            },
+            {
+              "name": "gear1",
+              "properties": []
+            },
+            {
+              "name": "gear2",
+              "properties": []
+            },
+            {
+              "name": "gear3",
+              "properties": []
+            },
+            {
+              "name": "shaft1",
+              "properties": []
+            },
+            {
+              "name": "shaft2",
+              "properties": []
+            },
+            {
+              "name": "shaft3",
+              "properties": []
+            },
+            {
+              "name": "gearbase",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole1",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole3",
+              "properties": []
+            },
+            {
+              "name": "left_hand",
+              "properties": []
+            }
+          ],
+          "constraints": [
+            {
+              "source": "shaft3",
+              "name": "can_insert_to",
+              "target": "gearbase_hole3"
+            },
+            {
+              "source": "gear2",
+              "name": "can_insert_to",
+              "target": "shaft2"
+            },
+            {
+              "source": "gear1",
+              "name": "can_insert_to",
+              "target": "shaft1"
+            },
+            {
+              "source": "clampgripper",
+              "name": "can_manipulate",
+              "target": "shaft1"
+            },
+            {
+              "source": "gear3",
+              "name": "can_insert_to",
+              "target": "shaft3"
+            },
+            {
+              "source": "shaft1",
+              "name": "can_insert_to",
+              "target": "gearbase_hole1"
+            },
+            {
+              "source": "parallelgripper",
+              "name": "can_manipulate",
+              "target": "gear1"
+            },
+            {
+              "source": "outwardgripper",
+              "name": "can_manipulate",
+              "target": "gear3"
+            },
+            {
+              "source": "defaultgripper",
+              "name": "can_manipulate",
+              "target": "shaft3"
+            },
+            {
+              "source": "outwardgripper",
+              "name": "can_manipulate",
+              "target": "gear2"
+            }
+          ],
+          "relations": [
+            {
+              "source": "defaultgripper",
+              "name": "hold",
+              "target": "shaft3"
+            },
+            {
+              "source": "left_hand",
+              "name": "hold",
+              "target": "defaultgripper"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sample_id": "gearset1_problem_011_subtask_01",
+      "reason": {
+        "result": "failure",
+        "summary": "Behavior tree tick returns failure. The reason could be: A condition failed and an action to satisfy it is not present; An action node failed and no alternative is available; the node is against the definition in domain knowledge; The tree is not well-structured.",
+        "final_node": {
+          "summary": "precondition hold(left_hand, outwardgripper)",
+          "identifier": 512,
+          "name": "precondition: hold(left_hand, outwardgripper)",
+          "conditions": [
+            {
+              "object_name": "left_hand",
+              "property_name": "hold",
+              "property_value": "outwardgripper",
+              "status": true
+            }
+          ]
+        },
+        "world_state": {
+          "objects": [
+            {
+              "name": "clampgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "parallelgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "inwardgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "outwardgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "defaultgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "gear1",
+              "properties": []
+            },
+            {
+              "name": "gear2",
+              "properties": []
+            },
+            {
+              "name": "gear3",
+              "properties": []
+            },
+            {
+              "name": "shaft1",
+              "properties": []
+            },
+            {
+              "name": "shaft2",
+              "properties": []
+            },
+            {
+              "name": "shaft3",
+              "properties": []
+            },
+            {
+              "name": "gearbase",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole1",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole3",
+              "properties": []
+            },
+            {
+              "name": "left_hand",
+              "properties": []
+            }
+          ],
+          "constraints": [
+            {
+              "source": "shaft3",
+              "name": "can_insert_to",
+              "target": "gearbase_hole3"
+            },
+            {
+              "source": "gear2",
+              "name": "can_insert_to",
+              "target": "shaft2"
+            },
+            {
+              "source": "clampgripper",
+              "name": "can_manipulate",
+              "target": "shaft1"
+            },
+            {
+              "source": "gear1",
+              "name": "can_insert_to",
+              "target": "shaft1"
+            },
+            {
+              "source": "gear3",
+              "name": "can_insert_to",
+              "target": "shaft3"
+            },
+            {
+              "source": "shaft1",
+              "name": "can_insert_to",
+              "target": "gearbase_hole1"
+            },
+            {
+              "source": "parallelgripper",
+              "name": "can_manipulate",
+              "target": "gear1"
+            },
+            {
+              "source": "outwardgripper",
+              "name": "can_manipulate",
+              "target": "gear3"
+            },
+            {
+              "source": "defaultgripper",
+              "name": "can_manipulate",
+              "target": "shaft3"
+            },
+            {
+              "source": "outwardgripper",
+              "name": "can_manipulate",
+              "target": "gear2"
+            }
+          ],
+          "relations": [
+            {
+              "source": "left_hand",
+              "name": "hold",
+              "target": "defaultgripper"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sample_id": "gearset1_problem_012_subtask_01",
+      "reason": {
+        "result": "failure",
+        "summary": "Behavior tree tick returns failure. The reason could be: A condition failed and an action to satisfy it is not present; An action node failed and no alternative is available; the node is against the definition in domain knowledge; The tree is not well-structured.",
+        "final_node": {
+          "summary": "precondition hold(left_hand, defaultgripper)",
+          "identifier": 551,
+          "name": "precondition: hold(left_hand, defaultgripper)",
+          "conditions": [
+            {
+              "object_name": "left_hand",
+              "property_name": "hold",
+              "property_value": "defaultgripper",
+              "status": true
+            }
+          ]
+        },
+        "world_state": {
+          "objects": [
+            {
+              "name": "clampgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "parallelgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "inwardgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "outwardgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "defaultgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "gear1",
+              "properties": []
+            },
+            {
+              "name": "gear2",
+              "properties": []
+            },
+            {
+              "name": "gear3",
+              "properties": []
+            },
+            {
+              "name": "shaft1",
+              "properties": []
+            },
+            {
+              "name": "shaft2",
+              "properties": []
+            },
+            {
+              "name": "shaft3",
+              "properties": []
+            },
+            {
+              "name": "gearbase",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole1",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole3",
+              "properties": []
+            },
+            {
+              "name": "left_hand",
+              "properties": []
+            }
+          ],
+          "constraints": [
+            {
+              "source": "shaft3",
+              "name": "can_insert_to",
+              "target": "gearbase_hole3"
+            },
+            {
+              "source": "gear2",
+              "name": "can_insert_to",
+              "target": "shaft2"
+            },
+            {
+              "source": "clampgripper",
+              "name": "can_manipulate",
+              "target": "shaft1"
+            },
+            {
+              "source": "gear1",
+              "name": "can_insert_to",
+              "target": "shaft1"
+            },
+            {
+              "source": "gear3",
+              "name": "can_insert_to",
+              "target": "shaft3"
+            },
+            {
+              "source": "shaft1",
+              "name": "can_insert_to",
+              "target": "gearbase_hole1"
+            },
+            {
+              "source": "parallelgripper",
+              "name": "can_manipulate",
+              "target": "gear1"
+            },
+            {
+              "source": "outwardgripper",
+              "name": "can_manipulate",
+              "target": "gear3"
+            },
+            {
+              "source": "defaultgripper",
+              "name": "can_manipulate",
+              "target": "shaft3"
+            },
+            {
+              "source": "outwardgripper",
+              "name": "can_manipulate",
+              "target": "gear2"
+            }
+          ],
+          "relations": [
+            {
+              "source": "left_hand",
+              "name": "hold",
+              "target": "inwardgripper"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sample_id": "gearset1_problem_013_subtask_01",
+      "reason": {
+        "result": "failure",
+        "summary": "Behavior tree tick returns failure. The reason could be: A condition failed and an action to satisfy it is not present; An action node failed and no alternative is available; the node is against the definition in domain knowledge; The tree is not well-structured.",
+        "final_node": {
+          "summary": "precondition hold(left_hand, defaultgripper)",
+          "identifier": 608,
+          "name": "precondition: hold(left_hand, defaultgripper)",
+          "conditions": [
+            {
+              "object_name": "left_hand",
+              "property_name": "hold",
+              "property_value": "defaultgripper",
+              "status": true
+            }
+          ]
+        },
+        "world_state": {
+          "objects": [
+            {
+              "name": "clampgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "parallelgripper",
+              "properties": []
+            },
+            {
+              "name": "inwardgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "outwardgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "defaultgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "gear1",
+              "properties": []
+            },
+            {
+              "name": "gear2",
+              "properties": []
+            },
+            {
+              "name": "gear3",
+              "properties": []
+            },
+            {
+              "name": "shaft1",
+              "properties": []
+            },
+            {
+              "name": "shaft2",
+              "properties": []
+            },
+            {
+              "name": "shaft3",
+              "properties": []
+            },
+            {
+              "name": "gearbase",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole1",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole3",
+              "properties": []
+            },
+            {
+              "name": "left_hand",
+              "properties": []
+            }
+          ],
+          "constraints": [
+            {
+              "source": "shaft3",
+              "name": "can_insert_to",
+              "target": "gearbase_hole3"
+            },
+            {
+              "source": "gear2",
+              "name": "can_insert_to",
+              "target": "shaft2"
+            },
+            {
+              "source": "gear1",
+              "name": "can_insert_to",
+              "target": "shaft1"
+            },
+            {
+              "source": "clampgripper",
+              "name": "can_manipulate",
+              "target": "shaft1"
+            },
+            {
+              "source": "gear3",
+              "name": "can_insert_to",
+              "target": "shaft3"
+            },
+            {
+              "source": "shaft1",
+              "name": "can_insert_to",
+              "target": "gearbase_hole1"
+            },
+            {
+              "source": "parallelgripper",
+              "name": "can_manipulate",
+              "target": "gear1"
+            },
+            {
+              "source": "outwardgripper",
+              "name": "can_manipulate",
+              "target": "gear3"
+            },
+            {
+              "source": "defaultgripper",
+              "name": "can_manipulate",
+              "target": "shaft3"
+            },
+            {
+              "source": "outwardgripper",
+              "name": "can_manipulate",
+              "target": "gear2"
+            }
+          ],
+          "relations": [
+            {
+              "source": "left_hand",
+              "name": "hold",
+              "target": "parallelgripper"
+            },
+            {
+              "source": "parallelgripper",
+              "name": "hold",
+              "target": "gear1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sample_id": "gearset1_problem_016_subtask_01",
+      "reason": {
+        "result": "failure",
+        "summary": "Behavior tree tick returns failure. The reason could be: A condition failed and an action to satisfy it is not present; An action node failed and no alternative is available; the node is against the definition in domain knowledge; The tree is not well-structured.",
+        "final_node": {
+          "summary": "precondition hold(left_hand, parallelgripper)",
+          "identifier": 657,
+          "name": "precondition: hold(left_hand, parallelgripper)",
+          "conditions": [
+            {
+              "object_name": "left_hand",
+              "property_name": "hold",
+              "property_value": "parallelgripper",
+              "status": true
+            }
+          ]
+        },
+        "world_state": {
+          "objects": [
+            {
+              "name": "clampgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "parallelgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "inwardgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "outwardgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "defaultgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "gear1",
+              "properties": []
+            },
+            {
+              "name": "gear2",
+              "properties": []
+            },
+            {
+              "name": "gear3",
+              "properties": []
+            },
+            {
+              "name": "shaft1",
+              "properties": []
+            },
+            {
+              "name": "shaft2",
+              "properties": []
+            },
+            {
+              "name": "shaft3",
+              "properties": []
+            },
+            {
+              "name": "gearbase",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole1",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole3",
+              "properties": []
+            },
+            {
+              "name": "lampbase",
+              "properties": []
+            },
+            {
+              "name": "chair_leg1",
+              "properties": []
+            },
+            {
+              "name": "left_hand",
+              "properties": []
+            }
+          ],
+          "constraints": [
+            {
+              "source": "shaft3",
+              "name": "can_insert_to",
+              "target": "gearbase_hole3"
+            },
+            {
+              "source": "gear2",
+              "name": "can_insert_to",
+              "target": "shaft2"
+            },
+            {
+              "source": "clampgripper",
+              "name": "can_manipulate",
+              "target": "shaft1"
+            },
+            {
+              "source": "gear1",
+              "name": "can_insert_to",
+              "target": "shaft1"
+            },
+            {
+              "source": "gear3",
+              "name": "can_insert_to",
+              "target": "shaft3"
+            },
+            {
+              "source": "shaft1",
+              "name": "can_insert_to",
+              "target": "gearbase_hole1"
+            },
+            {
+              "source": "parallelgripper",
+              "name": "can_manipulate",
+              "target": "gear1"
+            },
+            {
+              "source": "outwardgripper",
+              "name": "can_manipulate",
+              "target": "gear3"
+            },
+            {
+              "source": "defaultgripper",
+              "name": "can_manipulate",
+              "target": "shaft3"
+            },
+            {
+              "source": "outwardgripper",
+              "name": "can_manipulate",
+              "target": "gear2"
+            }
+          ],
+          "relations": [
+            {
+              "source": "shaft1",
+              "name": "is_inserted_to",
+              "target": "gearbase_hole1"
+            },
+            {
+              "source": "shaft3",
+              "name": "is_inserted_to",
+              "target": "gearbase_hole3"
+            },
+            {
+              "source": "left_hand",
+              "name": "hold",
+              "target": "inwardgripper"
+            },
+            {
+              "source": "gear2",
+              "name": "is_inserted_to",
+              "target": "shaft2"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sample_id": "gearset1_problem_017",
+      "reason": {
+        "result": "failure",
+        "summary": "Behavior tree tick returns failure. The reason could be: A condition failed and an action to satisfy it is not present; An action node failed and no alternative is available; the node is against the definition in domain knowledge; The tree is not well-structured.",
+        "final_node": {
+          "summary": "precondition hold(left_hand, inwardgripper)",
+          "identifier": 666,
+          "name": "precondition: hold(left_hand, inwardgripper)",
+          "conditions": [
+            {
+              "object_name": "left_hand",
+              "property_name": "hold",
+              "property_value": "inwardgripper",
+              "status": true
+            }
+          ]
+        },
+        "world_state": {
+          "objects": [
+            {
+              "name": "clampgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "parallelgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "inwardgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "outwardgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "defaultgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "smallgear",
+              "properties": []
+            },
+            {
+              "name": "compoundgear",
+              "properties": []
+            },
+            {
+              "name": "largegear",
+              "properties": []
+            },
+            {
+              "name": "smallshaft",
+              "properties": []
+            },
+            {
+              "name": "cylindershaft",
+              "properties": []
+            },
+            {
+              "name": "largeshaft",
+              "properties": []
+            },
+            {
+              "name": "gearbase",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole1",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole2",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole3",
+              "properties": []
+            },
+            {
+              "name": "lampbase",
+              "properties": []
+            },
+            {
+              "name": "chair_leg1",
+              "properties": []
+            },
+            {
+              "name": "left_hand",
+              "properties": []
+            }
+          ],
+          "constraints": [
+            {
+              "source": "clampgripper",
+              "name": "can_manipulate",
+              "target": "smallshaft"
+            },
+            {
+              "source": "parallelgripper",
+              "name": "can_manipulate",
+              "target": "cylindershaft"
+            },
+            {
+              "source": "largegear",
+              "name": "can_insert_to",
+              "target": "largeshaft"
+            },
+            {
+              "source": "outwardgripper",
+              "name": "can_manipulate",
+              "target": "largegear"
+            },
+            {
+              "source": "largeshaft",
+              "name": "can_insert_to",
+              "target": "gearbase_hole3"
+            },
+            {
+              "source": "parallelgripper",
+              "name": "can_manipulate",
+              "target": "smallgear"
+            },
+            {
+              "source": "smallgear",
+              "name": "can_insert_to",
+              "target": "smallshaft"
+            },
+            {
+              "source": "outwardgripper",
+              "name": "can_manipulate",
+              "target": "compoundgear"
+            },
+            {
+              "source": "smallshaft",
+              "name": "can_insert_to",
+              "target": "gearbase_hole1"
+            },
+            {
+              "source": "compoundgear",
+              "name": "can_insert_to",
+              "target": "cylindershaft"
+            },
+            {
+              "source": "cylindershaft",
+              "name": "can_screw_to",
+              "target": "gearbase_hole2"
+            },
+            {
+              "source": "defaultgripper",
+              "name": "can_manipulate",
+              "target": "largeshaft"
+            }
+          ],
+          "relations": [
+            {
+              "source": "left_hand",
+              "name": "hold",
+              "target": "outwardgripper"
+            },
+            {
+              "source": "largeshaft",
+              "name": "is_inserted_to",
+              "target": "gearbase_hole3"
+            },
+            {
+              "source": "smallshaft",
+              "name": "is_inserted_to",
+              "target": "gearbase_hole1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sample_id": "gearset1_problem_017_subtask_00",
+      "reason": {
+        "result": "failure",
+        "summary": "Behavior tree tick returns failure. The reason could be: A condition failed and an action to satisfy it is not present; An action node failed and no alternative is available; the node is against the definition in domain knowledge; The tree is not well-structured.",
+        "final_node": {
+          "summary": "precondition hold(left_hand, inwardgripper)",
+          "identifier": 689,
+          "name": "precondition: hold(left_hand, inwardgripper)",
+          "conditions": [
+            {
+              "object_name": "left_hand",
+              "property_name": "hold",
+              "property_value": "inwardgripper",
+              "status": true
+            }
+          ]
+        },
+        "world_state": {
+          "objects": [
+            {
+              "name": "clampgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "parallelgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "inwardgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "outwardgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "defaultgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "smallgear",
+              "properties": []
+            },
+            {
+              "name": "compoundgear",
+              "properties": []
+            },
+            {
+              "name": "largegear",
+              "properties": []
+            },
+            {
+              "name": "smallshaft",
+              "properties": []
+            },
+            {
+              "name": "cylindershaft",
+              "properties": []
+            },
+            {
+              "name": "largeshaft",
+              "properties": []
+            },
+            {
+              "name": "gearbase",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole1",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole2",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole3",
+              "properties": []
+            },
+            {
+              "name": "lampbase",
+              "properties": []
+            },
+            {
+              "name": "chair_leg1",
+              "properties": []
+            },
+            {
+              "name": "left_hand",
+              "properties": []
+            }
+          ],
+          "constraints": [
+            {
+              "source": "clampgripper",
+              "name": "can_manipulate",
+              "target": "smallshaft"
+            },
+            {
+              "source": "parallelgripper",
+              "name": "can_manipulate",
+              "target": "cylindershaft"
+            },
+            {
+              "source": "largegear",
+              "name": "can_insert_to",
+              "target": "largeshaft"
+            },
+            {
+              "source": "outwardgripper",
+              "name": "can_manipulate",
+              "target": "largegear"
+            },
+            {
+              "source": "largeshaft",
+              "name": "can_insert_to",
+              "target": "gearbase_hole3"
+            },
+            {
+              "source": "parallelgripper",
+              "name": "can_manipulate",
+              "target": "smallgear"
+            },
+            {
+              "source": "smallgear",
+              "name": "can_insert_to",
+              "target": "smallshaft"
+            },
+            {
+              "source": "outwardgripper",
+              "name": "can_manipulate",
+              "target": "compoundgear"
+            },
+            {
+              "source": "smallshaft",
+              "name": "can_insert_to",
+              "target": "gearbase_hole1"
+            },
+            {
+              "source": "compoundgear",
+              "name": "can_insert_to",
+              "target": "cylindershaft"
+            },
+            {
+              "source": "cylindershaft",
+              "name": "can_screw_to",
+              "target": "gearbase_hole2"
+            },
+            {
+              "source": "defaultgripper",
+              "name": "can_manipulate",
+              "target": "largeshaft"
+            }
+          ],
+          "relations": [
+            {
+              "source": "left_hand",
+              "name": "hold",
+              "target": "outwardgripper"
+            },
+            {
+              "source": "largeshaft",
+              "name": "is_inserted_to",
+              "target": "gearbase_hole3"
+            },
+            {
+              "source": "smallshaft",
+              "name": "is_inserted_to",
+              "target": "gearbase_hole1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sample_id": "gearset1_problem_017_subtask_01",
+      "reason": {
+        "result": "failure",
+        "summary": "Behavior tree tick returns failure. The reason could be: A condition failed and an action to satisfy it is not present; An action node failed and no alternative is available; the node is against the definition in domain knowledge; The tree is not well-structured.",
+        "final_node": {
+          "summary": "precondition hold(left_hand, parallelgripper)",
+          "identifier": 696,
+          "name": "precondition: hold(left_hand, parallelgripper)",
+          "conditions": [
+            {
+              "object_name": "left_hand",
+              "property_name": "hold",
+              "property_value": "parallelgripper",
+              "status": true
+            }
+          ]
+        },
+        "world_state": {
+          "objects": [
+            {
+              "name": "clampgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "parallelgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "inwardgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "outwardgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "defaultgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "smallgear",
+              "properties": []
+            },
+            {
+              "name": "compoundgear",
+              "properties": []
+            },
+            {
+              "name": "largegear",
+              "properties": []
+            },
+            {
+              "name": "smallshaft",
+              "properties": []
+            },
+            {
+              "name": "cylindershaft",
+              "properties": []
+            },
+            {
+              "name": "largeshaft",
+              "properties": []
+            },
+            {
+              "name": "gearbase",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole1",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole2",
+              "properties": []
+            },
+            {
+              "name": "gearbase_hole3",
+              "properties": []
+            },
+            {
+              "name": "lampbase",
+              "properties": []
+            },
+            {
+              "name": "chair_leg1",
+              "properties": []
+            },
+            {
+              "name": "left_hand",
+              "properties": []
+            }
+          ],
+          "constraints": [
+            {
+              "source": "clampgripper",
+              "name": "can_manipulate",
+              "target": "smallshaft"
+            },
+            {
+              "source": "parallelgripper",
+              "name": "can_manipulate",
+              "target": "cylindershaft"
+            },
+            {
+              "source": "largegear",
+              "name": "can_insert_to",
+              "target": "largeshaft"
+            },
+            {
+              "source": "outwardgripper",
+              "name": "can_manipulate",
+              "target": "largegear"
+            },
+            {
+              "source": "largeshaft",
+              "name": "can_insert_to",
+              "target": "gearbase_hole3"
+            },
+            {
+              "source": "parallelgripper",
+              "name": "can_manipulate",
+              "target": "smallgear"
+            },
+            {
+              "source": "smallgear",
+              "name": "can_insert_to",
+              "target": "smallshaft"
+            },
+            {
+              "source": "outwardgripper",
+              "name": "can_manipulate",
+              "target": "compoundgear"
+            },
+            {
+              "source": "smallshaft",
+              "name": "can_insert_to",
+              "target": "gearbase_hole1"
+            },
+            {
+              "source": "compoundgear",
+              "name": "can_insert_to",
+              "target": "cylindershaft"
+            },
+            {
+              "source": "cylindershaft",
+              "name": "can_screw_to",
+              "target": "gearbase_hole2"
+            },
+            {
+              "source": "defaultgripper",
+              "name": "can_manipulate",
+              "target": "largeshaft"
+            }
+          ],
+          "relations": [
+            {
+              "source": "left_hand",
+              "name": "hold",
+              "target": "outwardgripper"
+            },
+            {
+              "source": "largeshaft",
+              "name": "is_inserted_to",
+              "target": "gearbase_hole3"
+            },
+            {
+              "source": "smallshaft",
+              "name": "is_inserted_to",
+              "target": "gearbase_hole1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sample_id": "chair_problem_000_subtask_01",
+      "reason": {
+        "result": "failure",
+        "summary": "Behavior tree tick returns failure. The reason could be: A condition failed and an action to satisfy it is not present; An action node failed and no alternative is available; the node is against the definition in domain knowledge; The tree is not well-structured.",
+        "final_node": {
+          "summary": "precondition hold(left_hand, inwardgripper)",
+          "identifier": 753,
+          "name": "precondition: hold(left_hand, inwardgripper)",
+          "conditions": [
+            {
+              "object_name": "left_hand",
+              "property_name": "hold",
+              "property_value": "inwardgripper",
+              "status": true
+            }
+          ]
+        },
+        "world_state": {
+          "objects": [
+            {
+              "name": "clampgripper",
+              "properties": [
+                "is_equippable",
+                "is_empty"
+              ]
+            },
+            {
+              "name": "parallelgripper",
+              "properties": [
+                "is_equippable",
+                "is_empty"
+              ]
+            },
+            {
+              "name": "inwardgripper",
+              "properties": [
+                "is_equippable",
+                "is_empty"
+              ]
+            },
+            {
+              "name": "outwardgripper",
+              "properties": [
+                "is_equippable",
+                "is_empty"
+              ]
+            },
+            {
+              "name": "defaultgripper",
+              "properties": []
+            },
+            {
+              "name": "chairnut1",
+              "properties": []
+            },
+            {
+              "name": "chairnut2",
+              "properties": []
+            },
+            {
+              "name": "chairseat",
+              "properties": []
+            },
+            {
+              "name": "chairseatbolt1",
+              "properties": []
+            },
+            {
+              "name": "chairseatbolt2",
+              "properties": []
+            },
+            {
+              "name": "chairseatconnection",
+              "properties": []
+            },
+            {
+              "name": "chairseatthread1",
+              "properties": []
+            },
+            {
+              "name": "chairseatthread2",
+              "properties": []
+            },
+            {
+              "name": "chairback",
+              "properties": []
+            },
+            {
+              "name": "chairleg1",
+              "properties": []
+            },
+            {
+              "name": "chairleg2",
+              "properties": []
+            },
+            {
+              "name": "left_hand",
+              "properties": []
+            }
+          ],
+          "constraints": [
+            {
+              "source": "defaultgripper",
+              "name": "can_manipulate",
+              "target": "chairleg2"
+            },
+            {
+              "source": "chairnut2",
+              "name": "can_screw_to",
+              "target": "chairseatbolt2"
+            },
+            {
+              "source": "chairnut1",
+              "name": "can_screw_to",
+              "target": "chairseatbolt1"
+            },
+            {
+              "source": "inwardgripper",
+              "name": "can_manipulate",
+              "target": "chairnut1"
+            },
+            {
+              "source": "chairleg2",
+              "name": "can_screw_to",
+              "target": "chairseatthread2"
+            },
+            {
+              "source": "inwardgripper",
+              "name": "can_manipulate",
+              "target": "chairnut2"
+            },
+            {
+              "source": "chairleg1",
+              "name": "can_screw_to",
+              "target": "chairseatthread1"
+            },
+            {
+              "source": "clampgripper",
+              "name": "can_manipulate",
+              "target": "chairback"
+            },
+            {
+              "source": "chairback",
+              "name": "can_insert_to",
+              "target": "chairseatconnection"
+            },
+            {
+              "source": "defaultgripper",
+              "name": "can_manipulate",
+              "target": "chairleg1"
+            },
+            {
+              "source": "defaultgripper",
+              "name": "can_manipulate",
+              "target": "chairseat"
+            }
+          ],
+          "relations": [
+            {
+              "source": "defaultgripper",
+              "name": "hold",
+              "target": "chairleg1"
+            },
+            {
+              "source": "left_hand",
+              "name": "hold",
+              "target": "defaultgripper"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sample_id": "chair_problem_001_subtask_01",
+      "reason": {
+        "result": "failure",
+        "summary": "Behavior tree tick returns failure. The reason could be: A condition failed and an action to satisfy it is not present; An action node failed and no alternative is available; the node is against the definition in domain knowledge; The tree is not well-structured.",
+        "final_node": {
+          "summary": "precondition hold(left_hand, inwardgripper)",
+          "identifier": 798,
+          "name": "precondition: hold(left_hand, inwardgripper)",
+          "conditions": [
+            {
+              "object_name": "left_hand",
+              "property_name": "hold",
+              "property_value": "inwardgripper",
+              "status": true
+            }
+          ]
+        },
+        "world_state": {
+          "objects": [
+            {
+              "name": "clampgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "parallelgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "inwardgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "outwardgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "defaultgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "chairnut1",
+              "properties": []
+            },
+            {
+              "name": "chairnut2",
+              "properties": []
+            },
+            {
+              "name": "chairseat",
+              "properties": []
+            },
+            {
+              "name": "chairseatbolt1",
+              "properties": []
+            },
+            {
+              "name": "chairseatbolt2",
+              "properties": []
+            },
+            {
+              "name": "chairseatconnector",
+              "properties": []
+            },
+            {
+              "name": "chairseatthread1",
+              "properties": []
+            },
+            {
+              "name": "chairseatthread2",
+              "properties": []
+            },
+            {
+              "name": "chairback",
+              "properties": []
+            },
+            {
+              "name": "chairleg1",
+              "properties": []
+            },
+            {
+              "name": "chairleg2",
+              "properties": []
+            },
+            {
+              "name": "left_hand",
+              "properties": []
+            }
+          ],
+          "constraints": [
+            {
+              "source": "defaultgripper",
+              "name": "can_manipulate",
+              "target": "chairleg2"
+            },
+            {
+              "source": "chairnut2",
+              "name": "can_screw_to",
+              "target": "chairseatbolt2"
+            },
+            {
+              "source": "chairnut1",
+              "name": "can_screw_to",
+              "target": "chairseatbolt1"
+            },
+            {
+              "source": "inwardgripper",
+              "name": "can_manipulate",
+              "target": "chairnut1"
+            },
+            {
+              "source": "chairleg2",
+              "name": "can_screw_to",
+              "target": "chairseatthread2"
+            },
+            {
+              "source": "inwardgripper",
+              "name": "can_manipulate",
+              "target": "chairnut2"
+            },
+            {
+              "source": "chairleg1",
+              "name": "can_screw_to",
+              "target": "chairseatthread1"
+            },
+            {
+              "source": "clampgripper",
+              "name": "can_manipulate",
+              "target": "chairback"
+            },
+            {
+              "source": "chairback",
+              "name": "can_insert_to",
+              "target": "chairseatconnector"
+            },
+            {
+              "source": "defaultgripper",
+              "name": "can_manipulate",
+              "target": "chairleg1"
+            },
+            {
+              "source": "defaultgripper",
+              "name": "can_manipulate",
+              "target": "chairseat"
+            }
+          ],
+          "relations": [
+            {
+              "source": "left_hand",
+              "name": "hold",
+              "target": "clampgripper"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sample_id": "lamp_problem_000_subtask_01",
+      "reason": {
+        "result": "failure",
+        "summary": "Behavior tree tick returns failure. The reason could be: A condition failed and an action to satisfy it is not present; An action node failed and no alternative is available; the node is against the definition in domain knowledge; The tree is not well-structured.",
+        "final_node": {
+          "summary": "precondition hold(left_hand, clampgripper)",
+          "identifier": 858,
+          "name": "precondition: hold(left_hand, clampgripper)",
+          "conditions": [
+            {
+              "object_name": "left_hand",
+              "property_name": "hold",
+              "property_value": "clampgripper",
+              "status": true
+            }
+          ]
+        },
+        "world_state": {
+          "objects": [
+            {
+              "name": "clampgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "parallelgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "inwardgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "outwardgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "defaultgripper",
+              "properties": [
+                "is_empty"
+              ]
+            },
+            {
+              "name": "lampbase",
+              "properties": []
+            },
+            {
+              "name": "lampshade",
+              "properties": []
+            },
+            {
+              "name": "lampbulb",
+              "properties": []
+            },
+            {
+              "name": "left_hand",
+              "properties": []
+            }
+          ],
+          "constraints": [
+            {
+              "source": "lampshade",
+              "name": "can_place_to",
+              "target": "lampbulb"
+            },
+            {
+              "source": "clampgripper",
+              "name": "can_manipulate",
+              "target": "lampbulb"
+            },
+            {
+              "source": "lampbulb",
+              "name": "can_screw_to",
+              "target": "lampbase"
+            },
+            {
+              "source": "outwardgripper",
+              "name": "can_manipulate",
+              "target": "lampshade"
+            }
+          ],
+          "relations": [
+            {
+              "source": "left_hand",
+              "name": "hold",
+              "target": "defaultgripper"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "skipped_duplicates": [
+    "gearset1_problem_000",
+    "gearset1_problem_001",
+    "gearset1_problem_002",
+    "gearset1_problem_003",
+    "gearset1_problem_004",
+    "gearset1_problem_005",
+    "gearset1_problem_006",
+    "gearset1_problem_007",
+    "gearset1_problem_009"
+  ],
+  "final_examples": 50
+}

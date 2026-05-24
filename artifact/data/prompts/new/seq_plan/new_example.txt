@@ -1,0 +1,86 @@
+Following is an input/output example:
+INPUT:
+start_world_state: 
+{
+"objects": [
+    {"name": "outward_claw", "properties": ["is_empty"]},
+    {"name": "shaft1", "properties": []},
+    {"name": "left_hand", "properties": []},
+    {"name": "parallel_box1", "properties": [is_empty]}
+],
+"constraints": [
+    {"source": "outward_claw", "name": "can_manipulate", "target": "gear1"}
+],
+"relations": [
+    {"source": "left_hand", "name": "hold", "target": "parallel_box1"}
+]
+}
+target: "change the tool from the parallel_box1 to the outward_claw"
+
+OUTPUT:
+{   
+    "explanation": "The left_hand is holding the parallel_box1 now and the parallel_box1 is empty, so the change_tool action can be conducted to change the tool in the hand from the parallel_box1 to outward_claw.",
+    "task_plan": [
+        "change_tool(left_hand, parallel_box1, outward_claw)"
+    ]
+}
+
+INPUT:
+start_world_state:
+{
+"objects": [
+    {"name": "gear3", "properties": []},
+    {"name": "shaft2", "properties": []},
+    {"name": "inward_claw", "properties": ["is_equippable", "is_empty"]},
+    {"name": "left_hand", "properties": ["is_empty"]}
+],
+"constraints": [
+    {"source": "gear3", "name": "can_insert_to", "target": "shaft2"},
+    {"source": "inward_claw", "name": "can_manipulate", "target": "gear3"}
+],
+"relations": []
+}
+target: "hold(left_hand, inward_claw)"
+
+OUTPUT:
+{
+    "explanation": "The left hand is empty and the inward_claw is equippable, so the correct action is to load the inward_claw into the left hand.",
+    "task_plan": [
+        "load_tool(left_hand, inward_claw)"
+    ]
+}
+
+INPUT:
+start_world_state:
+{
+"objects": [
+    {"name": "clampgripper", "properties": ["is_empty", "is_equippable"]},
+    {"name": "outwardgripper", "properties": []},
+    {"name": "shaft1", "properties": []},
+    {"name": "gear2", "properties": []},
+    {"name": "gearbase_hole1", "properties": []},
+    {"name": "left_hand", "properties": []}
+],
+"constraints": [
+    {"source": "shaft1", "name": "can_insert_to", "target": "gearbase_hole1"},
+    {"source": "outwardgripper", "name": "can_manipulate", "target": "gear2"},
+    {"source": "clampgripper", "name": "can_manipulate", "target": "shaft1"}
+],
+"relations": [
+    {"source": "outwardgripper", "name": "hold", "target": "gear2"},
+    {"source": "left_hand", "name": "hold", "target": "outwardgripper"}
+]
+}
+target: "is_inserted_to(shaft1, gearbase_hole1)"
+
+OUTPUT:
+{
+    "explanation": "Because outwardgripper is holding gear2, it must first be emptied before the tool can be unloaded. After that, clampgripper can be loaded, shaft1 can be picked up, and shaft1 can be inserted into gearbase_hole1.",
+    "task_plan": [
+        "put_down(left_hand, outwardgripper, gear2)",
+        "unload_tool(left_hand, outwardgripper)",
+        "load_tool(left_hand, clampgripper)",
+        "pick_up(left_hand, clampgripper, shaft1)",
+        "insert(left_hand, clampgripper, shaft1, gearbase_hole1)"
+    ]
+}

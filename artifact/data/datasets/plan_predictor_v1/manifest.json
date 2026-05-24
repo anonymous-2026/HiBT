@@ -1,0 +1,32 @@
+{
+  "dataset_name": "plan_predictor_v1",
+  "format": "jsonl",
+  "fields_required_by_backend": [
+    "main_id",
+    "question",
+    "cot_answer",
+    "groundtruth"
+  ],
+  "counts": {
+    "all": 11,
+    "train": 9,
+    "eval": 2
+  },
+  "splits": {
+    "train": [
+      "gearset_insert_gear3_shaft2",
+      "gearset1_problem_000",
+      "gearset1_problem_001",
+      "gearset1_problem_002",
+      "gearset1_problem_003",
+      "gearset1_problem_004",
+      "gearset1_problem_005",
+      "gearset1_problem_006",
+      "gearset1_problem_007"
+    ],
+    "eval": [
+      "gearset1_problem_008_goal_already_satisfied",
+      "gearset1_problem_009"
+    ]
+  }
+}

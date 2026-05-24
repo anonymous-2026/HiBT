@@ -1,0 +1,68 @@
+# =============================================================================
+# Planner predictor smoke evaluation configuration - local JSONL dataset v2 all split
+# =============================================================================
+
+data:
+  data_name: planlocal
+  data_path: artifact/data/datasets/plan_predictor_v2
+  split: train
+  shuffle: true
+  drop_last: false
+
+environment:
+  dotenv_path: .env
+  seed: 42
+  dataloader_num_workers: 0
+  device_map:
+    model:
+      device: auto
+      priority: 1
+
+model:
+  builder:
+    config_path: artifact/configs/planner/train_builder_Qwen3-8B_planlocal_4level_v2_smoke.yml
+    checkpoint_path: EXPERIMENT/planner/builder/Planner_Qwen3-8B_4level_v2_smoke/checkpoints/checkpoint_best-epoch0-step1.pt
+    strict_load: true
+
+  predictor:
+    use_shared_model: true
+    predictor_model_name: null
+    predictor_num_layers: null
+    dropout: 0.0
+
+training:
+  batch_size: 1
+  num_epochs: 1
+  learning_rate: 0.0001
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  gradient_clip: 1.0
+
+  predictor:
+    freeze: true
+    lora: null
+
+  loss_weights:
+    concept_loss_weight: 1.0
+    reasoning_loss_weight: 1.0
+
+log:
+  save_folder: EXPERIMENT/planner/predictor/Planner_Qwen3-8B_4level_shared_v2_smoke
+  checkpoint_path: EXPERIMENT/planner/predictor/Planner_Qwen3-8B_4level_shared_v2_smoke/checkpoints
+  log_path: EXPERIMENT/planner/predictor/Planner_Qwen3-8B_4level_shared_v2_smoke/logs
+  log_level: INFO
+  log_step_interval: 1
+  checkpoint_step_interval: 100
+  checkpoint_clean: true
+
+evaluation:
+  eval_step_interval: 1
+  mode: teacher_forced
+  generation_max_tokens: 128
+  intermediate_vector_save: 0
+  data:
+    data_name: planlocal
+    data_path: artifact/data/datasets/plan_predictor_v2
+    split: all
+    log_num_samples: 50
+    eval_num_samples: 1.0

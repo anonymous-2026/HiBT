@@ -1,0 +1,938 @@
+[
+  {
+    "source_problem": "gearset1_problem_000.json",
+    "target": "is_inserted_to(shaft1, gearbase_hole1)",
+    "world_state": {
+      "objects": [
+        {
+          "name": "clampgripper",
+          "properties": [
+            "is_empty",
+            "is_equippable"
+          ]
+        },
+        {
+          "name": "parallelgripper",
+          "properties": [
+            "is_empty",
+            "is_equippable"
+          ]
+        },
+        {
+          "name": "inwardgripper",
+          "properties": [
+            "is_empty",
+            "is_equippable"
+          ]
+        },
+        {
+          "name": "outwardgripper",
+          "properties": []
+        },
+        {
+          "name": "defaultgripper",
+          "properties": [
+            "is_empty",
+            "is_equippable"
+          ]
+        },
+        {
+          "name": "gear1",
+          "properties": []
+        },
+        {
+          "name": "gear2",
+          "properties": []
+        },
+        {
+          "name": "gear3",
+          "properties": []
+        },
+        {
+          "name": "shaft1",
+          "properties": []
+        },
+        {
+          "name": "shaft2",
+          "properties": []
+        },
+        {
+          "name": "shaft3",
+          "properties": []
+        },
+        {
+          "name": "gearbase",
+          "properties": []
+        },
+        {
+          "name": "gearbase_hole1",
+          "properties": []
+        },
+        {
+          "name": "gearbase_hole3",
+          "properties": []
+        },
+        {
+          "name": "left_hand",
+          "properties": []
+        }
+      ],
+      "constraints": [
+        {
+          "source": "gear3",
+          "name": "can_insert_to",
+          "target": "shaft3"
+        },
+        {
+          "source": "shaft1",
+          "name": "can_insert_to",
+          "target": "gearbase_hole1"
+        },
+        {
+          "source": "parallelgripper",
+          "name": "can_manipulate",
+          "target": "gear1"
+        },
+        {
+          "source": "gear2",
+          "name": "can_insert_to",
+          "target": "shaft2"
+        },
+        {
+          "source": "outwardgripper",
+          "name": "can_manipulate",
+          "target": "gear3"
+        },
+        {
+          "source": "gear1",
+          "name": "can_insert_to",
+          "target": "shaft1"
+        },
+        {
+          "source": "defaultgripper",
+          "name": "can_manipulate",
+          "target": "shaft3"
+        },
+        {
+          "source": "outwardgripper",
+          "name": "can_manipulate",
+          "target": "gear2"
+        },
+        {
+          "source": "shaft3",
+          "name": "can_insert_to",
+          "target": "gearbase_hole3"
+        },
+        {
+          "source": "clampgripper",
+          "name": "can_manipulate",
+          "target": "shaft1"
+        }
+      ],
+      "relations": [
+        {
+          "source": "outwardgripper",
+          "name": "hold",
+          "target": "gear2"
+        },
+        {
+          "source": "left_hand",
+          "name": "hold",
+          "target": "outwardgripper"
+        }
+      ]
+    }
+  },
+  {
+    "source_problem": "gearset1/problem_set/problem_002.json",
+    "target": "is_inserted_to(gear2, shaft2)",
+    "world_state": {
+      "objects": [
+        {
+          "name": "clampgripper",
+          "properties": [
+            "is_empty"
+          ]
+        },
+        {
+          "name": "parallelgripper",
+          "properties": [
+            "is_empty"
+          ]
+        },
+        {
+          "name": "inwardgripper",
+          "properties": [
+            "is_empty"
+          ]
+        },
+        {
+          "name": "outwardgripper",
+          "properties": [
+            "is_empty"
+          ]
+        },
+        {
+          "name": "defaultgripper",
+          "properties": [
+            "is_empty"
+          ]
+        },
+        {
+          "name": "gear1",
+          "properties": []
+        },
+        {
+          "name": "gear2",
+          "properties": []
+        },
+        {
+          "name": "gear3",
+          "properties": []
+        },
+        {
+          "name": "shaft1",
+          "properties": []
+        },
+        {
+          "name": "shaft2",
+          "properties": []
+        },
+        {
+          "name": "shaft3",
+          "properties": []
+        },
+        {
+          "name": "gearbase",
+          "properties": []
+        },
+        {
+          "name": "gearbase_hole1",
+          "properties": []
+        },
+        {
+          "name": "gearbase_hole3",
+          "properties": []
+        },
+        {
+          "name": "left_hand",
+          "properties": []
+        }
+      ],
+      "constraints": [
+        {
+          "source": "shaft1",
+          "name": "can_insert_to",
+          "target": "gearbase_hole1"
+        },
+        {
+          "source": "clampgripper",
+          "name": "can_manipulate",
+          "target": "shaft1"
+        },
+        {
+          "source": "outwardgripper",
+          "name": "can_manipulate",
+          "target": "gear3"
+        },
+        {
+          "source": "gear3",
+          "name": "can_insert_to",
+          "target": "shaft3"
+        },
+        {
+          "source": "defaultgripper",
+          "name": "can_manipulate",
+          "target": "shaft3"
+        },
+        {
+          "source": "gear2",
+          "name": "can_insert_to",
+          "target": "shaft2"
+        },
+        {
+          "source": "shaft3",
+          "name": "can_insert_to",
+          "target": "gearbase_hole3"
+        },
+        {
+          "source": "gear1",
+          "name": "can_insert_to",
+          "target": "shaft1"
+        },
+        {
+          "source": "outwardgripper",
+          "name": "can_manipulate",
+          "target": "gear2"
+        },
+        {
+          "source": "parallelgripper",
+          "name": "can_manipulate",
+          "target": "gear1"
+        }
+      ],
+      "relations": [
+        {
+          "source": "left_hand",
+          "name": "hold",
+          "target": "outwardgripper"
+        }
+      ]
+    }
+  },
+  {
+    "source_problem": "gearset1/problem_set/problem_017.json",
+    "target": "is_inserted_to(compoundgear, cylindershaft)",
+    "world_state": {
+      "objects": [
+        {
+          "name": "clampgripper",
+          "properties": [
+            "is_empty"
+          ]
+        },
+        {
+          "name": "parallelgripper",
+          "properties": [
+            "is_empty"
+          ]
+        },
+        {
+          "name": "inwardgripper",
+          "properties": [
+            "is_empty"
+          ]
+        },
+        {
+          "name": "outwardgripper",
+          "properties": [
+            "is_empty"
+          ]
+        },
+        {
+          "name": "defaultgripper",
+          "properties": [
+            "is_empty"
+          ]
+        },
+        {
+          "name": "smallgear",
+          "properties": []
+        },
+        {
+          "name": "compoundgear",
+          "properties": []
+        },
+        {
+          "name": "largegear",
+          "properties": []
+        },
+        {
+          "name": "smallshaft",
+          "properties": []
+        },
+        {
+          "name": "cylindershaft",
+          "properties": []
+        },
+        {
+          "name": "largeshaft",
+          "properties": []
+        },
+        {
+          "name": "gearbase",
+          "properties": []
+        },
+        {
+          "name": "gearbase_hole1",
+          "properties": []
+        },
+        {
+          "name": "gearbase_hole2",
+          "properties": []
+        },
+        {
+          "name": "gearbase_hole3",
+          "properties": []
+        },
+        {
+          "name": "lampbase",
+          "properties": []
+        },
+        {
+          "name": "chair_leg1",
+          "properties": []
+        },
+        {
+          "name": "left_hand",
+          "properties": []
+        }
+      ],
+      "constraints": [
+        {
+          "source": "compoundgear",
+          "name": "can_insert_to",
+          "target": "cylindershaft"
+        },
+        {
+          "source": "parallelgripper",
+          "name": "can_manipulate",
+          "target": "cylindershaft"
+        },
+        {
+          "source": "cylindershaft",
+          "name": "can_screw_to",
+          "target": "gearbase_hole2"
+        },
+        {
+          "source": "outwardgripper",
+          "name": "can_manipulate",
+          "target": "largegear"
+        },
+        {
+          "source": "outwardgripper",
+          "name": "can_manipulate",
+          "target": "compoundgear"
+        },
+        {
+          "source": "largegear",
+          "name": "can_insert_to",
+          "target": "largeshaft"
+        },
+        {
+          "source": "largeshaft",
+          "name": "can_insert_to",
+          "target": "gearbase_hole3"
+        },
+        {
+          "source": "smallshaft",
+          "name": "can_insert_to",
+          "target": "gearbase_hole1"
+        },
+        {
+          "source": "parallelgripper",
+          "name": "can_manipulate",
+          "target": "smallgear"
+        },
+        {
+          "source": "clampgripper",
+          "name": "can_manipulate",
+          "target": "smallshaft"
+        },
+        {
+          "source": "smallgear",
+          "name": "can_insert_to",
+          "target": "smallshaft"
+        },
+        {
+          "source": "defaultgripper",
+          "name": "can_manipulate",
+          "target": "largeshaft"
+        }
+      ],
+      "relations": [
+        {
+          "source": "largeshaft",
+          "name": "is_inserted_to",
+          "target": "gearbase_hole3"
+        },
+        {
+          "source": "smallshaft",
+          "name": "is_inserted_to",
+          "target": "gearbase_hole1"
+        },
+        {
+          "source": "left_hand",
+          "name": "hold",
+          "target": "outwardgripper"
+        }
+      ]
+    }
+  },
+  {
+    "source_problem": "chair_problem_000.json",
+    "target": "is_screwed_to(chairnut1, chairseatbolt1)",
+    "world_state": {
+      "objects": [
+        {
+          "name": "clampgripper",
+          "properties": [
+            "is_empty",
+            "is_equippable"
+          ]
+        },
+        {
+          "name": "parallelgripper",
+          "properties": [
+            "is_empty",
+            "is_equippable"
+          ]
+        },
+        {
+          "name": "inwardgripper",
+          "properties": [
+            "is_empty",
+            "is_equippable"
+          ]
+        },
+        {
+          "name": "outwardgripper",
+          "properties": [
+            "is_empty",
+            "is_equippable"
+          ]
+        },
+        {
+          "name": "defaultgripper",
+          "properties": []
+        },
+        {
+          "name": "chairnut1",
+          "properties": []
+        },
+        {
+          "name": "chairnut2",
+          "properties": []
+        },
+        {
+          "name": "chairseat",
+          "properties": []
+        },
+        {
+          "name": "chairseatbolt1",
+          "properties": []
+        },
+        {
+          "name": "chairseatbolt2",
+          "properties": []
+        },
+        {
+          "name": "chairseatconnection",
+          "properties": []
+        },
+        {
+          "name": "chairseatthread1",
+          "properties": []
+        },
+        {
+          "name": "chairseatthread2",
+          "properties": []
+        },
+        {
+          "name": "chairback",
+          "properties": []
+        },
+        {
+          "name": "chairleg1",
+          "properties": []
+        },
+        {
+          "name": "chairleg2",
+          "properties": []
+        },
+        {
+          "name": "left_hand",
+          "properties": []
+        }
+      ],
+      "constraints": [
+        {
+          "source": "clampgripper",
+          "name": "can_manipulate",
+          "target": "chairback"
+        },
+        {
+          "source": "inwardgripper",
+          "name": "can_manipulate",
+          "target": "chairnut1"
+        },
+        {
+          "source": "inwardgripper",
+          "name": "can_manipulate",
+          "target": "chairnut2"
+        },
+        {
+          "source": "defaultgripper",
+          "name": "can_manipulate",
+          "target": "chairleg1"
+        },
+        {
+          "source": "defaultgripper",
+          "name": "can_manipulate",
+          "target": "chairleg2"
+        },
+        {
+          "source": "defaultgripper",
+          "name": "can_manipulate",
+          "target": "chairseat"
+        },
+        {
+          "source": "chairnut1",
+          "name": "can_screw_to",
+          "target": "chairseatbolt1"
+        },
+        {
+          "source": "chairnut2",
+          "name": "can_screw_to",
+          "target": "chairseatbolt2"
+        },
+        {
+          "source": "chairback",
+          "name": "can_insert_to",
+          "target": "chairseatconnection"
+        },
+        {
+          "source": "chairleg1",
+          "name": "can_screw_to",
+          "target": "chairseatthread1"
+        },
+        {
+          "source": "chairleg2",
+          "name": "can_screw_to",
+          "target": "chairseatthread2"
+        }
+      ],
+      "relations": [
+        {
+          "source": "left_hand",
+          "name": "hold",
+          "target": "defaultgripper"
+        },
+        {
+          "source": "defaultgripper",
+          "name": "hold",
+          "target": "chairleg1"
+        }
+      ]
+    }
+  },
+  {
+    "source_problem": "chair_problem_002.json",
+    "target": "is_screwed_to(chairleg1, chairseatthread1)",
+    "world_state": {
+      "objects": [
+        {
+          "name": "clampgripper",
+          "properties": [
+            "is_empty"
+          ]
+        },
+        {
+          "name": "parallelgripper",
+          "properties": [
+            "is_empty"
+          ]
+        },
+        {
+          "name": "inwardgripper",
+          "properties": [
+            "is_empty"
+          ]
+        },
+        {
+          "name": "outwardgripper",
+          "properties": [
+            "is_empty"
+          ]
+        },
+        {
+          "name": "defaultgripper",
+          "properties": [
+            "is_empty"
+          ]
+        },
+        {
+          "name": "chairnut1",
+          "properties": []
+        },
+        {
+          "name": "chairnut2",
+          "properties": []
+        },
+        {
+          "name": "chairseat",
+          "properties": []
+        },
+        {
+          "name": "chairseatbolt1",
+          "properties": []
+        },
+        {
+          "name": "chairseatbolt2",
+          "properties": []
+        },
+        {
+          "name": "chairseatconnector",
+          "properties": []
+        },
+        {
+          "name": "chairseatthread1",
+          "properties": []
+        },
+        {
+          "name": "chairseatthread2",
+          "properties": []
+        },
+        {
+          "name": "chairback",
+          "properties": []
+        },
+        {
+          "name": "chairleg1",
+          "properties": []
+        },
+        {
+          "name": "chairleg2",
+          "properties": []
+        },
+        {
+          "name": "left_hand",
+          "properties": []
+        }
+      ],
+      "constraints": [
+        {
+          "source": "clampgripper",
+          "name": "can_manipulate",
+          "target": "chairback"
+        },
+        {
+          "source": "inwardgripper",
+          "name": "can_manipulate",
+          "target": "chairnut1"
+        },
+        {
+          "source": "inwardgripper",
+          "name": "can_manipulate",
+          "target": "chairnut2"
+        },
+        {
+          "source": "defaultgripper",
+          "name": "can_manipulate",
+          "target": "chairleg1"
+        },
+        {
+          "source": "defaultgripper",
+          "name": "can_manipulate",
+          "target": "chairleg2"
+        },
+        {
+          "source": "defaultgripper",
+          "name": "can_manipulate",
+          "target": "chairseat"
+        },
+        {
+          "source": "chairnut1",
+          "name": "can_screw_to",
+          "target": "chairseatbolt1"
+        },
+        {
+          "source": "chairnut2",
+          "name": "can_screw_to",
+          "target": "chairseatbolt2"
+        },
+        {
+          "source": "chairback",
+          "name": "can_insert_to",
+          "target": "chairseatconnector"
+        },
+        {
+          "source": "chairleg1",
+          "name": "can_screw_to",
+          "target": "chairseatthread1"
+        },
+        {
+          "source": "chairleg2",
+          "name": "can_screw_to",
+          "target": "chairseatthread2"
+        }
+      ],
+      "relations": [
+        {
+          "source": "left_hand",
+          "name": "hold",
+          "target": "defaultgripper"
+        }
+      ]
+    }
+  },
+  {
+    "source_problem": "lamp_problem_000.json",
+    "target": "is_screwed_to(lampbulb, lampbase)",
+    "world_state": {
+      "objects": [
+        {
+          "name": "clampgripper",
+          "properties": [
+            "is_empty"
+          ]
+        },
+        {
+          "name": "parallelgripper",
+          "properties": [
+            "is_empty"
+          ]
+        },
+        {
+          "name": "inwardgripper",
+          "properties": [
+            "is_empty"
+          ]
+        },
+        {
+          "name": "outwardgripper",
+          "properties": [
+            "is_empty"
+          ]
+        },
+        {
+          "name": "defaultgripper",
+          "properties": [
+            "is_empty"
+          ]
+        },
+        {
+          "name": "lampbase",
+          "properties": []
+        },
+        {
+          "name": "lampshade",
+          "properties": []
+        },
+        {
+          "name": "lampbulb",
+          "properties": []
+        },
+        {
+          "name": "left_hand",
+          "properties": []
+        }
+      ],
+      "constraints": [
+        {
+          "source": "clampgripper",
+          "name": "can_manipulate",
+          "target": "lampbulb"
+        },
+        {
+          "source": "outwardgripper",
+          "name": "can_manipulate",
+          "target": "lampshade"
+        },
+        {
+          "source": "lampbulb",
+          "name": "can_screw_to",
+          "target": "lampbase"
+        },
+        {
+          "source": "lampshade",
+          "name": "can_place_to",
+          "target": "lampbulb"
+        }
+      ],
+      "relations": [
+        {
+          "source": "left_hand",
+          "name": "hold",
+          "target": "defaultgripper"
+        }
+      ]
+    }
+  },
+  {
+    "source_problem": "lamp_problem_002.json",
+    "target": "is_placed_to(lampshade, lampbulb)",
+    "world_state": {
+      "objects": [
+        {
+          "name": "clampgripper",
+          "properties": [
+            "is_empty"
+          ]
+        },
+        {
+          "name": "parallelgripper",
+          "properties": [
+            "is_empty"
+          ]
+        },
+        {
+          "name": "inwardgripper",
+          "properties": [
+            "is_empty"
+          ]
+        },
+        {
+          "name": "outwardgripper",
+          "properties": [
+            "is_empty"
+          ]
+        },
+        {
+          "name": "defaultgripper",
+          "properties": [
+            "is_empty"
+          ]
+        },
+        {
+          "name": "lampbase",
+          "properties": []
+        },
+        {
+          "name": "lampshade",
+          "properties": []
+        },
+        {
+          "name": "lampbulb",
+          "properties": []
+        },
+        {
+          "name": "cube",
+          "properties": []
+        },
+        {
+          "name": "designring",
+          "properties": []
+        },
+        {
+          "name": "left_hand",
+          "properties": []
+        }
+      ],
+      "constraints": [
+        {
+          "source": "clampgripper",
+          "name": "can_manipulate",
+          "target": "lampbulb"
+        },
+        {
+          "source": "outwardgripper",
+          "name": "can_manipulate",
+          "target": "lampshade"
+        },
+        {
+          "source": "lampbulb",
+          "name": "can_screw_to",
+          "target": "lampbase"
+        },
+        {
+          "source": "lampshade",
+          "name": "can_place_to",
+          "target": "lampbulb"
+        }
+      ],
+      "relations": [
+        {
+          "source": "left_hand",
+          "name": "hold",
+          "target": "inwardgripper"
+        },
+        {
+          "source": "lampbulb",
+          "name": "is_screwed_to",
+          "target": "lampbase"
+        }
+      ]
+    }
+  }
+]

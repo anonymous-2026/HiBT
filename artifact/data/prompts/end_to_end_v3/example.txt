@@ -1,0 +1,352 @@
+Following is an input/output example.
+Example 1:
+"""
+INPUT:
+target: "insert the gear1 into the shaft1"
+initial_state: {"objects": [
+            {"name": "gear1", "properties": []},
+            {"name": "shaft1", "properties": []},
+            {"name": "parallel_box1", "properties": ["is_empty"]},
+            {"name": "left_hand", "properties": []}
+        ],
+        "constraints": [
+            {"source": "gear1", "name": "can_insert_to", "target": "shaft1"},
+            {"source": "parallel_box1", "name": "can_manipulate", "target": "gear1"}
+        ],
+        "relations": [
+            {"source": "left_hand", "name": "hold", "target": "parallel_box1"}
+        ]
+}
+OUTPUT:
+{
+    "thought": "At the start, the left hand is holding the parallel_box1, and the parallel_box1 is empty. According to the constraints, the gear1 can be inserted to the shaft1, and the parallel_box1 can manipulate the gear1. So, the gear1 can be picked up with the parallel_box1 in the left hand, and then the precondition hold(parallel_box1, gear1) is satisfied. Finally, the gear1 can be inserted into the shaft1 with the parallel_box1 in the left hand.",
+    "action_sequence": [
+        "pick_up(left_hand, parallel_box1, gear1)",
+        "insert(left_hand, parallel_box1, gear1, shaft1)"
+    ],
+    "behavior_tree": {
+        "summary": "selector to insert the gear1 into the shaft1 with the parallel_box1 in the left hand",
+        "name": "selector: insert(left_hand, parallel_box1, gear1, shaft1)",
+        "children": [
+            {
+                "summary": "check the target that gear1 is inserted to shaft1",
+                "name": "target: is_inserted_to(gear1, shaft1)"
+            },
+            {
+                "summary": "sequence to insert the gear1 into the shaft1 with the parallel_box1 in the left hand",
+                "name": "sequence: insert(left_hand, parallel_box1, gear1, shaft1)",
+                "children": [
+                    {
+                        "summary": "check the precondition that the left hand is holding the parallel_box1",
+                        "name": "precondition: hold(left_hand, parallel_box1)"
+                    },
+                    {
+                        "summary": "selector to pick_up the gear1 with the parallel_box1 in the left hand",
+                        "name": "selector: pick_up(left_hand, parallel_box1, gear1)",
+                        "children": [
+                            {
+                                "summary": "check the target that the parallel_box1 is holding the gear1",
+                                "name": "target: hold(parallel_box1, gear1)"
+                            },
+                            {
+                                "summary": "sequence to pick_up the gear1 with the parallel_box1 in the left hand",
+                                "name": "sequence: pick_up(left_hand, parallel_box1, gear1)",
+                                "children": [
+                                    {
+                                        "summary": "check the precondition that the parallel_box1 is empty",
+                                        "name": "precondition: is_empty(parallel_box1)"
+                                    },
+                                    {
+                                        "summary": "check the precondition that the left hand is holding the parallel_box1",
+                                        "name": "precondition: hold(left_hand, parallel_box1)"
+                                    },
+                                    {
+                                        "summary": "the action to pick_up the gear1 with the parallel_box1 in the left hand",
+                                        "name": "action: pick_up(left_hand, parallel_box1, gear1)"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "summary": "the action to insert the gear1 into the shaft1 with the parallel_box1 in the left hand",
+                        "name": "action: insert(left_hand, parallel_box1, gear1, shaft1)"
+                    }
+                ]
+            }
+        ]
+    }
+}
+"""
+
+Example 2:
+"""
+INPUT:
+target: "insert the gear3 into the shaft2"
+initial_state: {
+    "objects": [
+        {"name": "gear3", "properties": []},
+        {"name": "shaft2", "properties": []},
+        {"name": "inward_claw", "properties": ["is_equippable", "is_empty"]},
+        {"name": "left_hand", "properties": ["is_empty"]}
+    ],
+    "constraints": [
+        {"source": "gear3", "name": "can_insert_to", "target": "shaft2"},
+        {"source": "inward_claw", "name": "can_manipulate", "target": "gear3"}
+    ],
+    "relations": []
+}
+OUTPUT:
+{
+    "thought": "At the start, the left hand is empty and the inward_claw is equippable and empty. First, the left hand should load the inward_claw. Then the gear3 can be picked up with the inward_claw in the left hand. Finally, the gear3 can be inserted into shaft2.",
+    "action_sequence": [
+        "load_tool(left_hand, inward_claw)",
+        "pick_up(left_hand, inward_claw, gear3)",
+        "insert(left_hand, inward_claw, gear3, shaft2)"
+    ],
+    "behavior_tree": {
+        "summary": "selector to insert the gear3 into the shaft2 with the inward_claw in the left hand",
+        "name": "selector: insert(left_hand, inward_claw, gear3, shaft2)",
+        "children": [
+            {
+                "summary": "check the target that gear3 is inserted to shaft2",
+                "name": "target: is_inserted_to(gear3, shaft2)"
+            },
+            {
+                "summary": "sequence to insert the gear3 into the shaft2 with the inward_claw in the left hand",
+                "name": "sequence: insert(left_hand, inward_claw, gear3, shaft2)",
+                "children": [
+                    {
+                        "summary": "selector to load the inward_claw into the left hand",
+                        "name": "selector: load_tool(left_hand, inward_claw)",
+                        "children": [
+                            {
+                                "summary": "check the target that the left hand is holding the inward_claw",
+                                "name": "target: hold(left_hand, inward_claw)"
+                            },
+                            {
+                                "summary": "sequence to load the inward_claw into the left hand",
+                                "name": "sequence: load_tool(left_hand, inward_claw)",
+                                "children": [
+                                    {
+                                        "summary": "check the precondition that the left hand is empty",
+                                        "name": "precondition: is_empty(left_hand)"
+                                    },
+                                    {
+                                        "summary": "check the precondition that the inward_claw is equippable",
+                                        "name": "precondition: is_equippable(inward_claw)"
+                                    },
+                                    {
+                                        "summary": "the action to load the inward_claw into the left hand",
+                                        "name": "action: load_tool(left_hand, inward_claw)"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "summary": "selector to pick_up the gear3 with the inward_claw in the left hand",
+                        "name": "selector: pick_up(left_hand, inward_claw, gear3)",
+                        "children": [
+                            {
+                                "summary": "check the target that the inward_claw is holding the gear3",
+                                "name": "target: hold(inward_claw, gear3)"
+                            },
+                            {
+                                "summary": "sequence to pick_up the gear3 with the inward_claw in the left hand",
+                                "name": "sequence: pick_up(left_hand, inward_claw, gear3)",
+                                "children": [
+                                    {
+                                        "summary": "check the precondition that the inward_claw is empty",
+                                        "name": "precondition: is_empty(inward_claw)"
+                                    },
+                                    {
+                                        "summary": "check the precondition that the left hand is holding the inward_claw",
+                                        "name": "precondition: hold(left_hand, inward_claw)"
+                                    },
+                                    {
+                                        "summary": "the action to pick_up the gear3 with the inward_claw in the left hand",
+                                        "name": "action: pick_up(left_hand, inward_claw, gear3)"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "summary": "the action to insert the gear3 into the shaft2 with the inward_claw in the left hand",
+                        "name": "action: insert(left_hand, inward_claw, gear3, shaft2)"
+                    }
+                ]
+            }
+        ]
+    }
+}
+"""
+
+Example 3:
+"""
+INPUT:
+target: "insert the shaft1 into the gearbase_hole1"
+initial_state: {
+    "objects": [
+        {"name": "clampgripper", "properties": ["is_empty", "is_equippable"]},
+        {"name": "outwardgripper", "properties": []},
+        {"name": "shaft1", "properties": []},
+        {"name": "gear2", "properties": []},
+        {"name": "gearbase_hole1", "properties": []},
+        {"name": "left_hand", "properties": []}
+    ],
+    "constraints": [
+        {"source": "shaft1", "name": "can_insert_to", "target": "gearbase_hole1"},
+        {"source": "outwardgripper", "name": "can_manipulate", "target": "gear2"},
+        {"source": "clampgripper", "name": "can_manipulate", "target": "shaft1"}
+    ],
+    "relations": [
+        {"source": "outwardgripper", "name": "hold", "target": "gear2"},
+        {"source": "left_hand", "name": "hold", "target": "outwardgripper"}
+    ]
+}
+OUTPUT:
+{
+    "thought": "The left hand is holding outwardgripper, and outwardgripper is holding gear2, so the tool is not empty yet. First, gear2 must be put down to make outwardgripper empty. Then outwardgripper can be unloaded from the left hand. After that, the clampgripper can be loaded into the left hand, shaft1 can be picked up, and finally shaft1 can be inserted into gearbase_hole1.",
+    "action_sequence": [
+        "put_down(left_hand, outwardgripper, gear2)",
+        "unload_tool(left_hand, outwardgripper)",
+        "load_tool(left_hand, clampgripper)",
+        "pick_up(left_hand, clampgripper, shaft1)",
+        "insert(left_hand, clampgripper, shaft1, gearbase_hole1)"
+    ],
+    "behavior_tree": {
+        "summary": "selector to insert shaft1 into gearbase_hole1 with clampgripper in the left hand",
+        "name": "selector: insert(left_hand, clampgripper, shaft1, gearbase_hole1)",
+        "children": [
+            {
+                "summary": "check the target that shaft1 is inserted to gearbase_hole1",
+                "name": "target: is_inserted_to(shaft1, gearbase_hole1)"
+            },
+            {
+                "summary": "sequence to insert shaft1 into gearbase_hole1 with clampgripper in the left hand",
+                "name": "sequence: insert(left_hand, clampgripper, shaft1, gearbase_hole1)",
+                "children": [
+                    {
+                        "summary": "selector to put down gear2 from outwardgripper in the left hand",
+                        "name": "selector: put_down(left_hand, outwardgripper, gear2)",
+                        "children": [
+                            {
+                                "summary": "check the target that outwardgripper is empty",
+                                "name": "target: is_empty(outwardgripper)"
+                            },
+                            {
+                                "summary": "sequence to put down gear2 from outwardgripper in the left hand",
+                                "name": "sequence: put_down(left_hand, outwardgripper, gear2)",
+                                "children": [
+                                    {
+                                        "summary": "check the precondition that the left hand is holding outwardgripper",
+                                        "name": "precondition: hold(left_hand, outwardgripper)"
+                                    },
+                                    {
+                                        "summary": "check the precondition that outwardgripper is holding gear2",
+                                        "name": "precondition: hold(outwardgripper, gear2)"
+                                    },
+                                    {
+                                        "summary": "the action to put down gear2 from outwardgripper in the left hand",
+                                        "name": "action: put_down(left_hand, outwardgripper, gear2)"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "summary": "selector to unload outwardgripper from the left hand",
+                        "name": "selector: unload_tool(left_hand, outwardgripper)",
+                        "children": [
+                            {
+                                "summary": "check the target that outwardgripper is equippable again",
+                                "name": "target: is_equippable(outwardgripper)"
+                            },
+                            {
+                                "summary": "sequence to unload outwardgripper from the left hand",
+                                "name": "sequence: unload_tool(left_hand, outwardgripper)",
+                                "children": [
+                                    {
+                                        "summary": "check the precondition that the left hand is holding outwardgripper",
+                                        "name": "precondition: hold(left_hand, outwardgripper)"
+                                    },
+                                    {
+                                        "summary": "check the precondition that outwardgripper is empty",
+                                        "name": "precondition: is_empty(outwardgripper)"
+                                    },
+                                    {
+                                        "summary": "the action to unload outwardgripper from the left hand",
+                                        "name": "action: unload_tool(left_hand, outwardgripper)"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "summary": "selector to load clampgripper into the left hand",
+                        "name": "selector: load_tool(left_hand, clampgripper)",
+                        "children": [
+                            {
+                                "summary": "check the target that the left hand is holding clampgripper",
+                                "name": "target: hold(left_hand, clampgripper)"
+                            },
+                            {
+                                "summary": "sequence to load clampgripper into the left hand",
+                                "name": "sequence: load_tool(left_hand, clampgripper)",
+                                "children": [
+                                    {
+                                        "summary": "check the precondition that the left hand is empty",
+                                        "name": "precondition: is_empty(left_hand)"
+                                    },
+                                    {
+                                        "summary": "check the precondition that clampgripper is equippable",
+                                        "name": "precondition: is_equippable(clampgripper)"
+                                    },
+                                    {
+                                        "summary": "the action to load clampgripper into the left hand",
+                                        "name": "action: load_tool(left_hand, clampgripper)"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "summary": "selector to pick up shaft1 with clampgripper in the left hand",
+                        "name": "selector: pick_up(left_hand, clampgripper, shaft1)",
+                        "children": [
+                            {
+                                "summary": "check the target that clampgripper is holding shaft1",
+                                "name": "target: hold(clampgripper, shaft1)"
+                            },
+                            {
+                                "summary": "sequence to pick up shaft1 with clampgripper in the left hand",
+                                "name": "sequence: pick_up(left_hand, clampgripper, shaft1)",
+                                "children": [
+                                    {
+                                        "summary": "check the precondition that clampgripper is empty",
+                                        "name": "precondition: is_empty(clampgripper)"
+                                    },
+                                    {
+                                        "summary": "check the precondition that the left hand is holding clampgripper",
+                                        "name": "precondition: hold(left_hand, clampgripper)"
+                                    },
+                                    {
+                                        "summary": "the action to pick up shaft1 with clampgripper in the left hand",
+                                        "name": "action: pick_up(left_hand, clampgripper, shaft1)"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "summary": "the action to insert shaft1 into gearbase_hole1 with clampgripper in the left hand",
+                        "name": "action: insert(left_hand, clampgripper, shaft1, gearbase_hole1)"
+                    }
+                ]
+            }
+        ]
+    }
+}
+"""

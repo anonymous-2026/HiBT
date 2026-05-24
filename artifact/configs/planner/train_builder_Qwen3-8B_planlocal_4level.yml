@@ -1,0 +1,68 @@
+# =============================================================================
+# Planner builder training configuration - local JSONL dataset
+# =============================================================================
+
+data:
+  data_name: planlocal
+  data_path: artifact/data/datasets/plan_predictor_v1
+  split: train
+  shuffle: true
+  drop_last: false
+
+environment:
+  dotenv_path: .env
+  seed: 42
+  dataloader_num_workers: 0
+  device_map:
+    model:
+      device: auto
+      priority: 1
+
+model:
+  reason_model:
+    model_name: ${BT_MODEL:-Qwen/Qwen3-8B}
+    trust_remote_code: true
+    torch_dtype: bfloat16
+  pyramid:
+    num_levels: 4
+    level_lengths: [1, 4, 5, 5]
+    hidden_dim: 3584
+    num_heads: 16
+    max_seq_len: 4096
+
+training:
+  batch_size: 2
+  num_epochs: 20
+  learning_rate: 0.0001
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  gradient_clip: 1.0
+
+  builder:
+    freeze_reason_model: true
+    lora: null
+
+  loss_weights:
+    concept_loss_weight: 1.0
+    reasoning_loss_weight: 1.0
+
+log:
+  save_folder: EXPERIMENT/planner/builder/Planner_Qwen3-8B_4level
+  checkpoint_path: EXPERIMENT/planner/builder/Planner_Qwen3-8B_4level/checkpoints
+  log_path: EXPERIMENT/planner/builder/Planner_Qwen3-8B_4level/logs
+  log_level: INFO
+  log_step_interval: 5
+  checkpoint_step_interval: 100
+  checkpoint_clean: true
+
+evaluation:
+  eval_step_interval: 50
+  mode: teacher_forced
+  generation_max_tokens: 512
+  intermediate_vector_save: 1
+  data:
+    data_name: planlocal
+    data_path: artifact/data/datasets/plan_predictor_v1
+    split: eval
+    log_num_samples: 2
+    eval_num_samples: 1.0

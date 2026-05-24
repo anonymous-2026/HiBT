@@ -1,0 +1,171 @@
+{
+  "description": "Strict held-out test split built from full-task-only plan examples. The selected sample IDs should be excluded from predictor training, prototype-bank construction, and decoder/repair tuning.",
+  "input_examples": "artifact/data/pyramids/plan_examples_v2.json",
+  "input_requests": "artifact/data/requests/test_requests_50.json",
+  "selection_policy": {
+    "full_task_only": true,
+    "best_effort_balanced_matrix": {
+      "gearset": {
+        "easy": 0,
+        "medium": 0,
+        "hard": 1,
+        "very_hard": 0
+      },
+      "gearset1": {
+        "easy": 1,
+        "medium": 1,
+        "hard": 2,
+        "very_hard": 2
+      },
+      "chair": {
+        "easy": 0,
+        "medium": 1,
+        "hard": 1,
+        "very_hard": 1
+      },
+      "lamp": {
+        "easy": 0,
+        "medium": 0,
+        "hard": 1,
+        "very_hard": 1
+      }
+    },
+    "selection_order": "deterministic sample_id sort within each domain/difficulty bucket"
+  },
+  "eligible_full_task_count": 24,
+  "heldout_test_size": 12,
+  "actual_domain_difficulty_matrix": {
+    "gearset": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1,
+      "very_hard": 0
+    },
+    "gearset1": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 2,
+      "very_hard": 2
+    },
+    "chair": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1,
+      "very_hard": 1
+    },
+    "lamp": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1,
+      "very_hard": 1
+    }
+  },
+  "counts": {
+    "by_domain": {
+      "chair": 3,
+      "gearset1": 6,
+      "gearset": 1,
+      "lamp": 2
+    },
+    "by_difficulty": {
+      "very_hard": 4,
+      "hard": 5,
+      "medium": 2,
+      "easy": 1
+    }
+  },
+  "selected_audit": {
+    "gearset:easy": [],
+    "gearset:medium": [],
+    "gearset:hard": [
+      "gearset_insert_gear3_shaft2"
+    ],
+    "gearset:very_hard": [],
+    "gearset1:easy": [
+      "gearset1_problem_008"
+    ],
+    "gearset1:medium": [
+      "gearset1_problem_002"
+    ],
+    "gearset1:hard": [
+      "gearset1_problem_001",
+      "gearset1_problem_005"
+    ],
+    "gearset1:very_hard": [
+      "gearset1_problem_000",
+      "gearset1_problem_003"
+    ],
+    "chair:easy": [],
+    "chair:medium": [
+      "chair_problem_002"
+    ],
+    "chair:hard": [
+      "chair_problem_001"
+    ],
+    "chair:very_hard": [
+      "chair_problem_000"
+    ],
+    "lamp:easy": [],
+    "lamp:medium": [],
+    "lamp:hard": [
+      "lamp_problem_000"
+    ],
+    "lamp:very_hard": [
+      "lamp_problem_001"
+    ]
+  },
+  "selected_sample_ids": [
+    "chair_problem_000",
+    "chair_problem_001",
+    "chair_problem_002",
+    "gearset1_problem_000",
+    "gearset1_problem_001",
+    "gearset1_problem_002",
+    "gearset1_problem_003",
+    "gearset1_problem_005",
+    "gearset1_problem_008",
+    "gearset_insert_gear3_shaft2",
+    "lamp_problem_000",
+    "lamp_problem_001"
+  ],
+  "remaining_non_test_sample_ids": [
+    "gearset1_problem_004",
+    "gearset1_problem_006",
+    "gearset1_problem_007",
+    "gearset1_problem_008_goal_already_satisfied",
+    "gearset1_problem_009",
+    "gearset1_problem_000_subtask_00",
+    "gearset1_problem_000_subtask_02",
+    "gearset1_problem_001_subtask_00",
+    "gearset1_problem_002_subtask_00",
+    "gearset1_problem_003_subtask_00",
+    "gearset1_problem_003_subtask_02",
+    "gearset1_problem_004_subtask_00",
+    "gearset1_problem_004_subtask_02",
+    "gearset1_problem_005_subtask_00",
+    "gearset1_problem_005_subtask_02",
+    "gearset1_problem_006_subtask_00",
+    "gearset1_problem_007_subtask_00",
+    "gearset1_problem_009_subtask_00",
+    "gearset1_problem_010",
+    "gearset1_problem_010_subtask_00",
+    "gearset1_problem_010_subtask_02",
+    "gearset1_problem_011",
+    "gearset1_problem_011_subtask_00",
+    "gearset1_problem_012",
+    "gearset1_problem_012_subtask_00",
+    "gearset1_problem_013",
+    "gearset1_problem_013_subtask_00",
+    "gearset1_problem_013_subtask_02",
+    "gearset1_problem_014",
+    "gearset1_problem_015",
+    "gearset1_problem_016",
+    "gearset1_problem_016_subtask_00",
+    "chair_problem_000_subtask_00",
+    "chair_problem_000_subtask_02",
+    "chair_problem_001_subtask_00",
+    "chair_problem_002_subtask_00",
+    "lamp_problem_000_subtask_00",
+    "lamp_problem_001_subtask_00"
+  ]
+}

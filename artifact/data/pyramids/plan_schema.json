@@ -1,0 +1,317 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "plan-schema-v1",
+  "title": "Plan Schema",
+  "description": "A domain-level intermediate representation for assembly planning. The predictor emits this plan, and a deterministic compiler converts it into a behavior-tree skeleton.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "domain",
+    "input",
+    "pyramid"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "plan-schema-v1"
+    },
+    "domain": {
+      "const": "assembly_planning"
+    },
+    "problem_id": {
+      "type": "string"
+    },
+    "input": {
+      "$ref": "#/$defs/input"
+    },
+    "pyramid": {
+      "type": "array",
+      "description": "Exactly four levels: goal, stable_subgoals, methods, actions.",
+      "minItems": 4,
+      "maxItems": 4,
+      "prefixItems": [
+        {
+          "$ref": "#/$defs/goalLevel"
+        },
+        {
+          "$ref": "#/$defs/subgoalLevel"
+        },
+        {
+          "$ref": "#/$defs/methodLevel"
+        },
+        {
+          "$ref": "#/$defs/actionLevel"
+        }
+      ],
+      "items": false
+    }
+  },
+  "$defs": {
+    "groundedCallString": {
+      "type": "string",
+      "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*\\([^()]*\\)$",
+      "description": "A grounded predicate or action call such as hold(left_hand, inward_claw)."
+    },
+    "identifier": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9_\\-]*$"
+    },
+    "argumentList": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "target",
+        "initial_state"
+      ],
+      "properties": {
+        "target": {
+          "$ref": "#/$defs/groundedCallString"
+        },
+        "initial_state": {
+          "type": "object",
+          "description": "Original world-state JSON. This schema intentionally keeps it opaque."
+        }
+      }
+    },
+    "goalItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "predicate",
+        "args"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "type": {
+          "const": "goal"
+        },
+        "predicate": {
+          "type": "string",
+          "minLength": 1
+        },
+        "args": {
+          "$ref": "#/$defs/argumentList"
+        }
+      }
+    },
+    "subgoalItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "predicate",
+        "args",
+        "supports"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "type": {
+          "const": "subgoal"
+        },
+        "predicate": {
+          "type": "string",
+          "minLength": 1
+        },
+        "args": {
+          "$ref": "#/$defs/argumentList"
+        },
+        "supports": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/identifier"
+          }
+        }
+      }
+    },
+    "actionRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "args"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "args": {
+          "$ref": "#/$defs/argumentList"
+        }
+      }
+    },
+    "methodItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "achieves",
+        "action",
+        "requires"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "type": {
+          "const": "method"
+        },
+        "achieves": {
+          "$ref": "#/$defs/identifier",
+          "description": "ID of the goal or subgoal this method achieves."
+        },
+        "action": {
+          "$ref": "#/$defs/actionRef"
+        },
+        "requires": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/identifier"
+          },
+          "description": "IDs of stable subgoals that must be achieved before this method action."
+        }
+      }
+    },
+    "actionItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "step",
+        "type",
+        "name",
+        "args",
+        "derived_from"
+      ],
+      "properties": {
+        "step": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "type": {
+          "const": "action"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "args": {
+          "$ref": "#/$defs/argumentList"
+        },
+        "derived_from": {
+          "$ref": "#/$defs/identifier",
+          "description": "Method ID that produced this action."
+        }
+      }
+    },
+    "goalLevel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level",
+        "name",
+        "items"
+      ],
+      "properties": {
+        "level": {
+          "const": 0
+        },
+        "name": {
+          "const": "goal"
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "$ref": "#/$defs/goalItem"
+          }
+        }
+      }
+    },
+    "subgoalLevel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level",
+        "name",
+        "items"
+      ],
+      "properties": {
+        "level": {
+          "const": 1
+        },
+        "name": {
+          "const": "stable_subgoals"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/subgoalItem"
+          },
+          "description": "Only stable subgoals belong here. Do not place transient states that later actions will invalidate."
+        }
+      }
+    },
+    "methodLevel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level",
+        "name",
+        "items"
+      ],
+      "properties": {
+        "level": {
+          "const": 2
+        },
+        "name": {
+          "const": "methods"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/methodItem"
+          }
+        }
+      }
+    },
+    "actionLevel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level",
+        "name",
+        "items"
+      ],
+      "properties": {
+        "level": {
+          "const": 3
+        },
+        "name": {
+          "const": "actions"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/actionItem"
+          }
+        }
+      }
+    }
+  }
+}

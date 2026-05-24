@@ -1,0 +1,112 @@
+Following is an input/output example:
+INPUT:
+start_world_state: 
+{
+"objects": [
+    {"name": "outwardgripper", "properties": ["is_empty"]},
+    {"name": "shaft1", "properties": []},
+    {"name": "hole1", "properties": []},
+    {"name": "defaultgripper", "properties": ["is_empty"]},
+    {"name": "left_hand", "properties": []}
+],
+"constraints": [
+    {"source": "outwardgripper", "name": "can_manipulate", "target": "shaft1"},
+    {"source": "shaft1", "name": "can_insert_to", "target": "hole1"}
+],
+"relations": [
+    {"source": "left_hand", "name": "hold", "target": "defaultgripper"}
+]
+}
+action_plan: 
+[
+    "change_tool(left_hand, defaultgripper, outwardgripper)",
+    "pick_up(left_hand, outwardgripper, shaft1)",
+    "insert(left_hand, outwardgripper, gear1, hole1)",
+]
+OUTPUT:
+{
+    "estimated_world_state": {
+        "objects": [
+            {"name": "outwardgripper", "properties": ["is_empty"]},
+            {"name": "shaft1", "properties": []},
+            {"name": "hole1", "properties": []},
+            {"name": "defaultgripper", "properties": ["is_empty"]},
+            {"name": "left_hand", "properties": []}
+        ],
+        "constraints": [
+            {"source": "outwardgripper", "name": "can_manipulate", "target": "shaft1"},
+            {"source": "shaft1", "name": "can_insert_to", "target": "hole1"}
+        ],
+        "relations": [
+            {"source": "left_hand", "name": "hold", "target": "outwardgripper"}
+            {"source": "shaft1", "name": "is_inserted_to", "target": "hole1"}
+        ]
+    }
+}
+
+INPUT:
+start_world_state:
+{
+"objects": [
+    {"name": "inward_claw", "properties": ["is_equippable", "is_empty"]},
+    {"name": "left_hand", "properties": ["is_empty"]}
+],
+"constraints": [],
+"relations": []
+}
+action_plan:
+[
+    "load_tool(left_hand, inward_claw)"
+]
+
+OUTPUT:
+{
+    "estimated_world_state": {
+        "objects": [
+            {"name": "inward_claw", "properties": ["is_empty"]},
+            {"name": "left_hand", "properties": []}
+        ],
+        "constraints": [],
+        "relations": [
+            {"source": "left_hand", "name": "hold", "target": "inward_claw"}
+        ]
+    }
+}
+
+INPUT:
+start_world_state:
+{
+"objects": [
+    {"name": "clampgripper", "properties": ["is_empty", "is_equippable"]},
+    {"name": "outwardgripper", "properties": []},
+    {"name": "gear2", "properties": []},
+    {"name": "left_hand", "properties": []}
+],
+"constraints": [],
+"relations": [
+    {"source": "outwardgripper", "name": "hold", "target": "gear2"},
+    {"source": "left_hand", "name": "hold", "target": "outwardgripper"}
+]
+}
+action_plan:
+[
+    "put_down(left_hand, outwardgripper, gear2)",
+    "unload_tool(left_hand, outwardgripper)",
+    "load_tool(left_hand, clampgripper)"
+]
+
+OUTPUT:
+{
+    "estimated_world_state": {
+        "objects": [
+            {"name": "clampgripper", "properties": ["is_empty"]},
+            {"name": "outwardgripper", "properties": ["is_empty", "is_equippable"]},
+            {"name": "gear2", "properties": []},
+            {"name": "left_hand", "properties": []}
+        ],
+        "constraints": [],
+        "relations": [
+            {"source": "left_hand", "name": "hold", "target": "clampgripper"}
+        ]
+    }
+}

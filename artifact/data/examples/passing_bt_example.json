@@ -1,0 +1,80 @@
+{
+  "summary": "selector to insert gear3 into shaft2",
+  "name": "selector: insert(left_hand, inward_claw, gear3, shaft2)",
+  "children": [
+    {
+      "summary": "check target gear3 inserted to shaft2",
+      "name": "target: is_inserted_to(gear3, shaft2)"
+    },
+    {
+      "summary": "sequence to insert gear3 into shaft2",
+      "name": "sequence: insert(left_hand, inward_claw, gear3, shaft2)",
+      "children": [
+        {
+          "summary": "ensure left_hand holds inward_claw",
+          "name": "selector: load_tool(left_hand, inward_claw)",
+          "children": [
+            {
+              "summary": "target left_hand holds inward_claw",
+              "name": "target: hold(left_hand, inward_claw)"
+            },
+            {
+              "summary": "sequence to load inward_claw",
+              "name": "sequence: load_tool(left_hand, inward_claw)",
+              "children": [
+                {
+                  "summary": "inward_claw can be equipped",
+                  "name": "precondition: is_equippable(inward_claw)"
+                },
+                {
+                  "summary": "load inward_claw to left_hand",
+                  "name": "action: load_tool(left_hand, inward_claw)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "summary": "ensure inward_claw holds gear3",
+          "name": "selector: pick_up(left_hand, inward_claw, gear3)",
+          "children": [
+            {
+              "summary": "target inward_claw holds gear3",
+              "name": "target: hold(inward_claw, gear3)"
+            },
+            {
+              "summary": "sequence to pick up gear3",
+              "name": "sequence: pick_up(left_hand, inward_claw, gear3)",
+              "children": [
+                {
+                  "summary": "left hand holds inward_claw",
+                  "name": "precondition: hold(left_hand, inward_claw)"
+                },
+                {
+                  "summary": "tool can manipulate gear3",
+                  "name": "precondition: can_manipulate(inward_claw, gear3)"
+                },
+                {
+                  "summary": "pick up gear3",
+                  "name": "action: pick_up(left_hand, inward_claw, gear3)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "summary": "tool holds gear3",
+          "name": "precondition: hold(inward_claw, gear3)"
+        },
+        {
+          "summary": "gear3 can insert to shaft2",
+          "name": "precondition: can_insert_to(gear3, shaft2)"
+        },
+        {
+          "summary": "insert gear3 into shaft2",
+          "name": "action: insert(left_hand, inward_claw, gear3, shaft2)"
+        }
+      ]
+    }
+  ]
+}

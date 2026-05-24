@@ -1,0 +1,10 @@
+torch
+transformers
+accelerate
+sentencepiece
+safetensors
+peft
+swanlab
+pyyaml
+python-dotenv
+py_trees

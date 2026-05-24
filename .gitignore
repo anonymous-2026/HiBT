@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.DS_Store
+swanlog/
+artifact/data/runtime/
+outputs/
+logs/
+*.log
+*.out
+*.err
+*.tmp
+*.ckpt
+checkpoint*/
+checkpoints/

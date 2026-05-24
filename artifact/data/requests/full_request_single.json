@@ -1,0 +1,7 @@
+[
+  {
+    "target": "is_inserted_to(gear3, shaft2)",
+    "world_state_path": "gearset/world_state.json",
+    "output": "outputs/kios_bt_single.json"
+  }
+]
