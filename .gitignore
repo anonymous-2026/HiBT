@@ -5,6 +5,7 @@ swanlog/
 artifact/data/runtime/
 artifact/data/results/
 outputs/
+visual/
 runs/
 .openvla_pydeps/
 logs/
