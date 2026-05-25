@@ -1,0 +1,34 @@
+{
+  "description": "Augmented 60-instance benchmark: base artifact request pool plus the 10 added samples, all classified as medium difficulty for the augmented portion.",
+  "base_request_file": "artifact/data/requests/artifact_request_pool.json",
+  "total": 60,
+  "counts": {
+    "by_domain": {
+      "gearset": 1,
+      "gearset1": 44,
+      "chair": 9,
+      "lamp": 6
+    },
+    "by_difficulty": {
+      "easy": 22,
+      "medium": 13,
+      "hard": 11,
+      "very_hard": 14
+    }
+  },
+  "added_medium_bases": [
+    "gearset1_medium_001",
+    "gearset1_medium_002",
+    "gearset1_medium_004",
+    "chair_medium_002",
+    "lamp_medium_001"
+  ],
+  "added_challenge_variants": [
+    "chair_problem_001_subset",
+    "gearset1_problem_001_subset",
+    "gearset1_problem_003_subset",
+    "gearset1_problem_016_subset",
+    "lamp_problem_000_subset"
+  ],
+  "augmentation_note": "The 10 added samples are embedded directly in test_requests_60.json and are all classified as medium in the current benchmark release."
+}

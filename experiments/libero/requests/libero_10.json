@@ -1,0 +1,1193 @@
+[
+  {
+    "bddl_file": "LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket.bddl",
+    "bddl_path": "libero_10/LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket.bddl",
+    "benchmark": "LIBERO",
+    "language": "put both the alphabet soup and the tomato sauce in the basket",
+    "problem_folder": "libero_10",
+    "request_id": "libero_10:0",
+    "suite": "libero_10",
+    "target": {
+      "compound_goal": "(In alphabet_soup_1 basket_1_contain_region); (In tomato_sauce_1 basket_1_contain_region)",
+      "goal_predicates": [
+        {
+          "args": [
+            "alphabet_soup_1",
+            "basket_1_contain_region"
+          ],
+          "predicate": "In",
+          "raw": "(In alphabet_soup_1 basket_1_contain_region)"
+        },
+        {
+          "args": [
+            "tomato_sauce_1",
+            "basket_1_contain_region"
+          ],
+          "predicate": "In",
+          "raw": "(In tomato_sauce_1 basket_1_contain_region)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "basket_1",
+          "goal": "(In alphabet_soup_1 basket_1_contain_region)",
+          "object": "alphabet_soup_1",
+          "op": "place_in",
+          "target": "basket_1_contain_region"
+        },
+        {
+          "display_target": "basket_1",
+          "goal": "(In tomato_sauce_1 basket_1_contain_region)",
+          "object": "tomato_sauce_1",
+          "op": "place_in",
+          "target": "basket_1_contain_region"
+        }
+      ]
+    },
+    "task_id": 0,
+    "task_name": "LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "living_room_table",
+          "type": "living_room_table"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "alphabet_soup_1",
+            "living_room_table_alphabet_soup_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On alphabet_soup_1 living_room_table_alphabet_soup_init_region)"
+        },
+        {
+          "args": [
+            "cream_cheese_1",
+            "living_room_table_cream_cheese_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On cream_cheese_1 living_room_table_cream_cheese_init_region)"
+        },
+        {
+          "args": [
+            "tomato_sauce_1",
+            "living_room_table_tomato_sauce_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On tomato_sauce_1 living_room_table_tomato_sauce_init_region)"
+        },
+        {
+          "args": [
+            "ketchup_1",
+            "living_room_table_ketchup_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On ketchup_1 living_room_table_ketchup_init_region)"
+        },
+        {
+          "args": [
+            "milk_1",
+            "living_room_table_milk_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On milk_1 living_room_table_milk_init_region)"
+        },
+        {
+          "args": [
+            "orange_juice_1",
+            "living_room_table_orange_juice_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On orange_juice_1 living_room_table_orange_juice_init_region)"
+        },
+        {
+          "args": [
+            "butter_1",
+            "living_room_table_butter_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On butter_1 living_room_table_butter_init_region)"
+        },
+        {
+          "args": [
+            "basket_1",
+            "living_room_table_basket_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On basket_1 living_room_table_basket_init_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "alphabet_soup_1",
+          "type": "alphabet_soup"
+        },
+        {
+          "name": "cream_cheese_1",
+          "type": "cream_cheese"
+        },
+        {
+          "name": "tomato_sauce_1",
+          "type": "tomato_sauce"
+        },
+        {
+          "name": "ketchup_1",
+          "type": "ketchup"
+        },
+        {
+          "name": "orange_juice_1",
+          "type": "orange_juice"
+        },
+        {
+          "name": "milk_1",
+          "type": "milk"
+        },
+        {
+          "name": "butter_1",
+          "type": "butter"
+        },
+        {
+          "name": "basket_1",
+          "type": "basket"
+        }
+      ],
+      "objects_of_interest": [
+        "alphabet_soup_1",
+        "tomato_sauce_1",
+        "basket_1"
+      ]
+    }
+  },
+  {
+    "bddl_file": "LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket.bddl",
+    "bddl_path": "libero_10/LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket.bddl",
+    "benchmark": "LIBERO",
+    "language": "put both the cream cheese box and the butter in the basket",
+    "problem_folder": "libero_10",
+    "request_id": "libero_10:1",
+    "suite": "libero_10",
+    "target": {
+      "compound_goal": "(In cream_cheese_1 basket_1_contain_region); (In butter_1 basket_1_contain_region)",
+      "goal_predicates": [
+        {
+          "args": [
+            "cream_cheese_1",
+            "basket_1_contain_region"
+          ],
+          "predicate": "In",
+          "raw": "(In cream_cheese_1 basket_1_contain_region)"
+        },
+        {
+          "args": [
+            "butter_1",
+            "basket_1_contain_region"
+          ],
+          "predicate": "In",
+          "raw": "(In butter_1 basket_1_contain_region)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "basket_1",
+          "goal": "(In cream_cheese_1 basket_1_contain_region)",
+          "object": "cream_cheese_1",
+          "op": "place_in",
+          "target": "basket_1_contain_region"
+        },
+        {
+          "display_target": "basket_1",
+          "goal": "(In butter_1 basket_1_contain_region)",
+          "object": "butter_1",
+          "op": "place_in",
+          "target": "basket_1_contain_region"
+        }
+      ]
+    },
+    "task_id": 1,
+    "task_name": "LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "living_room_table",
+          "type": "living_room_table"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "alphabet_soup_1",
+            "living_room_table_alphabet_soup_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On alphabet_soup_1 living_room_table_alphabet_soup_init_region)"
+        },
+        {
+          "args": [
+            "cream_cheese_1",
+            "living_room_table_cream_cheese_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On cream_cheese_1 living_room_table_cream_cheese_init_region)"
+        },
+        {
+          "args": [
+            "tomato_sauce_1",
+            "living_room_table_tomato_sauce_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On tomato_sauce_1 living_room_table_tomato_sauce_init_region)"
+        },
+        {
+          "args": [
+            "ketchup_1",
+            "living_room_table_ketchup_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On ketchup_1 living_room_table_ketchup_init_region)"
+        },
+        {
+          "args": [
+            "milk_1",
+            "living_room_table_milk_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On milk_1 living_room_table_milk_init_region)"
+        },
+        {
+          "args": [
+            "orange_juice_1",
+            "living_room_table_orange_juice_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On orange_juice_1 living_room_table_orange_juice_init_region)"
+        },
+        {
+          "args": [
+            "butter_1",
+            "living_room_table_butter_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On butter_1 living_room_table_butter_init_region)"
+        },
+        {
+          "args": [
+            "basket_1",
+            "living_room_table_basket_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On basket_1 living_room_table_basket_init_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "alphabet_soup_1",
+          "type": "alphabet_soup"
+        },
+        {
+          "name": "cream_cheese_1",
+          "type": "cream_cheese"
+        },
+        {
+          "name": "tomato_sauce_1",
+          "type": "tomato_sauce"
+        },
+        {
+          "name": "ketchup_1",
+          "type": "ketchup"
+        },
+        {
+          "name": "orange_juice_1",
+          "type": "orange_juice"
+        },
+        {
+          "name": "milk_1",
+          "type": "milk"
+        },
+        {
+          "name": "butter_1",
+          "type": "butter"
+        },
+        {
+          "name": "basket_1",
+          "type": "basket"
+        }
+      ],
+      "objects_of_interest": [
+        "cream_cheese_1",
+        "butter_1",
+        "basket_1"
+      ]
+    }
+  },
+  {
+    "bddl_file": "KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it.bddl",
+    "bddl_path": "libero_10/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it.bddl",
+    "benchmark": "LIBERO",
+    "language": "turn on the stove and put the moka pot on it",
+    "problem_folder": "libero_10",
+    "request_id": "libero_10:2",
+    "suite": "libero_10",
+    "target": {
+      "compound_goal": "(Turnon flat_stove_1); (On moka_pot_1 flat_stove_1_cook_region)",
+      "goal_predicates": [
+        {
+          "args": [
+            "flat_stove_1"
+          ],
+          "predicate": "Turnon",
+          "raw": "(Turnon flat_stove_1)"
+        },
+        {
+          "args": [
+            "moka_pot_1",
+            "flat_stove_1_cook_region"
+          ],
+          "predicate": "On",
+          "raw": "(On moka_pot_1 flat_stove_1_cook_region)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "goal": "(Turnon flat_stove_1)",
+          "object": "flat_stove_1",
+          "op": "turnon"
+        },
+        {
+          "display_target": "flat_stove_1_cook_region",
+          "goal": "(On moka_pot_1 flat_stove_1_cook_region)",
+          "object": "moka_pot_1",
+          "op": "place_on",
+          "target": "flat_stove_1_cook_region"
+        }
+      ]
+    },
+    "task_id": 2,
+    "task_name": "KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "kitchen_table",
+          "type": "kitchen_table"
+        },
+        {
+          "name": "flat_stove_1",
+          "type": "flat_stove"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "flat_stove_1",
+            "kitchen_table_flat_stove_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On flat_stove_1 kitchen_table_flat_stove_init_region)"
+        },
+        {
+          "args": [
+            "chefmate_8_frypan_1",
+            "kitchen_table_frypan_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On chefmate_8_frypan_1 kitchen_table_frypan_init_region)"
+        },
+        {
+          "args": [
+            "moka_pot_1",
+            "kitchen_table_moka_pot_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On moka_pot_1 kitchen_table_moka_pot_init_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "chefmate_8_frypan_1",
+          "type": "chefmate_8_frypan"
+        },
+        {
+          "name": "moka_pot_1",
+          "type": "moka_pot"
+        }
+      ],
+      "objects_of_interest": [
+        "moka_pot_1",
+        "flat_stove_1"
+      ]
+    }
+  },
+  {
+    "bddl_file": "KITCHEN_SCENE4_put_the_black_bowl_in_the_bottom_drawer_of_the_cabinet_and_close_it.bddl",
+    "bddl_path": "libero_10/KITCHEN_SCENE4_put_the_black_bowl_in_the_bottom_drawer_of_the_cabinet_and_close_it.bddl",
+    "benchmark": "LIBERO",
+    "language": "put the black bowl in the bottom drawer of the cabinet and close it",
+    "problem_folder": "libero_10",
+    "request_id": "libero_10:3",
+    "suite": "libero_10",
+    "target": {
+      "compound_goal": "(Close white_cabinet_1_bottom_region); (In akita_black_bowl_1 white_cabinet_1_bottom_region)",
+      "goal_predicates": [
+        {
+          "args": [
+            "white_cabinet_1_bottom_region"
+          ],
+          "predicate": "Close",
+          "raw": "(Close white_cabinet_1_bottom_region)"
+        },
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "white_cabinet_1_bottom_region"
+          ],
+          "predicate": "In",
+          "raw": "(In akita_black_bowl_1 white_cabinet_1_bottom_region)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "goal": "(Close white_cabinet_1_bottom_region)",
+          "object": "white_cabinet_1_bottom_region",
+          "op": "close"
+        },
+        {
+          "display_target": "white_cabinet_1",
+          "goal": "(In akita_black_bowl_1 white_cabinet_1_bottom_region)",
+          "object": "akita_black_bowl_1",
+          "op": "place_in",
+          "target": "white_cabinet_1_bottom_region"
+        }
+      ]
+    },
+    "task_id": 3,
+    "task_name": "KITCHEN_SCENE4_put_the_black_bowl_in_the_bottom_drawer_of_the_cabinet_and_close_it",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "kitchen_table",
+          "type": "kitchen_table"
+        },
+        {
+          "name": "white_cabinet_1",
+          "type": "white_cabinet"
+        },
+        {
+          "name": "wine_rack_1",
+          "type": "wine_rack"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "kitchen_table_akita_black_bowl_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 kitchen_table_akita_black_bowl_init_region)"
+        },
+        {
+          "args": [
+            "wine_bottle_1",
+            "kitchen_table_wine_bottle_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wine_bottle_1 kitchen_table_wine_bottle_init_region)"
+        },
+        {
+          "args": [
+            "white_cabinet_1",
+            "kitchen_table_white_cabinet_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On white_cabinet_1 kitchen_table_white_cabinet_init_region)"
+        },
+        {
+          "args": [
+            "wine_rack_1",
+            "kitchen_table_wine_rack_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wine_rack_1 kitchen_table_wine_rack_init_region)"
+        },
+        {
+          "args": [
+            "white_cabinet_1_bottom_region"
+          ],
+          "predicate": "Open",
+          "raw": "(Open white_cabinet_1_bottom_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "akita_black_bowl_1",
+          "type": "akita_black_bowl"
+        },
+        {
+          "name": "wine_bottle_1",
+          "type": "wine_bottle"
+        }
+      ],
+      "objects_of_interest": [
+        "akita_black_bowl_1",
+        "white_cabinet_1"
+      ]
+    }
+  },
+  {
+    "bddl_file": "LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate.bddl",
+    "bddl_path": "libero_10/LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate.bddl",
+    "benchmark": "LIBERO",
+    "language": "put the white mug on the left plate and put the yellow and white mug on the right plate",
+    "problem_folder": "libero_10",
+    "request_id": "libero_10:4",
+    "suite": "libero_10",
+    "target": {
+      "compound_goal": "(On porcelain_mug_1 plate_1); (On white_yellow_mug_1 plate_2)",
+      "goal_predicates": [
+        {
+          "args": [
+            "porcelain_mug_1",
+            "plate_1"
+          ],
+          "predicate": "On",
+          "raw": "(On porcelain_mug_1 plate_1)"
+        },
+        {
+          "args": [
+            "white_yellow_mug_1",
+            "plate_2"
+          ],
+          "predicate": "On",
+          "raw": "(On white_yellow_mug_1 plate_2)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "plate_1",
+          "goal": "(On porcelain_mug_1 plate_1)",
+          "object": "porcelain_mug_1",
+          "op": "place_on",
+          "target": "plate_1"
+        },
+        {
+          "display_target": "plate_2",
+          "goal": "(On white_yellow_mug_1 plate_2)",
+          "object": "white_yellow_mug_1",
+          "op": "place_on",
+          "target": "plate_2"
+        }
+      ]
+    },
+    "task_id": 4,
+    "task_name": "LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "living_room_table",
+          "type": "living_room_table"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "plate_1",
+            "living_room_table_plate_left_region"
+          ],
+          "predicate": "On",
+          "raw": "(On plate_1 living_room_table_plate_left_region)"
+        },
+        {
+          "args": [
+            "plate_2",
+            "living_room_table_plate_right_region"
+          ],
+          "predicate": "On",
+          "raw": "(On plate_2 living_room_table_plate_right_region)"
+        },
+        {
+          "args": [
+            "red_coffee_mug_1",
+            "living_room_table_red_coffee_mug_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On red_coffee_mug_1 living_room_table_red_coffee_mug_init_region)"
+        },
+        {
+          "args": [
+            "white_yellow_mug_1",
+            "living_room_table_white_yellow_mug_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On white_yellow_mug_1 living_room_table_white_yellow_mug_init_region)"
+        },
+        {
+          "args": [
+            "porcelain_mug_1",
+            "living_room_table_porcelain_mug_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On porcelain_mug_1 living_room_table_porcelain_mug_init_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "porcelain_mug_1",
+          "type": "porcelain_mug"
+        },
+        {
+          "name": "red_coffee_mug_1",
+          "type": "red_coffee_mug"
+        },
+        {
+          "name": "white_yellow_mug_1",
+          "type": "white_yellow_mug"
+        }
+      ],
+      "objects_of_interest": [
+        "plate_1",
+        "plate_2",
+        "white_yellow_mug_1",
+        "porcelain_mug_1"
+      ]
+    }
+  },
+  {
+    "bddl_file": "STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy.bddl",
+    "bddl_path": "libero_10/STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy.bddl",
+    "benchmark": "LIBERO",
+    "language": "pick up the book and place it in the back compartment of the caddy",
+    "problem_folder": "libero_10",
+    "request_id": "libero_10:5",
+    "suite": "libero_10",
+    "target": {
+      "compound_goal": "(In black_book_1 desk_caddy_1_back_contain_region)",
+      "goal_predicates": [
+        {
+          "args": [
+            "black_book_1",
+            "desk_caddy_1_back_contain_region"
+          ],
+          "predicate": "In",
+          "raw": "(In black_book_1 desk_caddy_1_back_contain_region)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "desk_caddy_1_back",
+          "goal": "(In black_book_1 desk_caddy_1_back_contain_region)",
+          "object": "black_book_1",
+          "op": "place_in",
+          "target": "desk_caddy_1_back_contain_region"
+        }
+      ]
+    },
+    "task_id": 5,
+    "task_name": "STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "study_table",
+          "type": "study_table"
+        },
+        {
+          "name": "desk_caddy_1",
+          "type": "desk_caddy"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "desk_caddy_1",
+            "study_table_desk_caddy_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On desk_caddy_1 study_table_desk_caddy_init_region)"
+        },
+        {
+          "args": [
+            "black_book_1",
+            "study_table_black_book_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On black_book_1 study_table_black_book_init_region)"
+        },
+        {
+          "args": [
+            "white_yellow_mug_1",
+            "study_table_white_yellow_mug_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On white_yellow_mug_1 study_table_white_yellow_mug_init_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "black_book_1",
+          "type": "black_book"
+        },
+        {
+          "name": "white_yellow_mug_1",
+          "type": "white_yellow_mug"
+        }
+      ],
+      "objects_of_interest": [
+        "black_book_1",
+        "desk_caddy_1"
+      ]
+    }
+  },
+  {
+    "bddl_file": "LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate.bddl",
+    "bddl_path": "libero_10/LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate.bddl",
+    "benchmark": "LIBERO",
+    "language": "put the white mug on the plate and put the chocolate pudding to the right of the plate",
+    "problem_folder": "libero_10",
+    "request_id": "libero_10:6",
+    "suite": "libero_10",
+    "target": {
+      "compound_goal": "(On porcelain_mug_1 plate_1); (On chocolate_pudding_1 living_room_table_plate_right_region)",
+      "goal_predicates": [
+        {
+          "args": [
+            "porcelain_mug_1",
+            "plate_1"
+          ],
+          "predicate": "On",
+          "raw": "(On porcelain_mug_1 plate_1)"
+        },
+        {
+          "args": [
+            "chocolate_pudding_1",
+            "living_room_table_plate_right_region"
+          ],
+          "predicate": "On",
+          "raw": "(On chocolate_pudding_1 living_room_table_plate_right_region)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "plate_1",
+          "goal": "(On porcelain_mug_1 plate_1)",
+          "object": "porcelain_mug_1",
+          "op": "place_on",
+          "target": "plate_1"
+        },
+        {
+          "display_target": "living_room_table_plate",
+          "goal": "(On chocolate_pudding_1 living_room_table_plate_right_region)",
+          "object": "chocolate_pudding_1",
+          "op": "place_on",
+          "target": "living_room_table_plate_right_region"
+        }
+      ]
+    },
+    "task_id": 6,
+    "task_name": "LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "living_room_table",
+          "type": "living_room_table"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "plate_1",
+            "living_room_table_plate_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On plate_1 living_room_table_plate_init_region)"
+        },
+        {
+          "args": [
+            "red_coffee_mug_1",
+            "living_room_table_red_coffee_mug_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On red_coffee_mug_1 living_room_table_red_coffee_mug_init_region)"
+        },
+        {
+          "args": [
+            "chocolate_pudding_1",
+            "living_room_table_chocolate_pudding_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On chocolate_pudding_1 living_room_table_chocolate_pudding_init_region)"
+        },
+        {
+          "args": [
+            "porcelain_mug_1",
+            "living_room_table_porcelain_mug_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On porcelain_mug_1 living_room_table_porcelain_mug_init_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "porcelain_mug_1",
+          "type": "porcelain_mug"
+        },
+        {
+          "name": "red_coffee_mug_1",
+          "type": "red_coffee_mug"
+        },
+        {
+          "name": "plate_1",
+          "type": "plate"
+        },
+        {
+          "name": "chocolate_pudding_1",
+          "type": "chocolate_pudding"
+        }
+      ],
+      "objects_of_interest": [
+        "plate_1",
+        "chocolate_pudding_1",
+        "porcelain_mug_1"
+      ]
+    }
+  },
+  {
+    "bddl_file": "LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket.bddl",
+    "bddl_path": "libero_10/LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket.bddl",
+    "benchmark": "LIBERO",
+    "language": "put both the alphabet soup and the cream cheese box in the basket",
+    "problem_folder": "libero_10",
+    "request_id": "libero_10:7",
+    "suite": "libero_10",
+    "target": {
+      "compound_goal": "(In alphabet_soup_1 basket_1_contain_region); (In cream_cheese_1 basket_1_contain_region)",
+      "goal_predicates": [
+        {
+          "args": [
+            "alphabet_soup_1",
+            "basket_1_contain_region"
+          ],
+          "predicate": "In",
+          "raw": "(In alphabet_soup_1 basket_1_contain_region)"
+        },
+        {
+          "args": [
+            "cream_cheese_1",
+            "basket_1_contain_region"
+          ],
+          "predicate": "In",
+          "raw": "(In cream_cheese_1 basket_1_contain_region)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "basket_1",
+          "goal": "(In alphabet_soup_1 basket_1_contain_region)",
+          "object": "alphabet_soup_1",
+          "op": "place_in",
+          "target": "basket_1_contain_region"
+        },
+        {
+          "display_target": "basket_1",
+          "goal": "(In cream_cheese_1 basket_1_contain_region)",
+          "object": "cream_cheese_1",
+          "op": "place_in",
+          "target": "basket_1_contain_region"
+        }
+      ]
+    },
+    "task_id": 7,
+    "task_name": "LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "living_room_table",
+          "type": "living_room_table"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "alphabet_soup_1",
+            "living_room_table_alphabet_soup_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On alphabet_soup_1 living_room_table_alphabet_soup_init_region)"
+        },
+        {
+          "args": [
+            "cream_cheese_1",
+            "living_room_table_cream_cheese_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On cream_cheese_1 living_room_table_cream_cheese_init_region)"
+        },
+        {
+          "args": [
+            "tomato_sauce_1",
+            "living_room_table_tomato_sauce_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On tomato_sauce_1 living_room_table_tomato_sauce_init_region)"
+        },
+        {
+          "args": [
+            "ketchup_1",
+            "living_room_table_ketchup_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On ketchup_1 living_room_table_ketchup_init_region)"
+        },
+        {
+          "args": [
+            "basket_1",
+            "living_room_table_basket_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On basket_1 living_room_table_basket_init_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "alphabet_soup_1",
+          "type": "alphabet_soup"
+        },
+        {
+          "name": "cream_cheese_1",
+          "type": "cream_cheese"
+        },
+        {
+          "name": "tomato_sauce_1",
+          "type": "tomato_sauce"
+        },
+        {
+          "name": "ketchup_1",
+          "type": "ketchup"
+        },
+        {
+          "name": "basket_1",
+          "type": "basket"
+        }
+      ],
+      "objects_of_interest": [
+        "alphabet_soup_1",
+        "cream_cheese_1",
+        "basket_1"
+      ]
+    }
+  },
+  {
+    "bddl_file": "KITCHEN_SCENE8_put_both_moka_pots_on_the_stove.bddl",
+    "bddl_path": "libero_10/KITCHEN_SCENE8_put_both_moka_pots_on_the_stove.bddl",
+    "benchmark": "LIBERO",
+    "language": "put both moka pots on the stove",
+    "problem_folder": "libero_10",
+    "request_id": "libero_10:8",
+    "suite": "libero_10",
+    "target": {
+      "compound_goal": "(On moka_pot_1 flat_stove_1_cook_region); (On moka_pot_2 flat_stove_1_cook_region); (Turnon flat_stove_1)",
+      "goal_predicates": [
+        {
+          "args": [
+            "moka_pot_1",
+            "flat_stove_1_cook_region"
+          ],
+          "predicate": "On",
+          "raw": "(On moka_pot_1 flat_stove_1_cook_region)"
+        },
+        {
+          "args": [
+            "moka_pot_2",
+            "flat_stove_1_cook_region"
+          ],
+          "predicate": "On",
+          "raw": "(On moka_pot_2 flat_stove_1_cook_region)"
+        },
+        {
+          "args": [
+            "flat_stove_1"
+          ],
+          "predicate": "Turnon",
+          "raw": "(Turnon flat_stove_1)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "flat_stove_1_cook_region",
+          "goal": "(On moka_pot_1 flat_stove_1_cook_region)",
+          "object": "moka_pot_1",
+          "op": "place_on",
+          "target": "flat_stove_1_cook_region"
+        },
+        {
+          "display_target": "flat_stove_1_cook_region",
+          "goal": "(On moka_pot_2 flat_stove_1_cook_region)",
+          "object": "moka_pot_2",
+          "op": "place_on",
+          "target": "flat_stove_1_cook_region"
+        },
+        {
+          "goal": "(Turnon flat_stove_1)",
+          "object": "flat_stove_1",
+          "op": "turnon"
+        }
+      ]
+    },
+    "task_id": 8,
+    "task_name": "KITCHEN_SCENE8_put_both_moka_pots_on_the_stove",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "kitchen_table",
+          "type": "kitchen_table"
+        },
+        {
+          "name": "flat_stove_1",
+          "type": "flat_stove"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "flat_stove_1",
+            "kitchen_table_flat_stove_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On flat_stove_1 kitchen_table_flat_stove_init_region)"
+        },
+        {
+          "args": [
+            "moka_pot_1",
+            "kitchen_table_moka_pot_right_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On moka_pot_1 kitchen_table_moka_pot_right_init_region)"
+        },
+        {
+          "args": [
+            "moka_pot_2",
+            "kitchen_table_moka_pot_left_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On moka_pot_2 kitchen_table_moka_pot_left_init_region)"
+        },
+        {
+          "args": [
+            "flat_stove_1"
+          ],
+          "predicate": "Turnon",
+          "raw": "(Turnon flat_stove_1)"
+        }
+      ],
+      "objects": [],
+      "objects_of_interest": [
+        "moka_pot_1",
+        "moka_pot_2",
+        "flat_stove_1"
+      ]
+    }
+  },
+  {
+    "bddl_file": "KITCHEN_SCENE6_put_the_yellow_and_white_mug_in_the_microwave_and_close_it.bddl",
+    "bddl_path": "libero_10/KITCHEN_SCENE6_put_the_yellow_and_white_mug_in_the_microwave_and_close_it.bddl",
+    "benchmark": "LIBERO",
+    "language": "put the yellow and white mug in the microwave and close it",
+    "problem_folder": "libero_10",
+    "request_id": "libero_10:9",
+    "suite": "libero_10",
+    "target": {
+      "compound_goal": "(In white_yellow_mug_1 microwave_1_heating_region); (Close microwave_1)",
+      "goal_predicates": [
+        {
+          "args": [
+            "white_yellow_mug_1",
+            "microwave_1_heating_region"
+          ],
+          "predicate": "In",
+          "raw": "(In white_yellow_mug_1 microwave_1_heating_region)"
+        },
+        {
+          "args": [
+            "microwave_1"
+          ],
+          "predicate": "Close",
+          "raw": "(Close microwave_1)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "microwave_1",
+          "goal": "(In white_yellow_mug_1 microwave_1_heating_region)",
+          "object": "white_yellow_mug_1",
+          "op": "place_in",
+          "target": "microwave_1_heating_region"
+        },
+        {
+          "goal": "(Close microwave_1)",
+          "object": "microwave_1",
+          "op": "close"
+        }
+      ]
+    },
+    "task_id": 9,
+    "task_name": "KITCHEN_SCENE6_put_the_yellow_and_white_mug_in_the_microwave_and_close_it",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "kitchen_table",
+          "type": "kitchen_table"
+        },
+        {
+          "name": "microwave_1",
+          "type": "microwave"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "porcelain_mug_1",
+            "kitchen_table_porcelain_mug_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On porcelain_mug_1 kitchen_table_porcelain_mug_init_region)"
+        },
+        {
+          "args": [
+            "white_yellow_mug_1",
+            "kitchen_table_white_yellow_mug_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On white_yellow_mug_1 kitchen_table_white_yellow_mug_init_region)"
+        },
+        {
+          "args": [
+            "microwave_1",
+            "kitchen_table_microwave_init_region"
+          ],
+          "predicate": "On",
+          "raw": "(On microwave_1 kitchen_table_microwave_init_region)"
+        },
+        {
+          "args": [
+            "microwave_1"
+          ],
+          "predicate": "Open",
+          "raw": "(Open microwave_1)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "porcelain_mug_1",
+          "type": "porcelain_mug"
+        },
+        {
+          "name": "white_yellow_mug_1",
+          "type": "white_yellow_mug"
+        }
+      ],
+      "objects_of_interest": [
+        "white_yellow_mug_1",
+        "microwave_1"
+      ]
+    }
+  }
+]

@@ -22,7 +22,8 @@ from pathlib import Path
 from typing import Any
 
 import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import AutoConfig, AutoModelForCausalLM, AutoTokenizer
+from transformers.modeling_utils import PreTrainedModel
 
 
 ARTIFACT_ROOT = Path(__file__).resolve().parents[1]
@@ -32,7 +33,26 @@ if str(ARTIFACT_ROOT) not in sys.path:
 from common_paths import ARTIFACT_DATA_DIR
 
 PROMPT_DIR = ARTIFACT_DATA_DIR / "prompts" / "end_to_end_v3"
-DEFAULT_MODEL = os.environ.get("BT_MODEL", "Qwen/Qwen3-8B")
+DEFAULT_MODEL = (
+    os.environ.get("BT_LOCAL_MODEL")
+    or os.environ.get("BT_MODEL")
+    or "Qwen/Qwen3-8B"
+)
+
+if not hasattr(PreTrainedModel, "all_tied_weights_keys"):
+    def _get_all_tied_weights_keys(self):
+        stored = self.__dict__.get("_all_tied_weights_keys")
+        if stored is not None:
+            return stored
+        return {key: key for key in (getattr(self, "_tied_weights_keys", None) or [])}
+
+    def _set_all_tied_weights_keys(self, value):
+        self.__dict__["_all_tied_weights_keys"] = value
+
+    PreTrainedModel.all_tied_weights_keys = property(
+        _get_all_tied_weights_keys,
+        _set_all_tied_weights_keys,
+    )
 
 
 def _read_prompt(name: str) -> str:
@@ -140,6 +160,13 @@ def load_local_model(
     attn_implementation: str | None,
     device: str,
 ):
+    config = AutoConfig.from_pretrained(
+        model_name,
+        trust_remote_code=True,
+    )
+    if not hasattr(config, "max_length") and hasattr(config, "seq_length"):
+        config.max_length = config.seq_length
+
     tokenizer = AutoTokenizer.from_pretrained(
         model_name,
         trust_remote_code=True,
@@ -160,6 +187,7 @@ def load_local_model(
     model_kwargs: dict[str, Any] = {
         "trust_remote_code": True,
         "torch_dtype": dtype_map[torch_dtype],
+        "low_cpu_mem_usage": False,
     }
     if attn_implementation:
         model_kwargs["attn_implementation"] = attn_implementation
@@ -169,7 +197,17 @@ def load_local_model(
     else:
         model_kwargs["device_map"] = None
 
-    model = AutoModelForCausalLM.from_pretrained(model_name, **model_kwargs)
+    model = AutoModelForCausalLM.from_pretrained(
+        model_name,
+        config=config,
+        **model_kwargs,
+    )
+    if hasattr(config, "max_length"):
+        model.generation_config.max_length = config.max_length
+        try:
+            delattr(model.config, "max_length")
+        except AttributeError:
+            pass
     if device != "auto":
         model = model.to(device)
     return tokenizer, model
@@ -208,8 +246,50 @@ def generate_raw_response(
     return output.strip()
 
 
+def _extract_tagged_json_block(text: str) -> str | None:
+    start_tag = "<json>"
+    end_tag = "</json>"
+    start = text.find(start_tag)
+    end = text.rfind(end_tag)
+    if start == -1 or end == -1 or end <= start:
+        return None
+    return text[start + len(start_tag) : end].strip()
+
+
+def _extract_balanced_braces(text: str) -> str | None:
+    start = text.find("{")
+    if start == -1:
+        return None
+    depth = 0
+    in_string = False
+    escape = False
+    for idx in range(start, len(text)):
+        ch = text[idx]
+        if in_string:
+            if escape:
+                escape = False
+            elif ch == "\\":
+                escape = True
+            elif ch == '"':
+                in_string = False
+            continue
+        if ch == '"':
+            in_string = True
+        elif ch == "{":
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+            if depth == 0:
+                return text[start : idx + 1]
+    return None
+
+
 def extract_json_object(text: str) -> dict[str, Any]:
     candidate = text.strip()
+
+    tagged = _extract_tagged_json_block(candidate)
+    if tagged:
+        candidate = tagged
 
     if candidate.startswith("```"):
         first_newline = candidate.find("\n")
@@ -220,11 +300,10 @@ def extract_json_object(text: str) -> dict[str, Any]:
     try:
         return json.loads(candidate)
     except json.JSONDecodeError:
-        start = candidate.find("{")
-        end = candidate.rfind("}")
-        if start == -1 or end == -1 or end <= start:
+        balanced = _extract_balanced_braces(candidate)
+        if balanced is None:
             raise
-        return json.loads(candidate[start : end + 1])
+        return json.loads(balanced)
 
 
 def validate_generation_result(result: dict[str, Any]) -> None:
@@ -430,7 +509,9 @@ def parse_args() -> argparse.Namespace:
         "--prompt-profile",
         default="full",
         choices=["full", "compact"],
-        help="Prompt template profile. Use compact for shorter prompts.",
+        help=(
+            "Prompt template profile. Use compact for shorter prompts. "
+        ),
     )
     parser.add_argument(
         "--output",

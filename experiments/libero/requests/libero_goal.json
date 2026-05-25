@@ -1,0 +1,1324 @@
+[
+  {
+    "bddl_file": "open_the_middle_drawer_of_the_cabinet.bddl",
+    "bddl_path": "libero_goal/open_the_middle_drawer_of_the_cabinet.bddl",
+    "benchmark": "LIBERO",
+    "language": "open the middle drawer of the cabinet",
+    "problem_folder": "libero_goal",
+    "request_id": "libero_goal:0",
+    "suite": "libero_goal",
+    "target": {
+      "compound_goal": "(Open wooden_cabinet_1_middle_region)",
+      "goal_predicates": [
+        {
+          "args": [
+            "wooden_cabinet_1_middle_region"
+          ],
+          "predicate": "Open",
+          "raw": "(Open wooden_cabinet_1_middle_region)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "goal": "(Open wooden_cabinet_1_middle_region)",
+          "object": "wooden_cabinet_1_middle_region",
+          "op": "open"
+        }
+      ]
+    },
+    "task_id": 0,
+    "task_name": "open_the_middle_drawer_of_the_cabinet",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "main_table",
+          "type": "table"
+        },
+        {
+          "name": "wooden_cabinet_1",
+          "type": "wooden_cabinet"
+        },
+        {
+          "name": "flat_stove_1",
+          "type": "flat_stove"
+        },
+        {
+          "name": "wine_rack_1",
+          "type": "wine_rack"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "wine_bottle_1",
+            "main_table_wine_bottle_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wine_bottle_1 main_table_wine_bottle_region)"
+        },
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "main_table_akita_black_bowl_region"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 main_table_akita_black_bowl_region)"
+        },
+        {
+          "args": [
+            "plate_1",
+            "main_table_plate_region"
+          ],
+          "predicate": "On",
+          "raw": "(On plate_1 main_table_plate_region)"
+        },
+        {
+          "args": [
+            "cream_cheese_1",
+            "main_table_cream_cheese_region"
+          ],
+          "predicate": "On",
+          "raw": "(On cream_cheese_1 main_table_cream_cheese_region)"
+        },
+        {
+          "args": [
+            "wooden_cabinet_1",
+            "main_table_cabinet_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wooden_cabinet_1 main_table_cabinet_region)"
+        },
+        {
+          "args": [
+            "flat_stove_1",
+            "main_table_stove_region"
+          ],
+          "predicate": "On",
+          "raw": "(On flat_stove_1 main_table_stove_region)"
+        },
+        {
+          "args": [
+            "wine_rack_1",
+            "main_table_wine_rack_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wine_rack_1 main_table_wine_rack_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "akita_black_bowl_1",
+          "type": "akita_black_bowl"
+        },
+        {
+          "name": "cream_cheese_1",
+          "type": "cream_cheese"
+        },
+        {
+          "name": "wine_bottle_1",
+          "type": "wine_bottle"
+        },
+        {
+          "name": "plate_1",
+          "type": "plate"
+        }
+      ],
+      "objects_of_interest": [
+        "wooden_cabinet_1_middle_region"
+      ]
+    }
+  },
+  {
+    "bddl_file": "put_the_bowl_on_the_stove.bddl",
+    "bddl_path": "libero_goal/put_the_bowl_on_the_stove.bddl",
+    "benchmark": "LIBERO",
+    "language": "put the bowl on the stove",
+    "problem_folder": "libero_goal",
+    "request_id": "libero_goal:1",
+    "suite": "libero_goal",
+    "target": {
+      "compound_goal": "(On akita_black_bowl_1 flat_stove_1_cook_region)",
+      "goal_predicates": [
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "flat_stove_1_cook_region"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 flat_stove_1_cook_region)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "flat_stove_1_cook_region",
+          "goal": "(On akita_black_bowl_1 flat_stove_1_cook_region)",
+          "object": "akita_black_bowl_1",
+          "op": "place_on",
+          "target": "flat_stove_1_cook_region"
+        }
+      ]
+    },
+    "task_id": 1,
+    "task_name": "put_the_bowl_on_the_stove",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "main_table",
+          "type": "table"
+        },
+        {
+          "name": "wooden_cabinet_1",
+          "type": "wooden_cabinet"
+        },
+        {
+          "name": "flat_stove_1",
+          "type": "flat_stove"
+        },
+        {
+          "name": "wine_rack_1",
+          "type": "wine_rack"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "wine_bottle_1",
+            "main_table_wine_bottle_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wine_bottle_1 main_table_wine_bottle_region)"
+        },
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "main_table_akita_black_bowl_region"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 main_table_akita_black_bowl_region)"
+        },
+        {
+          "args": [
+            "plate_1",
+            "main_table_plate_region"
+          ],
+          "predicate": "On",
+          "raw": "(On plate_1 main_table_plate_region)"
+        },
+        {
+          "args": [
+            "cream_cheese_1",
+            "main_table_cream_cheese_region"
+          ],
+          "predicate": "On",
+          "raw": "(On cream_cheese_1 main_table_cream_cheese_region)"
+        },
+        {
+          "args": [
+            "wooden_cabinet_1",
+            "main_table_cabinet_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wooden_cabinet_1 main_table_cabinet_region)"
+        },
+        {
+          "args": [
+            "flat_stove_1",
+            "main_table_stove_region"
+          ],
+          "predicate": "On",
+          "raw": "(On flat_stove_1 main_table_stove_region)"
+        },
+        {
+          "args": [
+            "wine_rack_1",
+            "main_table_wine_rack_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wine_rack_1 main_table_wine_rack_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "akita_black_bowl_1",
+          "type": "akita_black_bowl"
+        },
+        {
+          "name": "cream_cheese_1",
+          "type": "cream_cheese"
+        },
+        {
+          "name": "wine_bottle_1",
+          "type": "wine_bottle"
+        },
+        {
+          "name": "plate_1",
+          "type": "plate"
+        }
+      ],
+      "objects_of_interest": [
+        "akita_black_bowl_1",
+        "flat_stove_1_cook_region"
+      ]
+    }
+  },
+  {
+    "bddl_file": "put_the_wine_bottle_on_top_of_the_cabinet.bddl",
+    "bddl_path": "libero_goal/put_the_wine_bottle_on_top_of_the_cabinet.bddl",
+    "benchmark": "LIBERO",
+    "language": "put the wine bottle on top of the cabinet",
+    "problem_folder": "libero_goal",
+    "request_id": "libero_goal:2",
+    "suite": "libero_goal",
+    "target": {
+      "compound_goal": "(On wine_bottle_1 wooden_cabinet_1_top_side)",
+      "goal_predicates": [
+        {
+          "args": [
+            "wine_bottle_1",
+            "wooden_cabinet_1_top_side"
+          ],
+          "predicate": "On",
+          "raw": "(On wine_bottle_1 wooden_cabinet_1_top_side)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "wooden_cabinet_1_top_side",
+          "goal": "(On wine_bottle_1 wooden_cabinet_1_top_side)",
+          "object": "wine_bottle_1",
+          "op": "place_on",
+          "target": "wooden_cabinet_1_top_side"
+        }
+      ]
+    },
+    "task_id": 2,
+    "task_name": "put_the_wine_bottle_on_top_of_the_cabinet",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "main_table",
+          "type": "table"
+        },
+        {
+          "name": "wooden_cabinet_1",
+          "type": "wooden_cabinet"
+        },
+        {
+          "name": "flat_stove_1",
+          "type": "flat_stove"
+        },
+        {
+          "name": "wine_rack_1",
+          "type": "wine_rack"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "wine_bottle_1",
+            "main_table_wine_bottle_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wine_bottle_1 main_table_wine_bottle_region)"
+        },
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "main_table_akita_black_bowl_region"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 main_table_akita_black_bowl_region)"
+        },
+        {
+          "args": [
+            "plate_1",
+            "main_table_plate_region"
+          ],
+          "predicate": "On",
+          "raw": "(On plate_1 main_table_plate_region)"
+        },
+        {
+          "args": [
+            "cream_cheese_1",
+            "main_table_cream_cheese_region"
+          ],
+          "predicate": "On",
+          "raw": "(On cream_cheese_1 main_table_cream_cheese_region)"
+        },
+        {
+          "args": [
+            "wooden_cabinet_1",
+            "main_table_cabinet_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wooden_cabinet_1 main_table_cabinet_region)"
+        },
+        {
+          "args": [
+            "flat_stove_1",
+            "main_table_stove_region"
+          ],
+          "predicate": "On",
+          "raw": "(On flat_stove_1 main_table_stove_region)"
+        },
+        {
+          "args": [
+            "wine_rack_1",
+            "main_table_wine_rack_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wine_rack_1 main_table_wine_rack_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "akita_black_bowl_1",
+          "type": "akita_black_bowl"
+        },
+        {
+          "name": "cream_cheese_1",
+          "type": "cream_cheese"
+        },
+        {
+          "name": "wine_bottle_1",
+          "type": "wine_bottle"
+        },
+        {
+          "name": "plate_1",
+          "type": "plate"
+        }
+      ],
+      "objects_of_interest": [
+        "wine_bottle_1",
+        "wooden_cabinet_1_top_side"
+      ]
+    }
+  },
+  {
+    "bddl_file": "open_the_top_drawer_and_put_the_bowl_inside.bddl",
+    "bddl_path": "libero_goal/open_the_top_drawer_and_put_the_bowl_inside.bddl",
+    "benchmark": "LIBERO",
+    "language": "open the top drawer and put the bowl inside",
+    "problem_folder": "libero_goal",
+    "request_id": "libero_goal:3",
+    "suite": "libero_goal",
+    "target": {
+      "compound_goal": "(In akita_black_bowl_1 wooden_cabinet_1_top_region)",
+      "goal_predicates": [
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "wooden_cabinet_1_top_region"
+          ],
+          "predicate": "In",
+          "raw": "(In akita_black_bowl_1 wooden_cabinet_1_top_region)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "wooden_cabinet_1",
+          "goal": "(In akita_black_bowl_1 wooden_cabinet_1_top_region)",
+          "object": "akita_black_bowl_1",
+          "op": "place_in",
+          "target": "wooden_cabinet_1_top_region"
+        }
+      ]
+    },
+    "task_id": 3,
+    "task_name": "open_the_top_drawer_and_put_the_bowl_inside",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "main_table",
+          "type": "table"
+        },
+        {
+          "name": "wooden_cabinet_1",
+          "type": "wooden_cabinet"
+        },
+        {
+          "name": "flat_stove_1",
+          "type": "flat_stove"
+        },
+        {
+          "name": "wine_rack_1",
+          "type": "wine_rack"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "wine_bottle_1",
+            "main_table_wine_bottle_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wine_bottle_1 main_table_wine_bottle_region)"
+        },
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "main_table_akita_black_bowl_region"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 main_table_akita_black_bowl_region)"
+        },
+        {
+          "args": [
+            "plate_1",
+            "main_table_plate_region"
+          ],
+          "predicate": "On",
+          "raw": "(On plate_1 main_table_plate_region)"
+        },
+        {
+          "args": [
+            "cream_cheese_1",
+            "main_table_cream_cheese_region"
+          ],
+          "predicate": "On",
+          "raw": "(On cream_cheese_1 main_table_cream_cheese_region)"
+        },
+        {
+          "args": [
+            "wooden_cabinet_1",
+            "main_table_cabinet_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wooden_cabinet_1 main_table_cabinet_region)"
+        },
+        {
+          "args": [
+            "flat_stove_1",
+            "main_table_stove_region"
+          ],
+          "predicate": "On",
+          "raw": "(On flat_stove_1 main_table_stove_region)"
+        },
+        {
+          "args": [
+            "wine_rack_1",
+            "main_table_wine_rack_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wine_rack_1 main_table_wine_rack_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "akita_black_bowl_1",
+          "type": "akita_black_bowl"
+        },
+        {
+          "name": "cream_cheese_1",
+          "type": "cream_cheese"
+        },
+        {
+          "name": "wine_bottle_1",
+          "type": "wine_bottle"
+        },
+        {
+          "name": "plate_1",
+          "type": "plate"
+        }
+      ],
+      "objects_of_interest": [
+        "akita_black_bowl_1",
+        "wooden_cabinet_1_top_region"
+      ]
+    }
+  },
+  {
+    "bddl_file": "put_the_bowl_on_top_of_the_cabinet.bddl",
+    "bddl_path": "libero_goal/put_the_bowl_on_top_of_the_cabinet.bddl",
+    "benchmark": "LIBERO",
+    "language": "put the bowl on top of the cabinet",
+    "problem_folder": "libero_goal",
+    "request_id": "libero_goal:4",
+    "suite": "libero_goal",
+    "target": {
+      "compound_goal": "(On akita_black_bowl_1 wooden_cabinet_1_top_side)",
+      "goal_predicates": [
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "wooden_cabinet_1_top_side"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 wooden_cabinet_1_top_side)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "wooden_cabinet_1_top_side",
+          "goal": "(On akita_black_bowl_1 wooden_cabinet_1_top_side)",
+          "object": "akita_black_bowl_1",
+          "op": "place_on",
+          "target": "wooden_cabinet_1_top_side"
+        }
+      ]
+    },
+    "task_id": 4,
+    "task_name": "put_the_bowl_on_top_of_the_cabinet",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "main_table",
+          "type": "table"
+        },
+        {
+          "name": "wooden_cabinet_1",
+          "type": "wooden_cabinet"
+        },
+        {
+          "name": "flat_stove_1",
+          "type": "flat_stove"
+        },
+        {
+          "name": "wine_rack_1",
+          "type": "wine_rack"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "wine_bottle_1",
+            "main_table_wine_bottle_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wine_bottle_1 main_table_wine_bottle_region)"
+        },
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "main_table_akita_black_bowl_region"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 main_table_akita_black_bowl_region)"
+        },
+        {
+          "args": [
+            "plate_1",
+            "main_table_plate_region"
+          ],
+          "predicate": "On",
+          "raw": "(On plate_1 main_table_plate_region)"
+        },
+        {
+          "args": [
+            "cream_cheese_1",
+            "main_table_cream_cheese_region"
+          ],
+          "predicate": "On",
+          "raw": "(On cream_cheese_1 main_table_cream_cheese_region)"
+        },
+        {
+          "args": [
+            "wooden_cabinet_1",
+            "main_table_cabinet_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wooden_cabinet_1 main_table_cabinet_region)"
+        },
+        {
+          "args": [
+            "flat_stove_1",
+            "main_table_stove_region"
+          ],
+          "predicate": "On",
+          "raw": "(On flat_stove_1 main_table_stove_region)"
+        },
+        {
+          "args": [
+            "wine_rack_1",
+            "main_table_wine_rack_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wine_rack_1 main_table_wine_rack_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "akita_black_bowl_1",
+          "type": "akita_black_bowl"
+        },
+        {
+          "name": "cream_cheese_1",
+          "type": "cream_cheese"
+        },
+        {
+          "name": "wine_bottle_1",
+          "type": "wine_bottle"
+        },
+        {
+          "name": "plate_1",
+          "type": "plate"
+        }
+      ],
+      "objects_of_interest": [
+        "akita_black_bowl_1",
+        "wooden_cabinet_1_top_side"
+      ]
+    }
+  },
+  {
+    "bddl_file": "push_the_plate_to_the_front_of_the_stove.bddl",
+    "bddl_path": "libero_goal/push_the_plate_to_the_front_of_the_stove.bddl",
+    "benchmark": "LIBERO",
+    "language": "push the plate to the front of the stove",
+    "problem_folder": "libero_goal",
+    "request_id": "libero_goal:5",
+    "suite": "libero_goal",
+    "target": {
+      "compound_goal": "(On plate_1 main_table_stove_front_region)",
+      "goal_predicates": [
+        {
+          "args": [
+            "plate_1",
+            "main_table_stove_front_region"
+          ],
+          "predicate": "On",
+          "raw": "(On plate_1 main_table_stove_front_region)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "main_table_stove_front_region",
+          "goal": "(On plate_1 main_table_stove_front_region)",
+          "object": "plate_1",
+          "op": "place_on",
+          "target": "main_table_stove_front_region"
+        }
+      ]
+    },
+    "task_id": 5,
+    "task_name": "push_the_plate_to_the_front_of_the_stove",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "main_table",
+          "type": "table"
+        },
+        {
+          "name": "wooden_cabinet_1",
+          "type": "wooden_cabinet"
+        },
+        {
+          "name": "flat_stove_1",
+          "type": "flat_stove"
+        },
+        {
+          "name": "wine_rack_1",
+          "type": "wine_rack"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "wine_bottle_1",
+            "main_table_wine_bottle_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wine_bottle_1 main_table_wine_bottle_region)"
+        },
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "main_table_akita_black_bowl_region"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 main_table_akita_black_bowl_region)"
+        },
+        {
+          "args": [
+            "plate_1",
+            "main_table_plate_region"
+          ],
+          "predicate": "On",
+          "raw": "(On plate_1 main_table_plate_region)"
+        },
+        {
+          "args": [
+            "cream_cheese_1",
+            "main_table_cream_cheese_region"
+          ],
+          "predicate": "On",
+          "raw": "(On cream_cheese_1 main_table_cream_cheese_region)"
+        },
+        {
+          "args": [
+            "wooden_cabinet_1",
+            "main_table_cabinet_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wooden_cabinet_1 main_table_cabinet_region)"
+        },
+        {
+          "args": [
+            "flat_stove_1",
+            "main_table_stove_region"
+          ],
+          "predicate": "On",
+          "raw": "(On flat_stove_1 main_table_stove_region)"
+        },
+        {
+          "args": [
+            "wine_rack_1",
+            "main_table_wine_rack_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wine_rack_1 main_table_wine_rack_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "akita_black_bowl_1",
+          "type": "akita_black_bowl"
+        },
+        {
+          "name": "cream_cheese_1",
+          "type": "cream_cheese"
+        },
+        {
+          "name": "wine_bottle_1",
+          "type": "wine_bottle"
+        },
+        {
+          "name": "plate_1",
+          "type": "plate"
+        }
+      ],
+      "objects_of_interest": [
+        "plate_1",
+        "main_table_stove_front_region"
+      ]
+    }
+  },
+  {
+    "bddl_file": "put_the_cream_cheese_in_the_bowl.bddl",
+    "bddl_path": "libero_goal/put_the_cream_cheese_in_the_bowl.bddl",
+    "benchmark": "LIBERO",
+    "language": "put the cream cheese in the bowl",
+    "problem_folder": "libero_goal",
+    "request_id": "libero_goal:6",
+    "suite": "libero_goal",
+    "target": {
+      "compound_goal": "(On cream_cheese_1 akita_black_bowl_1)",
+      "goal_predicates": [
+        {
+          "args": [
+            "cream_cheese_1",
+            "akita_black_bowl_1"
+          ],
+          "predicate": "On",
+          "raw": "(On cream_cheese_1 akita_black_bowl_1)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "akita_black_bowl_1",
+          "goal": "(On cream_cheese_1 akita_black_bowl_1)",
+          "object": "cream_cheese_1",
+          "op": "place_on",
+          "target": "akita_black_bowl_1"
+        }
+      ]
+    },
+    "task_id": 6,
+    "task_name": "put_the_cream_cheese_in_the_bowl",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "main_table",
+          "type": "table"
+        },
+        {
+          "name": "wooden_cabinet_1",
+          "type": "wooden_cabinet"
+        },
+        {
+          "name": "flat_stove_1",
+          "type": "flat_stove"
+        },
+        {
+          "name": "wine_rack_1",
+          "type": "wine_rack"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "wine_bottle_1",
+            "main_table_wine_bottle_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wine_bottle_1 main_table_wine_bottle_region)"
+        },
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "main_table_akita_black_bowl_region"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 main_table_akita_black_bowl_region)"
+        },
+        {
+          "args": [
+            "plate_1",
+            "main_table_plate_region"
+          ],
+          "predicate": "On",
+          "raw": "(On plate_1 main_table_plate_region)"
+        },
+        {
+          "args": [
+            "cream_cheese_1",
+            "main_table_cream_cheese_region"
+          ],
+          "predicate": "On",
+          "raw": "(On cream_cheese_1 main_table_cream_cheese_region)"
+        },
+        {
+          "args": [
+            "wooden_cabinet_1",
+            "main_table_cabinet_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wooden_cabinet_1 main_table_cabinet_region)"
+        },
+        {
+          "args": [
+            "flat_stove_1",
+            "main_table_stove_region"
+          ],
+          "predicate": "On",
+          "raw": "(On flat_stove_1 main_table_stove_region)"
+        },
+        {
+          "args": [
+            "wine_rack_1",
+            "main_table_wine_rack_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wine_rack_1 main_table_wine_rack_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "akita_black_bowl_1",
+          "type": "akita_black_bowl"
+        },
+        {
+          "name": "cream_cheese_1",
+          "type": "cream_cheese"
+        },
+        {
+          "name": "wine_bottle_1",
+          "type": "wine_bottle"
+        },
+        {
+          "name": "plate_1",
+          "type": "plate"
+        }
+      ],
+      "objects_of_interest": [
+        "cream_cheese_1",
+        "akita_black_bowl_1"
+      ]
+    }
+  },
+  {
+    "bddl_file": "turn_on_the_stove.bddl",
+    "bddl_path": "libero_goal/turn_on_the_stove.bddl",
+    "benchmark": "LIBERO",
+    "language": "turn on the stove",
+    "problem_folder": "libero_goal",
+    "request_id": "libero_goal:7",
+    "suite": "libero_goal",
+    "target": {
+      "compound_goal": "(Turnon flat_stove_1)",
+      "goal_predicates": [
+        {
+          "args": [
+            "flat_stove_1"
+          ],
+          "predicate": "Turnon",
+          "raw": "(Turnon flat_stove_1)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "goal": "(Turnon flat_stove_1)",
+          "object": "flat_stove_1",
+          "op": "turnon"
+        }
+      ]
+    },
+    "task_id": 7,
+    "task_name": "turn_on_the_stove",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "main_table",
+          "type": "table"
+        },
+        {
+          "name": "wooden_cabinet_1",
+          "type": "wooden_cabinet"
+        },
+        {
+          "name": "flat_stove_1",
+          "type": "flat_stove"
+        },
+        {
+          "name": "wine_rack_1",
+          "type": "wine_rack"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "wine_bottle_1",
+            "main_table_wine_bottle_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wine_bottle_1 main_table_wine_bottle_region)"
+        },
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "main_table_akita_black_bowl_region"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 main_table_akita_black_bowl_region)"
+        },
+        {
+          "args": [
+            "plate_1",
+            "main_table_plate_region"
+          ],
+          "predicate": "On",
+          "raw": "(On plate_1 main_table_plate_region)"
+        },
+        {
+          "args": [
+            "cream_cheese_1",
+            "main_table_cream_cheese_region"
+          ],
+          "predicate": "On",
+          "raw": "(On cream_cheese_1 main_table_cream_cheese_region)"
+        },
+        {
+          "args": [
+            "wooden_cabinet_1",
+            "main_table_cabinet_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wooden_cabinet_1 main_table_cabinet_region)"
+        },
+        {
+          "args": [
+            "flat_stove_1",
+            "main_table_stove_region"
+          ],
+          "predicate": "On",
+          "raw": "(On flat_stove_1 main_table_stove_region)"
+        },
+        {
+          "args": [
+            "wine_rack_1",
+            "main_table_wine_rack_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wine_rack_1 main_table_wine_rack_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "akita_black_bowl_1",
+          "type": "akita_black_bowl"
+        },
+        {
+          "name": "cream_cheese_1",
+          "type": "cream_cheese"
+        },
+        {
+          "name": "wine_bottle_1",
+          "type": "wine_bottle"
+        },
+        {
+          "name": "plate_1",
+          "type": "plate"
+        }
+      ],
+      "objects_of_interest": [
+        "flat_stove_1"
+      ]
+    }
+  },
+  {
+    "bddl_file": "put_the_bowl_on_the_plate.bddl",
+    "bddl_path": "libero_goal/put_the_bowl_on_the_plate.bddl",
+    "benchmark": "LIBERO",
+    "language": "put the bowl on the plate",
+    "problem_folder": "libero_goal",
+    "request_id": "libero_goal:8",
+    "suite": "libero_goal",
+    "target": {
+      "compound_goal": "(On akita_black_bowl_1 plate_1)",
+      "goal_predicates": [
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "plate_1"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 plate_1)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "plate_1",
+          "goal": "(On akita_black_bowl_1 plate_1)",
+          "object": "akita_black_bowl_1",
+          "op": "place_on",
+          "target": "plate_1"
+        }
+      ]
+    },
+    "task_id": 8,
+    "task_name": "put_the_bowl_on_the_plate",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "main_table",
+          "type": "table"
+        },
+        {
+          "name": "wooden_cabinet_1",
+          "type": "wooden_cabinet"
+        },
+        {
+          "name": "flat_stove_1",
+          "type": "flat_stove"
+        },
+        {
+          "name": "wine_rack_1",
+          "type": "wine_rack"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "wine_bottle_1",
+            "main_table_wine_bottle_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wine_bottle_1 main_table_wine_bottle_region)"
+        },
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "main_table_akita_black_bowl_region"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 main_table_akita_black_bowl_region)"
+        },
+        {
+          "args": [
+            "plate_1",
+            "main_table_plate_region"
+          ],
+          "predicate": "On",
+          "raw": "(On plate_1 main_table_plate_region)"
+        },
+        {
+          "args": [
+            "cream_cheese_1",
+            "main_table_cream_cheese_region"
+          ],
+          "predicate": "On",
+          "raw": "(On cream_cheese_1 main_table_cream_cheese_region)"
+        },
+        {
+          "args": [
+            "wooden_cabinet_1",
+            "main_table_cabinet_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wooden_cabinet_1 main_table_cabinet_region)"
+        },
+        {
+          "args": [
+            "flat_stove_1",
+            "main_table_stove_region"
+          ],
+          "predicate": "On",
+          "raw": "(On flat_stove_1 main_table_stove_region)"
+        },
+        {
+          "args": [
+            "wine_rack_1",
+            "main_table_wine_rack_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wine_rack_1 main_table_wine_rack_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "akita_black_bowl_1",
+          "type": "akita_black_bowl"
+        },
+        {
+          "name": "cream_cheese_1",
+          "type": "cream_cheese"
+        },
+        {
+          "name": "wine_bottle_1",
+          "type": "wine_bottle"
+        },
+        {
+          "name": "plate_1",
+          "type": "plate"
+        }
+      ],
+      "objects_of_interest": [
+        "akita_black_bowl_1",
+        "plate_1"
+      ]
+    }
+  },
+  {
+    "bddl_file": "put_the_wine_bottle_on_the_rack.bddl",
+    "bddl_path": "libero_goal/put_the_wine_bottle_on_the_rack.bddl",
+    "benchmark": "LIBERO",
+    "language": "put the wine bottle on the rack",
+    "problem_folder": "libero_goal",
+    "request_id": "libero_goal:9",
+    "suite": "libero_goal",
+    "target": {
+      "compound_goal": "(On wine_bottle_1 wine_rack_1_top_region)",
+      "goal_predicates": [
+        {
+          "args": [
+            "wine_bottle_1",
+            "wine_rack_1_top_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wine_bottle_1 wine_rack_1_top_region)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "wine_rack_1",
+          "goal": "(On wine_bottle_1 wine_rack_1_top_region)",
+          "object": "wine_bottle_1",
+          "op": "place_on",
+          "target": "wine_rack_1_top_region"
+        }
+      ]
+    },
+    "task_id": 9,
+    "task_name": "put_the_wine_bottle_on_the_rack",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "main_table",
+          "type": "table"
+        },
+        {
+          "name": "wooden_cabinet_1",
+          "type": "wooden_cabinet"
+        },
+        {
+          "name": "flat_stove_1",
+          "type": "flat_stove"
+        },
+        {
+          "name": "wine_rack_1",
+          "type": "wine_rack"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "wine_bottle_1",
+            "main_table_wine_bottle_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wine_bottle_1 main_table_wine_bottle_region)"
+        },
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "main_table_akita_black_bowl_region"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 main_table_akita_black_bowl_region)"
+        },
+        {
+          "args": [
+            "plate_1",
+            "main_table_plate_region"
+          ],
+          "predicate": "On",
+          "raw": "(On plate_1 main_table_plate_region)"
+        },
+        {
+          "args": [
+            "cream_cheese_1",
+            "main_table_cream_cheese_region"
+          ],
+          "predicate": "On",
+          "raw": "(On cream_cheese_1 main_table_cream_cheese_region)"
+        },
+        {
+          "args": [
+            "wooden_cabinet_1",
+            "main_table_cabinet_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wooden_cabinet_1 main_table_cabinet_region)"
+        },
+        {
+          "args": [
+            "flat_stove_1",
+            "main_table_stove_region"
+          ],
+          "predicate": "On",
+          "raw": "(On flat_stove_1 main_table_stove_region)"
+        },
+        {
+          "args": [
+            "wine_rack_1",
+            "main_table_wine_rack_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wine_rack_1 main_table_wine_rack_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "akita_black_bowl_1",
+          "type": "akita_black_bowl"
+        },
+        {
+          "name": "cream_cheese_1",
+          "type": "cream_cheese"
+        },
+        {
+          "name": "wine_bottle_1",
+          "type": "wine_bottle"
+        },
+        {
+          "name": "plate_1",
+          "type": "plate"
+        }
+      ],
+      "objects_of_interest": [
+        "wine_bottle_1",
+        "wine_rack_1_top_region"
+      ]
+    }
+  }
+]

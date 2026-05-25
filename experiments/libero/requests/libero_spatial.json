@@ -1,0 +1,1259 @@
+[
+  {
+    "bddl_file": "pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate.bddl",
+    "bddl_path": "libero_spatial/pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate.bddl",
+    "benchmark": "LIBERO",
+    "language": "pick up the black bowl between the plate and the ramekin and place it on the plate",
+    "problem_folder": "libero_spatial",
+    "request_id": "libero_spatial:0",
+    "suite": "libero_spatial",
+    "target": {
+      "compound_goal": "(On akita_black_bowl_1 plate_1)",
+      "goal_predicates": [
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "plate_1"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 plate_1)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "plate_1",
+          "goal": "(On akita_black_bowl_1 plate_1)",
+          "object": "akita_black_bowl_1",
+          "op": "place_on",
+          "target": "plate_1"
+        }
+      ]
+    },
+    "task_id": 0,
+    "task_name": "pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "main_table",
+          "type": "table"
+        },
+        {
+          "name": "wooden_cabinet_1",
+          "type": "wooden_cabinet"
+        },
+        {
+          "name": "flat_stove_1",
+          "type": "flat_stove"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "main_table_between_plate_ramekin_region"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 main_table_between_plate_ramekin_region)"
+        },
+        {
+          "args": [
+            "akita_black_bowl_2",
+            "main_table_next_to_ramekin_region"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_2 main_table_next_to_ramekin_region)"
+        },
+        {
+          "args": [
+            "plate_1",
+            "main_table_plate_region"
+          ],
+          "predicate": "On",
+          "raw": "(On plate_1 main_table_plate_region)"
+        },
+        {
+          "args": [
+            "cookies_1",
+            "main_table_box_region"
+          ],
+          "predicate": "On",
+          "raw": "(On cookies_1 main_table_box_region)"
+        },
+        {
+          "args": [
+            "glazed_rim_porcelain_ramekin_1",
+            "main_table_ramekin_region"
+          ],
+          "predicate": "On",
+          "raw": "(On glazed_rim_porcelain_ramekin_1 main_table_ramekin_region)"
+        },
+        {
+          "args": [
+            "wooden_cabinet_1",
+            "main_table_cabinet_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wooden_cabinet_1 main_table_cabinet_region)"
+        },
+        {
+          "args": [
+            "flat_stove_1",
+            "main_table_stove_region"
+          ],
+          "predicate": "On",
+          "raw": "(On flat_stove_1 main_table_stove_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "cookies_1",
+          "type": "cookies"
+        },
+        {
+          "name": "glazed_rim_porcelain_ramekin_1",
+          "type": "glazed_rim_porcelain_ramekin"
+        },
+        {
+          "name": "plate_1",
+          "type": "plate"
+        }
+      ],
+      "objects_of_interest": [
+        "akita_black_bowl_1",
+        "plate_1"
+      ]
+    }
+  },
+  {
+    "bddl_file": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate.bddl",
+    "bddl_path": "libero_spatial/pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate.bddl",
+    "benchmark": "LIBERO",
+    "language": "pick up the black bowl next to the ramekin and place it on the plate",
+    "problem_folder": "libero_spatial",
+    "request_id": "libero_spatial:1",
+    "suite": "libero_spatial",
+    "target": {
+      "compound_goal": "(On akita_black_bowl_1 plate_1)",
+      "goal_predicates": [
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "plate_1"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 plate_1)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "plate_1",
+          "goal": "(On akita_black_bowl_1 plate_1)",
+          "object": "akita_black_bowl_1",
+          "op": "place_on",
+          "target": "plate_1"
+        }
+      ]
+    },
+    "task_id": 1,
+    "task_name": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "main_table",
+          "type": "table"
+        },
+        {
+          "name": "wooden_cabinet_1",
+          "type": "wooden_cabinet"
+        },
+        {
+          "name": "flat_stove_1",
+          "type": "flat_stove"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "main_table_next_to_ramekin_region"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 main_table_next_to_ramekin_region)"
+        },
+        {
+          "args": [
+            "akita_black_bowl_2",
+            "main_table_next_to_box_region"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_2 main_table_next_to_box_region)"
+        },
+        {
+          "args": [
+            "plate_1",
+            "main_table_plate_region"
+          ],
+          "predicate": "On",
+          "raw": "(On plate_1 main_table_plate_region)"
+        },
+        {
+          "args": [
+            "cookies_1",
+            "main_table_box_region"
+          ],
+          "predicate": "On",
+          "raw": "(On cookies_1 main_table_box_region)"
+        },
+        {
+          "args": [
+            "glazed_rim_porcelain_ramekin_1",
+            "main_table_ramekin_region"
+          ],
+          "predicate": "On",
+          "raw": "(On glazed_rim_porcelain_ramekin_1 main_table_ramekin_region)"
+        },
+        {
+          "args": [
+            "wooden_cabinet_1",
+            "main_table_cabinet_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wooden_cabinet_1 main_table_cabinet_region)"
+        },
+        {
+          "args": [
+            "flat_stove_1",
+            "main_table_stove_region"
+          ],
+          "predicate": "On",
+          "raw": "(On flat_stove_1 main_table_stove_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "cookies_1",
+          "type": "cookies"
+        },
+        {
+          "name": "glazed_rim_porcelain_ramekin_1",
+          "type": "glazed_rim_porcelain_ramekin"
+        },
+        {
+          "name": "plate_1",
+          "type": "plate"
+        }
+      ],
+      "objects_of_interest": [
+        "akita_black_bowl_1",
+        "plate_1"
+      ]
+    }
+  },
+  {
+    "bddl_file": "pick_up_the_black_bowl_from_table_center_and_place_it_on_the_plate.bddl",
+    "bddl_path": "libero_spatial/pick_up_the_black_bowl_from_table_center_and_place_it_on_the_plate.bddl",
+    "benchmark": "LIBERO",
+    "language": "pick up the black bowl from table center and place it on the plate",
+    "problem_folder": "libero_spatial",
+    "request_id": "libero_spatial:2",
+    "suite": "libero_spatial",
+    "target": {
+      "compound_goal": "(On akita_black_bowl_1 plate_1)",
+      "goal_predicates": [
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "plate_1"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 plate_1)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "plate_1",
+          "goal": "(On akita_black_bowl_1 plate_1)",
+          "object": "akita_black_bowl_1",
+          "op": "place_on",
+          "target": "plate_1"
+        }
+      ]
+    },
+    "task_id": 2,
+    "task_name": "pick_up_the_black_bowl_from_table_center_and_place_it_on_the_plate",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "main_table",
+          "type": "table"
+        },
+        {
+          "name": "wooden_cabinet_1",
+          "type": "wooden_cabinet"
+        },
+        {
+          "name": "flat_stove_1",
+          "type": "flat_stove"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "main_table_table_center"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 main_table_table_center)"
+        },
+        {
+          "args": [
+            "akita_black_bowl_2",
+            "main_table_next_to_plate_region"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_2 main_table_next_to_plate_region)"
+        },
+        {
+          "args": [
+            "plate_1",
+            "main_table_plate_region"
+          ],
+          "predicate": "On",
+          "raw": "(On plate_1 main_table_plate_region)"
+        },
+        {
+          "args": [
+            "cookies_1",
+            "main_table_box_region"
+          ],
+          "predicate": "On",
+          "raw": "(On cookies_1 main_table_box_region)"
+        },
+        {
+          "args": [
+            "glazed_rim_porcelain_ramekin_1",
+            "main_table_ramekin_region"
+          ],
+          "predicate": "On",
+          "raw": "(On glazed_rim_porcelain_ramekin_1 main_table_ramekin_region)"
+        },
+        {
+          "args": [
+            "wooden_cabinet_1",
+            "main_table_cabinet_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wooden_cabinet_1 main_table_cabinet_region)"
+        },
+        {
+          "args": [
+            "flat_stove_1",
+            "main_table_stove_region"
+          ],
+          "predicate": "On",
+          "raw": "(On flat_stove_1 main_table_stove_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "cookies_1",
+          "type": "cookies"
+        },
+        {
+          "name": "glazed_rim_porcelain_ramekin_1",
+          "type": "glazed_rim_porcelain_ramekin"
+        },
+        {
+          "name": "plate_1",
+          "type": "plate"
+        }
+      ],
+      "objects_of_interest": [
+        "akita_black_bowl_1",
+        "plate_1"
+      ]
+    }
+  },
+  {
+    "bddl_file": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate.bddl",
+    "bddl_path": "libero_spatial/pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate.bddl",
+    "benchmark": "LIBERO",
+    "language": "pick up the black bowl on the cookie box and place it on the plate",
+    "problem_folder": "libero_spatial",
+    "request_id": "libero_spatial:3",
+    "suite": "libero_spatial",
+    "target": {
+      "compound_goal": "(On akita_black_bowl_1 plate_1)",
+      "goal_predicates": [
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "plate_1"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 plate_1)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "plate_1",
+          "goal": "(On akita_black_bowl_1 plate_1)",
+          "object": "akita_black_bowl_1",
+          "op": "place_on",
+          "target": "plate_1"
+        }
+      ]
+    },
+    "task_id": 3,
+    "task_name": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "main_table",
+          "type": "table"
+        },
+        {
+          "name": "wooden_cabinet_1",
+          "type": "wooden_cabinet"
+        },
+        {
+          "name": "flat_stove_1",
+          "type": "flat_stove"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "cookies_1"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 cookies_1)"
+        },
+        {
+          "args": [
+            "akita_black_bowl_2",
+            "wooden_cabinet_1_top_side"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_2 wooden_cabinet_1_top_side)"
+        },
+        {
+          "args": [
+            "plate_1",
+            "main_table_plate_region"
+          ],
+          "predicate": "On",
+          "raw": "(On plate_1 main_table_plate_region)"
+        },
+        {
+          "args": [
+            "cookies_1",
+            "main_table_box_region"
+          ],
+          "predicate": "On",
+          "raw": "(On cookies_1 main_table_box_region)"
+        },
+        {
+          "args": [
+            "glazed_rim_porcelain_ramekin_1",
+            "main_table_ramekin_region"
+          ],
+          "predicate": "On",
+          "raw": "(On glazed_rim_porcelain_ramekin_1 main_table_ramekin_region)"
+        },
+        {
+          "args": [
+            "wooden_cabinet_1",
+            "main_table_cabinet_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wooden_cabinet_1 main_table_cabinet_region)"
+        },
+        {
+          "args": [
+            "flat_stove_1",
+            "main_table_stove_region"
+          ],
+          "predicate": "On",
+          "raw": "(On flat_stove_1 main_table_stove_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "cookies_1",
+          "type": "cookies"
+        },
+        {
+          "name": "glazed_rim_porcelain_ramekin_1",
+          "type": "glazed_rim_porcelain_ramekin"
+        },
+        {
+          "name": "plate_1",
+          "type": "plate"
+        }
+      ],
+      "objects_of_interest": [
+        "akita_black_bowl_1",
+        "plate_1"
+      ]
+    }
+  },
+  {
+    "bddl_file": "pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_plate.bddl",
+    "bddl_path": "libero_spatial/pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_plate.bddl",
+    "benchmark": "LIBERO",
+    "language": "pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate",
+    "problem_folder": "libero_spatial",
+    "request_id": "libero_spatial:4",
+    "suite": "libero_spatial",
+    "target": {
+      "compound_goal": "(On akita_black_bowl_1 plate_1)",
+      "goal_predicates": [
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "plate_1"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 plate_1)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "plate_1",
+          "goal": "(On akita_black_bowl_1 plate_1)",
+          "object": "akita_black_bowl_1",
+          "op": "place_on",
+          "target": "plate_1"
+        }
+      ]
+    },
+    "task_id": 4,
+    "task_name": "pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_plate",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "main_table",
+          "type": "table"
+        },
+        {
+          "name": "wooden_cabinet_1",
+          "type": "wooden_cabinet"
+        },
+        {
+          "name": "flat_stove_1",
+          "type": "flat_stove"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "wooden_cabinet_1_top_region"
+          ],
+          "predicate": "In",
+          "raw": "(In akita_black_bowl_1 wooden_cabinet_1_top_region)"
+        },
+        {
+          "args": [
+            "akita_black_bowl_2",
+            "wooden_cabinet_1_top_side"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_2 wooden_cabinet_1_top_side)"
+        },
+        {
+          "args": [
+            "wooden_cabinet_1_top_region"
+          ],
+          "predicate": "Open",
+          "raw": "(Open wooden_cabinet_1_top_region)"
+        },
+        {
+          "args": [
+            "plate_1",
+            "main_table_plate_region"
+          ],
+          "predicate": "On",
+          "raw": "(On plate_1 main_table_plate_region)"
+        },
+        {
+          "args": [
+            "cookies_1",
+            "main_table_box_region"
+          ],
+          "predicate": "On",
+          "raw": "(On cookies_1 main_table_box_region)"
+        },
+        {
+          "args": [
+            "glazed_rim_porcelain_ramekin_1",
+            "main_table_ramekin_region"
+          ],
+          "predicate": "On",
+          "raw": "(On glazed_rim_porcelain_ramekin_1 main_table_ramekin_region)"
+        },
+        {
+          "args": [
+            "wooden_cabinet_1",
+            "main_table_cabinet_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wooden_cabinet_1 main_table_cabinet_region)"
+        },
+        {
+          "args": [
+            "flat_stove_1",
+            "main_table_stove_region"
+          ],
+          "predicate": "On",
+          "raw": "(On flat_stove_1 main_table_stove_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "cookies_1",
+          "type": "cookies"
+        },
+        {
+          "name": "glazed_rim_porcelain_ramekin_1",
+          "type": "glazed_rim_porcelain_ramekin"
+        },
+        {
+          "name": "plate_1",
+          "type": "plate"
+        }
+      ],
+      "objects_of_interest": [
+        "akita_black_bowl_1",
+        "plate_1"
+      ]
+    }
+  },
+  {
+    "bddl_file": "pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate.bddl",
+    "bddl_path": "libero_spatial/pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate.bddl",
+    "benchmark": "LIBERO",
+    "language": "pick up the black bowl on the ramekin and place it on the plate",
+    "problem_folder": "libero_spatial",
+    "request_id": "libero_spatial:5",
+    "suite": "libero_spatial",
+    "target": {
+      "compound_goal": "(On akita_black_bowl_1 plate_1)",
+      "goal_predicates": [
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "plate_1"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 plate_1)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "plate_1",
+          "goal": "(On akita_black_bowl_1 plate_1)",
+          "object": "akita_black_bowl_1",
+          "op": "place_on",
+          "target": "plate_1"
+        }
+      ]
+    },
+    "task_id": 5,
+    "task_name": "pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "main_table",
+          "type": "table"
+        },
+        {
+          "name": "wooden_cabinet_1",
+          "type": "wooden_cabinet"
+        },
+        {
+          "name": "flat_stove_1",
+          "type": "flat_stove"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "glazed_rim_porcelain_ramekin_1"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 glazed_rim_porcelain_ramekin_1)"
+        },
+        {
+          "args": [
+            "akita_black_bowl_2",
+            "cookies_1"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_2 cookies_1)"
+        },
+        {
+          "args": [
+            "plate_1",
+            "main_table_plate_region"
+          ],
+          "predicate": "On",
+          "raw": "(On plate_1 main_table_plate_region)"
+        },
+        {
+          "args": [
+            "cookies_1",
+            "main_table_box_region"
+          ],
+          "predicate": "On",
+          "raw": "(On cookies_1 main_table_box_region)"
+        },
+        {
+          "args": [
+            "glazed_rim_porcelain_ramekin_1",
+            "main_table_ramekin_region"
+          ],
+          "predicate": "On",
+          "raw": "(On glazed_rim_porcelain_ramekin_1 main_table_ramekin_region)"
+        },
+        {
+          "args": [
+            "wooden_cabinet_1",
+            "main_table_cabinet_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wooden_cabinet_1 main_table_cabinet_region)"
+        },
+        {
+          "args": [
+            "flat_stove_1",
+            "main_table_stove_region"
+          ],
+          "predicate": "On",
+          "raw": "(On flat_stove_1 main_table_stove_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "cookies_1",
+          "type": "cookies"
+        },
+        {
+          "name": "glazed_rim_porcelain_ramekin_1",
+          "type": "glazed_rim_porcelain_ramekin"
+        },
+        {
+          "name": "plate_1",
+          "type": "plate"
+        }
+      ],
+      "objects_of_interest": [
+        "akita_black_bowl_1",
+        "plate_1"
+      ]
+    }
+  },
+  {
+    "bddl_file": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_plate.bddl",
+    "bddl_path": "libero_spatial/pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_plate.bddl",
+    "benchmark": "LIBERO",
+    "language": "pick up the black bowl next to the cookie box and place it on the plate",
+    "problem_folder": "libero_spatial",
+    "request_id": "libero_spatial:6",
+    "suite": "libero_spatial",
+    "target": {
+      "compound_goal": "(On akita_black_bowl_1 plate_1)",
+      "goal_predicates": [
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "plate_1"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 plate_1)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "plate_1",
+          "goal": "(On akita_black_bowl_1 plate_1)",
+          "object": "akita_black_bowl_1",
+          "op": "place_on",
+          "target": "plate_1"
+        }
+      ]
+    },
+    "task_id": 6,
+    "task_name": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_plate",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "main_table",
+          "type": "table"
+        },
+        {
+          "name": "wooden_cabinet_1",
+          "type": "wooden_cabinet"
+        },
+        {
+          "name": "flat_stove_1",
+          "type": "flat_stove"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "main_table_next_to_box_region"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 main_table_next_to_box_region)"
+        },
+        {
+          "args": [
+            "akita_black_bowl_2",
+            "flat_stove_1_cook_region"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_2 flat_stove_1_cook_region)"
+        },
+        {
+          "args": [
+            "plate_1",
+            "main_table_plate_region"
+          ],
+          "predicate": "On",
+          "raw": "(On plate_1 main_table_plate_region)"
+        },
+        {
+          "args": [
+            "cookies_1",
+            "main_table_box_region"
+          ],
+          "predicate": "On",
+          "raw": "(On cookies_1 main_table_box_region)"
+        },
+        {
+          "args": [
+            "glazed_rim_porcelain_ramekin_1",
+            "main_table_ramekin_region"
+          ],
+          "predicate": "On",
+          "raw": "(On glazed_rim_porcelain_ramekin_1 main_table_ramekin_region)"
+        },
+        {
+          "args": [
+            "wooden_cabinet_1",
+            "main_table_cabinet_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wooden_cabinet_1 main_table_cabinet_region)"
+        },
+        {
+          "args": [
+            "flat_stove_1",
+            "main_table_stove_region"
+          ],
+          "predicate": "On",
+          "raw": "(On flat_stove_1 main_table_stove_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "cookies_1",
+          "type": "cookies"
+        },
+        {
+          "name": "glazed_rim_porcelain_ramekin_1",
+          "type": "glazed_rim_porcelain_ramekin"
+        },
+        {
+          "name": "plate_1",
+          "type": "plate"
+        }
+      ],
+      "objects_of_interest": [
+        "akita_black_bowl_1",
+        "plate_1"
+      ]
+    }
+  },
+  {
+    "bddl_file": "pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate.bddl",
+    "bddl_path": "libero_spatial/pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate.bddl",
+    "benchmark": "LIBERO",
+    "language": "pick up the black bowl on the stove and place it on the plate",
+    "problem_folder": "libero_spatial",
+    "request_id": "libero_spatial:7",
+    "suite": "libero_spatial",
+    "target": {
+      "compound_goal": "(On akita_black_bowl_1 plate_1)",
+      "goal_predicates": [
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "plate_1"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 plate_1)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "plate_1",
+          "goal": "(On akita_black_bowl_1 plate_1)",
+          "object": "akita_black_bowl_1",
+          "op": "place_on",
+          "target": "plate_1"
+        }
+      ]
+    },
+    "task_id": 7,
+    "task_name": "pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "main_table",
+          "type": "table"
+        },
+        {
+          "name": "wooden_cabinet_1",
+          "type": "wooden_cabinet"
+        },
+        {
+          "name": "flat_stove_1",
+          "type": "flat_stove"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "flat_stove_1_cook_region"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 flat_stove_1_cook_region)"
+        },
+        {
+          "args": [
+            "akita_black_bowl_2",
+            "wooden_cabinet_1_top_side"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_2 wooden_cabinet_1_top_side)"
+        },
+        {
+          "args": [
+            "plate_1",
+            "main_table_plate_region"
+          ],
+          "predicate": "On",
+          "raw": "(On plate_1 main_table_plate_region)"
+        },
+        {
+          "args": [
+            "cookies_1",
+            "main_table_box_region"
+          ],
+          "predicate": "On",
+          "raw": "(On cookies_1 main_table_box_region)"
+        },
+        {
+          "args": [
+            "glazed_rim_porcelain_ramekin_1",
+            "main_table_ramekin_region"
+          ],
+          "predicate": "On",
+          "raw": "(On glazed_rim_porcelain_ramekin_1 main_table_ramekin_region)"
+        },
+        {
+          "args": [
+            "wooden_cabinet_1",
+            "main_table_cabinet_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wooden_cabinet_1 main_table_cabinet_region)"
+        },
+        {
+          "args": [
+            "flat_stove_1",
+            "main_table_stove_region"
+          ],
+          "predicate": "On",
+          "raw": "(On flat_stove_1 main_table_stove_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "cookies_1",
+          "type": "cookies"
+        },
+        {
+          "name": "glazed_rim_porcelain_ramekin_1",
+          "type": "glazed_rim_porcelain_ramekin"
+        },
+        {
+          "name": "plate_1",
+          "type": "plate"
+        }
+      ],
+      "objects_of_interest": [
+        "akita_black_bowl_1",
+        "plate_1"
+      ]
+    }
+  },
+  {
+    "bddl_file": "pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate.bddl",
+    "bddl_path": "libero_spatial/pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate.bddl",
+    "benchmark": "LIBERO",
+    "language": "pick up the black bowl next to the plate and place it on the plate",
+    "problem_folder": "libero_spatial",
+    "request_id": "libero_spatial:8",
+    "suite": "libero_spatial",
+    "target": {
+      "compound_goal": "(On akita_black_bowl_1 plate_1)",
+      "goal_predicates": [
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "plate_1"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 plate_1)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "plate_1",
+          "goal": "(On akita_black_bowl_1 plate_1)",
+          "object": "akita_black_bowl_1",
+          "op": "place_on",
+          "target": "plate_1"
+        }
+      ]
+    },
+    "task_id": 8,
+    "task_name": "pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "main_table",
+          "type": "table"
+        },
+        {
+          "name": "wooden_cabinet_1",
+          "type": "wooden_cabinet"
+        },
+        {
+          "name": "flat_stove_1",
+          "type": "flat_stove"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "main_table_next_to_plate_region"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 main_table_next_to_plate_region)"
+        },
+        {
+          "args": [
+            "akita_black_bowl_2",
+            "main_table_next_to_ramekin_region"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_2 main_table_next_to_ramekin_region)"
+        },
+        {
+          "args": [
+            "plate_1",
+            "main_table_plate_region"
+          ],
+          "predicate": "On",
+          "raw": "(On plate_1 main_table_plate_region)"
+        },
+        {
+          "args": [
+            "cookies_1",
+            "main_table_box_region"
+          ],
+          "predicate": "On",
+          "raw": "(On cookies_1 main_table_box_region)"
+        },
+        {
+          "args": [
+            "glazed_rim_porcelain_ramekin_1",
+            "main_table_ramekin_region"
+          ],
+          "predicate": "On",
+          "raw": "(On glazed_rim_porcelain_ramekin_1 main_table_ramekin_region)"
+        },
+        {
+          "args": [
+            "wooden_cabinet_1",
+            "main_table_cabinet_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wooden_cabinet_1 main_table_cabinet_region)"
+        },
+        {
+          "args": [
+            "flat_stove_1",
+            "main_table_stove_region"
+          ],
+          "predicate": "On",
+          "raw": "(On flat_stove_1 main_table_stove_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "cookies_1",
+          "type": "cookies"
+        },
+        {
+          "name": "glazed_rim_porcelain_ramekin_1",
+          "type": "glazed_rim_porcelain_ramekin"
+        },
+        {
+          "name": "plate_1",
+          "type": "plate"
+        }
+      ],
+      "objects_of_interest": [
+        "akita_black_bowl_1",
+        "plate_1"
+      ]
+    }
+  },
+  {
+    "bddl_file": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate.bddl",
+    "bddl_path": "libero_spatial/pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate.bddl",
+    "benchmark": "LIBERO",
+    "language": "pick up the black bowl on the wooden cabinet and place it on the plate",
+    "problem_folder": "libero_spatial",
+    "request_id": "libero_spatial:9",
+    "suite": "libero_spatial",
+    "target": {
+      "compound_goal": "(On akita_black_bowl_1 plate_1)",
+      "goal_predicates": [
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "plate_1"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 plate_1)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "plate_1",
+          "goal": "(On akita_black_bowl_1 plate_1)",
+          "object": "akita_black_bowl_1",
+          "op": "place_on",
+          "target": "plate_1"
+        }
+      ]
+    },
+    "task_id": 9,
+    "task_name": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "main_table",
+          "type": "table"
+        },
+        {
+          "name": "wooden_cabinet_1",
+          "type": "wooden_cabinet"
+        },
+        {
+          "name": "flat_stove_1",
+          "type": "flat_stove"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "akita_black_bowl_1",
+            "wooden_cabinet_1_top_side"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_1 wooden_cabinet_1_top_side)"
+        },
+        {
+          "args": [
+            "akita_black_bowl_2",
+            "flat_stove_1_cook_region"
+          ],
+          "predicate": "On",
+          "raw": "(On akita_black_bowl_2 flat_stove_1_cook_region)"
+        },
+        {
+          "args": [
+            "plate_1",
+            "main_table_plate_region"
+          ],
+          "predicate": "On",
+          "raw": "(On plate_1 main_table_plate_region)"
+        },
+        {
+          "args": [
+            "cookies_1",
+            "main_table_box_region"
+          ],
+          "predicate": "On",
+          "raw": "(On cookies_1 main_table_box_region)"
+        },
+        {
+          "args": [
+            "glazed_rim_porcelain_ramekin_1",
+            "main_table_ramekin_region"
+          ],
+          "predicate": "On",
+          "raw": "(On glazed_rim_porcelain_ramekin_1 main_table_ramekin_region)"
+        },
+        {
+          "args": [
+            "wooden_cabinet_1",
+            "main_table_cabinet_region"
+          ],
+          "predicate": "On",
+          "raw": "(On wooden_cabinet_1 main_table_cabinet_region)"
+        },
+        {
+          "args": [
+            "flat_stove_1",
+            "main_table_stove_region"
+          ],
+          "predicate": "On",
+          "raw": "(On flat_stove_1 main_table_stove_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "cookies_1",
+          "type": "cookies"
+        },
+        {
+          "name": "glazed_rim_porcelain_ramekin_1",
+          "type": "glazed_rim_porcelain_ramekin"
+        },
+        {
+          "name": "plate_1",
+          "type": "plate"
+        }
+      ],
+      "objects_of_interest": [
+        "akita_black_bowl_1",
+        "plate_1"
+      ]
+    }
+  }
+]

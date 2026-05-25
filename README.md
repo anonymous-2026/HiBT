@@ -39,6 +39,9 @@ deployment, motion planning, low-level control, or hardware-specific code.
   compilation
 - compact plan-pyramid schemas, examples, request files, and training data
 - configuration files for Builder/Predictor experiments
+- artifact benchmark request pools, including the 60-task split and held-out
+  12-task split used by the paper experiments
+- reusable LIBERO planning-only and VLA rollout harnesses
 - quickstart scripts that write generated outputs outside Git
 
 Large model weights, generated checkpoints, local logs, and result records are
@@ -55,6 +58,8 @@ artifact/
   runtime/        minimal behavior-tree runtime and simulator
 planner/          Builder/Predictor model code and training utilities
 scripts/          public command-line entry points
+experiments/      optional benchmark harnesses, including LIBERO
+analysis/         aggregation scripts for generated run directories
 docs/             configuration and quickstart notes
 examples/         runnable shell examples
 ```
@@ -166,6 +171,27 @@ python3 scripts/run_eval.py \
   --summary-output outputs/actionseq_summary.json
 ```
 
+Check the main artifact inputs and optional checkpoint/model paths:
+
+```bash
+bash scripts/check_setup.sh
+```
+
+Run the 60-task planning benchmark with any supported backend:
+
+```bash
+python3 scripts/run_eval.py \
+  --backend actionseq \
+  --requests-file artifact/data/requests/test_requests_60.json \
+  --model "$BT_MODEL" \
+  --output-dir outputs/test60_actionseq \
+  --summary-output outputs/test60_actionseq_summary.json
+```
+
+LIBERO planning-only and rollout harnesses are under `experiments/libero/`.
+They require a separate LIBERO installation and optional VLA carrier
+checkpoints. See `experiments/libero/README.md`.
+
 ## Concept Backend
 
 The concept backend requires Builder/Predictor checkpoints. These are not
@@ -211,6 +237,7 @@ The repository intentionally excludes:
 - Builder/Predictor checkpoints
 - generated result records
 - local runtime folders
+- benchmark run directories
 - Python caches and logs
 
 ## Evaluation Metrics

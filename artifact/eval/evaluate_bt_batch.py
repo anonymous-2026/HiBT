@@ -34,7 +34,8 @@ from common_paths import (
     bootstrap_runtime,
 )
 
-DEFAULT_MODEL = os.environ.get("BT_MODEL", "Qwen/Qwen3-8B")
+DEFAULT_LOCAL_MODEL = "Qwen/Qwen3-8B"
+DEFAULT_DEEPSEEK_MODEL = "deepseek-chat"
 
 bootstrap_runtime()
 if str(ARTIFACT_EVAL_DIR) not in sys.path:
@@ -147,6 +148,27 @@ def _write_json(path: Path, payload: dict[str, Any]) -> None:
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n")
 
 
+def _resolve_backend_model(backend: str, cli_model: str | None) -> str:
+    if cli_model:
+        return cli_model
+    if backend == "local":
+        return (
+            os.environ.get("BT_LOCAL_MODEL")
+            or os.environ.get("BT_MODEL")
+            or DEFAULT_LOCAL_MODEL
+        )
+    if backend == "actionseq":
+        return (
+            os.environ.get("BT_ACTIONSEQ_MODEL")
+            or os.environ.get("BT_LOCAL_MODEL")
+            or os.environ.get("BT_MODEL")
+            or DEFAULT_LOCAL_MODEL
+        )
+    if backend == "deepseek":
+        return os.environ.get("BT_DEEPSEEK_MODEL") or DEFAULT_DEEPSEEK_MODEL
+    return cli_model or ""
+
+
 def evaluate_requests(
     args: argparse.Namespace, generator: BehaviorTreeGenerator
 ) -> list[dict[str, Any]]:
@@ -230,6 +252,14 @@ def write_summary(summary_path: str | None, records: list[dict[str, Any]]) -> No
     if not summary_path:
         return
     summary_file = Path(summary_path).expanduser().resolve()
+    comparison_records = []
+    for item in records:
+        generation_result = item.get("generation_result") or {}
+        decode_report = generation_result.get("decode_report") or {}
+        comparison = decode_report.get("comparison_to_normal")
+        if comparison and comparison.get("enabled"):
+            comparison_records.append(comparison)
+
     summary = {
         "total": len(records),
         "successes": sum(1 for item in records if item["success"]),
@@ -244,6 +274,20 @@ def write_summary(summary_path: str | None, records: list[dict[str, Any]]) -> No
         ),
         "records": records,
     }
+    if comparison_records:
+        changed_plan_count = sum(
+            1 for item in comparison_records if item.get("changed_vs_normal")
+        )
+        changed_action_count = sum(
+            1 for item in comparison_records if not item.get("same_repaired_action_sequence")
+        )
+        summary["comparison_to_normal"] = {
+            "total_compared": len(comparison_records),
+            "changed_plan_count": changed_plan_count,
+            "changed_plan_rate": changed_plan_count / len(comparison_records),
+            "changed_action_sequence_count": changed_action_count,
+            "changed_action_sequence_rate": changed_action_count / len(comparison_records),
+        }
     _write_json(summary_file, summary)
 
 
@@ -266,22 +310,47 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--backend",
         default="local",
-        choices=["local", "deepseek", "concept", "actionseq", "concept_raw", "concept_nostable"],
+        choices=[
+            "local",
+            "deepseek",
+            "concept",
+            "actionseq",
+            "concept_raw",
+            "concept_nostable",
+            "concept_nostable_no_closure_boost",
+            "concept_nostable_no_closure_boost_weak_terminal",
+            "concept_nostable_interface_only",
+            "concept_ruleonly",
+            "concept_shuffle",
+            "concept_random",
+        ],
         help=(
             "Generation backend. Use local for transformers, deepseek for API, "
             "concept for the concept predictor + decoder pipeline, or actionseq "
             "for action-sequence generation followed by deterministic compilation. "
             "Use concept_raw to disable decoder repair, or concept_nostable to "
             "disable stable-target construction while keeping repair enabled. "
+            "Use concept_nostable_no_closure_boost to additionally remove the "
+            "tool-management repeated-tick closure boost from method dependency "
+            "construction. Use concept_nostable_no_closure_boost_weak_terminal "
+            "to further weaken final-goal terminal closure by no longer "
+            "synthesizing missing terminal hold-tool / hold-part subchains. "
+            "Use concept_nostable_interface_only to keep the concept-induced "
+            "interface but disable both guided prefix closure and terminal "
+            "goal-closure expansion. "
+            "Use concept_ruleonly, concept_shuffle, or concept_random for "
+            "concept-ablation backends with normal-output comparison diagnostics. "
             "Default: local."
         ),
     )
     parser.add_argument(
         "--model",
-        default=DEFAULT_MODEL,
+        default="",
         help=(
-            f'Hugging Face model id/local path for local backend or API model name for '
-            f'deepseek backend. Default: "{DEFAULT_MODEL}".'
+            "Optional model override. Resolution order: "
+            "CLI --model > backend-specific env vars "
+            "(BT_ACTIONSEQ_MODEL / BT_LOCAL_MODEL / BT_MODEL / BT_DEEPSEEK_MODEL) "
+            "> repository defaults."
         ),
     )
     parser.add_argument(
@@ -320,7 +389,9 @@ def parse_args() -> argparse.Namespace:
         "--prompt-profile",
         default="full",
         choices=["full", "compact"],
-        help="Prompt template profile. Use compact for shorter prompts.",
+        help=(
+            "Prompt template profile. Use compact for shorter prompts. "
+        ),
     )
     parser.add_argument(
         "--api-key-env",
@@ -357,12 +428,12 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--planner-storage-root",
-        default=str(ARTIFACT_DATA_DIR / "runtime" / "planner_v2"),
+        default=str(ARTIFACT_DATA_DIR / "runtime" / "planner"),
         help="Storage root that contains planner builder/predictor checkpoints.",
     )
     parser.add_argument(
         "--plan-bank",
-        default=str(ARTIFACT_DATA_DIR / "pyramids" / "plan_bank_v2.pt"),
+        default=str(ARTIFACT_DATA_DIR / "pyramids" / "plan_bank_qwen3_8b_v2.pt"),
         help="Prototype bank .pt path for --backend concept.",
     )
     parser.add_argument(
@@ -386,11 +457,12 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
+    model_name = _resolve_backend_model(args.backend, args.model or None)
     if args.backend == "local":
         from generate_bt_only import BehaviorTreeGenerator as _BehaviorTreeGenerator
 
         generator = _BehaviorTreeGenerator(
-            model_name=args.model,
+            model_name=model_name,
             torch_dtype=args.torch_dtype,
             attn_implementation=args.attn_implementation,
             device=args.device,
@@ -405,7 +477,7 @@ def main() -> None:
         )
 
         generator = _ActionSequenceBehaviorTreeGenerator(
-            model_name=args.model,
+            model_name=model_name,
             torch_dtype=args.torch_dtype,
             attn_implementation=args.attn_implementation,
             device=args.device,
@@ -421,14 +493,32 @@ def main() -> None:
             )
         generator = DeepSeekBehaviorTreeGenerator(
             api_key=api_key,
-            model_name=args.model,
+            model_name=model_name,
             prompt_profile=args.prompt_profile,
             max_new_tokens=args.max_new_tokens,
             temperature=args.temperature,
             base_url=args.base_url,
         )
-    elif args.backend in {"concept", "concept_raw", "concept_nostable"}:
+    elif args.backend in {
+        "concept",
+        "concept_raw",
+        "concept_nostable",
+        "concept_nostable_no_closure_boost",
+        "concept_nostable_no_closure_boost_weak_terminal",
+        "concept_nostable_interface_only",
+        "concept_ruleonly",
+        "concept_shuffle",
+        "concept_random",
+    }:
         from concept_backend import ConceptBehaviorTreeGenerator
+
+        ablation_mode = "normal"
+        if args.backend == "concept_ruleonly":
+            ablation_mode = "ruleonly"
+        elif args.backend == "concept_shuffle":
+            ablation_mode = "shuffle"
+        elif args.backend == "concept_random":
+            ablation_mode = "random"
 
         generator = ConceptBehaviorTreeGenerator(
             predictor_config_path=args.planner_config,
@@ -439,7 +529,37 @@ def main() -> None:
             device=args.device,
             top_k=args.planner_top_k,
             enable_repair=args.backend != "concept_raw",
-            stable_targets=args.backend != "concept_nostable",
+            stable_targets=args.backend
+            not in {
+                "concept_nostable",
+                "concept_nostable_no_closure_boost",
+                "concept_nostable_no_closure_boost_weak_terminal",
+                "concept_nostable_interface_only",
+            },
+            repeated_tick_closure_boost=(
+                args.backend
+                not in {
+                    "concept_nostable_no_closure_boost",
+                    "concept_nostable_no_closure_boost_weak_terminal",
+                    "concept_nostable_interface_only",
+                }
+            ),
+            weak_terminal_closure=(
+                args.backend
+                in {
+                    "concept_nostable_no_closure_boost_weak_terminal",
+                    "concept_nostable_interface_only",
+                }
+            ),
+            disable_guided_prefix_closure=(
+                args.backend == "concept_nostable_interface_only"
+            ),
+            ablation_mode=ablation_mode,
+            compare_to_normal=args.backend in {
+                "concept_ruleonly",
+                "concept_shuffle",
+                "concept_random",
+            },
         )
     else:
         raise ValueError(f"Unsupported backend: {args.backend}")

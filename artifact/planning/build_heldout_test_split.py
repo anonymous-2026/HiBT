@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build a more balanced held-out test split from full-task plan examples.
 
-This split is stricter than ``test_requests_50.json`` in two ways:
+This split is stricter than ``artifact_request_pool.json`` in two ways:
 1. it excludes selector-subtask-derived samples and keeps only full tasks
 2. it fixes a dedicated test subset that should be excluded from training,
    prototype-bank construction, and decoder-rule tuning
@@ -22,7 +22,7 @@ THIS_DIR = Path(__file__).resolve().parent
 ARTIFACT_ROOT = THIS_DIR.parent
 DATA_DIR = ARTIFACT_ROOT / "data"
 PYRAMID_INPUT = DATA_DIR / "pyramids" / "plan_examples_v2.json"
-REQUEST_INPUT = DATA_DIR / "requests" / "test_requests_50.json"
+REQUEST_INPUT = DATA_DIR / "requests" / "artifact_request_pool.json"
 REQUEST_OUTPUT = DATA_DIR / "requests" / "test_requests_heldout_full_12.json"
 META_OUTPUT = DATA_DIR / "requests" / "test_requests_heldout_full_12_metadata.json"
 SPLIT_OUTPUT = DATA_DIR / "datasets" / "plan_predictor_v3_split.json"
@@ -118,8 +118,8 @@ def build_heldout_split() -> dict[str, Any]:
             "The selected sample IDs should be excluded from predictor training, "
             "prototype-bank construction, and decoder/repair tuning."
         ),
-        "input_examples": str(PYRAMID_INPUT),
-        "input_requests": str(REQUEST_INPUT),
+        "input_examples": "artifact/data/pyramids/plan_examples_v2.json",
+        "input_requests": "artifact/data/requests/artifact_request_pool.json",
         "selection_policy": {
             "full_task_only": True,
             "best_effort_balanced_matrix": TARGET_MATRIX,

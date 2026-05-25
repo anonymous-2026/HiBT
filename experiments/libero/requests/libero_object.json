@@ -1,0 +1,1332 @@
+[
+  {
+    "bddl_file": "pick_up_the_alphabet_soup_and_place_it_in_the_basket.bddl",
+    "bddl_path": "libero_object/pick_up_the_alphabet_soup_and_place_it_in_the_basket.bddl",
+    "benchmark": "LIBERO",
+    "language": "pick up the alphabet soup and place it in the basket",
+    "problem_folder": "libero_object",
+    "request_id": "libero_object:0",
+    "suite": "libero_object",
+    "target": {
+      "compound_goal": "(In alphabet_soup_1 basket_1_contain_region)",
+      "goal_predicates": [
+        {
+          "args": [
+            "alphabet_soup_1",
+            "basket_1_contain_region"
+          ],
+          "predicate": "In",
+          "raw": "(In alphabet_soup_1 basket_1_contain_region)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "basket_1",
+          "goal": "(In alphabet_soup_1 basket_1_contain_region)",
+          "object": "alphabet_soup_1",
+          "op": "place_in",
+          "target": "basket_1_contain_region"
+        }
+      ]
+    },
+    "task_id": 0,
+    "task_name": "pick_up_the_alphabet_soup_and_place_it_in_the_basket",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "floor",
+          "type": "floor"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "alphabet_soup_1",
+            "floor_target_object_region"
+          ],
+          "predicate": "On",
+          "raw": "(On alphabet_soup_1 floor_target_object_region)"
+        },
+        {
+          "args": [
+            "salad_dressing_1",
+            "floor_other_object_region_0"
+          ],
+          "predicate": "On",
+          "raw": "(On salad_dressing_1 floor_other_object_region_0)"
+        },
+        {
+          "args": [
+            "cream_cheese_1",
+            "floor_other_object_region_1"
+          ],
+          "predicate": "On",
+          "raw": "(On cream_cheese_1 floor_other_object_region_1)"
+        },
+        {
+          "args": [
+            "milk_1",
+            "floor_other_object_region_2"
+          ],
+          "predicate": "On",
+          "raw": "(On milk_1 floor_other_object_region_2)"
+        },
+        {
+          "args": [
+            "tomato_sauce_1",
+            "floor_other_object_region_3"
+          ],
+          "predicate": "On",
+          "raw": "(On tomato_sauce_1 floor_other_object_region_3)"
+        },
+        {
+          "args": [
+            "butter_1",
+            "floor_other_object_region_4"
+          ],
+          "predicate": "On",
+          "raw": "(On butter_1 floor_other_object_region_4)"
+        },
+        {
+          "args": [
+            "basket_1",
+            "floor_bin_region"
+          ],
+          "predicate": "On",
+          "raw": "(On basket_1 floor_bin_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "alphabet_soup_1",
+          "type": "alphabet_soup"
+        },
+        {
+          "name": "basket_1",
+          "type": "basket"
+        },
+        {
+          "name": "salad_dressing_1",
+          "type": "salad_dressing"
+        },
+        {
+          "name": "cream_cheese_1",
+          "type": "cream_cheese"
+        },
+        {
+          "name": "milk_1",
+          "type": "milk"
+        },
+        {
+          "name": "tomato_sauce_1",
+          "type": "tomato_sauce"
+        },
+        {
+          "name": "butter_1",
+          "type": "butter"
+        }
+      ],
+      "objects_of_interest": [
+        "alphabet_soup_1",
+        "basket_1"
+      ]
+    }
+  },
+  {
+    "bddl_file": "pick_up_the_cream_cheese_and_place_it_in_the_basket.bddl",
+    "bddl_path": "libero_object/pick_up_the_cream_cheese_and_place_it_in_the_basket.bddl",
+    "benchmark": "LIBERO",
+    "language": "pick up the cream cheese and place it in the basket",
+    "problem_folder": "libero_object",
+    "request_id": "libero_object:1",
+    "suite": "libero_object",
+    "target": {
+      "compound_goal": "(In cream_cheese_1 basket_1_contain_region)",
+      "goal_predicates": [
+        {
+          "args": [
+            "cream_cheese_1",
+            "basket_1_contain_region"
+          ],
+          "predicate": "In",
+          "raw": "(In cream_cheese_1 basket_1_contain_region)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "basket_1",
+          "goal": "(In cream_cheese_1 basket_1_contain_region)",
+          "object": "cream_cheese_1",
+          "op": "place_in",
+          "target": "basket_1_contain_region"
+        }
+      ]
+    },
+    "task_id": 1,
+    "task_name": "pick_up_the_cream_cheese_and_place_it_in_the_basket",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "floor",
+          "type": "floor"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "cream_cheese_1",
+            "floor_target_object_region"
+          ],
+          "predicate": "On",
+          "raw": "(On cream_cheese_1 floor_target_object_region)"
+        },
+        {
+          "args": [
+            "alphabet_soup_1",
+            "floor_other_object_region_0"
+          ],
+          "predicate": "On",
+          "raw": "(On alphabet_soup_1 floor_other_object_region_0)"
+        },
+        {
+          "args": [
+            "milk_1",
+            "floor_other_object_region_1"
+          ],
+          "predicate": "On",
+          "raw": "(On milk_1 floor_other_object_region_1)"
+        },
+        {
+          "args": [
+            "tomato_sauce_1",
+            "floor_other_object_region_2"
+          ],
+          "predicate": "On",
+          "raw": "(On tomato_sauce_1 floor_other_object_region_2)"
+        },
+        {
+          "args": [
+            "butter_1",
+            "floor_other_object_region_3"
+          ],
+          "predicate": "On",
+          "raw": "(On butter_1 floor_other_object_region_3)"
+        },
+        {
+          "args": [
+            "orange_juice_1",
+            "floor_other_object_region_4"
+          ],
+          "predicate": "On",
+          "raw": "(On orange_juice_1 floor_other_object_region_4)"
+        },
+        {
+          "args": [
+            "basket_1",
+            "floor_bin_region"
+          ],
+          "predicate": "On",
+          "raw": "(On basket_1 floor_bin_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "cream_cheese_1",
+          "type": "cream_cheese"
+        },
+        {
+          "name": "basket_1",
+          "type": "basket"
+        },
+        {
+          "name": "alphabet_soup_1",
+          "type": "alphabet_soup"
+        },
+        {
+          "name": "milk_1",
+          "type": "milk"
+        },
+        {
+          "name": "tomato_sauce_1",
+          "type": "tomato_sauce"
+        },
+        {
+          "name": "butter_1",
+          "type": "butter"
+        },
+        {
+          "name": "orange_juice_1",
+          "type": "orange_juice"
+        }
+      ],
+      "objects_of_interest": [
+        "cream_cheese_1",
+        "basket_1"
+      ]
+    }
+  },
+  {
+    "bddl_file": "pick_up_the_salad_dressing_and_place_it_in_the_basket.bddl",
+    "bddl_path": "libero_object/pick_up_the_salad_dressing_and_place_it_in_the_basket.bddl",
+    "benchmark": "LIBERO",
+    "language": "pick up the salad dressing and place it in the basket",
+    "problem_folder": "libero_object",
+    "request_id": "libero_object:2",
+    "suite": "libero_object",
+    "target": {
+      "compound_goal": "(In salad_dressing_1 basket_1_contain_region)",
+      "goal_predicates": [
+        {
+          "args": [
+            "salad_dressing_1",
+            "basket_1_contain_region"
+          ],
+          "predicate": "In",
+          "raw": "(In salad_dressing_1 basket_1_contain_region)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "basket_1",
+          "goal": "(In salad_dressing_1 basket_1_contain_region)",
+          "object": "salad_dressing_1",
+          "op": "place_in",
+          "target": "basket_1_contain_region"
+        }
+      ]
+    },
+    "task_id": 2,
+    "task_name": "pick_up_the_salad_dressing_and_place_it_in_the_basket",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "floor",
+          "type": "floor"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "salad_dressing_1",
+            "floor_target_object_region"
+          ],
+          "predicate": "On",
+          "raw": "(On salad_dressing_1 floor_target_object_region)"
+        },
+        {
+          "args": [
+            "ketchup_1",
+            "floor_other_object_region_0"
+          ],
+          "predicate": "On",
+          "raw": "(On ketchup_1 floor_other_object_region_0)"
+        },
+        {
+          "args": [
+            "alphabet_soup_1",
+            "floor_other_object_region_1"
+          ],
+          "predicate": "On",
+          "raw": "(On alphabet_soup_1 floor_other_object_region_1)"
+        },
+        {
+          "args": [
+            "cream_cheese_1",
+            "floor_other_object_region_2"
+          ],
+          "predicate": "On",
+          "raw": "(On cream_cheese_1 floor_other_object_region_2)"
+        },
+        {
+          "args": [
+            "milk_1",
+            "floor_other_object_region_3"
+          ],
+          "predicate": "On",
+          "raw": "(On milk_1 floor_other_object_region_3)"
+        },
+        {
+          "args": [
+            "tomato_sauce_1",
+            "floor_other_object_region_4"
+          ],
+          "predicate": "On",
+          "raw": "(On tomato_sauce_1 floor_other_object_region_4)"
+        },
+        {
+          "args": [
+            "basket_1",
+            "floor_bin_region"
+          ],
+          "predicate": "On",
+          "raw": "(On basket_1 floor_bin_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "salad_dressing_1",
+          "type": "salad_dressing"
+        },
+        {
+          "name": "basket_1",
+          "type": "basket"
+        },
+        {
+          "name": "ketchup_1",
+          "type": "ketchup"
+        },
+        {
+          "name": "alphabet_soup_1",
+          "type": "alphabet_soup"
+        },
+        {
+          "name": "cream_cheese_1",
+          "type": "cream_cheese"
+        },
+        {
+          "name": "milk_1",
+          "type": "milk"
+        },
+        {
+          "name": "tomato_sauce_1",
+          "type": "tomato_sauce"
+        }
+      ],
+      "objects_of_interest": [
+        "salad_dressing_1",
+        "basket_1"
+      ]
+    }
+  },
+  {
+    "bddl_file": "pick_up_the_bbq_sauce_and_place_it_in_the_basket.bddl",
+    "bddl_path": "libero_object/pick_up_the_bbq_sauce_and_place_it_in_the_basket.bddl",
+    "benchmark": "LIBERO",
+    "language": "pick up the bbq sauce and place it in the basket",
+    "problem_folder": "libero_object",
+    "request_id": "libero_object:3",
+    "suite": "libero_object",
+    "target": {
+      "compound_goal": "(In bbq_sauce_1 basket_1_contain_region)",
+      "goal_predicates": [
+        {
+          "args": [
+            "bbq_sauce_1",
+            "basket_1_contain_region"
+          ],
+          "predicate": "In",
+          "raw": "(In bbq_sauce_1 basket_1_contain_region)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "basket_1",
+          "goal": "(In bbq_sauce_1 basket_1_contain_region)",
+          "object": "bbq_sauce_1",
+          "op": "place_in",
+          "target": "basket_1_contain_region"
+        }
+      ]
+    },
+    "task_id": 3,
+    "task_name": "pick_up_the_bbq_sauce_and_place_it_in_the_basket",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "floor",
+          "type": "floor"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "bbq_sauce_1",
+            "floor_target_object_region"
+          ],
+          "predicate": "On",
+          "raw": "(On bbq_sauce_1 floor_target_object_region)"
+        },
+        {
+          "args": [
+            "chocolate_pudding_1",
+            "floor_other_object_region_0"
+          ],
+          "predicate": "On",
+          "raw": "(On chocolate_pudding_1 floor_other_object_region_0)"
+        },
+        {
+          "args": [
+            "ketchup_1",
+            "floor_other_object_region_1"
+          ],
+          "predicate": "On",
+          "raw": "(On ketchup_1 floor_other_object_region_1)"
+        },
+        {
+          "args": [
+            "salad_dressing_1",
+            "floor_other_object_region_2"
+          ],
+          "predicate": "On",
+          "raw": "(On salad_dressing_1 floor_other_object_region_2)"
+        },
+        {
+          "args": [
+            "alphabet_soup_1",
+            "floor_other_object_region_3"
+          ],
+          "predicate": "On",
+          "raw": "(On alphabet_soup_1 floor_other_object_region_3)"
+        },
+        {
+          "args": [
+            "cream_cheese_1",
+            "floor_other_object_region_4"
+          ],
+          "predicate": "On",
+          "raw": "(On cream_cheese_1 floor_other_object_region_4)"
+        },
+        {
+          "args": [
+            "basket_1",
+            "floor_bin_region"
+          ],
+          "predicate": "On",
+          "raw": "(On basket_1 floor_bin_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "bbq_sauce_1",
+          "type": "bbq_sauce"
+        },
+        {
+          "name": "basket_1",
+          "type": "basket"
+        },
+        {
+          "name": "chocolate_pudding_1",
+          "type": "chocolate_pudding"
+        },
+        {
+          "name": "ketchup_1",
+          "type": "ketchup"
+        },
+        {
+          "name": "salad_dressing_1",
+          "type": "salad_dressing"
+        },
+        {
+          "name": "alphabet_soup_1",
+          "type": "alphabet_soup"
+        },
+        {
+          "name": "cream_cheese_1",
+          "type": "cream_cheese"
+        }
+      ],
+      "objects_of_interest": [
+        "bbq_sauce_1",
+        "basket_1"
+      ]
+    }
+  },
+  {
+    "bddl_file": "pick_up_the_ketchup_and_place_it_in_the_basket.bddl",
+    "bddl_path": "libero_object/pick_up_the_ketchup_and_place_it_in_the_basket.bddl",
+    "benchmark": "LIBERO",
+    "language": "pick up the ketchup and place it in the basket",
+    "problem_folder": "libero_object",
+    "request_id": "libero_object:4",
+    "suite": "libero_object",
+    "target": {
+      "compound_goal": "(In ketchup_1 basket_1_contain_region)",
+      "goal_predicates": [
+        {
+          "args": [
+            "ketchup_1",
+            "basket_1_contain_region"
+          ],
+          "predicate": "In",
+          "raw": "(In ketchup_1 basket_1_contain_region)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "basket_1",
+          "goal": "(In ketchup_1 basket_1_contain_region)",
+          "object": "ketchup_1",
+          "op": "place_in",
+          "target": "basket_1_contain_region"
+        }
+      ]
+    },
+    "task_id": 4,
+    "task_name": "pick_up_the_ketchup_and_place_it_in_the_basket",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "floor",
+          "type": "floor"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "ketchup_1",
+            "floor_target_object_region"
+          ],
+          "predicate": "On",
+          "raw": "(On ketchup_1 floor_target_object_region)"
+        },
+        {
+          "args": [
+            "bbq_sauce_1",
+            "floor_other_object_region_0"
+          ],
+          "predicate": "On",
+          "raw": "(On bbq_sauce_1 floor_other_object_region_0)"
+        },
+        {
+          "args": [
+            "salad_dressing_1",
+            "floor_other_object_region_1"
+          ],
+          "predicate": "On",
+          "raw": "(On salad_dressing_1 floor_other_object_region_1)"
+        },
+        {
+          "args": [
+            "alphabet_soup_1",
+            "floor_other_object_region_2"
+          ],
+          "predicate": "On",
+          "raw": "(On alphabet_soup_1 floor_other_object_region_2)"
+        },
+        {
+          "args": [
+            "cream_cheese_1",
+            "floor_other_object_region_3"
+          ],
+          "predicate": "On",
+          "raw": "(On cream_cheese_1 floor_other_object_region_3)"
+        },
+        {
+          "args": [
+            "milk_1",
+            "floor_other_object_region_4"
+          ],
+          "predicate": "On",
+          "raw": "(On milk_1 floor_other_object_region_4)"
+        },
+        {
+          "args": [
+            "basket_1",
+            "floor_bin_region"
+          ],
+          "predicate": "On",
+          "raw": "(On basket_1 floor_bin_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "ketchup_1",
+          "type": "ketchup"
+        },
+        {
+          "name": "basket_1",
+          "type": "basket"
+        },
+        {
+          "name": "bbq_sauce_1",
+          "type": "bbq_sauce"
+        },
+        {
+          "name": "salad_dressing_1",
+          "type": "salad_dressing"
+        },
+        {
+          "name": "alphabet_soup_1",
+          "type": "alphabet_soup"
+        },
+        {
+          "name": "cream_cheese_1",
+          "type": "cream_cheese"
+        },
+        {
+          "name": "milk_1",
+          "type": "milk"
+        }
+      ],
+      "objects_of_interest": [
+        "ketchup_1",
+        "basket_1"
+      ]
+    }
+  },
+  {
+    "bddl_file": "pick_up_the_tomato_sauce_and_place_it_in_the_basket.bddl",
+    "bddl_path": "libero_object/pick_up_the_tomato_sauce_and_place_it_in_the_basket.bddl",
+    "benchmark": "LIBERO",
+    "language": "pick up the tomato sauce and place it in the basket",
+    "problem_folder": "libero_object",
+    "request_id": "libero_object:5",
+    "suite": "libero_object",
+    "target": {
+      "compound_goal": "(In tomato_sauce_1 basket_1_contain_region)",
+      "goal_predicates": [
+        {
+          "args": [
+            "tomato_sauce_1",
+            "basket_1_contain_region"
+          ],
+          "predicate": "In",
+          "raw": "(In tomato_sauce_1 basket_1_contain_region)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "basket_1",
+          "goal": "(In tomato_sauce_1 basket_1_contain_region)",
+          "object": "tomato_sauce_1",
+          "op": "place_in",
+          "target": "basket_1_contain_region"
+        }
+      ]
+    },
+    "task_id": 5,
+    "task_name": "pick_up_the_tomato_sauce_and_place_it_in_the_basket",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "floor",
+          "type": "floor"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "tomato_sauce_1",
+            "floor_target_object_region"
+          ],
+          "predicate": "On",
+          "raw": "(On tomato_sauce_1 floor_target_object_region)"
+        },
+        {
+          "args": [
+            "milk_1",
+            "floor_other_object_region_0"
+          ],
+          "predicate": "On",
+          "raw": "(On milk_1 floor_other_object_region_0)"
+        },
+        {
+          "args": [
+            "butter_1",
+            "floor_other_object_region_1"
+          ],
+          "predicate": "On",
+          "raw": "(On butter_1 floor_other_object_region_1)"
+        },
+        {
+          "args": [
+            "orange_juice_1",
+            "floor_other_object_region_2"
+          ],
+          "predicate": "On",
+          "raw": "(On orange_juice_1 floor_other_object_region_2)"
+        },
+        {
+          "args": [
+            "chocolate_pudding_1",
+            "floor_other_object_region_3"
+          ],
+          "predicate": "On",
+          "raw": "(On chocolate_pudding_1 floor_other_object_region_3)"
+        },
+        {
+          "args": [
+            "bbq_sauce_1",
+            "floor_other_object_region_4"
+          ],
+          "predicate": "On",
+          "raw": "(On bbq_sauce_1 floor_other_object_region_4)"
+        },
+        {
+          "args": [
+            "basket_1",
+            "floor_bin_region"
+          ],
+          "predicate": "On",
+          "raw": "(On basket_1 floor_bin_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "tomato_sauce_1",
+          "type": "tomato_sauce"
+        },
+        {
+          "name": "basket_1",
+          "type": "basket"
+        },
+        {
+          "name": "milk_1",
+          "type": "milk"
+        },
+        {
+          "name": "butter_1",
+          "type": "butter"
+        },
+        {
+          "name": "orange_juice_1",
+          "type": "orange_juice"
+        },
+        {
+          "name": "chocolate_pudding_1",
+          "type": "chocolate_pudding"
+        },
+        {
+          "name": "bbq_sauce_1",
+          "type": "bbq_sauce"
+        }
+      ],
+      "objects_of_interest": [
+        "tomato_sauce_1",
+        "basket_1"
+      ]
+    }
+  },
+  {
+    "bddl_file": "pick_up_the_butter_and_place_it_in_the_basket.bddl",
+    "bddl_path": "libero_object/pick_up_the_butter_and_place_it_in_the_basket.bddl",
+    "benchmark": "LIBERO",
+    "language": "pick up the butter and place it in the basket",
+    "problem_folder": "libero_object",
+    "request_id": "libero_object:6",
+    "suite": "libero_object",
+    "target": {
+      "compound_goal": "(In butter_1 basket_1_contain_region)",
+      "goal_predicates": [
+        {
+          "args": [
+            "butter_1",
+            "basket_1_contain_region"
+          ],
+          "predicate": "In",
+          "raw": "(In butter_1 basket_1_contain_region)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "basket_1",
+          "goal": "(In butter_1 basket_1_contain_region)",
+          "object": "butter_1",
+          "op": "place_in",
+          "target": "basket_1_contain_region"
+        }
+      ]
+    },
+    "task_id": 6,
+    "task_name": "pick_up_the_butter_and_place_it_in_the_basket",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "floor",
+          "type": "floor"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "butter_1",
+            "floor_target_object_region"
+          ],
+          "predicate": "On",
+          "raw": "(On butter_1 floor_target_object_region)"
+        },
+        {
+          "args": [
+            "tomato_sauce_1",
+            "floor_other_object_region_0"
+          ],
+          "predicate": "On",
+          "raw": "(On tomato_sauce_1 floor_other_object_region_0)"
+        },
+        {
+          "args": [
+            "orange_juice_1",
+            "floor_other_object_region_1"
+          ],
+          "predicate": "On",
+          "raw": "(On orange_juice_1 floor_other_object_region_1)"
+        },
+        {
+          "args": [
+            "chocolate_pudding_1",
+            "floor_other_object_region_2"
+          ],
+          "predicate": "On",
+          "raw": "(On chocolate_pudding_1 floor_other_object_region_2)"
+        },
+        {
+          "args": [
+            "bbq_sauce_1",
+            "floor_other_object_region_3"
+          ],
+          "predicate": "On",
+          "raw": "(On bbq_sauce_1 floor_other_object_region_3)"
+        },
+        {
+          "args": [
+            "ketchup_1",
+            "floor_other_object_region_4"
+          ],
+          "predicate": "On",
+          "raw": "(On ketchup_1 floor_other_object_region_4)"
+        },
+        {
+          "args": [
+            "basket_1",
+            "floor_bin_region"
+          ],
+          "predicate": "On",
+          "raw": "(On basket_1 floor_bin_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "butter_1",
+          "type": "butter"
+        },
+        {
+          "name": "basket_1",
+          "type": "basket"
+        },
+        {
+          "name": "tomato_sauce_1",
+          "type": "tomato_sauce"
+        },
+        {
+          "name": "orange_juice_1",
+          "type": "orange_juice"
+        },
+        {
+          "name": "chocolate_pudding_1",
+          "type": "chocolate_pudding"
+        },
+        {
+          "name": "bbq_sauce_1",
+          "type": "bbq_sauce"
+        },
+        {
+          "name": "ketchup_1",
+          "type": "ketchup"
+        }
+      ],
+      "objects_of_interest": [
+        "butter_1",
+        "basket_1"
+      ]
+    }
+  },
+  {
+    "bddl_file": "pick_up_the_milk_and_place_it_in_the_basket.bddl",
+    "bddl_path": "libero_object/pick_up_the_milk_and_place_it_in_the_basket.bddl",
+    "benchmark": "LIBERO",
+    "language": "pick up the milk and place it in the basket",
+    "problem_folder": "libero_object",
+    "request_id": "libero_object:7",
+    "suite": "libero_object",
+    "target": {
+      "compound_goal": "(In milk_1 basket_1_contain_region)",
+      "goal_predicates": [
+        {
+          "args": [
+            "milk_1",
+            "basket_1_contain_region"
+          ],
+          "predicate": "In",
+          "raw": "(In milk_1 basket_1_contain_region)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "basket_1",
+          "goal": "(In milk_1 basket_1_contain_region)",
+          "object": "milk_1",
+          "op": "place_in",
+          "target": "basket_1_contain_region"
+        }
+      ]
+    },
+    "task_id": 7,
+    "task_name": "pick_up_the_milk_and_place_it_in_the_basket",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "floor",
+          "type": "floor"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "milk_1",
+            "floor_target_object_region"
+          ],
+          "predicate": "On",
+          "raw": "(On milk_1 floor_target_object_region)"
+        },
+        {
+          "args": [
+            "cream_cheese_1",
+            "floor_other_object_region_0"
+          ],
+          "predicate": "On",
+          "raw": "(On cream_cheese_1 floor_other_object_region_0)"
+        },
+        {
+          "args": [
+            "tomato_sauce_1",
+            "floor_other_object_region_1"
+          ],
+          "predicate": "On",
+          "raw": "(On tomato_sauce_1 floor_other_object_region_1)"
+        },
+        {
+          "args": [
+            "butter_1",
+            "floor_other_object_region_2"
+          ],
+          "predicate": "On",
+          "raw": "(On butter_1 floor_other_object_region_2)"
+        },
+        {
+          "args": [
+            "orange_juice_1",
+            "floor_other_object_region_3"
+          ],
+          "predicate": "On",
+          "raw": "(On orange_juice_1 floor_other_object_region_3)"
+        },
+        {
+          "args": [
+            "chocolate_pudding_1",
+            "floor_other_object_region_4"
+          ],
+          "predicate": "On",
+          "raw": "(On chocolate_pudding_1 floor_other_object_region_4)"
+        },
+        {
+          "args": [
+            "basket_1",
+            "floor_bin_region"
+          ],
+          "predicate": "On",
+          "raw": "(On basket_1 floor_bin_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "milk_1",
+          "type": "milk"
+        },
+        {
+          "name": "basket_1",
+          "type": "basket"
+        },
+        {
+          "name": "cream_cheese_1",
+          "type": "cream_cheese"
+        },
+        {
+          "name": "tomato_sauce_1",
+          "type": "tomato_sauce"
+        },
+        {
+          "name": "butter_1",
+          "type": "butter"
+        },
+        {
+          "name": "orange_juice_1",
+          "type": "orange_juice"
+        },
+        {
+          "name": "chocolate_pudding_1",
+          "type": "chocolate_pudding"
+        }
+      ],
+      "objects_of_interest": [
+        "milk_1",
+        "basket_1"
+      ]
+    }
+  },
+  {
+    "bddl_file": "pick_up_the_chocolate_pudding_and_place_it_in_the_basket.bddl",
+    "bddl_path": "libero_object/pick_up_the_chocolate_pudding_and_place_it_in_the_basket.bddl",
+    "benchmark": "LIBERO",
+    "language": "pick up the chocolate pudding and place it in the basket",
+    "problem_folder": "libero_object",
+    "request_id": "libero_object:8",
+    "suite": "libero_object",
+    "target": {
+      "compound_goal": "(In chocolate_pudding_1 basket_1_contain_region)",
+      "goal_predicates": [
+        {
+          "args": [
+            "chocolate_pudding_1",
+            "basket_1_contain_region"
+          ],
+          "predicate": "In",
+          "raw": "(In chocolate_pudding_1 basket_1_contain_region)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "basket_1",
+          "goal": "(In chocolate_pudding_1 basket_1_contain_region)",
+          "object": "chocolate_pudding_1",
+          "op": "place_in",
+          "target": "basket_1_contain_region"
+        }
+      ]
+    },
+    "task_id": 8,
+    "task_name": "pick_up_the_chocolate_pudding_and_place_it_in_the_basket",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "floor",
+          "type": "floor"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "chocolate_pudding_1",
+            "floor_target_object_region"
+          ],
+          "predicate": "On",
+          "raw": "(On chocolate_pudding_1 floor_target_object_region)"
+        },
+        {
+          "args": [
+            "orange_juice_1",
+            "floor_other_object_region_0"
+          ],
+          "predicate": "On",
+          "raw": "(On orange_juice_1 floor_other_object_region_0)"
+        },
+        {
+          "args": [
+            "bbq_sauce_1",
+            "floor_other_object_region_1"
+          ],
+          "predicate": "On",
+          "raw": "(On bbq_sauce_1 floor_other_object_region_1)"
+        },
+        {
+          "args": [
+            "ketchup_1",
+            "floor_other_object_region_2"
+          ],
+          "predicate": "On",
+          "raw": "(On ketchup_1 floor_other_object_region_2)"
+        },
+        {
+          "args": [
+            "salad_dressing_1",
+            "floor_other_object_region_3"
+          ],
+          "predicate": "On",
+          "raw": "(On salad_dressing_1 floor_other_object_region_3)"
+        },
+        {
+          "args": [
+            "alphabet_soup_1",
+            "floor_other_object_region_4"
+          ],
+          "predicate": "On",
+          "raw": "(On alphabet_soup_1 floor_other_object_region_4)"
+        },
+        {
+          "args": [
+            "basket_1",
+            "floor_bin_region"
+          ],
+          "predicate": "On",
+          "raw": "(On basket_1 floor_bin_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "chocolate_pudding_1",
+          "type": "chocolate_pudding"
+        },
+        {
+          "name": "basket_1",
+          "type": "basket"
+        },
+        {
+          "name": "orange_juice_1",
+          "type": "orange_juice"
+        },
+        {
+          "name": "bbq_sauce_1",
+          "type": "bbq_sauce"
+        },
+        {
+          "name": "ketchup_1",
+          "type": "ketchup"
+        },
+        {
+          "name": "salad_dressing_1",
+          "type": "salad_dressing"
+        },
+        {
+          "name": "alphabet_soup_1",
+          "type": "alphabet_soup"
+        }
+      ],
+      "objects_of_interest": [
+        "chocolate_pudding_1",
+        "basket_1"
+      ]
+    }
+  },
+  {
+    "bddl_file": "pick_up_the_orange_juice_and_place_it_in_the_basket.bddl",
+    "bddl_path": "libero_object/pick_up_the_orange_juice_and_place_it_in_the_basket.bddl",
+    "benchmark": "LIBERO",
+    "language": "pick up the orange juice and place it in the basket",
+    "problem_folder": "libero_object",
+    "request_id": "libero_object:9",
+    "suite": "libero_object",
+    "target": {
+      "compound_goal": "(In orange_juice_1 basket_1_contain_region)",
+      "goal_predicates": [
+        {
+          "args": [
+            "orange_juice_1",
+            "basket_1_contain_region"
+          ],
+          "predicate": "In",
+          "raw": "(In orange_juice_1 basket_1_contain_region)"
+        }
+      ],
+      "normalized_primitives": [
+        {
+          "display_target": "basket_1",
+          "goal": "(In orange_juice_1 basket_1_contain_region)",
+          "object": "orange_juice_1",
+          "op": "place_in",
+          "target": "basket_1_contain_region"
+        }
+      ]
+    },
+    "task_id": 9,
+    "task_name": "pick_up_the_orange_juice_and_place_it_in_the_basket",
+    "world_state": {
+      "fixtures": [
+        {
+          "name": "floor",
+          "type": "floor"
+        }
+      ],
+      "init_predicates": [
+        {
+          "args": [
+            "orange_juice_1",
+            "floor_target_object_region"
+          ],
+          "predicate": "On",
+          "raw": "(On orange_juice_1 floor_target_object_region)"
+        },
+        {
+          "args": [
+            "butter_1",
+            "floor_other_object_region_0"
+          ],
+          "predicate": "On",
+          "raw": "(On butter_1 floor_other_object_region_0)"
+        },
+        {
+          "args": [
+            "chocolate_pudding_1",
+            "floor_other_object_region_1"
+          ],
+          "predicate": "On",
+          "raw": "(On chocolate_pudding_1 floor_other_object_region_1)"
+        },
+        {
+          "args": [
+            "bbq_sauce_1",
+            "floor_other_object_region_2"
+          ],
+          "predicate": "On",
+          "raw": "(On bbq_sauce_1 floor_other_object_region_2)"
+        },
+        {
+          "args": [
+            "ketchup_1",
+            "floor_other_object_region_3"
+          ],
+          "predicate": "On",
+          "raw": "(On ketchup_1 floor_other_object_region_3)"
+        },
+        {
+          "args": [
+            "salad_dressing_1",
+            "floor_other_object_region_4"
+          ],
+          "predicate": "On",
+          "raw": "(On salad_dressing_1 floor_other_object_region_4)"
+        },
+        {
+          "args": [
+            "basket_1",
+            "floor_bin_region"
+          ],
+          "predicate": "On",
+          "raw": "(On basket_1 floor_bin_region)"
+        }
+      ],
+      "objects": [
+        {
+          "name": "orange_juice_1",
+          "type": "orange_juice"
+        },
+        {
+          "name": "basket_1",
+          "type": "basket"
+        },
+        {
+          "name": "butter_1",
+          "type": "butter"
+        },
+        {
+          "name": "chocolate_pudding_1",
+          "type": "chocolate_pudding"
+        },
+        {
+          "name": "bbq_sauce_1",
+          "type": "bbq_sauce"
+        },
+        {
+          "name": "ketchup_1",
+          "type": "ketchup"
+        },
+        {
+          "name": "salad_dressing_1",
+          "type": "salad_dressing"
+        }
+      ],
+      "objects_of_interest": [
+        "orange_juice_1",
+        "basket_1"
+      ]
+    }
+  }
+]

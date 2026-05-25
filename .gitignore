@@ -3,7 +3,10 @@ __pycache__/
 .DS_Store
 swanlog/
 artifact/data/runtime/
+artifact/data/results/
 outputs/
+runs/
+.openvla_pydeps/
 logs/
 *.log
 *.out
@@ -12,3 +15,13 @@ logs/
 *.ckpt
 checkpoint*/
 checkpoints/
+analysis/*.csv
+analysis/*.tex
+analysis/*.pdf
+analysis/*.png
+analysis/*.svg
+analysis/*_latest.md
+analysis/*_summary.md
+analysis/final_paper_update_packet.md
+*.gif
+*.mp4

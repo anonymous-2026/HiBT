@@ -1,0 +1,76 @@
+# =============================================================================
+# Planner builder configuration - held-out v3 split (LLaMA-3-8B)
+# =============================================================================
+
+data:
+  data_name: planlocal
+  data_path: artifact/data/datasets/plan_predictor_v3
+  split: train
+  shuffle: true
+  drop_last: false
+
+environment:
+  dotenv_path: .env
+  seed: 42
+  dataloader_num_workers: 0
+  device_map:
+    model:
+      device: auto
+      priority: 1
+
+model:
+  reason_model:
+    reason_model_name: ${BT_MODEL:-meta-llama/Meta-Llama-3-8B-Instruct}
+    reason_model_num_layers: -1
+    trust_remote_code: true
+    torch_dtype: bfloat16
+  pyramid:
+    num_levels: 4
+    level_lengths: [1, 4, 5, 5]
+    hidden_dim: 4096
+    num_heads: 16
+    max_seq_len: 4096
+  builder:
+    use_positional_query_init: true
+    positional_init_alpha: 0.5
+
+training:
+  batch_size: 2
+  num_epochs: 1
+  learning_rate: 0.0001
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  gradient_clip: 1.0
+
+  reason_model:
+    freeze: true
+    lora: null
+
+  loss_weights:
+    reasoning_loss_weight: 0.5
+    ordering_loss_weight: 0.5
+    recon_loss_weight: 0.1
+    ordering_margin: 1.0
+    residual_loss_weight: 1.0
+  ordering_loss_type: margin
+
+log:
+  save_folder: EXPERIMENT/planner/builder/Planner_LLaMA-3-8B_4level_v3_heldout
+  checkpoint_path: EXPERIMENT/planner/builder/Planner_LLaMA-3-8B_4level_v3_heldout/checkpoints
+  log_path: EXPERIMENT/planner/builder/Planner_LLaMA-3-8B_4level_v3_heldout/logs
+  log_level: INFO
+  log_step_interval: 1
+  checkpoint_step_interval: 100
+  checkpoint_clean: true
+
+evaluation:
+  eval_step_interval: 5
+  mode: teacher_forced
+  generation_max_tokens: 128
+  intermediate_vector_save: 0
+  data:
+    data_name: planlocal
+    data_path: artifact/data/datasets/plan_predictor_v3
+    split: eval
+    log_num_samples: 2
+    eval_num_samples: 1.0

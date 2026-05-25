@@ -5,11 +5,21 @@ REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")"/.. && pwd)"
 cd "$REPO_ROOT"
 
 SPLIT="v3"
-STORAGE_ROOT="${STORAGE_ROOT:-$REPO_ROOT/artifact/data/runtime/repro_concept}"
 MODEL_PATH="${BT_MODEL:-Qwen/Qwen3-8B}"
 DEVICE="${DEVICE:-cuda:0}"
 TRAIN_RATIO="${TRAIN_RATIO:-0.8}"
-PYTHON_BIN="${PYTHON_BIN:-python3}"
+
+slugify_model() {
+  local raw="$1"
+  local base
+  base="$(basename "$raw")"
+  base="$(printf '%s' "$base" | tr '[:upper:]' '[:lower:]')"
+  base="${base%-instruct}"
+  base="${base%-chat}"
+  base="${base//./_}"
+  base="$(printf '%s' "$base" | sed -E 's/[^a-z0-9]+/_/g; s/^_+//; s/_+$//; s/_+/_/g')"
+  printf '%s' "$base"
+}
 
 usage() {
   cat <<'EOF'
@@ -62,6 +72,8 @@ while [[ $# -gt 0 ]]; do
 done
 
 export BT_MODEL="$MODEL_PATH"
+MODEL_TAG="${MODEL_TAG:-$(slugify_model "$BT_MODEL")}"
+STORAGE_ROOT="${STORAGE_ROOT:-$REPO_ROOT/artifact/data/runtime/planner_${MODEL_TAG}}"
 
 case "$SPLIT" in
   v2)
@@ -71,7 +83,7 @@ case "$SPLIT" in
     SPLIT_SPEC=""
     BUILDER_CONFIG="artifact/configs/planner/train_builder_Qwen3-8B_planlocal_4level_v2_smoke.yml"
     PREDICTOR_CONFIG="artifact/configs/planner/train_predictor_Qwen3-8B_planlocal_4level_shared_v2_smoke.yml"
-    PLAN_BANK="artifact/data/pyramids/plan_bank_v2.pt"
+    PLAN_BANK="artifact/data/pyramids/plan_bank_${MODEL_TAG}_v2.pt"
     BANK_SOURCE_JSONL="${DATASET_DIR}/all.jsonl"
     ;;
   v3)
@@ -81,7 +93,7 @@ case "$SPLIT" in
     SPLIT_SPEC="artifact/data/datasets/plan_predictor_v3_split.json"
     BUILDER_CONFIG="artifact/configs/planner/train_builder_Qwen3-8B_planlocal_4level_v3_heldout.yml"
     PREDICTOR_CONFIG="artifact/configs/planner/train_predictor_Qwen3-8B_planlocal_4level_shared_v3_heldout.yml"
-    PLAN_BANK="artifact/data/pyramids/plan_bank_v3.pt"
+    PLAN_BANK="artifact/data/pyramids/plan_bank_${MODEL_TAG}_v3.pt"
     BANK_SOURCE_JSONL="${DATASET_DIR}/train.jsonl"
     ;;
   *)
@@ -92,12 +104,13 @@ esac
 
 echo "[INFO] repo_root      = $REPO_ROOT"
 echo "[INFO] split          = $SPLIT"
+echo "[INFO] model_tag      = $MODEL_TAG"
 echo "[INFO] storage_root   = $STORAGE_ROOT"
 echo "[INFO] model          = $BT_MODEL"
 echo "[INFO] device         = $DEVICE"
 
 DATASET_EXPORT_CMD=(
-  "$PYTHON_BIN" artifact/planning/export_plan_dataset.py
+  python artifact/planning/export_plan_dataset.py
   --input "$EXAMPLES_JSON"
   --output-dir "$DATASET_DIR"
   --dataset-name "$DATASET_NAME"
@@ -111,11 +124,11 @@ echo "[STEP 1/4] Export predictor dataset"
 "${DATASET_EXPORT_CMD[@]}"
 
 echo "[STEP 2/4] Train builder"
-"$PYTHON_BIN" planner/train_builder.py \
+python planner/train_builder.py \
   -c "$BUILDER_CONFIG" \
   -s "$STORAGE_ROOT"
 
-BUILDER_CKPT="$("$PYTHON_BIN" - <<'PY' "$STORAGE_ROOT" "$BUILDER_CONFIG"
+BUILDER_CKPT="$(python - <<'PY' "$STORAGE_ROOT" "$BUILDER_CONFIG"
 from pathlib import Path
 import sys
 from planner.config_io import load_config, apply_storage_root
@@ -146,7 +159,7 @@ PY
 echo "[INFO] builder_ckpt   = $BUILDER_CKPT"
 
 echo "[STEP 3/4] Build prototype bank"
-"$PYTHON_BIN" artifact/planning/build_plan_bank.py \
+python artifact/planning/build_plan_bank.py \
   --builder-config "$BUILDER_CONFIG" \
   --builder-checkpoint "$BUILDER_CKPT" \
   --dataset-jsonl "$BANK_SOURCE_JSONL" \
@@ -154,11 +167,11 @@ echo "[STEP 3/4] Build prototype bank"
   --device "$DEVICE"
 
 echo "[STEP 4/4] Train predictor"
-"$PYTHON_BIN" planner/train_predictor.py \
+python planner/train_predictor.py \
   -c "$PREDICTOR_CONFIG" \
   -s "$STORAGE_ROOT"
 
-PREDICTOR_CKPT="$("$PYTHON_BIN" - <<'PY' "$STORAGE_ROOT" "$PREDICTOR_CONFIG"
+PREDICTOR_CKPT="$(python - <<'PY' "$STORAGE_ROOT" "$PREDICTOR_CONFIG"
 from pathlib import Path
 import sys
 from planner.config_io import load_config, apply_storage_root
@@ -193,7 +206,7 @@ cat <<EOF
 [DONE] Concept training assets are ready.
 
 Use them with:
-$PYTHON_BIN scripts/run_eval.py \\
+python scripts/run_eval.py \\
   --backend concept \\
   --requests-file artifact/data/requests/full_request_single.json \\
   --device ${DEVICE} \\

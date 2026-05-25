@@ -162,7 +162,11 @@ def export_dataset(
         test_records = [records_by_id[item] for item in test_ids if item in records_by_id]
         records = ordered_pool + test_records
         manifest_extra = {
-            "split_spec": str(split_spec_path),
+            "split_spec": (
+                str(split_spec_path.relative_to(THIS_DIR.parent.parent))
+                if split_spec_path.is_relative_to(THIS_DIR.parent.parent)
+                else str(split_spec_path)
+            ),
             "test_count": len(test_records),
             "splits": {
                 "train": [record["main_id"] for record in train_records],

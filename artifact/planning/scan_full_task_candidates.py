@@ -13,7 +13,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
-from build_test_requests_50 import _complexity_bucket, _domain_from_sample_id
+from build_artifact_request_pool import _complexity_bucket, _domain_from_sample_id
 
 
 THIS_DIR = Path(__file__).resolve().parent
@@ -85,7 +85,7 @@ def build_report() -> dict[str, Any]:
             "Full-task-only candidate scan derived from plan_examples_v2.json. "
             "Difficulty labels are recomputed with the current artifact rules."
         ),
-        "input_examples": str(PYRAMID_INPUT),
+        "input_examples": "artifact/data/pyramids/plan_examples_v2.json",
         "full_task_count": len(records),
         "counts": {
             "by_domain": {domain: by_domain.get(domain, 0) for domain in DOMAINS},

@@ -1,7 +1,7 @@
 {
   "description": "Strict held-out test split built from full-task-only plan examples. The selected sample IDs should be excluded from predictor training, prototype-bank construction, and decoder/repair tuning.",
   "input_examples": "artifact/data/pyramids/plan_examples_v2.json",
-  "input_requests": "artifact/data/requests/test_requests_50.json",
+  "input_requests": "artifact/data/requests/artifact_request_pool.json",
   "selection_policy": {
     "full_task_only": true,
     "best_effort_balanced_matrix": {

@@ -1,0 +1,217 @@
+{
+  "created_at": "2026-05-25T06:09:45+08:00",
+  "status": "scaffold_only",
+  "suite_name": "libero_hier10",
+  "tasks": [
+    {
+      "bddl_status": "todo",
+      "constraint_fields": [
+        "final_goal_success",
+        "constraint_success",
+        "strict_success"
+      ],
+      "id": 0,
+      "key_test": "subgoal decomposition",
+      "language": "put alphabet soup and tomato sauce in basket",
+      "recommended_methods": [
+        "flat_vla",
+        "actionseq_vla",
+        "hibt_vla",
+        "hibt_vla_no_stable",
+        "manual_subgoal_vla"
+      ],
+      "source_suite_hint": "libero_10",
+      "source_task_hint": 0,
+      "type": "multi_object"
+    },
+    {
+      "bddl_status": "todo",
+      "constraint_fields": [
+        "final_goal_success",
+        "constraint_success",
+        "strict_success"
+      ],
+      "id": 1,
+      "key_test": "wrong-object / distractor",
+      "language": "put soup and tomato sauce in basket while ignoring ketchup",
+      "recommended_methods": [
+        "flat_vla",
+        "actionseq_vla",
+        "hibt_vla",
+        "hibt_vla_no_stable",
+        "manual_subgoal_vla"
+      ],
+      "source_suite_hint": "libero_90",
+      "source_task_hint": "LIVING_ROOM_SCENE1/2 basket tasks",
+      "type": "distractor_aware"
+    },
+    {
+      "bddl_status": "todo",
+      "constraint_fields": [
+        "final_goal_success",
+        "constraint_success",
+        "strict_success"
+      ],
+      "id": 2,
+      "key_test": "open/close stable state",
+      "language": "put black bowl in bottom drawer and close it",
+      "recommended_methods": [
+        "flat_vla",
+        "actionseq_vla",
+        "hibt_vla",
+        "hibt_vla_no_stable",
+        "manual_subgoal_vla"
+      ],
+      "source_suite_hint": "libero_10",
+      "source_task_hint": 3,
+      "type": "articulated"
+    },
+    {
+      "bddl_status": "todo",
+      "constraint_fields": [
+        "final_goal_success",
+        "constraint_success",
+        "strict_success"
+      ],
+      "id": 3,
+      "key_test": "cross-receptacle planning",
+      "language": "put bowl in drawer and close it, then place wine bottle on rack",
+      "recommended_methods": [
+        "flat_vla",
+        "actionseq_vla",
+        "hibt_vla",
+        "hibt_vla_no_stable",
+        "manual_subgoal_vla"
+      ],
+      "source_suite_hint": "libero_90",
+      "source_task_hint": "KITCHEN_SCENE4 drawer/rack tasks",
+      "type": "multi_stage"
+    },
+    {
+      "bddl_status": "todo",
+      "constraint_fields": [
+        "final_goal_success",
+        "constraint_success",
+        "strict_success"
+      ],
+      "id": 4,
+      "key_test": "state + placement",
+      "language": "turn on stove and put moka pot on it",
+      "recommended_methods": [
+        "flat_vla",
+        "actionseq_vla",
+        "hibt_vla",
+        "hibt_vla_no_stable",
+        "manual_subgoal_vla"
+      ],
+      "source_suite_hint": "libero_10",
+      "source_task_hint": 2,
+      "type": "stove_state"
+    },
+    {
+      "bddl_status": "todo",
+      "constraint_fields": [
+        "final_goal_success",
+        "constraint_success",
+        "strict_success"
+      ],
+      "id": 5,
+      "key_test": "articulated closure",
+      "language": "put mug in microwave and close it",
+      "recommended_methods": [
+        "flat_vla",
+        "actionseq_vla",
+        "hibt_vla",
+        "hibt_vla_no_stable",
+        "manual_subgoal_vla"
+      ],
+      "source_suite_hint": "libero_10",
+      "source_task_hint": 9,
+      "type": "microwave_state"
+    },
+    {
+      "bddl_status": "todo",
+      "constraint_fields": [
+        "final_goal_success",
+        "constraint_success",
+        "strict_success"
+      ],
+      "id": 6,
+      "key_test": "spatial binding/order",
+      "language": "put white mug on left plate and yellow-white mug on right plate",
+      "recommended_methods": [
+        "flat_vla",
+        "actionseq_vla",
+        "hibt_vla",
+        "hibt_vla_no_stable",
+        "manual_subgoal_vla"
+      ],
+      "source_suite_hint": "libero_10",
+      "source_task_hint": 4,
+      "type": "two_plates"
+    },
+    {
+      "bddl_status": "todo",
+      "constraint_fields": [
+        "final_goal_success",
+        "constraint_success",
+        "strict_success"
+      ],
+      "id": 7,
+      "key_test": "compositional manipulation",
+      "language": "stack bowls then place in tray",
+      "recommended_methods": [
+        "flat_vla",
+        "actionseq_vla",
+        "hibt_vla",
+        "hibt_vla_no_stable",
+        "manual_subgoal_vla"
+      ],
+      "source_suite_hint": "libero_90",
+      "source_task_hint": "LIVING_ROOM_SCENE4 stack bowl tasks",
+      "type": "stack_place"
+    },
+    {
+      "bddl_status": "todo",
+      "constraint_fields": [
+        "final_goal_success",
+        "constraint_success",
+        "strict_success"
+      ],
+      "id": 8,
+      "key_test": "target-region specificity",
+      "language": "place book in back compartment then mug right of caddy",
+      "recommended_methods": [
+        "flat_vla",
+        "actionseq_vla",
+        "hibt_vla",
+        "hibt_vla_no_stable",
+        "manual_subgoal_vla"
+      ],
+      "source_suite_hint": "libero_10/libero_90",
+      "source_task_hint": "STUDY_SCENE1/3 caddy tasks",
+      "type": "caddy_compartment"
+    },
+    {
+      "bddl_status": "todo",
+      "constraint_fields": [
+        "final_goal_success",
+        "constraint_success",
+        "strict_success"
+      ],
+      "id": 9,
+      "key_test": "strict success vs final success",
+      "language": "put target object in tray without moving distractor",
+      "recommended_methods": [
+        "flat_vla",
+        "actionseq_vla",
+        "hibt_vla",
+        "hibt_vla_no_stable",
+        "manual_subgoal_vla"
+      ],
+      "source_suite_hint": "libero_90",
+      "source_task_hint": "tray tasks with distractors",
+      "type": "constraint"
+    }
+  ]
+}

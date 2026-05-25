@@ -158,7 +158,7 @@ def parse_args() -> argparse.Namespace:
         default=str(
             ARTIFACT_DATA_DIR
             / "runtime"
-            / "planner_smoke"
+            / "planner"
             / "EXPERIMENT/planner/builder/Planner_Qwen3-8B_4level_smoke/checkpoints/checkpoint_best_eval-epoch0-step5.pt"
         ),
         help="Path to the Builder checkpoint.",
@@ -170,7 +170,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--output",
-        default=str(ARTIFACT_DATA_DIR / "pyramids" / "plan_bank_v1.pt"),
+        default=str(ARTIFACT_DATA_DIR / "pyramids" / "plan_bank_qwen3_8b_v1.pt"),
         help="Where to write the prototype bank (.pt).",
     )
     parser.add_argument(

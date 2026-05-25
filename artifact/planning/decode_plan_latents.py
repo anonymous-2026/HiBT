@@ -42,7 +42,7 @@ if str(ARTIFACT_EVAL_DIR) not in sys.path:
     sys.path.insert(0, str(ARTIFACT_EVAL_DIR))
 
 from compile_plan_to_bt import PyramidCompiler, run_sk_simulation
-from runtime.minimal_bt import ground_action
+from runtime.minimal_bt import WorldState, ground_action
 
 
 LOGGER = logging.getLogger("decode_plan_latents")
@@ -302,6 +302,70 @@ def _op_to_call(op: Any) -> str:
     return _call(op.property_name, args)
 
 
+def _get_bank_entry(bank: dict[str, Any], main_id: str) -> dict[str, Any]:
+    return next(entry for entry in bank["entries"] if entry["main_id"] == main_id)
+
+
+def _extract_template_action_names(entry: dict[str, Any]) -> list[str]:
+    return [
+        item["name"]
+        for item in entry.get("pyramid_json", [None, None, None, {"items": []}])[3].get(
+            "items", []
+        )
+        if isinstance(item, dict) and item.get("name")
+    ]
+
+
+def _extract_slot_action_names(slot_retrievals: list[dict[str, Any]]) -> list[str]:
+    for level_report in slot_retrievals:
+        if level_report.get("level") != 3:
+            continue
+        names: list[str] = []
+        for slot in level_report.get("slots", []):
+            topk = slot.get("topk") or []
+            if not topk:
+                continue
+            item = topk[0].get("item") or {}
+            name = item.get("name")
+            if isinstance(name, str) and name:
+                names.append(name)
+        return names
+    return []
+
+
+def _resolve_retrieved_action_hints(
+    template_action_names: list[str], slot_action_names: list[str]
+) -> list[str]:
+    support_actions = {"put_down", "change_tool", "unload_tool", "load_tool"}
+    if not template_action_names:
+        return list(slot_action_names)
+    resolved = list(template_action_names)
+    if not any(name in support_actions for name in resolved):
+        support_prefix: list[str] = []
+        for name in slot_action_names:
+            if name in support_actions and name not in support_prefix:
+                support_prefix.append(name)
+        if support_prefix:
+            return support_prefix + resolved
+    return resolved
+
+
+def _prefer_change_tool_from_hints(action_hints: list[str]) -> bool:
+    if "change_tool" not in action_hints:
+        return False
+    change_idx = action_hints.index("change_tool")
+    unload_idx = (
+        min(
+            idx
+            for idx, name in enumerate(action_hints)
+            if name in {"unload_tool", "load_tool"}
+        )
+        if any(name in {"unload_tool", "load_tool"} for name in action_hints)
+        else len(action_hints) + 1
+    )
+    return change_idx < unload_idx
+
+
 def _retrieve_template_scores(
     predicted_levels: list[torch.Tensor], bank: dict[str, Any]
 ) -> list[dict[str, Any]]:
@@ -326,6 +390,41 @@ def _retrieve_template_scores(
         )
     scored.sort(key=lambda item: item["mean_score"], reverse=True)
     return scored
+
+
+def _rerank_template_scores_for_target(
+    template_scores: list[dict[str, Any]], bank: dict[str, Any], target_call: str
+) -> list[dict[str, Any]]:
+    target_predicate, target_args = _parse_call(target_call)
+    target_argc = len(target_args)
+    reranked: list[dict[str, Any]] = []
+    for item in template_scores:
+        entry = _get_bank_entry(bank, item["main_id"])
+        entry_target = entry.get("target")
+        compatibility_bonus = 0.0
+        if isinstance(entry_target, str):
+            entry_predicate, entry_args = _parse_call(entry_target)
+            if entry_predicate == target_predicate:
+                compatibility_bonus += 2.0
+                if len(entry_args) == target_argc:
+                    compatibility_bonus += 0.2
+            action_names = _extract_template_action_names(entry)
+            terminal_action = GOAL_TO_ACTION.get(target_predicate)
+            if terminal_action and action_names and action_names[-1] == terminal_action:
+                compatibility_bonus += 0.5
+            if target_predicate == "hold" and any(
+                name in {"change_tool", "load_tool"} for name in action_names
+            ):
+                compatibility_bonus += 0.2
+        reranked.append(
+            {
+                **item,
+                "compatibility_bonus": compatibility_bonus,
+                "reranked_score": item["mean_score"] + compatibility_bonus,
+            }
+        )
+    reranked.sort(key=lambda entry: entry["reranked_score"], reverse=True)
+    return reranked
 
 
 def _build_slot_prototypes(
@@ -419,7 +518,11 @@ def _build_goal_only_pyramid(
 
 
 def _synthesize_action_sequence(
-    target_call: str, initial_state: dict[str, Any]
+    target_call: str,
+    initial_state: dict[str, Any],
+    prefer_change_tool: bool = False,
+    guided_action_hints: set[str] | None = None,
+    enforce_guided_support: bool = False,
 ) -> tuple[list[tuple[str, list[str]]], list[str]]:
     initial_state = _normalize_state_for_kios(initial_state)
 
@@ -428,6 +531,12 @@ def _synthesize_action_sequence(
 
     goal_predicate, goal_args = _parse_call(target_call)
     hand = _infer_hand(initial_state)
+    support_actions = {"put_down", "change_tool", "unload_tool", "load_tool"}
+
+    def _hinted(action_name: str) -> bool:
+        if not enforce_guided_support and action_name in support_actions:
+            return True
+        return guided_action_hints is None or action_name in guided_action_hints
 
     if goal_predicate == "hold" and len(goal_args) == 2:
         source, target = goal_args
@@ -442,28 +551,60 @@ def _synthesize_action_sequence(
         if source == hand and target in tool_names:
             if current_tool and current_tool != target:
                 if current_payload:
+                    if not prefer_change_tool and not _hinted("put_down"):
+                        return [], ["guided_missing_put_down_for_hold_goal"]
                     actions.append(("put_down", [hand, current_tool, current_payload]))
                     notes.append("put_down_current_tool_payload")
-                actions.append(("unload_tool", [hand, current_tool]))
-                notes.append("unload_wrong_tool")
+                if prefer_change_tool:
+                    if not _hinted("change_tool"):
+                        return [], ["guided_missing_change_tool_for_hold_goal"]
+                    actions.append(("change_tool", [hand, current_tool, target]))
+                    notes.append("change_wrong_tool")
+                else:
+                    if not _hinted("unload_tool"):
+                        return [], ["guided_missing_unload_tool_for_hold_goal"]
+                    actions.append(("unload_tool", [hand, current_tool]))
+                    notes.append("unload_wrong_tool")
             if current_tool != target:
-                actions.append(("load_tool", [hand, target]))
-                notes.append("load_required_tool_for_hold_goal")
+                if not (prefer_change_tool and current_tool and current_tool != target):
+                    if current_tool is not None and not _hinted("load_tool"):
+                        return [], ["guided_missing_load_tool_for_hold_goal"]
+                    actions.append(("load_tool", [hand, target]))
+                    notes.append("load_required_tool_for_hold_goal")
             return actions, notes or ["hold_goal_already_loaded"]
 
         if source in tool_names:
             required_tool = source
             if current_tool and current_tool != required_tool:
                 if current_payload:
+                    if not prefer_change_tool and not _hinted("put_down"):
+                        return [], ["guided_missing_put_down_for_pickup_goal"]
                     actions.append(("put_down", [hand, current_tool, current_payload]))
                     notes.append("put_down_current_tool_payload")
-                actions.append(("unload_tool", [hand, current_tool]))
-                notes.append("unload_wrong_tool")
+                if prefer_change_tool:
+                    if not _hinted("change_tool"):
+                        return [], ["guided_missing_change_tool_for_pickup_goal"]
+                    actions.append(("change_tool", [hand, current_tool, required_tool]))
+                    notes.append("change_wrong_tool")
+                else:
+                    if not _hinted("unload_tool"):
+                        return [], ["guided_missing_unload_tool_for_pickup_goal"]
+                    actions.append(("unload_tool", [hand, current_tool]))
+                    notes.append("unload_wrong_tool")
             if current_tool != required_tool:
-                actions.append(("load_tool", [hand, required_tool]))
-                notes.append("load_required_tool_for_pickup_goal")
+                if not (
+                    prefer_change_tool
+                    and current_tool
+                    and current_tool != required_tool
+                ):
+                    if current_tool is not None and not _hinted("load_tool"):
+                        return [], ["guided_missing_load_tool_for_pickup_goal"]
+                    actions.append(("load_tool", [hand, required_tool]))
+                    notes.append("load_required_tool_for_pickup_goal")
             held_part = _get_part_held_by_tool(initial_state, required_tool)
             if held_part and held_part != target:
+                if not _hinted("put_down"):
+                    return [], ["guided_missing_put_down_for_wrong_part"]
                 actions.append(("put_down", [hand, required_tool, held_part]))
                 notes.append("put_down_wrong_part_from_required_tool")
             if not _find_relation(initial_state, required_tool, "hold", target):
@@ -519,17 +660,31 @@ def _synthesize_action_sequence(
 
     if current_tool and current_tool != required_tool:
         if current_part:
+            if not prefer_change_tool and not _hinted("put_down"):
+                return [], ["guided_missing_put_down_for_tool_switch"]
             actions.append(("put_down", [hand, current_tool, current_part]))
             notes.append("put_down_current_tool_payload")
-        actions.append(("unload_tool", [hand, current_tool]))
-        notes.append("unload_wrong_tool")
-        actions.append(("load_tool", [hand, required_tool]))
-        notes.append("load_required_tool")
+        if prefer_change_tool:
+            if not _hinted("change_tool"):
+                return [], ["guided_missing_change_tool_for_tool_switch"]
+            actions.append(("change_tool", [hand, current_tool, required_tool]))
+            notes.append("change_wrong_tool")
+        else:
+            if not _hinted("unload_tool"):
+                return [], ["guided_missing_unload_tool_for_tool_switch"]
+            actions.append(("unload_tool", [hand, current_tool]))
+            notes.append("unload_wrong_tool")
+            if not _hinted("load_tool"):
+                return [], ["guided_missing_load_tool_for_tool_switch"]
+            actions.append(("load_tool", [hand, required_tool]))
+            notes.append("load_required_tool")
     elif current_tool is None:
         actions.append(("load_tool", [hand, required_tool]))
         notes.append("load_tool_from_empty_hand")
     elif current_tool == required_tool:
         if current_part and current_part != part:
+            if not _hinted("put_down"):
+                return [], ["guided_missing_put_down_for_wrong_part"]
             actions.append(("put_down", [hand, current_tool, current_part]))
             notes.append("put_down_wrong_part_from_required_tool")
         notes.append("required_tool_already_loaded")
@@ -543,12 +698,257 @@ def _synthesize_action_sequence(
     return actions, notes
 
 
+def _resolve_guided_goal_context(
+    state: dict[str, Any], target_call: str
+) -> dict[str, Any]:
+    goal_predicate, goal_args = _parse_call(target_call)
+    hand = _infer_hand(state)
+    current_tool = _get_current_tool(state, hand)
+    current_part = (
+        _get_part_held_by_tool(state, current_tool) if current_tool else None
+    )
+    tool_names = _tool_names(state)
+    required_tool = None
+    part = None
+
+    if goal_predicate == "hold" and len(goal_args) == 2:
+        source, target = goal_args
+        if source == hand and target in tool_names:
+            required_tool = target
+        elif source in tool_names:
+            required_tool = source
+            part = target
+    elif goal_predicate in GOAL_TO_ACTION and len(goal_args) == 2:
+        part = goal_args[0]
+        required_tool = _infer_tool_for_part(state, part)
+    elif goal_predicate in {"is_empty", "is_equippable"} and len(goal_args) == 1:
+        required_tool = goal_args[0]
+
+    return {
+        "hand": hand,
+        "current_tool": current_tool,
+        "current_part": current_part,
+        "required_tool": required_tool,
+        "part": part,
+    }
+
+
+def _guided_subgoal_from_action_hint(
+    action_name: str, target_call: str, current_state: dict[str, Any]
+) -> tuple[str | None, bool]:
+    context = _resolve_guided_goal_context(current_state, target_call)
+    hand = context["hand"]
+    current_tool = context["current_tool"]
+    current_part = context["current_part"]
+    required_tool = context["required_tool"]
+    part = context["part"]
+
+    if action_name == "put_down":
+        if current_tool and current_part:
+            return _call("is_empty", [current_tool]), False
+        return None, False
+    if action_name == "unload_tool":
+        if current_tool:
+            return _call("is_equippable", [current_tool]), False
+        return None, False
+    if action_name == "load_tool":
+        if required_tool:
+            return _call("hold", [hand, required_tool]), False
+        return None, False
+    if action_name == "change_tool":
+        if required_tool:
+            return _call("hold", [hand, required_tool]), True
+        return None, False
+    if action_name == "pick_up":
+        if required_tool and part:
+            return _call("hold", [required_tool, part]), False
+        return None, False
+    return None, False
+
+
+def _apply_action_sequence_to_state(
+    state: dict[str, Any], action_sequence: list[tuple[str, list[str]]]
+) -> dict[str, Any] | None:
+    world = WorldState(copy.deepcopy(state))
+    for action_name, action_args in action_sequence:
+        if not world.apply_action(action_name, action_args):
+            return None
+    return world.to_json()
+
+
+def _synthesize_terminal_closure(
+    target_call: str,
+    current_state: dict[str, Any],
+    prefer_change_tool: bool,
+    guided_action_hints: set[str] | None = None,
+    enforce_guided_support: bool = False,
+    weak_terminal_closure: bool = False,
+) -> tuple[list[tuple[str, list[str]]], list[str]]:
+    state = _normalize_state_for_kios(current_state)
+    if _is_call_satisfied(state, target_call):
+        return [], ["goal_already_satisfied_after_guidance"]
+
+    goal_predicate, goal_args = _parse_call(target_call)
+    if goal_predicate not in GOAL_TO_ACTION or len(goal_args) != 2:
+        return _synthesize_action_sequence(
+            target_call,
+            state,
+            prefer_change_tool=prefer_change_tool,
+            guided_action_hints=guided_action_hints,
+            enforce_guided_support=enforce_guided_support,
+        )
+
+    hand = _infer_hand(state)
+    part, target = goal_args
+    required_tool = _infer_tool_for_part(state, part)
+    if required_tool is None:
+        return [], [f"missing_tool_for_part:{part}"]
+
+    actions: list[tuple[str, list[str]]] = []
+    notes: list[str] = []
+
+    hold_tool_goal = _call("hold", [hand, required_tool])
+    if not _is_call_satisfied(state, hold_tool_goal):
+        if weak_terminal_closure:
+            return actions, notes + ["terminal_closure_skipped:hold_tool"]
+        segment, segment_notes = _synthesize_action_sequence(
+            hold_tool_goal,
+            state,
+            prefer_change_tool=prefer_change_tool,
+            guided_action_hints=guided_action_hints,
+            enforce_guided_support=enforce_guided_support,
+        )
+        next_state = _apply_action_sequence_to_state(state, segment)
+        if next_state is None:
+            return actions, notes + ["terminal_closure_failed:hold_tool"]
+        actions.extend(segment)
+        notes.extend(f"terminal_hold_tool:{note}" for note in segment_notes)
+        state = _normalize_state_for_kios(next_state)
+
+    hold_part_goal = _call("hold", [required_tool, part])
+    if not _is_call_satisfied(state, hold_part_goal):
+        if weak_terminal_closure:
+            return actions, notes + ["terminal_closure_skipped:hold_part"]
+        segment, segment_notes = _synthesize_action_sequence(
+            hold_part_goal,
+            state,
+            prefer_change_tool=prefer_change_tool,
+            guided_action_hints=guided_action_hints,
+            enforce_guided_support=enforce_guided_support,
+        )
+        next_state = _apply_action_sequence_to_state(state, segment)
+        if next_state is None:
+            return actions, notes + ["terminal_closure_failed:hold_part"]
+        actions.extend(segment)
+        notes.extend(f"terminal_hold_part:{note}" for note in segment_notes)
+        state = _normalize_state_for_kios(next_state)
+
+    final_action_name = GOAL_TO_ACTION[goal_predicate]
+    final_action_args = [hand, required_tool, part, target]
+    preconditions, _ = ground_action(final_action_name, final_action_args)
+    precondition_calls = [_op_to_call(op) for op in preconditions]
+    unsatisfied = [call for call in precondition_calls if not _is_call_satisfied(state, call)]
+    if unsatisfied:
+        return actions, notes + [
+            "terminal_closure_unsatisfied_preconditions:" + " | ".join(unsatisfied)
+        ]
+
+    actions.append((final_action_name, final_action_args))
+    notes.append("terminal_apply_final_goal_action")
+    return actions, notes
+
+
+def _synthesize_action_sequence_with_retrieval_guidance(
+    target_call: str,
+    initial_state: dict[str, Any],
+    retrieved_action_hints: list[str],
+    strict_guidance: bool = False,
+    weak_terminal_closure: bool = False,
+    disable_guided_prefix_closure: bool = False,
+) -> tuple[list[tuple[str, list[str]]], list[str], dict[str, Any]]:
+    current_state = _normalize_state_for_kios(initial_state)
+    if _is_call_satisfied(current_state, target_call):
+        return [], ["goal_already_satisfied"], {
+            "retrieved_action_hints": retrieved_action_hints,
+            "prefer_change_tool": False,
+        }
+
+    prefer_change_tool = _prefer_change_tool_from_hints(retrieved_action_hints)
+    goal_predicate, _ = _parse_call(target_call)
+    terminal_action = GOAL_TO_ACTION.get(goal_predicate)
+    prefix_hints = [
+        name for name in retrieved_action_hints if not terminal_action or name != terminal_action
+    ]
+
+    guided_actions: list[tuple[str, list[str]]] = []
+    repair_notes: list[str] = []
+    if retrieved_action_hints:
+        repair_notes.append(
+            "guided_action_hints:" + " -> ".join(retrieved_action_hints)
+        )
+
+    if disable_guided_prefix_closure and prefix_hints:
+        repair_notes.append("guided_prefix_closure_disabled")
+
+    for action_name in prefix_hints:
+        if disable_guided_prefix_closure:
+            repair_notes.append(f"guided_hint_skipped_by_config:{action_name}")
+            continue
+        subgoal_call, local_prefer_change = _guided_subgoal_from_action_hint(
+            action_name, target_call, current_state
+        )
+        if subgoal_call is None:
+            repair_notes.append(f"guided_hint_skipped:{action_name}")
+            continue
+        segment, segment_notes = _synthesize_action_sequence(
+            subgoal_call,
+            current_state,
+            prefer_change_tool=local_prefer_change or prefer_change_tool,
+            guided_action_hints=set(retrieved_action_hints) if strict_guidance else None,
+            enforce_guided_support=strict_guidance,
+        )
+        if not segment and not _is_call_satisfied(current_state, subgoal_call):
+            repair_notes.append(f"guided_hint_failed:{action_name}")
+            continue
+        next_state = _apply_action_sequence_to_state(current_state, segment)
+        if next_state is None:
+            repair_notes.append(f"guided_hint_unapplied:{action_name}")
+            continue
+        guided_actions.extend(segment)
+        current_state = _normalize_state_for_kios(next_state)
+        repair_notes.append(f"guided_hint_applied:{action_name}")
+        repair_notes.extend(f"guided:{note}" for note in segment_notes)
+
+    if retrieved_action_hints:
+        residual_actions, residual_notes = _synthesize_terminal_closure(
+            target_call,
+            current_state,
+            prefer_change_tool=prefer_change_tool,
+            guided_action_hints=set(retrieved_action_hints) if strict_guidance else None,
+            enforce_guided_support=strict_guidance,
+            weak_terminal_closure=weak_terminal_closure,
+        )
+    else:
+        residual_actions, residual_notes = _synthesize_action_sequence(
+            target_call,
+            current_state,
+            prefer_change_tool=prefer_change_tool,
+        )
+    guided_actions.extend(residual_actions)
+    repair_notes.extend(f"guided_final:{note}" for note in residual_notes)
+    return guided_actions, repair_notes, {
+        "retrieved_action_hints": retrieved_action_hints,
+        "prefer_change_tool": prefer_change_tool,
+    }
+
+
 def _build_pyramid_from_actions(
     target_call: str,
     initial_state: dict[str, Any],
     action_sequence: list[tuple[str, list[str]]],
     problem_id: str,
     stable_targets: bool = True,
+    repeated_tick_closure_boost: bool = True,
 ) -> dict[str, Any]:
     goal_predicate, goal_args = _parse_call(target_call)
     goal_item = {
@@ -565,8 +965,6 @@ def _build_pyramid_from_actions(
     achieved_calls_by_subgoal_id: dict[str, str] = {}
 
     def ensure_subgoal(call: str) -> str:
-        if call in subgoal_ids_by_call:
-            return subgoal_ids_by_call[call]
         sg_id = f"sg{len(subgoal_items) + 1}"
         predicate, args = _parse_call(call)
         item = {
@@ -609,7 +1007,7 @@ def _build_pyramid_from_actions(
         # - load_tool should depend on the prior unload_tool(...)->is_equippable(tool)
         # This preserves the repeated-tick semantics that the hand-labeled
         # examples already use.
-        if stable_targets:
+        if stable_targets and repeated_tick_closure_boost:
             if action_name == "unload_tool":
                 empty_tool_call = _call("is_empty", [action_args[1]])
                 sg_id = subgoal_ids_by_call.get(empty_tool_call)
@@ -689,9 +1087,19 @@ def decode_with_slot_retrieval_and_repair(
     top_k: int,
     enable_repair: bool = True,
     stable_targets: bool = True,
+    repeated_tick_closure_boost: bool = True,
+    strict_guidance: bool = False,
+    use_target_rerank: bool = True,
+    weak_terminal_closure: bool = False,
+    disable_guided_prefix_closure: bool = False,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     template_scores = _retrieve_template_scores(predicted_levels, bank)
+    if use_target_rerank and input_payload is not None and input_payload.get("target"):
+        template_scores = _rerank_template_scores_for_target(
+            template_scores, bank, input_payload["target"]
+        )
     best_template = template_scores[0]
+    best_entry = _get_bank_entry(bank, best_template["main_id"])
     selected_lengths = list(best_template["template_lengths"])
     target_main_id = input_payload.get("main_id") if input_payload else None
     prototypes = _build_slot_prototypes(bank, target_main_id=target_main_id)
@@ -701,11 +1109,16 @@ def decode_with_slot_retrieval_and_repair(
         level_lengths=selected_lengths,
         top_k=top_k,
     )
+    template_action_names = _extract_template_action_names(best_entry)
+    slot_action_names = _extract_slot_action_names(slot_retrievals)
+    if strict_guidance:
+        retrieved_action_hints = list(slot_action_names) or list(template_action_names)
+    else:
+        retrieved_action_hints = _resolve_retrieved_action_hints(
+            template_action_names, slot_action_names
+        )
 
     if input_payload is None or input_payload.get("target") is None:
-        best_entry = next(
-            entry for entry in bank["entries"] if entry["main_id"] == best_template["main_id"]
-        )
         decoded = {
             "schema_version": "plan-schema-v1",
             "domain": "assembly_planning",
@@ -731,9 +1144,6 @@ def decode_with_slot_retrieval_and_repair(
     problem_id = input_payload.get("main_id") or best_template["main_id"]
 
     if not enable_repair:
-        best_entry = next(
-            entry for entry in bank["entries"] if entry["main_id"] == best_template["main_id"]
-        )
         decoded = {
             "schema_version": "plan-schema-v1",
             "domain": "assembly_planning",
@@ -745,8 +1155,23 @@ def decode_with_slot_retrieval_and_repair(
             "pyramid": copy.deepcopy(best_entry["pyramid_json"]),
         }
         repair_notes = ["repair_disabled_template_passthrough"]
+        retrieval_guidance = {
+            "template_action_names": template_action_names,
+            "slot_action_names": slot_action_names,
+            "retrieved_action_hints": retrieved_action_hints,
+            "prefer_change_tool": None,
+        }
     else:
-        action_sequence, repair_notes = _synthesize_action_sequence(target_call, initial_state)
+        action_sequence, repair_notes, retrieval_guidance = (
+            _synthesize_action_sequence_with_retrieval_guidance(
+                target_call=target_call,
+                initial_state=initial_state,
+                retrieved_action_hints=retrieved_action_hints,
+                strict_guidance=strict_guidance,
+                weak_terminal_closure=weak_terminal_closure,
+                disable_guided_prefix_closure=disable_guided_prefix_closure,
+            )
+        )
         if not action_sequence and _is_call_satisfied(initial_state, target_call):
             decoded = _build_goal_only_pyramid(target_call, initial_state, problem_id)
         else:
@@ -756,6 +1181,7 @@ def decode_with_slot_retrieval_and_repair(
                 action_sequence=action_sequence,
                 problem_id=problem_id,
                 stable_targets=stable_targets,
+                repeated_tick_closure_boost=repeated_tick_closure_boost,
             )
 
     report = {
@@ -768,6 +1194,14 @@ def decode_with_slot_retrieval_and_repair(
         "target_from_input": target_call,
         "repair_enabled": enable_repair,
         "stable_targets_enabled": stable_targets,
+        "repeated_tick_closure_boost_enabled": repeated_tick_closure_boost,
+        "strict_guidance_enabled": strict_guidance,
+        "weak_terminal_closure_enabled": weak_terminal_closure,
+        "guided_prefix_closure_disabled": disable_guided_prefix_closure,
+        "template_action_names": template_action_names,
+        "slot_action_names": slot_action_names,
+        "retrieved_action_hints": retrieved_action_hints,
+        "retrieval_guidance": retrieval_guidance,
     }
     return decoded, report
 
