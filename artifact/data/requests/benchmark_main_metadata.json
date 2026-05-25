@@ -30,5 +30,5 @@
     "gearset1_problem_016_subset",
     "lamp_problem_000_subset"
   ],
-  "augmentation_note": "The 10 added samples are embedded directly in test_requests_60.json and are all classified as medium in the current benchmark release."
+  "augmentation_note": "The 10 added samples are embedded directly in benchmark_main.json and are all classified as medium in the current benchmark release."
 }

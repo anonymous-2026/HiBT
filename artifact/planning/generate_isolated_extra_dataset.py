@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Generate extra concept-training samples that stay disjoint from test60.
+"""Generate extra concept-training samples that stay disjoint from main_benchmark.
 
 The script expands only from seed problem families that are absent from both:
 
 - artifact/data/datasets/plan_predictor_v3/train.jsonl
-- artifact/data/requests/test_requests_60.json
+- artifact/data/requests/benchmark_main.json
 
 Each generated sample is:
 1. created from a programmatic world-state variant
@@ -22,6 +22,7 @@ from __future__ import annotations
 import argparse
 import copy
 import json
+import os
 import sys
 from dataclasses import dataclass
 from pathlib import Path
@@ -54,7 +55,7 @@ from planning.decode_plan_latents import (
 
 
 REPO_ROOT = ARTIFACT_ROOT.parent.parent
-KIOS_EXPERIMENTS = REPO_ROOT / "emnlp2026" / "kios" / "experiments"
+KIOS_EXPERIMENTS = Path(os.environ.get("KIOS_EXPERIMENTS_ROOT", REPO_ROOT / "external" / "kios" / "experiments"))
 
 
 @dataclass(frozen=True)
@@ -301,7 +302,7 @@ def _variant_specs_for_seed(seed: SeedSpec, target_call: str) -> list[VariantSpe
 def build_extra_records() -> tuple[list[dict[str, Any]], dict[str, Any]]:
     records: list[dict[str, Any]] = []
     report: dict[str, Any] = {
-        "generator_version": "test60-excluded-extra-v1",
+        "generator_version": "main_benchmark-excluded-extra-v1",
         "seed_families": [seed.sample_id for seed in SEEDS],
         "kept": [],
         "dropped": [],
@@ -362,7 +363,7 @@ def write_jsonl(path: Path, records: list[dict[str, Any]]) -> None:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Generate strict-isolation extra predictor rows outside current train/test60."
+        description="Generate strict-isolation extra predictor rows outside current train/main_benchmark."
     )
     parser.add_argument(
         "--output-jsonl",
@@ -370,7 +371,7 @@ def parse_args() -> argparse.Namespace:
             ARTIFACT_DATA_DIR
             / "datasets"
             / "plan_predictor_v3"
-            / "train_excl_test60_extra.jsonl"
+            / "train_excl_main_benchmark_extra.jsonl"
         ),
         help="Output JSONL path.",
     )
@@ -380,7 +381,7 @@ def parse_args() -> argparse.Namespace:
             ARTIFACT_DATA_DIR
             / "datasets"
             / "plan_predictor_v3"
-            / "train_excl_test60_extra_report.json"
+            / "train_excl_main_benchmark_extra_report.json"
         ),
         help="Output report JSON path.",
     )

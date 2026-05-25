@@ -3,7 +3,7 @@
 
 This script is a strict isolation wrapper around ``build_plan_bank.py``.
 It removes all dataset rows whose normalized base problem id overlaps with the
-normalized base problem ids found in a request file such as ``test_requests_60``.
+normalized base problem ids found in a benchmark request file.
 
 Normalization removes common derived-task suffixes including:
 
@@ -111,7 +111,7 @@ def build_report(
         }
     )
     return {
-        "report_version": "test60-bank-exclusion-v1",
+        "report_version": "main_benchmark-bank-exclusion-v1",
         "dataset_jsonl": str(dataset_jsonl),
         "requests_file": str(requests_file),
         "excluded_request_base_ids": sorted(excluded_base_ids),
@@ -145,7 +145,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--requests-file",
-        default=str(ARTIFACT_ROOT / "data" / "requests" / "test_requests_60.json"),
+        default=str(ARTIFACT_ROOT / "data" / "requests" / "benchmark_main.json"),
         help="Benchmark request file whose base problems should be excluded.",
     )
     parser.add_argument(

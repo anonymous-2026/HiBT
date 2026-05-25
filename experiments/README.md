@@ -15,10 +15,10 @@ folders, checkpoints, videos, GIFs, or local environment caches.
 
 The symbolic artifact benchmark inputs live under:
 
-- `artifact/data/requests/test_requests_60.json`
-- `artifact/data/requests/test_requests_60_metadata.json`
-- `artifact/data/requests/test_requests_heldout_full_12.json`
-- `artifact/data/requests/test_requests_heldout_full_12_metadata.json`
+- `artifact/data/requests/benchmark_main.json`
+- `artifact/data/requests/benchmark_main_metadata.json`
+- `artifact/data/requests/benchmark_heldout.json`
+- `artifact/data/requests/benchmark_heldout_metadata.json`
 - `artifact/data/requests/artifact_request_pool.json`
 
 ## Generated Outputs

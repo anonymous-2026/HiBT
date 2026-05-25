@@ -10,7 +10,9 @@
   </a>
   <img alt="Python" src="https://img.shields.io/badge/python-3.10%2B-3776ab">
   <img alt="Behavior Trees" src="https://img.shields.io/badge/output-behavior%20trees-2aa7b8">
-  <img alt="Repo size" src="https://img.shields.io/badge/repo-%3C50MB-2f9e8f">
+  <img alt="OpenVLA" src="https://img.shields.io/badge/VLA-OpenVLA--OFT-0f766e">
+  <img alt="Qwen" src="https://img.shields.io/badge/LLM-Qwen-2563eb">
+  <img alt="LIBERO" src="https://img.shields.io/badge/benchmark-LIBERO-0891b2">
   <img alt="License" src="https://img.shields.io/badge/license-see%20notices-lightgrey">
 </p>
 
@@ -39,8 +41,8 @@ deployment, motion planning, low-level control, or hardware-specific code.
   compilation
 - compact plan-pyramid schemas, examples, request files, and training data
 - configuration files for Builder/Predictor experiments
-- artifact benchmark request pools, including the 60-task split and held-out
-  12-task split used by the paper experiments
+- artifact benchmark request pools, including the main benchmark split and the
+  held-out benchmark split used by the paper experiments
 - reusable LIBERO planning-only and VLA rollout harnesses
 - quickstart scripts that write generated outputs outside Git
 
@@ -177,15 +179,15 @@ Check the main artifact inputs and optional checkpoint/model paths:
 bash scripts/check_setup.sh
 ```
 
-Run the 60-task planning benchmark with any supported backend:
+Run the main planning benchmark with any supported backend:
 
 ```bash
 python3 scripts/run_eval.py \
   --backend actionseq \
-  --requests-file artifact/data/requests/test_requests_60.json \
+  --requests-file artifact/data/requests/benchmark_main.json \
   --model "$BT_MODEL" \
-  --output-dir outputs/test60_actionseq \
-  --summary-output outputs/test60_actionseq_summary.json
+  --output-dir outputs/main_benchmark_actionseq \
+  --summary-output outputs/main_benchmark_actionseq_summary.json
 ```
 
 LIBERO planning-only and rollout harnesses are under `experiments/libero/`.

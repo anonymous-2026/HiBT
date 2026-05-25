@@ -23,8 +23,8 @@ ARTIFACT_ROOT = THIS_DIR.parent
 DATA_DIR = ARTIFACT_ROOT / "data"
 PYRAMID_INPUT = DATA_DIR / "pyramids" / "plan_examples_v2.json"
 REQUEST_INPUT = DATA_DIR / "requests" / "artifact_request_pool.json"
-REQUEST_OUTPUT = DATA_DIR / "requests" / "test_requests_heldout_full_12.json"
-META_OUTPUT = DATA_DIR / "requests" / "test_requests_heldout_full_12_metadata.json"
+REQUEST_OUTPUT = DATA_DIR / "requests" / "benchmark_heldout.json"
+META_OUTPUT = DATA_DIR / "requests" / "benchmark_heldout_metadata.json"
 SPLIT_OUTPUT = DATA_DIR / "datasets" / "plan_predictor_v3_split.json"
 
 

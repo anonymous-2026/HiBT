@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""Build a 50-instance held-out test request file from plan examples v2.
+"""Build a fixed artifact request pool from plan examples v2.
 
-The current artifact's validated candidate pool is exactly the 50 examples in
+The current artifact's validated candidate pool is exactly the validated examples in
 ``artifact/data/pyramids/plan_examples_v2.json``.  We therefore:
 
 1. enumerate all candidates,
 2. assign a complexity label to each candidate,
 3. compare the observed domain/difficulty distribution against an ideal target
    matrix, and
-4. export the full 50-instance pool as a fixed test request file.
+4. export the full validated pool as a fixed test request file.
 
 This keeps the test-set construction reproducible and makes the sampling
 limitation explicit in the report.
@@ -131,8 +131,8 @@ def build_test_requests(
 
     report = {
         "description": (
-            "Formal 50-instance test set derived from the validated plan example "
-            "pool. The artifact currently exposes exactly 50 usable candidates, "
+            "Formal artifact request pool derived from the validated plan example "
+            "pool. The artifact currently exposes the available validated candidates, "
             "so the final test set keeps all candidates and reports the resulting "
             "domain/difficulty distribution against the ideal target matrix."
         ),
