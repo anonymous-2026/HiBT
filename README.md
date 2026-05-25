@@ -13,7 +13,6 @@
   <img alt="OpenVLA" src="https://img.shields.io/badge/VLA-OpenVLA--OFT-0f766e">
   <img alt="Qwen" src="https://img.shields.io/badge/LLM-Qwen-2563eb">
   <img alt="LIBERO" src="https://img.shields.io/badge/benchmark-LIBERO-0891b2">
-  <img alt="License" src="https://img.shields.io/badge/license-see%20notices-lightgrey">
 </p>
 
 <p align="center">
