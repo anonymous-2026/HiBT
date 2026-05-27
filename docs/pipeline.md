@@ -12,8 +12,8 @@ HiBT consumes language-conditioned robot planning instances:
 ## Stage 1: Hierarchical Concept Prediction
 
 The inference-time Predictor maps the task instruction and symbolic state to a
-fixed-geometry latent concept pyramid. The final paper uses four concept levels
-with slot counts `(1, 4, 5, 5)`.
+fixed-geometry latent concept pyramid. HiBT uses four concept levels with slot
+counts `(1, 4, 5, 5)`.
 
 ## Stage 2: Prototype-Guided Interface Decoding
 

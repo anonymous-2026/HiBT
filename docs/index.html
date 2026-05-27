@@ -27,7 +27,7 @@
   <meta name="theme-color" content="#0f9fad">
   <meta name="msapplication-TileColor" content="#0f9fad">
 
-  <title>HiBT | Project Page</title>
+  <title>HiBT</title>
 
   <link rel="icon" type="image/svg+xml" href="hibt-icon.svg">
   <link rel="apple-touch-icon" href="hibt-icon.svg">
@@ -103,7 +103,7 @@
       <div class="container is-max-widescreen">
         <div class="columns is-centered">
           <div class="column is-five-sixths">
-            <h2 class="title is-3 has-text-left">Abstract</h2>
+            <h2 class="title is-3 has-text-left section-title">Abstract</h2>
             <div class="content">
               <p class="has-text-justified">
                 Long-horizon robotic assembly requires planners to reason over object relations, tool use, and ordered preconditions while producing executable control structures. However, most LLM-based planners rely on flat token-by-token generation, which does not explicitly capture the dependencies required for Behavior Tree (BT) synthesis. We propose HiBT, which formulates BT synthesis as hierarchical concept planning. HiBT predicts hierarchical concepts from the task goal and symbolic world state, induces a planning interface through prototype-guided matching, applies deterministic realization and dependency repair, and compiles the resulting symbolic plan into a BT. On a 60-instance language-conditioned assembly benchmark using four open-source LLM backbones, HiBT achieves 60/60 executability, logical coherence, and task success for each backbone, while reducing generation time to 0.35-0.45 seconds. In LIBERO rollouts, HiBT reaches 89.2% final-goal success on LIBERO-Long with shorter rollouts, and 72.3% strict success on the dependency-intensive LIBERO-Hier suite, outperforming flat-instruction and action-sequence guidance. These results show that a dependency-aware hierarchical interface supports both executable BT synthesis and long-horizon embodied execution.
@@ -148,7 +148,7 @@
                 <p class="caption-text"><span class="caption-label">Figure 1.</span> Overview. HiBT predicts a hierarchical concept interface from the task instruction and initial state, completes dependency-aware support conditions, and compiles the repaired plan into an executable Behavior Tree.</p>
               </div>
               <div class="column is-5">
-                <h2 class="title is-3 has-text-left">Hierarchical Concept Planning</h2>
+                <h2 class="title is-3 has-text-left section-title">Hierarchical Concept Planning</h2>
                 <div class="content">
                   <p class="has-text-justified">
                     HiBT separates high-level task reasoning from symbolic execution. A learned interface proposes task-compatible hierarchy, while deterministic realization closes tool, grasp, and ordering dependencies before BT compilation.
@@ -173,7 +173,7 @@
           <div class="column is-11">
             <div class="planning-artifact-layout">
               <div class="planning-copy">
-                <h2 class="title is-3 has-text-left">Planning Interface</h2>
+                <h2 class="title is-3 has-text-left section-title">Planning Interface</h2>
                 <div class="content">
                   <p class="has-text-justified">
                     The example shows how HiBT turns a language-conditioned assembly request into a structured interface before any Behavior Tree is emitted. The task goal and initial symbolic state are first mapped into a hierarchical concept pyramid, then decoded against a prototype bank to recover a task-compatible planning template and slot-level symbolic candidates.
@@ -182,7 +182,7 @@
                     The realized plan is not treated as a flat action list. HiBT records the target predicate, stable subgoals, grounded method nodes, and an auxiliary action sequence. Dependency closure checks each grounded action against the current state and inserts support actions when tool, grasp, or ordering preconditions are missing.
                   </p>
                   <p class="has-text-justified">
-                    The final compiler operates on repaired method nodes and stable subgoals, so the generated BT contains explicit condition checks and reusable support branches. This is the main distinction from direct BT generation and action-sequence-first planning: hierarchy and dependency closure are made explicit before compilation.
+                    The compiler operates on repaired method nodes and stable subgoals, so the generated BT contains explicit condition checks and reusable support branches. This is the main distinction from direct BT generation and action-sequence-first planning: hierarchy and dependency closure are made explicit before compilation.
                   </p>
                   <ul class="has-text-left planning-points">
                     <li><strong>Input:</strong> task language, symbolic initial state, target predicate, and action domain.</li>
@@ -196,7 +196,7 @@
                 <figure class="image paper-figure planning-figure">
                   <img class="paper-media" src="static/images/paper/example.png" alt="HiBT planning example" loading="lazy">
                 </figure>
-                <p class="caption-text"><span class="caption-label">Figure 2.</span> Example planning artifact from the final paper, shown at the original vertical aspect ratio.</p>
+                <p class="caption-text"><span class="caption-label">Figure 2.</span> Planning example showing the hierarchy, dependency closure, and compiled Behavior Tree structure.</p>
               </div>
             </div>
           </div>
@@ -208,7 +208,7 @@
       <div class="container is-max-widescreen">
         <div class="columns is-centered">
           <div class="column is-11">
-            <h2 class="title is-3 has-text-left">Results</h2>
+            <h2 class="title is-3 has-text-left section-title">Results</h2>
             <div class="content">
               <p class="has-text-justified">
                 HiBT is evaluated on symbolic robotic assembly and embodied LIBERO rollouts. The main evidence is that hierarchical concepts plus deterministic repair produce fully executable and logically coherent BTs across model backbones, while the same interface improves long-horizon VLA execution.
@@ -257,10 +257,10 @@
       <div class="container is-max-widescreen">
         <div class="columns is-centered">
           <div class="column is-11">
-            <h2 class="title is-3 has-text-left">Evidence Tables</h2>
+            <h2 class="title is-3 has-text-left section-title">Evidence Tables</h2>
             <div class="content">
               <p class="has-text-justified">
-                The tables below summarize the paper's core quantitative evidence: multi-backbone BT synthesis, difficulty scaling, realization ablations, interface perturbations, and embodied rollout transfer.
+                The tables below summarize the core quantitative evidence: multi-backbone BT synthesis, difficulty scaling, realization ablations, interface perturbations, and embodied rollout transfer.
               </p>
             </div>
 
@@ -448,7 +448,7 @@
       <div class="container is-max-widescreen">
         <div class="columns is-centered">
           <div class="column is-11">
-            <h2 class="title is-3 has-text-left">Qualitative Evidence</h2>
+            <h2 class="title is-3 has-text-left section-title">Qualitative Evidence</h2>
             <div class="content">
               <p class="has-text-justified">
                 Representative LIBERO rollout panels compare flat-instruction behavior with HiBT-guided execution on long-horizon manipulation tasks.
@@ -461,7 +461,7 @@
               </figure>
               <figure class="gallery-item qualitative-wide">
                 <img class="paper-media" src="static/images/paper/libero_task1_flat_process_2x6.png" alt="LIBERO flat-instruction process samples" loading="lazy">
-                <figcaption><span class="caption-label">Figure 6.</span> Additional rollout process samples from the paper's LIBERO evaluation suite.</figcaption>
+                <figcaption><span class="caption-label">Figure 6.</span> Additional LIBERO rollout process samples.</figcaption>
               </figure>
             </div>
           </div>
@@ -473,7 +473,7 @@
       <div class="container is-max-widescreen">
         <div class="columns is-centered">
           <div class="column is-five-sixths">
-            <h2 class="title is-3 has-text-left">BibTeX</h2>
+            <h2 class="title is-3 has-text-left section-title">BibTeX</h2>
             <pre class="bibtex-box"><code>@inproceedings{anonymous2026hibt,
   title     = {HiBT: From Hierarchical Concepts to Behavior Trees for Reliable Robot Task Planning},
   author    = {Anonymous Author(s)},
@@ -488,7 +488,7 @@
 
   <footer class="footer">
     <div class="content has-text-centered">
-      <p>HiBT project page. Anonymous preprint release.</p>
+      <p>HiBT: From Hierarchical Concepts to Behavior Trees for Reliable Robot Task Planning.</p>
     </div>
   </footer>
 </body>

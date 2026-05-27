@@ -1,9 +1,8 @@
-# HiBT Project Page
+# HiBT Website
 
-This directory contains the anonymous static project page for:
+This directory contains the static project website for:
 
 **HiBT: From Hierarchical Concepts to Behavior Trees for Reliable Robot Task Planning**
 
-The page is built from the final paper assets under `paper-new` and links to
-the anonymous GitHub repository, paper PDF, repository quickstart, and
-configuration notes.
+The page includes the project overview, paper PDF, key figures, quantitative
+tables, and anonymous code link.

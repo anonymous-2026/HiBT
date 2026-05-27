@@ -1,6 +1,6 @@
 # Website Figure Assets
 
-The project page uses rendered PNG copies of final paper figures:
+The project page uses these figure assets:
 
 - `static/images/paper/overview.png`
 - `static/images/paper/example.png`
@@ -13,5 +13,5 @@ The project page uses rendered PNG copies of final paper figures:
 - `static/images/paper/libero_task8_flat_vs_hibt_2x6.png`
 - `static/images/paper/libero_task1_flat_process_2x6.png`
 
-These assets are generated from `paper-new/figure/*.pdf` so the website tracks
-the final paper version.
+These assets support the method overview, planning-interface example, LIBERO
+rollout plots, and qualitative rollout panels shown on the website.
