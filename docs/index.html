@@ -260,7 +260,7 @@
             <h2 class="title is-3 has-text-left section-title">Evidence Tables</h2>
             <div class="content">
               <p class="has-text-justified">
-                The tables below summarize the core quantitative evidence: multi-backbone BT synthesis, difficulty scaling, realization ablations, interface perturbations, and embodied rollout transfer.
+                The tables below focus on the core evidence: multi-backbone BT synthesis, realization ablations, and VLA/LIBERO embodied rollout transfer.
               </p>
             </div>
 
@@ -291,33 +291,7 @@
             </article>
 
             <article class="table-card">
-              <h3><span class="caption-label">Table 2.</span> Difficulty-bucket results aggregated across all four backbones.</h3>
-              <p class="table-note">Each denominator equals the number of instances in the bucket multiplied by four.</p>
-              <div class="table-scroll">
-                <table class="paper-table">
-                  <thead>
-                    <tr><th>Bucket</th><th>Method</th><th>Exec</th><th>LC</th><th>SR</th><th>Time (s)</th></tr>
-                  </thead>
-                  <tbody>
-                    <tr><td>Easy</td><td>Direct BT</td><td>80/88</td><td>36/88</td><td>36/88</td><td>18.63</td></tr>
-                    <tr><td>Easy</td><td>ActionSeq</td><td>76/88</td><td>52/88</td><td>54/88</td><td>2.50</td></tr>
-                    <tr class="best-row"><td>Easy</td><td>HiBT</td><td>88/88</td><td>88/88</td><td>88/88</td><td>0.41</td></tr>
-                    <tr><td>Medium</td><td>Direct BT</td><td>48/52</td><td>35/52</td><td>30/52</td><td>22.43</td></tr>
-                    <tr><td>Medium</td><td>ActionSeq</td><td>44/52</td><td>25/52</td><td>26/52</td><td>3.40</td></tr>
-                    <tr class="best-row"><td>Medium</td><td>HiBT</td><td>52/52</td><td>52/52</td><td>52/52</td><td>0.35</td></tr>
-                    <tr><td>Hard</td><td>Direct BT</td><td>40/44</td><td>19/44</td><td>14/44</td><td>27.37</td></tr>
-                    <tr><td>Hard</td><td>ActionSeq</td><td>40/44</td><td>21/44</td><td>21/44</td><td>3.72</td></tr>
-                    <tr class="best-row"><td>Hard</td><td>HiBT</td><td>44/44</td><td>44/44</td><td>44/44</td><td>0.41</td></tr>
-                    <tr><td>Very hard</td><td>Direct BT</td><td>50/56</td><td>12/56</td><td>10/56</td><td>27.18</td></tr>
-                    <tr><td>Very hard</td><td>ActionSeq</td><td>54/56</td><td>24/56</td><td>24/56</td><td>3.34</td></tr>
-                    <tr class="best-row"><td>Very hard</td><td>HiBT</td><td>56/56</td><td>56/56</td><td>56/56</td><td>0.39</td></tr>
-                  </tbody>
-                </table>
-              </div>
-            </article>
-
-            <article class="table-card">
-              <h3><span class="caption-label">Table 3.</span> Realization ablations on the 60-instance assembly benchmark.</h3>
+              <h3><span class="caption-label">Table 2.</span> Realization ablations on the 60-instance assembly benchmark.</h3>
               <p class="table-note">Removing symbolic repair or stable-subgoal construction preserves structural parsing but reduces logical coherence and success.</p>
               <div class="table-scroll">
                 <table class="paper-table">
@@ -343,25 +317,7 @@
             </article>
 
             <article class="table-card">
-              <h3><span class="caption-label">Table 4.</span> Interface perturbation study with Qwen2.5-7B-Instruct.</h3>
-              <p class="table-note">The learned hierarchical interface matters beyond deterministic realization alone.</p>
-              <div class="table-scroll">
-                <table class="paper-table">
-                  <thead>
-                    <tr><th>Variant</th><th>Exec</th><th>LC</th><th>SR</th><th>Gen. time (s)</th></tr>
-                  </thead>
-                  <tbody>
-                    <tr class="best-row"><td>HiBT</td><td>60/60</td><td>60/60</td><td>60/60</td><td>0.35</td></tr>
-                    <tr><td>Rule-only realization</td><td>60/60</td><td>12/60</td><td>12/60</td><td>0.35</td></tr>
-                    <tr><td>Shuffled concepts</td><td>60/60</td><td>53/60</td><td>53/60</td><td>0.34</td></tr>
-                    <tr><td>Random concepts</td><td>60/60</td><td>18/60</td><td>18/60</td><td>0.35</td></tr>
-                  </tbody>
-                </table>
-              </div>
-            </article>
-
-            <article class="table-card">
-              <h3><span class="caption-label">Table 5.</span> Complete LIBERO-Long rollout table.</h3>
+              <h3><span class="caption-label">Table 3.</span> Complete LIBERO-Long rollout table.</h3>
               <p class="table-note">Each method is evaluated on 10 tasks with 120 trials per task. Manual subgoal upper and wrong-order controls are diagnostic references.</p>
               <div class="table-scroll">
                 <table class="paper-table">
@@ -382,7 +338,7 @@
             </article>
 
             <article class="table-card">
-              <h3><span class="caption-label">Table 6.</span> Four-suite LIBERO VLA rollout summary.</h3>
+              <h3><span class="caption-label">Table 4.</span> Four-suite LIBERO VLA rollout summary.</h3>
               <p class="table-note">Each suite cell contains 1200 episodes. The VLA carrier is pi0.5/OpenPI under the shared rollout protocol.</p>
               <div class="table-scroll">
                 <table class="paper-table">
@@ -401,7 +357,7 @@
             </article>
 
             <article class="table-card">
-              <h3><span class="caption-label">Table 7.</span> Mechanism ablation on LIBERO-Long.</h3>
+              <h3><span class="caption-label">Table 5.</span> Mechanism ablation on LIBERO-Long.</h3>
               <p class="table-note">Learned, Stable, and Retry indicate enabled components. Dominant failure is the modal first-failure stage on failed episodes.</p>
               <div class="table-scroll">
                 <table class="paper-table">
@@ -422,7 +378,7 @@
             </article>
 
             <article class="table-card">
-              <h3><span class="caption-label">Table 8.</span> Custom LIBERO-Hier stress-suite summary.</h3>
+              <h3><span class="caption-label">Table 6.</span> Custom LIBERO-Hier stress-suite summary.</h3>
               <p class="table-note">Final SR measures the BDDL final goal. Strict SR requires both final-goal and process-constraint success.</p>
               <div class="table-scroll">
                 <table class="paper-table">
