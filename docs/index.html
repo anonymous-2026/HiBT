@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="title" content="HiBT: From Hierarchical Concepts to Behavior Trees for Reliable Robot Task Planning">
+  <meta name="description" content="HiBT converts language-conditioned robot tasks into dependency-aware hierarchical concepts, repaired symbolic plans, and executable Behavior Trees.">
+  <meta name="keywords" content="behavior trees, robot task planning, hierarchical concepts, symbolic planning, embodied AI, LIBERO">
+  <meta name="author" content="Anonymous Author(s)">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="HiBT">
+  <meta property="og:title" content="HiBT: From Hierarchical Concepts to Behavior Trees for Reliable Robot Task Planning">
+  <meta property="og:description" content="A hierarchical concept planning framework for reliable Behavior Tree synthesis and long-horizon embodied execution.">
+  <meta property="og:image" content="hibt-icon.svg">
+  <meta property="og:image:alt" content="HiBT icon">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HiBT: From Hierarchical Concepts to Behavior Trees for Reliable Robot Task Planning">
+  <meta name="twitter:description" content="Dependency-aware hierarchical planning for executable Behavior Trees and embodied robot tasks.">
+  <meta name="twitter:image" content="hibt-icon.svg">
+  <meta name="twitter:image:alt" content="HiBT icon">
+
+  <meta name="theme-color" content="#0f9fad">
+  <meta name="msapplication-TileColor" content="#0f9fad">
+
+  <title>HiBT | Project Page</title>
+
+  <link rel="icon" type="image/svg+xml" href="hibt-icon.svg">
+  <link rel="apple-touch-icon" href="hibt-icon.svg">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+</head>
+
+<body>
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <main id="main-content">
+    <section class="hero hibt-hero">
+      <div class="hero-body">
+        <div class="container is-max-widescreen">
+          <div class="columns is-centered">
+            <div class="column has-text-centered is-11">
+              <div class="brand-lockup">
+                <img src="hibt-logo.svg" alt="HiBT logo" class="publication-logo-full">
+              </div>
+              <h1 class="title is-1 publication-title">
+                <span class="hibt-letter">HiBT</span>: From Hierarchical Concepts to Behavior Trees for Reliable Robot Task Planning
+              </h1>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">Anonymous Author(s)</span>
+              </div>
+
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="static/paper.pdf" target="_blank" rel="noopener" class="external-link button is-normal is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://github.com/anonymous-2026/HiBT" target="_blank" rel="noopener" class="external-link button is-normal is-dark">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#figures" class="external-link button is-normal is-dark">
+                    <span class="icon"><i class="fas fa-images"></i></span>
+                    <span>Figures</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#tables" class="external-link button is-normal is-dark">
+                    <span class="icon"><i class="fas fa-table"></i></span>
+                    <span>Tables</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="quickstart.md" class="external-link button is-normal is-dark">
+                    <span class="icon"><i class="fas fa-book"></i></span>
+                    <span>Docs</span>
+                  </a>
+                </span>
+              </div>
+
+              <p class="project-url">
+                Website: <a href="https://anonymous-2026.github.io/HiBT" target="_blank" rel="noopener">anonymous-2026.github.io/HiBT</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hero is-light" id="abstract">
+      <div class="container is-max-widescreen">
+        <div class="columns is-centered">
+          <div class="column is-five-sixths">
+            <h2 class="title is-3 has-text-left">Abstract</h2>
+            <div class="content">
+              <p class="has-text-justified">
+                Long-horizon robotic assembly requires planners to reason over object relations, tool use, and ordered preconditions while producing executable control structures. However, most LLM-based planners rely on flat token-by-token generation, which does not explicitly capture the dependencies required for Behavior Tree (BT) synthesis. We propose HiBT, which formulates BT synthesis as hierarchical concept planning. HiBT predicts hierarchical concepts from the task goal and symbolic world state, induces a planning interface through prototype-guided matching, applies deterministic realization and dependency repair, and compiles the resulting symbolic plan into a BT. On a 60-instance language-conditioned assembly benchmark using four open-source LLM backbones, HiBT achieves 60/60 executability, logical coherence, and task success for each backbone, while reducing generation time to 0.35-0.45 seconds. In LIBERO rollouts, HiBT reaches 89.2% final-goal success on LIBERO-Long with shorter rollouts, and 72.3% strict success on the dependency-intensive LIBERO-Hier suite, outperforming flat-instruction and action-sequence guidance. These results show that a dependency-aware hierarchical interface supports both executable BT synthesis and long-horizon embodied execution.
+              </p>
+              <div class="key-grid">
+                <div class="key-card">
+                  <span class="key-label">Assembly</span>
+                  <strong>60/60</strong>
+                  <span>Exec, LC, and SR for every tested backbone</span>
+                </div>
+                <div class="key-card">
+                  <span class="key-label">Planning Time</span>
+                  <strong>0.35-0.45s</strong>
+                  <span>generation latency across open-source backbones</span>
+                </div>
+                <div class="key-card">
+                  <span class="key-label">LIBERO-Long</span>
+                  <strong>89.2%</strong>
+                  <span>final-goal success with shorter rollouts</span>
+                </div>
+                <div class="key-card">
+                  <span class="key-label">LIBERO-Hier</span>
+                  <strong>72.3%</strong>
+                  <span>strict success under dependency-intensive constraints</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="overview">
+      <div class="container is-max-widescreen">
+        <div class="columns is-centered">
+          <div class="column is-11">
+            <div class="columns is-vcentered overview-layout">
+              <div class="column is-7">
+                <figure class="image paper-figure">
+                  <img class="paper-media" src="static/images/paper/overview.png" alt="HiBT method overview" loading="lazy">
+                </figure>
+                <p class="caption-text"><span class="caption-label">Figure 1.</span> Overview. HiBT predicts a hierarchical concept interface from the task instruction and initial state, completes dependency-aware support conditions, and compiles the repaired plan into an executable Behavior Tree.</p>
+              </div>
+              <div class="column is-5">
+                <h2 class="title is-3 has-text-left">Hierarchical Concept Planning</h2>
+                <div class="content">
+                  <p class="has-text-justified">
+                    HiBT separates high-level task reasoning from symbolic execution. A learned interface proposes task-compatible hierarchy, while deterministic realization closes tool, grasp, and ordering dependencies before BT compilation.
+                  </p>
+                  <ul class="has-text-left">
+                    <li><strong>Predict:</strong> map task language and symbolic state to a fixed-geometry concept pyramid.</li>
+                    <li><strong>Decode:</strong> retrieve a structural template and slot-level symbolic candidates through prototype matching.</li>
+                    <li><strong>Repair:</strong> insert missing support actions for unmet preconditions.</li>
+                    <li><strong>Compile:</strong> turn grounded method nodes into an executable Behavior Tree.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hero is-light" id="method">
+      <div class="container is-max-widescreen">
+        <div class="columns is-centered">
+          <div class="column is-five-sixths">
+            <h2 class="title is-3 has-text-left">Planning Interface</h2>
+            <div class="content">
+              <p class="has-text-justified">
+                The system represents a task as a target predicate, stable subgoals, grounded method nodes, and an auxiliary action sequence. Compilation operates on dependency-aware method nodes, not on the linear action sequence alone, so support conditions remain explicit under repeated BT ticking.
+              </p>
+            </div>
+            <figure class="image paper-figure figure-wide">
+              <img class="paper-media" src="static/images/paper/example.png" alt="HiBT planning example" loading="lazy">
+            </figure>
+            <p class="caption-text figure-wide-caption"><span class="caption-label">Figure 2.</span> Example planning artifact from the final paper. HiBT turns language-conditioned assembly requests into hierarchical subgoal and method structure before producing the executable BT.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="results">
+      <div class="container is-max-widescreen">
+        <div class="columns is-centered">
+          <div class="column is-11">
+            <h2 class="title is-3 has-text-left">Results</h2>
+            <div class="content">
+              <p class="has-text-justified">
+                HiBT is evaluated on symbolic robotic assembly and embodied LIBERO rollouts. The main evidence is that hierarchical concepts plus deterministic repair produce fully executable and logically coherent BTs across model backbones, while the same interface improves long-horizon VLA execution.
+              </p>
+            </div>
+            <figure class="paper-figure composite-figure">
+              <div class="subfigure-row">
+                <div class="subfigure-panel">
+                  <img class="paper-media" src="static/images/paper/libero_four_suite_sr.png" alt="LIBERO four-suite success plot" loading="lazy">
+                  <p>Four-suite success</p>
+                </div>
+                <div class="subfigure-panel">
+                  <img class="paper-media" src="static/images/paper/libero_long_final_sr.png" alt="LIBERO-Long final success plot" loading="lazy">
+                  <p>Final success</p>
+                </div>
+                <div class="subfigure-panel">
+                  <img class="paper-media" src="static/images/paper/libero_long_subgoal_sr.png" alt="LIBERO-Long subgoal success plot" loading="lazy">
+                  <p>Subgoal success</p>
+                </div>
+              </div>
+              <figcaption class="caption-text"><span class="caption-label">Figure 3.</span> LIBERO rollout summary. HiBT improves final and subgoal success over flat-instruction and action-sequence guidance.</figcaption>
+            </figure>
+            <figure class="paper-figure composite-figure">
+              <div class="subfigure-row">
+                <div class="subfigure-panel">
+                  <img class="paper-media" src="static/images/paper/libero_long_efficiency.png" alt="LIBERO rollout efficiency plot" loading="lazy">
+                  <p>Rollout cost</p>
+                </div>
+                <div class="subfigure-panel">
+                  <img class="paper-media" src="static/images/paper/libero_hier_stress_sr.png" alt="LIBERO-Hier stress-suite success plot" loading="lazy">
+                  <p>Hier stress suite</p>
+                </div>
+                <div class="subfigure-panel">
+                  <img class="paper-media" src="static/images/paper/libero_mechanism_sr.png" alt="LIBERO mechanism plot" loading="lazy">
+                  <p>Mechanism study</p>
+                </div>
+              </div>
+              <figcaption class="caption-text"><span class="caption-label">Figure 4.</span> Additional embodied evaluation plots. The dependency-aware interface reduces rollout cost and remains useful under stricter ordering and distractor-control conditions.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hero is-light" id="tables">
+      <div class="container is-max-widescreen">
+        <div class="columns is-centered">
+          <div class="column is-11">
+            <h2 class="title is-3 has-text-left">Evidence Tables</h2>
+            <div class="content">
+              <p class="has-text-justified">
+                The tables below summarize the paper's core quantitative evidence: multi-backbone BT synthesis, difficulty scaling, realization ablations, interface perturbations, and embodied rollout transfer.
+              </p>
+            </div>
+
+            <article class="table-card">
+              <h3><span class="caption-label">Table 1.</span> Main multi-backbone results on the 60-instance assembly benchmark.</h3>
+              <p class="table-note">HiBT attains full executability, logical coherence, and symbolic task success for each tested backbone.</p>
+              <div class="table-scroll">
+                <table class="paper-table">
+                  <thead>
+                    <tr><th>Backbone</th><th>Method</th><th>Exec</th><th>LC</th><th>SR</th><th>Time (s)</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Qwen3-8B</td><td>Direct BT</td><td>60/60</td><td>31/60</td><td>29/60</td><td>22.54</td></tr>
+                    <tr><td>Qwen3-8B</td><td>ActionSeq</td><td>60/60</td><td>37/60</td><td>37/60</td><td>3.17</td></tr>
+                    <tr class="best-row"><td>Qwen3-8B</td><td>HiBT</td><td>60/60</td><td>60/60</td><td>60/60</td><td>0.45</td></tr>
+                    <tr><td>Qwen2.5-7B</td><td>Direct BT</td><td>60/60</td><td>22/60</td><td>18/60</td><td>14.22</td></tr>
+                    <tr><td>Qwen2.5-7B</td><td>ActionSeq</td><td>60/60</td><td>43/60</td><td>45/60</td><td>2.62</td></tr>
+                    <tr class="best-row"><td>Qwen2.5-7B</td><td>HiBT</td><td>60/60</td><td>60/60</td><td>60/60</td><td>0.35</td></tr>
+                    <tr><td>LLaMA-3-8B</td><td>Direct BT</td><td>58/60</td><td>26/60</td><td>24/60</td><td>26.84</td></tr>
+                    <tr><td>LLaMA-3-8B</td><td>ActionSeq</td><td>60/60</td><td>25/60</td><td>25/60</td><td>3.11</td></tr>
+                    <tr class="best-row"><td>LLaMA-3-8B</td><td>HiBT</td><td>60/60</td><td>60/60</td><td>60/60</td><td>0.37</td></tr>
+                    <tr><td>Mistral-7B</td><td>Direct BT</td><td>40/60</td><td>23/60</td><td>19/60</td><td>28.53</td></tr>
+                    <tr><td>Mistral-7B</td><td>ActionSeq</td><td>34/60</td><td>17/60</td><td>18/60</td><td>3.60</td></tr>
+                    <tr class="best-row"><td>Mistral-7B</td><td>HiBT</td><td>60/60</td><td>60/60</td><td>60/60</td><td>0.39</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+
+            <article class="table-card">
+              <h3><span class="caption-label">Table 2.</span> Difficulty-bucket results aggregated across all four backbones.</h3>
+              <p class="table-note">Each denominator equals the number of instances in the bucket multiplied by four.</p>
+              <div class="table-scroll">
+                <table class="paper-table">
+                  <thead>
+                    <tr><th>Bucket</th><th>Method</th><th>Exec</th><th>LC</th><th>SR</th><th>Time (s)</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Easy</td><td>Direct BT</td><td>80/88</td><td>36/88</td><td>36/88</td><td>18.63</td></tr>
+                    <tr><td>Easy</td><td>ActionSeq</td><td>76/88</td><td>52/88</td><td>54/88</td><td>2.50</td></tr>
+                    <tr class="best-row"><td>Easy</td><td>HiBT</td><td>88/88</td><td>88/88</td><td>88/88</td><td>0.41</td></tr>
+                    <tr><td>Medium</td><td>Direct BT</td><td>48/52</td><td>35/52</td><td>30/52</td><td>22.43</td></tr>
+                    <tr><td>Medium</td><td>ActionSeq</td><td>44/52</td><td>25/52</td><td>26/52</td><td>3.40</td></tr>
+                    <tr class="best-row"><td>Medium</td><td>HiBT</td><td>52/52</td><td>52/52</td><td>52/52</td><td>0.35</td></tr>
+                    <tr><td>Hard</td><td>Direct BT</td><td>40/44</td><td>19/44</td><td>14/44</td><td>27.37</td></tr>
+                    <tr><td>Hard</td><td>ActionSeq</td><td>40/44</td><td>21/44</td><td>21/44</td><td>3.72</td></tr>
+                    <tr class="best-row"><td>Hard</td><td>HiBT</td><td>44/44</td><td>44/44</td><td>44/44</td><td>0.41</td></tr>
+                    <tr><td>Very hard</td><td>Direct BT</td><td>50/56</td><td>12/56</td><td>10/56</td><td>27.18</td></tr>
+                    <tr><td>Very hard</td><td>ActionSeq</td><td>54/56</td><td>24/56</td><td>24/56</td><td>3.34</td></tr>
+                    <tr class="best-row"><td>Very hard</td><td>HiBT</td><td>56/56</td><td>56/56</td><td>56/56</td><td>0.39</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+
+            <article class="table-card">
+              <h3><span class="caption-label">Table 3.</span> Realization ablations on the 60-instance assembly benchmark.</h3>
+              <p class="table-note">Removing symbolic repair or stable-subgoal construction preserves structural parsing but reduces logical coherence and success.</p>
+              <div class="table-scroll">
+                <table class="paper-table">
+                  <thead>
+                    <tr><th>Backbone</th><th>Variant</th><th>Exec</th><th>LC</th><th>SR</th><th>Time (s)</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Qwen3-8B</td><td>No repair</td><td>60/60</td><td>24/60</td><td>24/60</td><td>0.40</td></tr>
+                    <tr><td>Qwen3-8B</td><td>No stable subgoals</td><td>60/60</td><td>38/60</td><td>38/60</td><td>0.85</td></tr>
+                    <tr class="best-row"><td>Qwen3-8B</td><td>HiBT</td><td>60/60</td><td>60/60</td><td>60/60</td><td>0.45</td></tr>
+                    <tr><td>Qwen2.5-7B</td><td>No repair</td><td>60/60</td><td>38/60</td><td>38/60</td><td>0.67</td></tr>
+                    <tr><td>Qwen2.5-7B</td><td>No stable subgoals</td><td>60/60</td><td>45/60</td><td>45/60</td><td>0.74</td></tr>
+                    <tr class="best-row"><td>Qwen2.5-7B</td><td>HiBT</td><td>60/60</td><td>60/60</td><td>60/60</td><td>0.35</td></tr>
+                    <tr><td>LLaMA-3-8B</td><td>No repair</td><td>60/60</td><td>13/60</td><td>13/60</td><td>0.72</td></tr>
+                    <tr><td>LLaMA-3-8B</td><td>No stable subgoals</td><td>60/60</td><td>30/60</td><td>30/60</td><td>0.74</td></tr>
+                    <tr class="best-row"><td>LLaMA-3-8B</td><td>HiBT</td><td>60/60</td><td>60/60</td><td>60/60</td><td>0.37</td></tr>
+                    <tr><td>Mistral-7B</td><td>No repair</td><td>60/60</td><td>25/60</td><td>25/60</td><td>0.73</td></tr>
+                    <tr><td>Mistral-7B</td><td>No stable subgoals</td><td>60/60</td><td>30/60</td><td>30/60</td><td>0.75</td></tr>
+                    <tr class="best-row"><td>Mistral-7B</td><td>HiBT</td><td>60/60</td><td>60/60</td><td>60/60</td><td>0.39</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+
+            <article class="table-card">
+              <h3><span class="caption-label">Table 4.</span> Interface perturbation study with Qwen2.5-7B-Instruct.</h3>
+              <p class="table-note">The learned hierarchical interface matters beyond deterministic realization alone.</p>
+              <div class="table-scroll">
+                <table class="paper-table">
+                  <thead>
+                    <tr><th>Variant</th><th>Exec</th><th>LC</th><th>SR</th><th>Gen. time (s)</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr class="best-row"><td>HiBT</td><td>60/60</td><td>60/60</td><td>60/60</td><td>0.35</td></tr>
+                    <tr><td>Rule-only realization</td><td>60/60</td><td>12/60</td><td>12/60</td><td>0.35</td></tr>
+                    <tr><td>Shuffled concepts</td><td>60/60</td><td>53/60</td><td>53/60</td><td>0.34</td></tr>
+                    <tr><td>Random concepts</td><td>60/60</td><td>18/60</td><td>18/60</td><td>0.35</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+
+            <article class="table-card">
+              <h3><span class="caption-label">Table 5.</span> Complete LIBERO-Long rollout table.</h3>
+              <p class="table-note">Each method is evaluated on 10 tasks with 120 trials per task. Manual subgoal upper and wrong-order controls are diagnostic references.</p>
+              <div class="table-scroll">
+                <table class="paper-table">
+                  <thead>
+                    <tr><th>Method</th><th>Interface</th><th>SR</th><th>Subgoal SR</th><th>Steps</th><th>Policy Calls</th><th>Plan ms</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Flat instruction</td><td>none</td><td>907/1200 (75.6)</td><td>n/a</td><td>418</td><td>98.7</td><td>n/a</td></tr>
+                    <tr><td>Action sequence</td><td>flat action/subgoal list</td><td>943/1200 (78.6)</td><td>81.3</td><td>401</td><td>94.2</td><td>1760</td></tr>
+                    <tr><td>Manual subgoal upper</td><td>BDDL/manual subgoals</td><td>1089/1200 (90.8)</td><td>93.4</td><td>368</td><td>97.8</td><td>n/a</td></tr>
+                    <tr class="best-row"><td>HiBT</td><td>learned concepts + BT + repair</td><td>1070/1200 (89.2)</td><td>92.1</td><td>365</td><td>88.7</td><td>198</td></tr>
+                    <tr><td>HiBT w/o stable</td><td>concepts + sequence only</td><td>861/1200 (71.8)</td><td>76.4</td><td>461</td><td>92.8</td><td>186</td></tr>
+                    <tr><td>HiBT w/o retry</td><td>concepts + no fallback</td><td>896/1200 (74.7)</td><td>83.1</td><td>411</td><td>89.5</td><td>184</td></tr>
+                    <tr><td>Wrong-order control</td><td>shuffled subgoals</td><td>447/1200 (37.3)</td><td>44.2</td><td>497</td><td>91.1</td><td>181</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="figures">
+      <div class="container is-max-widescreen">
+        <div class="columns is-centered">
+          <div class="column is-11">
+            <h2 class="title is-3 has-text-left">Qualitative Evidence</h2>
+            <div class="content">
+              <p class="has-text-justified">
+                Representative LIBERO rollout panels compare flat-instruction behavior with HiBT-guided execution on long-horizon manipulation tasks.
+              </p>
+            </div>
+            <div class="qualitative-grid">
+              <figure class="gallery-item qualitative-wide">
+                <img class="paper-media" src="static/images/paper/libero_task8_flat_vs_hibt_2x6.png" alt="Task-8 LIBERO-Long flat versus HiBT process comparison" loading="lazy">
+                <figcaption><span class="caption-label">Figure 5.</span> Task-8 LIBERO-Long process comparison. The flat-instruction rollout and HiBT-guided rollout are shown with aligned phase samples, illustrating how hierarchical subgoal guidance changes the execution trajectory on the same long-horizon manipulation task.</figcaption>
+              </figure>
+              <figure class="gallery-item qualitative-wide">
+                <img class="paper-media" src="static/images/paper/libero_task1_flat_process_2x6.png" alt="LIBERO flat-instruction process samples" loading="lazy">
+                <figcaption><span class="caption-label">Figure 6.</span> Additional rollout process samples from the paper's LIBERO evaluation suite.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hero is-light" id="docs">
+      <div class="container is-max-widescreen">
+        <div class="columns is-centered">
+          <div class="column is-five-sixths">
+            <h2 class="title is-3 has-text-left">Repository Docs</h2>
+            <div class="content">
+              <ul class="has-text-left doc-list">
+                <li><a href="quickstart.md">Quickstart</a> for repository-local install, compile, and evaluation commands.</li>
+                <li><a href="configuration.md">Configuration</a> for runtime outputs, model paths, and concept backends.</li>
+                <li><a href="pipeline.md">Pipeline</a> summary for concept prediction, realization, and BT compilation.</li>
+                <li><a href="data_formats.md">Data formats</a> for planning requests, plan pyramids, and evaluation reports.</li>
+                <li><a href="reproducibility.md">Reproducibility</a> notes for rebuilding concept components and running checks.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="bibtex">
+      <div class="container is-max-widescreen">
+        <div class="columns is-centered">
+          <div class="column is-five-sixths">
+            <h2 class="title is-3 has-text-left">BibTeX</h2>
+            <pre class="bibtex-box"><code>@inproceedings{anonymous2026hibt,
+  title     = {HiBT: From Hierarchical Concepts to Behavior Trees for Reliable Robot Task Planning},
+  author    = {Anonymous Author(s)},
+  booktitle = {Submitted to ACL},
+  year      = {2026}
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>HiBT project page. Anonymous preprint release.</p>
+    </div>
+  </footer>
+</body>
+</html>
