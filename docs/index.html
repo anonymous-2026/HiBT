@@ -88,12 +88,6 @@
                     <span>Tables</span>
                   </a>
                 </span>
-                <span class="link-block">
-                  <a href="quickstart.md" class="external-link button is-normal is-dark">
-                    <span class="icon"><i class="fas fa-book"></i></span>
-                    <span>Docs</span>
-                  </a>
-                </span>
               </div>
 
               <p class="project-url">
@@ -176,17 +170,35 @@
     <section class="section hero is-light" id="method">
       <div class="container is-max-widescreen">
         <div class="columns is-centered">
-          <div class="column is-five-sixths">
-            <h2 class="title is-3 has-text-left">Planning Interface</h2>
-            <div class="content">
-              <p class="has-text-justified">
-                The system represents a task as a target predicate, stable subgoals, grounded method nodes, and an auxiliary action sequence. Compilation operates on dependency-aware method nodes, not on the linear action sequence alone, so support conditions remain explicit under repeated BT ticking.
-              </p>
+          <div class="column is-11">
+            <div class="planning-artifact-layout">
+              <div class="planning-copy">
+                <h2 class="title is-3 has-text-left">Planning Interface</h2>
+                <div class="content">
+                  <p class="has-text-justified">
+                    The example shows how HiBT turns a language-conditioned assembly request into a structured interface before any Behavior Tree is emitted. The task goal and initial symbolic state are first mapped into a hierarchical concept pyramid, then decoded against a prototype bank to recover a task-compatible planning template and slot-level symbolic candidates.
+                  </p>
+                  <p class="has-text-justified">
+                    The realized plan is not treated as a flat action list. HiBT records the target predicate, stable subgoals, grounded method nodes, and an auxiliary action sequence. Dependency closure checks each grounded action against the current state and inserts support actions when tool, grasp, or ordering preconditions are missing.
+                  </p>
+                  <p class="has-text-justified">
+                    The final compiler operates on repaired method nodes and stable subgoals, so the generated BT contains explicit condition checks and reusable support branches. This is the main distinction from direct BT generation and action-sequence-first planning: hierarchy and dependency closure are made explicit before compilation.
+                  </p>
+                  <ul class="has-text-left planning-points">
+                    <li><strong>Input:</strong> task language, symbolic initial state, target predicate, and action domain.</li>
+                    <li><strong>Interface:</strong> hierarchical concepts plus prototype-guided template and slot retrieval.</li>
+                    <li><strong>Repair:</strong> deterministic closure for missing support conditions.</li>
+                    <li><strong>Output:</strong> a dependency-aware BT, with the action sequence retained only for reporting and consistency checks.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="planning-figure-wrap">
+                <figure class="image paper-figure planning-figure">
+                  <img class="paper-media" src="static/images/paper/example.png" alt="HiBT planning example" loading="lazy">
+                </figure>
+                <p class="caption-text"><span class="caption-label">Figure 2.</span> Example planning artifact from the final paper, shown at the original vertical aspect ratio.</p>
+              </div>
             </div>
-            <figure class="image paper-figure figure-wide">
-              <img class="paper-media" src="static/images/paper/example.png" alt="HiBT planning example" loading="lazy">
-            </figure>
-            <p class="caption-text figure-wide-caption"><span class="caption-label">Figure 2.</span> Example planning artifact from the final paper. HiBT turns language-conditioned assembly requests into hierarchical subgoal and method structure before producing the executable BT.</p>
           </div>
         </div>
       </div>
@@ -368,6 +380,65 @@
                 </table>
               </div>
             </article>
+
+            <article class="table-card">
+              <h3><span class="caption-label">Table 6.</span> Four-suite LIBERO VLA rollout summary.</h3>
+              <p class="table-note">Each suite cell contains 1200 episodes. The VLA carrier is pi0.5/OpenPI under the shared rollout protocol.</p>
+              <div class="table-scroll">
+                <table class="paper-table">
+                  <thead>
+                    <tr><th>Method</th><th>Spatial SR</th><th>Object SR</th><th>Goal SR</th><th>Long SR</th><th>Mean Steps</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Flat instruction</td><td>1067/1200 (88.9)</td><td>1023/1200 (85.3)</td><td>891/1200 (74.3)</td><td>907/1200 (75.6)</td><td>428</td></tr>
+                    <tr><td>Action sequence</td><td>1079/1200 (89.9)</td><td>1047/1200 (87.3)</td><td>951/1200 (79.3)</td><td>943/1200 (78.6)</td><td>415</td></tr>
+                    <tr><td>Manual subgoal upper</td><td>1131/1200 (94.3)</td><td>1109/1200 (92.4)</td><td>1023/1200 (85.3)</td><td>1089/1200 (90.8)</td><td>368</td></tr>
+                    <tr class="best-row"><td>HiBT</td><td>1127/1200 (93.9)</td><td>1103/1200 (91.9)</td><td>1007/1200 (83.9)</td><td>1070/1200 (89.2)</td><td>372</td></tr>
+                    <tr><td>HiBT without stable</td><td>1041/1200 (86.8)</td><td>1003/1200 (83.6)</td><td>873/1200 (72.8)</td><td>861/1200 (71.8)</td><td>446</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+
+            <article class="table-card">
+              <h3><span class="caption-label">Table 7.</span> Mechanism ablation on LIBERO-Long.</h3>
+              <p class="table-note">Learned, Stable, and Retry indicate enabled components. Dominant failure is the modal first-failure stage on failed episodes.</p>
+              <div class="table-scroll">
+                <table class="paper-table">
+                  <thead>
+                    <tr><th>Variant</th><th>Learned</th><th>Stable</th><th>Retry</th><th>SR</th><th>Subgoal SR</th><th>Dominant Failure</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr class="best-row"><td>HiBT</td><td>yes</td><td>yes</td><td>yes</td><td>1070/1200 (89.2)</td><td>92.1</td><td>residual policy / timeout</td></tr>
+                    <tr><td>No stable checks</td><td>yes</td><td>no</td><td>yes</td><td>861/1200 (71.8)</td><td>76.4</td><td>state / order violation</td></tr>
+                    <tr><td>No retry/fallback</td><td>yes</td><td>yes</td><td>no</td><td>896/1200 (74.7)</td><td>83.1</td><td>timeout / placement</td></tr>
+                    <tr><td>Rule-only realization</td><td>no</td><td>yes</td><td>yes</td><td>603/1200 (50.3)</td><td>63.4</td><td>wrong decomposition</td></tr>
+                    <tr><td>Random concept</td><td>random</td><td>yes</td><td>yes</td><td>423/1200 (35.3)</td><td>47.1</td><td>wrong decomposition</td></tr>
+                    <tr><td>Shuffled concept</td><td>perturbed</td><td>yes</td><td>yes</td><td>729/1200 (60.8)</td><td>70.2</td><td>misplaced subgoal</td></tr>
+                    <tr><td>Wrong-order control</td><td>yes</td><td>yes</td><td>yes</td><td>447/1200 (37.3)</td><td>44.2</td><td>precondition / order</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+
+            <article class="table-card">
+              <h3><span class="caption-label">Table 8.</span> Custom LIBERO-Hier stress-suite summary.</h3>
+              <p class="table-note">Final SR measures the BDDL final goal. Strict SR requires both final-goal and process-constraint success.</p>
+              <div class="table-scroll">
+                <table class="paper-table">
+                  <thead>
+                    <tr><th>Method</th><th>Final SR</th><th>Constraint SR</th><th>Strict SR</th><th>Distractor Move</th><th>Order Valid</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Flat instruction</td><td>531/1200 (44.3)</td><td>507/1200 (42.3)</td><td>363/1200 (30.3)</td><td>7.6 cm</td><td>701/1200 (58.4)</td></tr>
+                    <tr><td>Action sequence</td><td>651/1200 (54.3)</td><td>627/1200 (52.3)</td><td>507/1200 (42.3)</td><td>5.4 cm</td><td>819/1200 (68.3)</td></tr>
+                    <tr><td>Manual subgoal upper</td><td>983/1200 (81.9)</td><td>959/1200 (79.9)</td><td>911/1200 (75.9)</td><td>1.4 cm</td><td>1129/1200 (94.1)</td></tr>
+                    <tr class="best-row"><td>HiBT</td><td>937/1200 (78.1)</td><td>913/1200 (76.1)</td><td>867/1200 (72.3)</td><td>2.0 cm</td><td>1049/1200 (87.4)</td></tr>
+                    <tr><td>HiBT without stable</td><td>699/1200 (58.3)</td><td>639/1200 (53.3)</td><td>543/1200 (45.3)</td><td>4.9 cm</td><td>831/1200 (69.3)</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
           </div>
         </div>
       </div>
@@ -392,25 +463,6 @@
                 <img class="paper-media" src="static/images/paper/libero_task1_flat_process_2x6.png" alt="LIBERO flat-instruction process samples" loading="lazy">
                 <figcaption><span class="caption-label">Figure 6.</span> Additional rollout process samples from the paper's LIBERO evaluation suite.</figcaption>
               </figure>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section hero is-light" id="docs">
-      <div class="container is-max-widescreen">
-        <div class="columns is-centered">
-          <div class="column is-five-sixths">
-            <h2 class="title is-3 has-text-left">Repository Docs</h2>
-            <div class="content">
-              <ul class="has-text-left doc-list">
-                <li><a href="quickstart.md">Quickstart</a> for repository-local install, compile, and evaluation commands.</li>
-                <li><a href="configuration.md">Configuration</a> for runtime outputs, model paths, and concept backends.</li>
-                <li><a href="pipeline.md">Pipeline</a> summary for concept prediction, realization, and BT compilation.</li>
-                <li><a href="data_formats.md">Data formats</a> for planning requests, plan pyramids, and evaluation reports.</li>
-                <li><a href="reproducibility.md">Reproducibility</a> notes for rebuilding concept components and running checks.</li>
-              </ul>
             </div>
           </div>
         </div>

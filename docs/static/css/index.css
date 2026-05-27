@@ -203,6 +203,39 @@ a:hover {
   width: min(980px, 100%);
 }
 
+.planning-artifact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.65fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.planning-copy {
+  min-width: 0;
+}
+
+.planning-copy .content p {
+  margin-bottom: 0.9rem;
+}
+
+.planning-points {
+  margin-top: 1.1rem !important;
+}
+
+.planning-figure-wrap {
+  width: min(380px, 100%);
+  justify-self: center;
+}
+
+.planning-figure {
+  margin: 0 auto;
+}
+
+.planning-figure .paper-media {
+  aspect-ratio: 749 / 1258;
+  object-fit: contain;
+}
+
 .figure-medium {
   width: min(680px, 100%);
   margin: 1.4rem auto 0;
@@ -457,8 +490,13 @@ a:hover {
   .key-grid,
   .gallery-grid,
   .qualitative-grid,
-  .carrier-grid {
+  .carrier-grid,
+  .planning-artifact-layout {
     grid-template-columns: 1fr;
+  }
+
+  .planning-figure-wrap {
+    width: min(360px, 100%);
   }
 
   .subfigure-row {
