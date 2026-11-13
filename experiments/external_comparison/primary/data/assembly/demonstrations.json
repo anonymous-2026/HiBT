@@ -1,0 +1,1404 @@
+{
+  "source_split": "independently_generated_train_only",
+  "source_teacher_sha256": "e2f55815436f12f758a05a8ce8f63e770fde582bb4718e47390117278b6e9ed6",
+  "intent_example_policy": "goal_coverage",
+  "intent_examples": [
+    {
+      "sample_id": "train_0000",
+      "instruction": "Insert e6_train_0000_pin into e6_train_0000_socket.",
+      "goal": "is_inserted_to(e6_train_0000_pin, e6_train_0000_socket)",
+      "planning_goal": "is_inserted_to(e6_train_0000_pin, e6_train_0000_socket)",
+      "planning_goal_source_sha256": "e2f55815436f12f758a05a8ce8f63e770fde582bb4718e47390117278b6e9ed6"
+    },
+    {
+      "sample_id": "train_0002",
+      "instruction": "Fasten e6_train_0002_fastener into e6_train_0002_threaded_base by screwing.",
+      "goal": "is_screwed_to(e6_train_0002_fastener, e6_train_0002_threaded_base)",
+      "planning_goal": "is_screwed_to(e6_train_0002_fastener, e6_train_0002_threaded_base)",
+      "planning_goal_source_sha256": "e2f55815436f12f758a05a8ce8f63e770fde582bb4718e47390117278b6e9ed6"
+    },
+    {
+      "sample_id": "state_goals_train_0000",
+      "instruction": "Make sure e6sg_train_0000_hand is holding e6sg_train_0000_tool_a.",
+      "goal": "hold(e6sg_train_0000_hand, e6sg_train_0000_tool_a)",
+      "planning_goal": "hold(e6sg_train_0000_hand, e6sg_train_0000_tool_a)",
+      "planning_goal_source_sha256": "e2f55815436f12f758a05a8ce8f63e770fde582bb4718e47390117278b6e9ed6"
+    },
+    {
+      "sample_id": "state_goals_train_0001",
+      "instruction": "Make sure e6sg_train_0001_part is held by e6sg_train_0001_tool_a.",
+      "goal": "hold(e6sg_train_0001_tool_a, e6sg_train_0001_part)",
+      "planning_goal": "hold(e6sg_train_0001_tool_a, e6sg_train_0001_part)",
+      "planning_goal_source_sha256": "e2f55815436f12f758a05a8ce8f63e770fde582bb4718e47390117278b6e9ed6"
+    },
+    {
+      "sample_id": "state_goals_train_0002",
+      "instruction": "Ensure e6sg_train_0002_hand is empty.",
+      "goal": "is_empty(e6sg_train_0002_hand)",
+      "planning_goal": "is_empty(e6sg_train_0002_hand)",
+      "planning_goal_source_sha256": "e2f55815436f12f758a05a8ce8f63e770fde582bb4718e47390117278b6e9ed6"
+    }
+  ],
+  "kios_demonstrations": [
+    {
+      "sample_id": "train_0000",
+      "instruction": "Insert e6_train_0000_pin into e6_train_0000_socket.",
+      "world_state": {
+        "objects": [
+          {
+            "name": "e6_train_0000_pin",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0000_hand",
+            "properties": [
+              "is_empty"
+            ]
+          },
+          {
+            "name": "e6_train_0000_tool_b",
+            "properties": [
+              "is_empty",
+              "is_equippable"
+            ]
+          },
+          {
+            "name": "e6_train_0000_distractor",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0000_tool_a",
+            "properties": [
+              "is_empty",
+              "is_equippable"
+            ]
+          },
+          {
+            "name": "e6_train_0000_socket",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0000_other_base",
+            "properties": []
+          }
+        ],
+        "constraints": [
+          {
+            "name": "can_manipulate",
+            "source": "e6_train_0000_tool_a",
+            "target": "e6_train_0000_pin"
+          },
+          {
+            "name": "can_insert_to",
+            "source": "e6_train_0000_distractor",
+            "target": "e6_train_0000_other_base"
+          },
+          {
+            "name": "can_manipulate",
+            "source": "e6_train_0000_tool_a",
+            "target": "e6_train_0000_distractor"
+          },
+          {
+            "name": "can_insert_to",
+            "source": "e6_train_0000_pin",
+            "target": "e6_train_0000_socket"
+          },
+          {
+            "name": "can_manipulate",
+            "source": "e6_train_0000_tool_b",
+            "target": "e6_train_0000_distractor"
+          }
+        ],
+        "relations": []
+      },
+      "behavior_tree": {
+        "summary": "selector insert(e6_train_0000_hand, e6_train_0000_tool_a, e6_train_0000_pin, e6_train_0000_socket)",
+        "name": "selector: insert(e6_train_0000_hand, e6_train_0000_tool_a, e6_train_0000_pin, e6_train_0000_socket)",
+        "children": [
+          {
+            "summary": "target is_inserted_to(e6_train_0000_pin, e6_train_0000_socket)",
+            "name": "target: is_inserted_to(e6_train_0000_pin, e6_train_0000_socket)"
+          },
+          {
+            "summary": "sequence insert(e6_train_0000_hand, e6_train_0000_tool_a, e6_train_0000_pin, e6_train_0000_socket)",
+            "name": "sequence: insert(e6_train_0000_hand, e6_train_0000_tool_a, e6_train_0000_pin, e6_train_0000_socket)",
+            "children": [
+              {
+                "summary": "selector load_tool(e6_train_0000_hand, e6_train_0000_tool_a)",
+                "name": "selector: load_tool(e6_train_0000_hand, e6_train_0000_tool_a)",
+                "children": [
+                  {
+                    "summary": "target hold(e6_train_0000_hand, e6_train_0000_tool_a)",
+                    "name": "target: hold(e6_train_0000_hand, e6_train_0000_tool_a)"
+                  },
+                  {
+                    "summary": "sequence load_tool(e6_train_0000_hand, e6_train_0000_tool_a)",
+                    "name": "sequence: load_tool(e6_train_0000_hand, e6_train_0000_tool_a)",
+                    "children": [
+                      {
+                        "summary": "precondition is_equippable(e6_train_0000_tool_a)",
+                        "name": "precondition: is_equippable(e6_train_0000_tool_a)"
+                      },
+                      {
+                        "summary": "precondition is_empty(e6_train_0000_hand)",
+                        "name": "precondition: is_empty(e6_train_0000_hand)"
+                      },
+                      {
+                        "summary": "action load_tool(e6_train_0000_hand, e6_train_0000_tool_a)",
+                        "name": "action: load_tool(e6_train_0000_hand, e6_train_0000_tool_a)"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "summary": "selector pick_up(e6_train_0000_hand, e6_train_0000_tool_a, e6_train_0000_pin)",
+                "name": "selector: pick_up(e6_train_0000_hand, e6_train_0000_tool_a, e6_train_0000_pin)",
+                "children": [
+                  {
+                    "summary": "target hold(e6_train_0000_tool_a, e6_train_0000_pin)",
+                    "name": "target: hold(e6_train_0000_tool_a, e6_train_0000_pin)"
+                  },
+                  {
+                    "summary": "sequence pick_up(e6_train_0000_hand, e6_train_0000_tool_a, e6_train_0000_pin)",
+                    "name": "sequence: pick_up(e6_train_0000_hand, e6_train_0000_tool_a, e6_train_0000_pin)",
+                    "children": [
+                      {
+                        "summary": "selector load_tool(e6_train_0000_hand, e6_train_0000_tool_a)",
+                        "name": "selector: load_tool(e6_train_0000_hand, e6_train_0000_tool_a)",
+                        "children": [
+                          {
+                            "summary": "target hold(e6_train_0000_hand, e6_train_0000_tool_a)",
+                            "name": "target: hold(e6_train_0000_hand, e6_train_0000_tool_a)"
+                          },
+                          {
+                            "summary": "sequence load_tool(e6_train_0000_hand, e6_train_0000_tool_a)",
+                            "name": "sequence: load_tool(e6_train_0000_hand, e6_train_0000_tool_a)",
+                            "children": [
+                              {
+                                "summary": "precondition is_equippable(e6_train_0000_tool_a)",
+                                "name": "precondition: is_equippable(e6_train_0000_tool_a)"
+                              },
+                              {
+                                "summary": "precondition is_empty(e6_train_0000_hand)",
+                                "name": "precondition: is_empty(e6_train_0000_hand)"
+                              },
+                              {
+                                "summary": "action load_tool(e6_train_0000_hand, e6_train_0000_tool_a)",
+                                "name": "action: load_tool(e6_train_0000_hand, e6_train_0000_tool_a)"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "summary": "precondition is_empty(e6_train_0000_tool_a)",
+                        "name": "precondition: is_empty(e6_train_0000_tool_a)"
+                      },
+                      {
+                        "summary": "precondition hold(e6_train_0000_hand, e6_train_0000_tool_a)",
+                        "name": "precondition: hold(e6_train_0000_hand, e6_train_0000_tool_a)"
+                      },
+                      {
+                        "summary": "precondition can_manipulate(e6_train_0000_tool_a, e6_train_0000_pin)",
+                        "name": "precondition: can_manipulate(e6_train_0000_tool_a, e6_train_0000_pin)"
+                      },
+                      {
+                        "summary": "action pick_up(e6_train_0000_hand, e6_train_0000_tool_a, e6_train_0000_pin)",
+                        "name": "action: pick_up(e6_train_0000_hand, e6_train_0000_tool_a, e6_train_0000_pin)"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "summary": "precondition hold(e6_train_0000_hand, e6_train_0000_tool_a)",
+                "name": "precondition: hold(e6_train_0000_hand, e6_train_0000_tool_a)"
+              },
+              {
+                "summary": "precondition hold(e6_train_0000_tool_a, e6_train_0000_pin)",
+                "name": "precondition: hold(e6_train_0000_tool_a, e6_train_0000_pin)"
+              },
+              {
+                "summary": "precondition can_insert_to(e6_train_0000_pin, e6_train_0000_socket)",
+                "name": "precondition: can_insert_to(e6_train_0000_pin, e6_train_0000_socket)"
+              },
+              {
+                "summary": "action insert(e6_train_0000_hand, e6_train_0000_tool_a, e6_train_0000_pin, e6_train_0000_socket)",
+                "name": "action: insert(e6_train_0000_hand, e6_train_0000_tool_a, e6_train_0000_pin, e6_train_0000_socket)"
+              }
+            ]
+          }
+        ]
+      },
+      "teacher_actions": [
+        {
+          "name": "load_tool",
+          "args": [
+            "e6_train_0000_hand",
+            "e6_train_0000_tool_a"
+          ]
+        },
+        {
+          "name": "pick_up",
+          "args": [
+            "e6_train_0000_hand",
+            "e6_train_0000_tool_a",
+            "e6_train_0000_pin"
+          ]
+        },
+        {
+          "name": "insert",
+          "args": [
+            "e6_train_0000_hand",
+            "e6_train_0000_tool_a",
+            "e6_train_0000_pin",
+            "e6_train_0000_socket"
+          ]
+        }
+      ],
+      "planning_goal": "is_inserted_to(e6_train_0000_pin, e6_train_0000_socket)",
+      "planning_goal_source_sha256": "e2f55815436f12f758a05a8ce8f63e770fde582bb4718e47390117278b6e9ed6"
+    },
+    {
+      "sample_id": "train_0007",
+      "instruction": "Use the available tools to place e6_train_0007_panel on e6_train_0007_support.",
+      "world_state": {
+        "objects": [
+          {
+            "name": "e6_train_0007_tool_b",
+            "properties": [
+              "is_empty"
+            ]
+          },
+          {
+            "name": "e6_train_0007_hand",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0007_other_base",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0007_distractor",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0007_support",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0007_tool_a",
+            "properties": [
+              "is_empty",
+              "is_equippable"
+            ]
+          },
+          {
+            "name": "e6_train_0007_panel",
+            "properties": []
+          }
+        ],
+        "constraints": [
+          {
+            "name": "can_place_to",
+            "source": "e6_train_0007_distractor",
+            "target": "e6_train_0007_other_base"
+          },
+          {
+            "name": "can_manipulate",
+            "source": "e6_train_0007_tool_a",
+            "target": "e6_train_0007_panel"
+          },
+          {
+            "name": "can_manipulate",
+            "source": "e6_train_0007_tool_a",
+            "target": "e6_train_0007_distractor"
+          },
+          {
+            "name": "can_manipulate",
+            "source": "e6_train_0007_tool_b",
+            "target": "e6_train_0007_distractor"
+          },
+          {
+            "name": "can_place_to",
+            "source": "e6_train_0007_panel",
+            "target": "e6_train_0007_support"
+          }
+        ],
+        "relations": [
+          {
+            "name": "hold",
+            "source": "e6_train_0007_hand",
+            "target": "e6_train_0007_tool_b"
+          }
+        ]
+      },
+      "behavior_tree": {
+        "summary": "selector place(e6_train_0007_hand, e6_train_0007_tool_a, e6_train_0007_panel, e6_train_0007_support)",
+        "name": "selector: place(e6_train_0007_hand, e6_train_0007_tool_a, e6_train_0007_panel, e6_train_0007_support)",
+        "children": [
+          {
+            "summary": "target is_placed_to(e6_train_0007_panel, e6_train_0007_support)",
+            "name": "target: is_placed_to(e6_train_0007_panel, e6_train_0007_support)"
+          },
+          {
+            "summary": "sequence place(e6_train_0007_hand, e6_train_0007_tool_a, e6_train_0007_panel, e6_train_0007_support)",
+            "name": "sequence: place(e6_train_0007_hand, e6_train_0007_tool_a, e6_train_0007_panel, e6_train_0007_support)",
+            "children": [
+              {
+                "summary": "selector change_tool(e6_train_0007_hand, e6_train_0007_tool_b, e6_train_0007_tool_a)",
+                "name": "selector: change_tool(e6_train_0007_hand, e6_train_0007_tool_b, e6_train_0007_tool_a)",
+                "children": [
+                  {
+                    "summary": "target hold(e6_train_0007_hand, e6_train_0007_tool_a)",
+                    "name": "target: hold(e6_train_0007_hand, e6_train_0007_tool_a)"
+                  },
+                  {
+                    "summary": "sequence change_tool(e6_train_0007_hand, e6_train_0007_tool_b, e6_train_0007_tool_a)",
+                    "name": "sequence: change_tool(e6_train_0007_hand, e6_train_0007_tool_b, e6_train_0007_tool_a)",
+                    "children": [
+                      {
+                        "summary": "precondition hold(e6_train_0007_hand, e6_train_0007_tool_b)",
+                        "name": "precondition: hold(e6_train_0007_hand, e6_train_0007_tool_b)"
+                      },
+                      {
+                        "summary": "precondition is_empty(e6_train_0007_tool_b)",
+                        "name": "precondition: is_empty(e6_train_0007_tool_b)"
+                      },
+                      {
+                        "summary": "action change_tool(e6_train_0007_hand, e6_train_0007_tool_b, e6_train_0007_tool_a)",
+                        "name": "action: change_tool(e6_train_0007_hand, e6_train_0007_tool_b, e6_train_0007_tool_a)"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "summary": "selector pick_up(e6_train_0007_hand, e6_train_0007_tool_a, e6_train_0007_panel)",
+                "name": "selector: pick_up(e6_train_0007_hand, e6_train_0007_tool_a, e6_train_0007_panel)",
+                "children": [
+                  {
+                    "summary": "target hold(e6_train_0007_tool_a, e6_train_0007_panel)",
+                    "name": "target: hold(e6_train_0007_tool_a, e6_train_0007_panel)"
+                  },
+                  {
+                    "summary": "sequence pick_up(e6_train_0007_hand, e6_train_0007_tool_a, e6_train_0007_panel)",
+                    "name": "sequence: pick_up(e6_train_0007_hand, e6_train_0007_tool_a, e6_train_0007_panel)",
+                    "children": [
+                      {
+                        "summary": "selector change_tool(e6_train_0007_hand, e6_train_0007_tool_b, e6_train_0007_tool_a)",
+                        "name": "selector: change_tool(e6_train_0007_hand, e6_train_0007_tool_b, e6_train_0007_tool_a)",
+                        "children": [
+                          {
+                            "summary": "target hold(e6_train_0007_hand, e6_train_0007_tool_a)",
+                            "name": "target: hold(e6_train_0007_hand, e6_train_0007_tool_a)"
+                          },
+                          {
+                            "summary": "sequence change_tool(e6_train_0007_hand, e6_train_0007_tool_b, e6_train_0007_tool_a)",
+                            "name": "sequence: change_tool(e6_train_0007_hand, e6_train_0007_tool_b, e6_train_0007_tool_a)",
+                            "children": [
+                              {
+                                "summary": "precondition hold(e6_train_0007_hand, e6_train_0007_tool_b)",
+                                "name": "precondition: hold(e6_train_0007_hand, e6_train_0007_tool_b)"
+                              },
+                              {
+                                "summary": "precondition is_empty(e6_train_0007_tool_b)",
+                                "name": "precondition: is_empty(e6_train_0007_tool_b)"
+                              },
+                              {
+                                "summary": "action change_tool(e6_train_0007_hand, e6_train_0007_tool_b, e6_train_0007_tool_a)",
+                                "name": "action: change_tool(e6_train_0007_hand, e6_train_0007_tool_b, e6_train_0007_tool_a)"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "summary": "precondition is_empty(e6_train_0007_tool_a)",
+                        "name": "precondition: is_empty(e6_train_0007_tool_a)"
+                      },
+                      {
+                        "summary": "precondition hold(e6_train_0007_hand, e6_train_0007_tool_a)",
+                        "name": "precondition: hold(e6_train_0007_hand, e6_train_0007_tool_a)"
+                      },
+                      {
+                        "summary": "precondition can_manipulate(e6_train_0007_tool_a, e6_train_0007_panel)",
+                        "name": "precondition: can_manipulate(e6_train_0007_tool_a, e6_train_0007_panel)"
+                      },
+                      {
+                        "summary": "action pick_up(e6_train_0007_hand, e6_train_0007_tool_a, e6_train_0007_panel)",
+                        "name": "action: pick_up(e6_train_0007_hand, e6_train_0007_tool_a, e6_train_0007_panel)"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "summary": "precondition hold(e6_train_0007_hand, e6_train_0007_tool_a)",
+                "name": "precondition: hold(e6_train_0007_hand, e6_train_0007_tool_a)"
+              },
+              {
+                "summary": "precondition hold(e6_train_0007_tool_a, e6_train_0007_panel)",
+                "name": "precondition: hold(e6_train_0007_tool_a, e6_train_0007_panel)"
+              },
+              {
+                "summary": "precondition can_place_to(e6_train_0007_panel, e6_train_0007_support)",
+                "name": "precondition: can_place_to(e6_train_0007_panel, e6_train_0007_support)"
+              },
+              {
+                "summary": "action place(e6_train_0007_hand, e6_train_0007_tool_a, e6_train_0007_panel, e6_train_0007_support)",
+                "name": "action: place(e6_train_0007_hand, e6_train_0007_tool_a, e6_train_0007_panel, e6_train_0007_support)"
+              }
+            ]
+          }
+        ]
+      },
+      "teacher_actions": [
+        {
+          "name": "change_tool",
+          "args": [
+            "e6_train_0007_hand",
+            "e6_train_0007_tool_b",
+            "e6_train_0007_tool_a"
+          ]
+        },
+        {
+          "name": "pick_up",
+          "args": [
+            "e6_train_0007_hand",
+            "e6_train_0007_tool_a",
+            "e6_train_0007_panel"
+          ]
+        },
+        {
+          "name": "place",
+          "args": [
+            "e6_train_0007_hand",
+            "e6_train_0007_tool_a",
+            "e6_train_0007_panel",
+            "e6_train_0007_support"
+          ]
+        }
+      ],
+      "planning_goal": "is_placed_to(e6_train_0007_panel, e6_train_0007_support)",
+      "planning_goal_source_sha256": "e2f55815436f12f758a05a8ce8f63e770fde582bb4718e47390117278b6e9ed6"
+    },
+    {
+      "sample_id": "train_0011",
+      "instruction": "Screw e6_train_0011_fastener into e6_train_0011_threaded_base.",
+      "world_state": {
+        "objects": [
+          {
+            "name": "e6_train_0011_distractor",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0011_threaded_base",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0011_tool_a",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0011_tool_b",
+            "properties": [
+              "is_empty",
+              "is_equippable"
+            ]
+          },
+          {
+            "name": "e6_train_0011_other_base",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0011_fastener",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0011_hand",
+            "properties": []
+          }
+        ],
+        "constraints": [
+          {
+            "name": "can_manipulate",
+            "source": "e6_train_0011_tool_a",
+            "target": "e6_train_0011_distractor"
+          },
+          {
+            "name": "can_screw_to",
+            "source": "e6_train_0011_distractor",
+            "target": "e6_train_0011_other_base"
+          },
+          {
+            "name": "can_screw_to",
+            "source": "e6_train_0011_fastener",
+            "target": "e6_train_0011_threaded_base"
+          },
+          {
+            "name": "can_manipulate",
+            "source": "e6_train_0011_tool_a",
+            "target": "e6_train_0011_fastener"
+          },
+          {
+            "name": "can_manipulate",
+            "source": "e6_train_0011_tool_b",
+            "target": "e6_train_0011_distractor"
+          }
+        ],
+        "relations": [
+          {
+            "name": "hold",
+            "source": "e6_train_0011_hand",
+            "target": "e6_train_0011_tool_a"
+          },
+          {
+            "name": "hold",
+            "source": "e6_train_0011_tool_a",
+            "target": "e6_train_0011_distractor"
+          }
+        ]
+      },
+      "behavior_tree": {
+        "summary": "selector screw(e6_train_0011_hand, e6_train_0011_tool_a, e6_train_0011_fastener, e6_train_0011_threaded_base)",
+        "name": "selector: screw(e6_train_0011_hand, e6_train_0011_tool_a, e6_train_0011_fastener, e6_train_0011_threaded_base)",
+        "children": [
+          {
+            "summary": "target is_screwed_to(e6_train_0011_fastener, e6_train_0011_threaded_base)",
+            "name": "target: is_screwed_to(e6_train_0011_fastener, e6_train_0011_threaded_base)"
+          },
+          {
+            "summary": "sequence screw(e6_train_0011_hand, e6_train_0011_tool_a, e6_train_0011_fastener, e6_train_0011_threaded_base)",
+            "name": "sequence: screw(e6_train_0011_hand, e6_train_0011_tool_a, e6_train_0011_fastener, e6_train_0011_threaded_base)",
+            "children": [
+              {
+                "summary": "selector pick_up(e6_train_0011_hand, e6_train_0011_tool_a, e6_train_0011_fastener)",
+                "name": "selector: pick_up(e6_train_0011_hand, e6_train_0011_tool_a, e6_train_0011_fastener)",
+                "children": [
+                  {
+                    "summary": "target hold(e6_train_0011_tool_a, e6_train_0011_fastener)",
+                    "name": "target: hold(e6_train_0011_tool_a, e6_train_0011_fastener)"
+                  },
+                  {
+                    "summary": "sequence pick_up(e6_train_0011_hand, e6_train_0011_tool_a, e6_train_0011_fastener)",
+                    "name": "sequence: pick_up(e6_train_0011_hand, e6_train_0011_tool_a, e6_train_0011_fastener)",
+                    "children": [
+                      {
+                        "summary": "selector put_down(e6_train_0011_hand, e6_train_0011_tool_a, e6_train_0011_distractor)",
+                        "name": "selector: put_down(e6_train_0011_hand, e6_train_0011_tool_a, e6_train_0011_distractor)",
+                        "children": [
+                          {
+                            "summary": "target is_empty(e6_train_0011_tool_a)",
+                            "name": "target: is_empty(e6_train_0011_tool_a)"
+                          },
+                          {
+                            "summary": "sequence put_down(e6_train_0011_hand, e6_train_0011_tool_a, e6_train_0011_distractor)",
+                            "name": "sequence: put_down(e6_train_0011_hand, e6_train_0011_tool_a, e6_train_0011_distractor)",
+                            "children": [
+                              {
+                                "summary": "precondition hold(e6_train_0011_tool_a, e6_train_0011_distractor)",
+                                "name": "precondition: hold(e6_train_0011_tool_a, e6_train_0011_distractor)"
+                              },
+                              {
+                                "summary": "precondition hold(e6_train_0011_hand, e6_train_0011_tool_a)",
+                                "name": "precondition: hold(e6_train_0011_hand, e6_train_0011_tool_a)"
+                              },
+                              {
+                                "summary": "action put_down(e6_train_0011_hand, e6_train_0011_tool_a, e6_train_0011_distractor)",
+                                "name": "action: put_down(e6_train_0011_hand, e6_train_0011_tool_a, e6_train_0011_distractor)"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "summary": "precondition is_empty(e6_train_0011_tool_a)",
+                        "name": "precondition: is_empty(e6_train_0011_tool_a)"
+                      },
+                      {
+                        "summary": "precondition hold(e6_train_0011_hand, e6_train_0011_tool_a)",
+                        "name": "precondition: hold(e6_train_0011_hand, e6_train_0011_tool_a)"
+                      },
+                      {
+                        "summary": "precondition can_manipulate(e6_train_0011_tool_a, e6_train_0011_fastener)",
+                        "name": "precondition: can_manipulate(e6_train_0011_tool_a, e6_train_0011_fastener)"
+                      },
+                      {
+                        "summary": "action pick_up(e6_train_0011_hand, e6_train_0011_tool_a, e6_train_0011_fastener)",
+                        "name": "action: pick_up(e6_train_0011_hand, e6_train_0011_tool_a, e6_train_0011_fastener)"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "summary": "precondition hold(e6_train_0011_hand, e6_train_0011_tool_a)",
+                "name": "precondition: hold(e6_train_0011_hand, e6_train_0011_tool_a)"
+              },
+              {
+                "summary": "precondition hold(e6_train_0011_tool_a, e6_train_0011_fastener)",
+                "name": "precondition: hold(e6_train_0011_tool_a, e6_train_0011_fastener)"
+              },
+              {
+                "summary": "precondition can_screw_to(e6_train_0011_fastener, e6_train_0011_threaded_base)",
+                "name": "precondition: can_screw_to(e6_train_0011_fastener, e6_train_0011_threaded_base)"
+              },
+              {
+                "summary": "action screw(e6_train_0011_hand, e6_train_0011_tool_a, e6_train_0011_fastener, e6_train_0011_threaded_base)",
+                "name": "action: screw(e6_train_0011_hand, e6_train_0011_tool_a, e6_train_0011_fastener, e6_train_0011_threaded_base)"
+              }
+            ]
+          }
+        ]
+      },
+      "teacher_actions": [
+        {
+          "name": "put_down",
+          "args": [
+            "e6_train_0011_hand",
+            "e6_train_0011_tool_a",
+            "e6_train_0011_distractor"
+          ]
+        },
+        {
+          "name": "pick_up",
+          "args": [
+            "e6_train_0011_hand",
+            "e6_train_0011_tool_a",
+            "e6_train_0011_fastener"
+          ]
+        },
+        {
+          "name": "screw",
+          "args": [
+            "e6_train_0011_hand",
+            "e6_train_0011_tool_a",
+            "e6_train_0011_fastener",
+            "e6_train_0011_threaded_base"
+          ]
+        }
+      ],
+      "planning_goal": "is_screwed_to(e6_train_0011_fastener, e6_train_0011_threaded_base)",
+      "planning_goal_source_sha256": "e2f55815436f12f758a05a8ce8f63e770fde582bb4718e47390117278b6e9ed6"
+    }
+  ],
+  "llmbt_demonstrations": [
+    {
+      "sample_id": "train_0000",
+      "instruction": "Insert e6_train_0000_pin into e6_train_0000_socket.",
+      "world_state": {
+        "objects": [
+          {
+            "name": "e6_train_0000_pin",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0000_hand",
+            "properties": [
+              "is_empty"
+            ]
+          },
+          {
+            "name": "e6_train_0000_tool_b",
+            "properties": [
+              "is_empty",
+              "is_equippable"
+            ]
+          },
+          {
+            "name": "e6_train_0000_distractor",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0000_tool_a",
+            "properties": [
+              "is_empty",
+              "is_equippable"
+            ]
+          },
+          {
+            "name": "e6_train_0000_socket",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0000_other_base",
+            "properties": []
+          }
+        ],
+        "constraints": [
+          {
+            "name": "can_manipulate",
+            "source": "e6_train_0000_tool_a",
+            "target": "e6_train_0000_pin"
+          },
+          {
+            "name": "can_insert_to",
+            "source": "e6_train_0000_distractor",
+            "target": "e6_train_0000_other_base"
+          },
+          {
+            "name": "can_manipulate",
+            "source": "e6_train_0000_tool_a",
+            "target": "e6_train_0000_distractor"
+          },
+          {
+            "name": "can_insert_to",
+            "source": "e6_train_0000_pin",
+            "target": "e6_train_0000_socket"
+          },
+          {
+            "name": "can_manipulate",
+            "source": "e6_train_0000_tool_b",
+            "target": "e6_train_0000_distractor"
+          }
+        ],
+        "relations": []
+      },
+      "target": "is_inserted_to(e6_train_0000_pin, e6_train_0000_socket)",
+      "teacher_actions": [
+        {
+          "name": "load_tool",
+          "args": [
+            "e6_train_0000_hand",
+            "e6_train_0000_tool_a"
+          ]
+        },
+        {
+          "name": "pick_up",
+          "args": [
+            "e6_train_0000_hand",
+            "e6_train_0000_tool_a",
+            "e6_train_0000_pin"
+          ]
+        },
+        {
+          "name": "insert",
+          "args": [
+            "e6_train_0000_hand",
+            "e6_train_0000_tool_a",
+            "e6_train_0000_pin",
+            "e6_train_0000_socket"
+          ]
+        }
+      ],
+      "generation": {
+        "namespace": "e6_train_0000_",
+        "operation": "insert",
+        "variant": "empty_hand",
+        "source": "independent assembly domain grammar; no test instance input"
+      },
+      "planning_goal": "is_inserted_to(e6_train_0000_pin, e6_train_0000_socket)",
+      "planning_goal_source_sha256": "e2f55815436f12f758a05a8ce8f63e770fde582bb4718e47390117278b6e9ed6"
+    },
+    {
+      "sample_id": "train_0007",
+      "instruction": "Use the available tools to place e6_train_0007_panel on e6_train_0007_support.",
+      "world_state": {
+        "objects": [
+          {
+            "name": "e6_train_0007_tool_b",
+            "properties": [
+              "is_empty"
+            ]
+          },
+          {
+            "name": "e6_train_0007_hand",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0007_other_base",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0007_distractor",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0007_support",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0007_tool_a",
+            "properties": [
+              "is_empty",
+              "is_equippable"
+            ]
+          },
+          {
+            "name": "e6_train_0007_panel",
+            "properties": []
+          }
+        ],
+        "constraints": [
+          {
+            "name": "can_place_to",
+            "source": "e6_train_0007_distractor",
+            "target": "e6_train_0007_other_base"
+          },
+          {
+            "name": "can_manipulate",
+            "source": "e6_train_0007_tool_a",
+            "target": "e6_train_0007_panel"
+          },
+          {
+            "name": "can_manipulate",
+            "source": "e6_train_0007_tool_a",
+            "target": "e6_train_0007_distractor"
+          },
+          {
+            "name": "can_manipulate",
+            "source": "e6_train_0007_tool_b",
+            "target": "e6_train_0007_distractor"
+          },
+          {
+            "name": "can_place_to",
+            "source": "e6_train_0007_panel",
+            "target": "e6_train_0007_support"
+          }
+        ],
+        "relations": [
+          {
+            "name": "hold",
+            "source": "e6_train_0007_hand",
+            "target": "e6_train_0007_tool_b"
+          }
+        ]
+      },
+      "target": "is_placed_to(e6_train_0007_panel, e6_train_0007_support)",
+      "teacher_actions": [
+        {
+          "name": "change_tool",
+          "args": [
+            "e6_train_0007_hand",
+            "e6_train_0007_tool_b",
+            "e6_train_0007_tool_a"
+          ]
+        },
+        {
+          "name": "pick_up",
+          "args": [
+            "e6_train_0007_hand",
+            "e6_train_0007_tool_a",
+            "e6_train_0007_panel"
+          ]
+        },
+        {
+          "name": "place",
+          "args": [
+            "e6_train_0007_hand",
+            "e6_train_0007_tool_a",
+            "e6_train_0007_panel",
+            "e6_train_0007_support"
+          ]
+        }
+      ],
+      "generation": {
+        "namespace": "e6_train_0007_",
+        "operation": "place",
+        "variant": "wrong_tool",
+        "source": "independent assembly domain grammar; no test instance input"
+      },
+      "planning_goal": "is_placed_to(e6_train_0007_panel, e6_train_0007_support)",
+      "planning_goal_source_sha256": "e2f55815436f12f758a05a8ce8f63e770fde582bb4718e47390117278b6e9ed6"
+    },
+    {
+      "sample_id": "train_0011",
+      "instruction": "Screw e6_train_0011_fastener into e6_train_0011_threaded_base.",
+      "world_state": {
+        "objects": [
+          {
+            "name": "e6_train_0011_distractor",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0011_threaded_base",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0011_tool_a",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0011_tool_b",
+            "properties": [
+              "is_empty",
+              "is_equippable"
+            ]
+          },
+          {
+            "name": "e6_train_0011_other_base",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0011_fastener",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0011_hand",
+            "properties": []
+          }
+        ],
+        "constraints": [
+          {
+            "name": "can_manipulate",
+            "source": "e6_train_0011_tool_a",
+            "target": "e6_train_0011_distractor"
+          },
+          {
+            "name": "can_screw_to",
+            "source": "e6_train_0011_distractor",
+            "target": "e6_train_0011_other_base"
+          },
+          {
+            "name": "can_screw_to",
+            "source": "e6_train_0011_fastener",
+            "target": "e6_train_0011_threaded_base"
+          },
+          {
+            "name": "can_manipulate",
+            "source": "e6_train_0011_tool_a",
+            "target": "e6_train_0011_fastener"
+          },
+          {
+            "name": "can_manipulate",
+            "source": "e6_train_0011_tool_b",
+            "target": "e6_train_0011_distractor"
+          }
+        ],
+        "relations": [
+          {
+            "name": "hold",
+            "source": "e6_train_0011_hand",
+            "target": "e6_train_0011_tool_a"
+          },
+          {
+            "name": "hold",
+            "source": "e6_train_0011_tool_a",
+            "target": "e6_train_0011_distractor"
+          }
+        ]
+      },
+      "target": "is_screwed_to(e6_train_0011_fastener, e6_train_0011_threaded_base)",
+      "teacher_actions": [
+        {
+          "name": "put_down",
+          "args": [
+            "e6_train_0011_hand",
+            "e6_train_0011_tool_a",
+            "e6_train_0011_distractor"
+          ]
+        },
+        {
+          "name": "pick_up",
+          "args": [
+            "e6_train_0011_hand",
+            "e6_train_0011_tool_a",
+            "e6_train_0011_fastener"
+          ]
+        },
+        {
+          "name": "screw",
+          "args": [
+            "e6_train_0011_hand",
+            "e6_train_0011_tool_a",
+            "e6_train_0011_fastener",
+            "e6_train_0011_threaded_base"
+          ]
+        }
+      ],
+      "generation": {
+        "namespace": "e6_train_0011_",
+        "operation": "screw",
+        "variant": "occupied_distractor",
+        "source": "independent assembly domain grammar; no test instance input"
+      },
+      "planning_goal": "is_screwed_to(e6_train_0011_fastener, e6_train_0011_threaded_base)",
+      "planning_goal_source_sha256": "e2f55815436f12f758a05a8ce8f63e770fde582bb4718e47390117278b6e9ed6"
+    },
+    {
+      "sample_id": "train_0000/hand_hold",
+      "instruction": "Have e6_train_0000_hand hold e6_train_0000_tool_a.",
+      "world_state": {
+        "objects": [
+          {
+            "name": "e6_train_0000_pin",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0000_hand",
+            "properties": [
+              "is_empty"
+            ]
+          },
+          {
+            "name": "e6_train_0000_tool_b",
+            "properties": [
+              "is_empty",
+              "is_equippable"
+            ]
+          },
+          {
+            "name": "e6_train_0000_distractor",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0000_tool_a",
+            "properties": [
+              "is_empty",
+              "is_equippable"
+            ]
+          },
+          {
+            "name": "e6_train_0000_socket",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0000_other_base",
+            "properties": []
+          }
+        ],
+        "constraints": [
+          {
+            "name": "can_manipulate",
+            "source": "e6_train_0000_tool_a",
+            "target": "e6_train_0000_pin"
+          },
+          {
+            "name": "can_insert_to",
+            "source": "e6_train_0000_distractor",
+            "target": "e6_train_0000_other_base"
+          },
+          {
+            "name": "can_manipulate",
+            "source": "e6_train_0000_tool_a",
+            "target": "e6_train_0000_distractor"
+          },
+          {
+            "name": "can_insert_to",
+            "source": "e6_train_0000_pin",
+            "target": "e6_train_0000_socket"
+          },
+          {
+            "name": "can_manipulate",
+            "source": "e6_train_0000_tool_b",
+            "target": "e6_train_0000_distractor"
+          }
+        ],
+        "relations": []
+      },
+      "target": "hold(e6_train_0000_hand, e6_train_0000_tool_a)",
+      "teacher_actions": [
+        {
+          "name": "load_tool",
+          "args": [
+            "e6_train_0000_hand",
+            "e6_train_0000_tool_a"
+          ]
+        }
+      ],
+      "generation": {
+        "source": "prefix of shared non-test training teacher trajectory",
+        "source_sample_id": "train_0000",
+        "source_action_index": 0,
+        "state_category": "hand_hold",
+        "derived_from_evaluation": false
+      },
+      "planning_goal": "hold(e6_train_0000_hand, e6_train_0000_tool_a)",
+      "planning_goal_source_sha256": "7cb331dc379f6b956813b58c38a72b83b688389d514e7a956257da29ac162fcf"
+    },
+    {
+      "sample_id": "train_0000/tool_hold",
+      "instruction": "Have e6_train_0000_tool_a hold e6_train_0000_pin.",
+      "world_state": {
+        "objects": [
+          {
+            "name": "e6_train_0000_pin",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0000_hand",
+            "properties": [
+              "is_empty"
+            ]
+          },
+          {
+            "name": "e6_train_0000_tool_b",
+            "properties": [
+              "is_empty",
+              "is_equippable"
+            ]
+          },
+          {
+            "name": "e6_train_0000_distractor",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0000_tool_a",
+            "properties": [
+              "is_empty",
+              "is_equippable"
+            ]
+          },
+          {
+            "name": "e6_train_0000_socket",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0000_other_base",
+            "properties": []
+          }
+        ],
+        "constraints": [
+          {
+            "name": "can_manipulate",
+            "source": "e6_train_0000_tool_a",
+            "target": "e6_train_0000_pin"
+          },
+          {
+            "name": "can_insert_to",
+            "source": "e6_train_0000_distractor",
+            "target": "e6_train_0000_other_base"
+          },
+          {
+            "name": "can_manipulate",
+            "source": "e6_train_0000_tool_a",
+            "target": "e6_train_0000_distractor"
+          },
+          {
+            "name": "can_insert_to",
+            "source": "e6_train_0000_pin",
+            "target": "e6_train_0000_socket"
+          },
+          {
+            "name": "can_manipulate",
+            "source": "e6_train_0000_tool_b",
+            "target": "e6_train_0000_distractor"
+          }
+        ],
+        "relations": []
+      },
+      "target": "hold(e6_train_0000_tool_a, e6_train_0000_pin)",
+      "teacher_actions": [
+        {
+          "name": "load_tool",
+          "args": [
+            "e6_train_0000_hand",
+            "e6_train_0000_tool_a"
+          ]
+        },
+        {
+          "name": "pick_up",
+          "args": [
+            "e6_train_0000_hand",
+            "e6_train_0000_tool_a",
+            "e6_train_0000_pin"
+          ]
+        }
+      ],
+      "generation": {
+        "source": "prefix of shared non-test training teacher trajectory",
+        "source_sample_id": "train_0000",
+        "source_action_index": 1,
+        "state_category": "tool_hold",
+        "derived_from_evaluation": false
+      },
+      "planning_goal": "hold(e6_train_0000_tool_a, e6_train_0000_pin)",
+      "planning_goal_source_sha256": "7cb331dc379f6b956813b58c38a72b83b688389d514e7a956257da29ac162fcf"
+    },
+    {
+      "sample_id": "train_0018/empty_hand",
+      "instruction": "Make e6_train_0018_hand empty.",
+      "world_state": {
+        "objects": [
+          {
+            "name": "e6_train_0018_socket",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0018_distractor",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0018_pin",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0018_tool_a",
+            "properties": [
+              "is_empty",
+              "is_equippable"
+            ]
+          },
+          {
+            "name": "e6_train_0018_tool_b",
+            "properties": [
+              "is_empty"
+            ]
+          },
+          {
+            "name": "e6_train_0018_other_base",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0018_hand",
+            "properties": []
+          }
+        ],
+        "constraints": [
+          {
+            "name": "can_manipulate",
+            "source": "e6_train_0018_tool_a",
+            "target": "e6_train_0018_pin"
+          },
+          {
+            "name": "can_insert_to",
+            "source": "e6_train_0018_distractor",
+            "target": "e6_train_0018_other_base"
+          },
+          {
+            "name": "can_insert_to",
+            "source": "e6_train_0018_pin",
+            "target": "e6_train_0018_socket"
+          },
+          {
+            "name": "can_manipulate",
+            "source": "e6_train_0018_tool_b",
+            "target": "e6_train_0018_distractor"
+          },
+          {
+            "name": "can_manipulate",
+            "source": "e6_train_0018_tool_a",
+            "target": "e6_train_0018_distractor"
+          }
+        ],
+        "relations": [
+          {
+            "name": "hold",
+            "source": "e6_train_0018_hand",
+            "target": "e6_train_0018_tool_b"
+          }
+        ]
+      },
+      "target": "is_empty(e6_train_0018_hand)",
+      "teacher_actions": [
+        {
+          "name": "unload_tool",
+          "args": [
+            "e6_train_0018_hand",
+            "e6_train_0018_tool_b"
+          ]
+        }
+      ],
+      "generation": {
+        "source": "prefix of shared non-test training teacher trajectory",
+        "source_sample_id": "train_0018",
+        "source_action_index": 0,
+        "state_category": "empty_hand",
+        "derived_from_evaluation": false
+      },
+      "planning_goal": "is_empty(e6_train_0018_hand)",
+      "planning_goal_source_sha256": "7cb331dc379f6b956813b58c38a72b83b688389d514e7a956257da29ac162fcf"
+    },
+    {
+      "sample_id": "train_0009/empty_tool",
+      "instruction": "Make e6_train_0009_tool_a empty.",
+      "world_state": {
+        "objects": [
+          {
+            "name": "e6_train_0009_other_base",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0009_hand",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0009_socket",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0009_pin",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0009_tool_b",
+            "properties": [
+              "is_empty",
+              "is_equippable"
+            ]
+          },
+          {
+            "name": "e6_train_0009_tool_a",
+            "properties": []
+          },
+          {
+            "name": "e6_train_0009_distractor",
+            "properties": []
+          }
+        ],
+        "constraints": [
+          {
+            "name": "can_insert_to",
+            "source": "e6_train_0009_distractor",
+            "target": "e6_train_0009_other_base"
+          },
+          {
+            "name": "can_manipulate",
+            "source": "e6_train_0009_tool_a",
+            "target": "e6_train_0009_pin"
+          },
+          {
+            "name": "can_manipulate",
+            "source": "e6_train_0009_tool_a",
+            "target": "e6_train_0009_distractor"
+          },
+          {
+            "name": "can_manipulate",
+            "source": "e6_train_0009_tool_b",
+            "target": "e6_train_0009_distractor"
+          },
+          {
+            "name": "can_insert_to",
+            "source": "e6_train_0009_pin",
+            "target": "e6_train_0009_socket"
+          }
+        ],
+        "relations": [
+          {
+            "name": "hold",
+            "source": "e6_train_0009_hand",
+            "target": "e6_train_0009_tool_a"
+          },
+          {
+            "name": "hold",
+            "source": "e6_train_0009_tool_a",
+            "target": "e6_train_0009_distractor"
+          }
+        ]
+      },
+      "target": "is_empty(e6_train_0009_tool_a)",
+      "teacher_actions": [
+        {
+          "name": "put_down",
+          "args": [
+            "e6_train_0009_hand",
+            "e6_train_0009_tool_a",
+            "e6_train_0009_distractor"
+          ]
+        }
+      ],
+      "generation": {
+        "source": "prefix of shared non-test training teacher trajectory",
+        "source_sample_id": "train_0009",
+        "source_action_index": 0,
+        "state_category": "empty_tool",
+        "derived_from_evaluation": false
+      },
+      "planning_goal": "is_empty(e6_train_0009_tool_a)",
+      "planning_goal_source_sha256": "7cb331dc379f6b956813b58c38a72b83b688389d514e7a956257da29ac162fcf"
+    }
+  ],
+  "llmbt_demonstrations_sha256": "49ac5e26e92572c9ca508cd60c43573f4bb9e2cce9d5df817f3e9f8c64371bfb"
+}

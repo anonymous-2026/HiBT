@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+outputs/
+work/
+models/
+services.json
+**/cpu_smoke.json
+extensions/cabto_assembly/source_audit/pinned/
+extensions/cabto_libero/source_audit/pinned/

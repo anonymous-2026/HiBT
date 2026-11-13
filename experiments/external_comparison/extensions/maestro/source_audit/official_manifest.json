@@ -1,0 +1,11 @@
+{
+  "repository": "https://github.com/penn-pal-lab/maestro",
+  "commit": "e60d326233a238ddc496bf7a08acb7a278e9e66d",
+  "license": "MIT",
+  "files": {
+    "LICENSE": "528ed6864dc410d7f623d1e341cce1f5ba9a5141999c6c002febb8dbd6b5c959",
+    "NOTICE": "59ded049ecdebac5b40cb386a193a29be98ba4554a04622d05b7b257b5a5ca00",
+    "maestro/prompts/maestro_prompt.txt": "0478cc6f3f05e1df467a26babfce19c72bd697c211314a67022ce44e25598cf9",
+    "maestro/runner.py": "3d19b947dffbf2102a5b458d0262881b77e9fd8308f79aa79ef02359156d2711"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "protocol_frozen": true,
+  "method": "cabto",
+  "model_tag": "qwen35_9b",
+  "expected_model_name": "Qwen/Qwen3.5-9B",
+  "expected_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+  "transport_timeout_s": 900,
+  "budget": {
+    "max_calls": 36,
+    "max_output_tokens": 4096,
+    "seed": 0,
+    "temperature": 0.0,
+    "max_models": 16,
+    "policy_samples": 3,
+    "planning_timeout_s": 30
+  },
+  "max_rounds": 3,
+  "runtime": {
+    "max_ticks": 128,
+    "max_actions": 128,
+    "max_feedback_ticks": 128,
+    "max_feedback_actions": 128
+  },
+  "scope": "Independent complete CABTO benchmark adaptation, supplied final goal, Qwen3.5-9B high/low generator; no unchanged-original-backbone claim",
+  "mode": "assembly",
+  "phase": "formal",
+  "n_expected_cases": 60,
+  "cold_revision": "cabto_complete_port_v2_json_object_schema_fix"
+}

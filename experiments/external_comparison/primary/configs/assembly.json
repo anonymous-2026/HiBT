@@ -1,0 +1,29 @@
+{
+  "phase": "formal",
+  "model_tags": [
+    "qwen",
+    "mistral"
+  ],
+  "methods": [
+    "hibt",
+    "llmbt",
+    "btgenbot",
+    "kios",
+    "obtea"
+  ],
+  "budget": {
+    "max_calls": 36,
+    "max_output_tokens": 4096,
+    "seed": 0,
+    "temperature": 0.0,
+    "intent_max_feedbacks": 5
+  },
+  "runtime": {
+    "max_ticks": 128,
+    "max_actions": 128,
+    "max_runtime_updates": 128,
+    "max_feedback_ticks": 128,
+    "max_feedback_actions": 128
+  },
+  "protocol_frozen": false
+}

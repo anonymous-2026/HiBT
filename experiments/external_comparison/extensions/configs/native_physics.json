@@ -1,0 +1,11 @@
+{
+  "max_steps": 650,
+  "stage_steps": 180,
+  "max_attempts": 3,
+  "chunk_steps": 5,
+  "settle_steps": 10,
+  "policy_seed": 0,
+  "camera_transform": "rotate180",
+  "prompt_mode": "task_prefix",
+  "openpi_client_source": null
+}

@@ -1,0 +1,225 @@
+{
+  "scope": "MAESTRO assembly/native; CABTO assembly v2 and physical v3",
+  "source_file_hashes": [
+    {
+      "destination": "common/native_runtime.py",
+      "source_sha256": "f154be911275b2cd4cb7cd649ba79f5f006937d9fe51054d49b3bedda2338c04",
+      "export_sha256": "565a14c1af1072148e3cee06c2d8741142ac13cc874b0df58347dd57b8854461"
+    },
+    {
+      "destination": "common/assembly_registry.py",
+      "source_sha256": "05bd3527cf0271669833b72f237aa72679bddfe4887272b039d0780f678db16e",
+      "export_sha256": "44e07470e1a20655a784f9db3541616ccb38a98166d73b22063ec3c4984400b6"
+    },
+    {
+      "destination": "common/assembly_state_canonicalization.py",
+      "source_sha256": "bcde7e04f4ec7009cd6911e226c6eb552ce978e089b9183a35ee3f9f7844f66b",
+      "export_sha256": "bcde7e04f4ec7009cd6911e226c6eb552ce978e089b9183a35ee3f9f7844f66b"
+    },
+    {
+      "destination": "common/run_native_libero.py",
+      "source_sha256": "60ffc47c6ddeca13771e3bf27452cd57e75e7cbb128ac0100d0a2e83e4b2e507",
+      "export_sha256": "60ffc47c6ddeca13771e3bf27452cd57e75e7cbb128ac0100d0a2e83e4b2e507"
+    },
+    {
+      "destination": "common/libero_registry.py",
+      "source_sha256": "ecdd4ef9ecf1d080b59c2c799644c01aeef4432f7ce78973c2c1d05a07817d20",
+      "export_sha256": "ecdd4ef9ecf1d080b59c2c799644c01aeef4432f7ce78973c2c1d05a07817d20"
+    },
+    {
+      "destination": "common/goal_contract.py",
+      "source_sha256": "6a8e219a9a125e02ee0a5a37e5ac11978c1c1c1dbad5ae8d52d10c5bab596804",
+      "export_sha256": "6a8e219a9a125e02ee0a5a37e5ac11978c1c1c1dbad5ae8d52d10c5bab596804"
+    },
+    {
+      "destination": "common/prompt_registry.py",
+      "source_sha256": "6f2095a06fc0671556d10f7b233e7999ded9ed41d0a4c7767495d9f286dee7b3",
+      "export_sha256": "6f2095a06fc0671556d10f7b233e7999ded9ed41d0a4c7767495d9f286dee7b3"
+    },
+    {
+      "destination": "assembly_artifact/runtime/minimal_bt.py",
+      "source_sha256": "de2219c286a071632936fecbb43d8e6e335fc123235e66f59a38f78b2826283b",
+      "export_sha256": "de2219c286a071632936fecbb43d8e6e335fc123235e66f59a38f78b2826283b"
+    },
+    {
+      "destination": "assembly_artifact/data/world_definition.json",
+      "source_sha256": "56b5bdc1f6abb0dcf66645b44228db1721fcbda28e2709350ff20288c67b048f",
+      "export_sha256": "56b5bdc1f6abb0dcf66645b44228db1721fcbda28e2709350ff20288c67b048f"
+    },
+    {
+      "destination": "cabto_assembly/adapter.py",
+      "source_sha256": "0a4f1fa283b7eeec8e5893a48d15dbcc42c2cafcbdb7f534c53c1ff3466607c3",
+      "export_sha256": "0a4f1fa283b7eeec8e5893a48d15dbcc42c2cafcbdb7f534c53c1ff3466607c3"
+    },
+    {
+      "destination": "cabto_assembly/programs.py",
+      "source_sha256": "fb1cb50e1076303fc5d7a225a12e0a41d7956d0f0c627249c234bb2bd97959f7",
+      "export_sha256": "fb1cb50e1076303fc5d7a225a12e0a41d7956d0f0c627249c234bb2bd97959f7"
+    },
+    {
+      "destination": "cabto_assembly/planner_bridge.py",
+      "source_sha256": "49e641af318a6410f67cb0f06581c3516007d28c559fb75df5480246ab1074ce",
+      "export_sha256": "49e641af318a6410f67cb0f06581c3516007d28c559fb75df5480246ab1074ce"
+    },
+    {
+      "destination": "cabto_assembly/transport.py",
+      "source_sha256": "041c8f41f92996a5e9d3ef2834608f87608ec11b67ae02027e5e6fe7464aa2cd",
+      "export_sha256": "041c8f41f92996a5e9d3ef2834608f87608ec11b67ae02027e5e6fe7464aa2cd"
+    },
+    {
+      "destination": "cabto_assembly/run_cabto.py",
+      "source_sha256": "2d66d365b10e7289e1c37e726a2c67c2eb41d327064b205b11095a7168c9e1cc",
+      "export_sha256": "3865e8c2317c7f29b2c7ded3c248ac48cbec5f16a3851643077b956a509a8265"
+    },
+    {
+      "destination": "cabto_assembly/source_audit/paper.json",
+      "source_sha256": "9d7d6a947ca7b095239b9b2e4e7de42dfe4ff32411aa4c2e6d1fbbf3c6c85ef4",
+      "export_sha256": "9d7d6a947ca7b095239b9b2e4e7de42dfe4ff32411aa4c2e6d1fbbf3c6c85ef4"
+    },
+    {
+      "destination": "cabto_assembly/source_audit/LICENSE_NOTICE.md",
+      "source_sha256": "218d826b5f78d9f02ecec8e0a228219be49c956824487cde9e10f8ccec972a1a",
+      "export_sha256": "a3f9f34effaed4ac63d3b1fe07872a114b9089194bdf52e913cd1b67b7125fd7"
+    },
+    {
+      "destination": "cabto_libero/adapter.py",
+      "source_sha256": "0a4f1fa283b7eeec8e5893a48d15dbcc42c2cafcbdb7f534c53c1ff3466607c3",
+      "export_sha256": "0a4f1fa283b7eeec8e5893a48d15dbcc42c2cafcbdb7f534c53c1ff3466607c3"
+    },
+    {
+      "destination": "cabto_libero/programs.py",
+      "source_sha256": "fb1cb50e1076303fc5d7a225a12e0a41d7956d0f0c627249c234bb2bd97959f7",
+      "export_sha256": "fb1cb50e1076303fc5d7a225a12e0a41d7956d0f0c627249c234bb2bd97959f7"
+    },
+    {
+      "destination": "cabto_libero/planner_bridge.py",
+      "source_sha256": "49e641af318a6410f67cb0f06581c3516007d28c559fb75df5480246ab1074ce",
+      "export_sha256": "49e641af318a6410f67cb0f06581c3516007d28c559fb75df5480246ab1074ce"
+    },
+    {
+      "destination": "cabto_libero/transport.py",
+      "source_sha256": "041c8f41f92996a5e9d3ef2834608f87608ec11b67ae02027e5e6fe7464aa2cd",
+      "export_sha256": "041c8f41f92996a5e9d3ef2834608f87608ec11b67ae02027e5e6fe7464aa2cd"
+    },
+    {
+      "destination": "cabto_libero/run_cabto.py",
+      "source_sha256": "e57eb57bb2d30fbd4752425ac4b52f2ae134c5b972e045274db05e8b2e95abd3",
+      "export_sha256": "c557e7f14c1aa35fd0cf3c0b7a4dddd6c0b38dfb228d7203362f19e199fd3938"
+    },
+    {
+      "destination": "cabto_libero/execution_boundary.py",
+      "source_sha256": "a199429e5677b49683bdf4f4fa148e5f34082132ed12a34605a90ffd2031c142",
+      "export_sha256": "a199429e5677b49683bdf4f4fa148e5f34082132ed12a34605a90ffd2031c142"
+    },
+    {
+      "destination": "cabto_libero/source_audit/paper.json",
+      "source_sha256": "9d7d6a947ca7b095239b9b2e4e7de42dfe4ff32411aa4c2e6d1fbbf3c6c85ef4",
+      "export_sha256": "9d7d6a947ca7b095239b9b2e4e7de42dfe4ff32411aa4c2e6d1fbbf3c6c85ef4"
+    },
+    {
+      "destination": "cabto_libero/source_audit/LICENSE_NOTICE.md",
+      "source_sha256": "218d826b5f78d9f02ecec8e0a228219be49c956824487cde9e10f8ccec972a1a",
+      "export_sha256": "a3f9f34effaed4ac63d3b1fe07872a114b9089194bdf52e913cd1b67b7125fd7"
+    },
+    {
+      "destination": "maestro/maestro_benchmark/__init__.py",
+      "source_sha256": "e85081225d590fcfbfd354397ec6626fbe578b7ad61ae0b2851da36766eb9458",
+      "export_sha256": "e85081225d590fcfbfd354397ec6626fbe578b7ad61ae0b2851da36766eb9458"
+    },
+    {
+      "destination": "maestro/maestro_benchmark/transport.py",
+      "source_sha256": "4955e6ea8b187426bf60f9a43cb76864545ee3b50709bd33977000bb782ea974",
+      "export_sha256": "4955e6ea8b187426bf60f9a43cb76864545ee3b50709bd33977000bb782ea974"
+    },
+    {
+      "destination": "maestro/maestro_benchmark/tools.py",
+      "source_sha256": "1c9c869ffb7c9266688e9b27f2c39980d48f46626538eb7419c8a8860966cea9",
+      "export_sha256": "1c9c869ffb7c9266688e9b27f2c39980d48f46626538eb7419c8a8860966cea9"
+    },
+    {
+      "destination": "maestro/maestro_benchmark/runner.py",
+      "source_sha256": "07048ce60ffea3b65e8cf12b961ff3fb00e52d358d52e4a126fdb11b39e73f30",
+      "export_sha256": "07048ce60ffea3b65e8cf12b961ff3fb00e52d358d52e4a126fdb11b39e73f30"
+    },
+    {
+      "destination": "maestro/maestro_benchmark/sandbox.py",
+      "source_sha256": "ac819c18f3df2b1e458e304b9ca273b72b9a38572cba988e3dde9fdd56aa8d1e",
+      "export_sha256": "ac819c18f3df2b1e458e304b9ca273b72b9a38572cba988e3dde9fdd56aa8d1e"
+    },
+    {
+      "destination": "maestro/maestro_benchmark/cli.py",
+      "source_sha256": "0c09112c27e975f9582d5c33168e71dc0ff4c311e7bf6ab018612ee43bf016cd",
+      "export_sha256": "3c94903a2771a044497bd5a774d4fe5167b4e5d2b2af78d58ad272713349736e"
+    },
+    {
+      "destination": "maestro/upstream/LICENSE",
+      "source_sha256": "528ed6864dc410d7f623d1e341cce1f5ba9a5141999c6c002febb8dbd6b5c959",
+      "export_sha256": "528ed6864dc410d7f623d1e341cce1f5ba9a5141999c6c002febb8dbd6b5c959"
+    },
+    {
+      "destination": "maestro/upstream/NOTICE",
+      "source_sha256": "59ded049ecdebac5b40cb386a193a29be98ba4554a04622d05b7b257b5a5ca00",
+      "export_sha256": "59ded049ecdebac5b40cb386a193a29be98ba4554a04622d05b7b257b5a5ca00"
+    },
+    {
+      "destination": "maestro/upstream/maestro/prompts/maestro_prompt.txt",
+      "source_sha256": "0478cc6f3f05e1df467a26babfce19c72bd697c211314a67022ce44e25598cf9",
+      "export_sha256": "0478cc6f3f05e1df467a26babfce19c72bd697c211314a67022ce44e25598cf9"
+    },
+    {
+      "destination": "inputs/assembly_formal_requests.json",
+      "source_sha256": "3052c59b07f7cbda2916b2a134f0efcf126a57ce22be7cee2ca01befa8aca55a",
+      "export_sha256": "c75180f3b053b880aedb56af3758f28d5e9be2483c5ba0b017125a4c27d36741"
+    },
+    {
+      "destination": "inputs/assembly_formal_evaluators.json",
+      "source_sha256": "4fbee22aa9b177273b49ee755617acadd120061f40ca1bda9bfb32e39e08c9dd",
+      "export_sha256": "4fbee22aa9b177273b49ee755617acadd120061f40ca1bda9bfb32e39e08c9dd"
+    },
+    {
+      "destination": "inputs/libero_formal_requests.json",
+      "source_sha256": "cb599148eb73127a1e1a91fd53cdf52d6cebcd52348e441e19a4457226763d51",
+      "export_sha256": "cb599148eb73127a1e1a91fd53cdf52d6cebcd52348e441e19a4457226763d51"
+    },
+    {
+      "destination": "services/serve_vlm.py",
+      "source_sha256": "7229ed012638cfca6bafd895565152eeadd26f296e6682b4be0f66a02f417a22",
+      "export_sha256": "4ee763da9f36095df6704bc856cffed8bcf2606115439273f8e42f31b4797b99"
+    },
+    {
+      "destination": "services/serve_policy.py",
+      "source_sha256": "75e942a5634e64a7f5b07c889fa50b875f13cbe0010d074fff9982121381c158",
+      "export_sha256": "fd9ae7f4965bcbe3924e678dc0d2a582e1b60386e6f04e48567182b5af27fb21"
+    }
+  ],
+  "relocation_changes": [
+    "Bundled original assembly artifact discovery",
+    "Configurable endpoint and policy host/port",
+    "Deferred service imports for CPU help",
+    "No algorithm, prompt, budget or skill-control changes",
+    "Path-only assembly provenance metadata relocation",
+    "VLM artifact identity hash gate",
+    "LIBERO asset fingerprint preflight gate"
+  ],
+  "scientific_input_fields_unchanged": true,
+  "cabto_algorithm_files_unchanged": true,
+  "cabto_assembly_case_unchanged": true,
+  "cabto_native_case_only_change": "Configurable policy host",
+  "dependency_sources": {
+    "OpenPI": "fdc03f527881cdfc8ae1a168ed6a20c60edbbbcc",
+    "Qwen3.5-9B": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+    "LIBERO": "Extracted source with no reliable commit; exact100 initial-state/BDDL fingerprints supplied"
+  },
+  "official_maestro_selected_files": {
+    "repository": "https://github.com/penn-pal-lab/maestro",
+    "commit": "e60d326233a238ddc496bf7a08acb7a278e9e66d",
+    "license": "MIT",
+    "files": {
+      "LICENSE": "528ed6864dc410d7f623d1e341cce1f5ba9a5141999c6c002febb8dbd6b5c959",
+      "NOTICE": "59ded049ecdebac5b40cb386a193a29be98ba4554a04622d05b7b257b5a5ca00",
+      "maestro/prompts/maestro_prompt.txt": "0478cc6f3f05e1df467a26babfce19c72bd697c211314a67022ce44e25598cf9",
+      "maestro/runner.py": "3d19b947dffbf2102a5b458d0262881b77e9fd8308f79aa79ef02359156d2711"
+    }
+  },
+  "cabto_core_distribution": "Not vendored; public pinned fetch with exact per-file SHA256; clean-copy fetch passed"
+}

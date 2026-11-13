@@ -20,6 +20,13 @@
   and world states into executable behavior trees.
 </p>
 
+## External-method evaluation
+
+[Evaluation scripts and setup](experiments/external_comparison/README.md) are
+available for LLM-BT, BTGenBot, LLM-as-BT-Planner/KIOS, LLM-OBTEA, MAESTRO
+and CABTO alongside HiBT. The update provides code, configurations and
+necessary task/training inputs; experiment results are not included.
+
 ## Overview
 
 HiBT is a research codebase for language-conditioned robotic assembly planning.

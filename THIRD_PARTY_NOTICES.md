@@ -82,3 +82,10 @@ The artifact implements a paper-specific pipeline that connects:
 If you reuse or extend this repository, preserve relevant third-party license
 notices for any dependencies, model weights, benchmark assets, or external code
 you add.
+
+## External-method adapters
+
+`experiments/external_comparison/` provides evaluation adapters and inputs.
+See its primary-method source references and the extensions' third-party
+notices for pinned upstream dependencies and licenses. Weights and simulator
+assets are obtained separately; no experiment results are redistributed.

@@ -1,0 +1,12 @@
+{
+  "max_attempts": 20,
+  "max_planner_calls": 21,
+  "max_skill_calls": 100,
+  "interpreter_nodes": 20000,
+  "seed": 0,
+  "temperature": 0.1,
+  "max_tokens": 4096,
+  "timeout": 600,
+  "structured": false,
+  "canonicalize_development": true
+}

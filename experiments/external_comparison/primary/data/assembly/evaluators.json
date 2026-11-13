@@ -1,0 +1,422 @@
+[
+  {
+    "sample_id": "gearset_insert_gear3_shaft2",
+    "request_index": 0,
+    "target": "is_inserted_to(gear3, shaft2)",
+    "difficulty": "hard",
+    "domain": "gearset"
+  },
+  {
+    "sample_id": "gearset1_problem_000",
+    "request_index": 1,
+    "target": "is_inserted_to(shaft1, gearbase_hole1)",
+    "difficulty": "very_hard",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_001",
+    "request_index": 2,
+    "target": "is_inserted_to(shaft1, gearbase_hole1)",
+    "difficulty": "hard",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_002",
+    "request_index": 3,
+    "target": "is_inserted_to(gear2, shaft2)",
+    "difficulty": "medium",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_003",
+    "request_index": 4,
+    "target": "is_inserted_to(gear2, shaft2)",
+    "difficulty": "very_hard",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_004",
+    "request_index": 5,
+    "target": "is_inserted_to(gear3, shaft3)",
+    "difficulty": "very_hard",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_005",
+    "request_index": 6,
+    "target": "is_inserted_to(gear3, shaft3)",
+    "difficulty": "hard",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_006",
+    "request_index": 7,
+    "target": "is_inserted_to(gear3, shaft3)",
+    "difficulty": "medium",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_007",
+    "request_index": 8,
+    "target": "is_inserted_to(gear1, shaft1)",
+    "difficulty": "hard",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_008_goal_already_satisfied",
+    "request_index": 9,
+    "target": "is_inserted_to(gear1, shaft1)",
+    "difficulty": "easy",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_009",
+    "request_index": 10,
+    "target": "is_inserted_to(gear3, shaft3)",
+    "difficulty": "hard",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_000_subtask_00",
+    "request_index": 11,
+    "target": "hold(left_hand, clampgripper)",
+    "difficulty": "very_hard",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_000_subtask_02",
+    "request_index": 12,
+    "target": "is_empty(outwardgripper)",
+    "difficulty": "easy",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_001_subtask_00",
+    "request_index": 13,
+    "target": "hold(left_hand, clampgripper)",
+    "difficulty": "easy",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_002_subtask_00",
+    "request_index": 14,
+    "target": "hold(outwardgripper, gear2)",
+    "difficulty": "easy",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_003_subtask_00",
+    "request_index": 15,
+    "target": "hold(left_hand, outwardgripper)",
+    "difficulty": "very_hard",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_003_subtask_02",
+    "request_index": 16,
+    "target": "is_empty(clampgripper)",
+    "difficulty": "easy",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_004_subtask_00",
+    "request_index": 17,
+    "target": "hold(left_hand, outwardgripper)",
+    "difficulty": "very_hard",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_004_subtask_02",
+    "request_index": 18,
+    "target": "is_empty(clampgripper)",
+    "difficulty": "easy",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_005_subtask_00",
+    "request_index": 19,
+    "target": "hold(left_hand, outwardgripper)",
+    "difficulty": "hard",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_005_subtask_02",
+    "request_index": 20,
+    "target": "hold(left_hand, clampgripper)",
+    "difficulty": "easy",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_006_subtask_00",
+    "request_index": 21,
+    "target": "hold(outwardgripper, gear3)",
+    "difficulty": "easy",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_007_subtask_00",
+    "request_index": 22,
+    "target": "hold(left_hand, parallelgripper)",
+    "difficulty": "easy",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_008",
+    "request_index": 23,
+    "target": "is_inserted_to(gear1, shaft1)",
+    "difficulty": "easy",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_009_subtask_00",
+    "request_index": 24,
+    "target": "hold(left_hand, outwardgripper)",
+    "difficulty": "easy",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_010",
+    "request_index": 25,
+    "target": "is_inserted_to(shaft1, gearbase_hole1)",
+    "difficulty": "very_hard",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_010_subtask_00",
+    "request_index": 26,
+    "target": "hold(left_hand, clampgripper)",
+    "difficulty": "very_hard",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_010_subtask_02",
+    "request_index": 27,
+    "target": "is_empty(defaultgripper)",
+    "difficulty": "easy",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_011",
+    "request_index": 28,
+    "target": "is_inserted_to(gear2, shaft2)",
+    "difficulty": "hard",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_011_subtask_00",
+    "request_index": 29,
+    "target": "hold(left_hand, outwardgripper)",
+    "difficulty": "easy",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_012",
+    "request_index": 30,
+    "target": "is_inserted_to(shaft3, gearbase_hole3)",
+    "difficulty": "hard",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_012_subtask_00",
+    "request_index": 31,
+    "target": "hold(left_hand, defaultgripper)",
+    "difficulty": "easy",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_013",
+    "request_index": 32,
+    "target": "is_inserted_to(shaft3, gearbase_hole3)",
+    "difficulty": "very_hard",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_013_subtask_00",
+    "request_index": 33,
+    "target": "hold(left_hand, defaultgripper)",
+    "difficulty": "very_hard",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_013_subtask_02",
+    "request_index": 34,
+    "target": "is_empty(parallelgripper)",
+    "difficulty": "easy",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_014",
+    "request_index": 35,
+    "target": "is_inserted_to(gear2, shaft2)",
+    "difficulty": "easy",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_015",
+    "request_index": 36,
+    "target": "is_inserted_to(gear3, shaft3)",
+    "difficulty": "easy",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_016",
+    "request_index": 37,
+    "target": "is_inserted_to(gear1, shaft1)",
+    "difficulty": "hard",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_016_subtask_00",
+    "request_index": 38,
+    "target": "hold(left_hand, parallelgripper)",
+    "difficulty": "easy",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "chair_problem_000",
+    "request_index": 39,
+    "target": "is_screwed_to(chairnut1, chairseatbolt1)",
+    "difficulty": "very_hard",
+    "domain": "chair"
+  },
+  {
+    "sample_id": "chair_problem_000_subtask_00",
+    "request_index": 40,
+    "target": "hold(left_hand, inwardgripper)",
+    "difficulty": "very_hard",
+    "domain": "chair"
+  },
+  {
+    "sample_id": "chair_problem_000_subtask_02",
+    "request_index": 41,
+    "target": "is_empty(defaultgripper)",
+    "difficulty": "easy",
+    "domain": "chair"
+  },
+  {
+    "sample_id": "chair_problem_001",
+    "request_index": 42,
+    "target": "is_screwed_to(chairnut1, chairseatbolt1)",
+    "difficulty": "hard",
+    "domain": "chair"
+  },
+  {
+    "sample_id": "chair_problem_001_subtask_00",
+    "request_index": 43,
+    "target": "hold(left_hand, inwardgripper)",
+    "difficulty": "easy",
+    "domain": "chair"
+  },
+  {
+    "sample_id": "chair_problem_002",
+    "request_index": 44,
+    "target": "is_screwed_to(chairleg1, chairseatthread1)",
+    "difficulty": "medium",
+    "domain": "chair"
+  },
+  {
+    "sample_id": "chair_problem_002_subtask_00",
+    "request_index": 45,
+    "target": "hold(defaultgripper, chairleg1)",
+    "difficulty": "easy",
+    "domain": "chair"
+  },
+  {
+    "sample_id": "lamp_problem_000",
+    "request_index": 46,
+    "target": "is_screwed_to(lampbulb, lampbase)",
+    "difficulty": "hard",
+    "domain": "lamp"
+  },
+  {
+    "sample_id": "lamp_problem_000_subtask_00",
+    "request_index": 47,
+    "target": "hold(left_hand, clampgripper)",
+    "difficulty": "easy",
+    "domain": "lamp"
+  },
+  {
+    "sample_id": "lamp_problem_001",
+    "request_index": 48,
+    "target": "is_screwed_to(lampbulb, lampbase)",
+    "difficulty": "very_hard",
+    "domain": "lamp"
+  },
+  {
+    "sample_id": "lamp_problem_001_subtask_00",
+    "request_index": 49,
+    "target": "hold(left_hand, clampgripper)",
+    "difficulty": "very_hard",
+    "domain": "lamp"
+  },
+  {
+    "sample_id": "gearset1_medium_001",
+    "request_index": 50,
+    "target": "is_inserted_to(gear1, shaft1)",
+    "difficulty": "medium",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_medium_002",
+    "request_index": 51,
+    "target": "is_inserted_to(gear2, shaft2)",
+    "difficulty": "medium",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_medium_004",
+    "request_index": 52,
+    "target": "is_inserted_to(shaft1, gearbase_hole1)",
+    "difficulty": "medium",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "chair_medium_002",
+    "request_index": 53,
+    "target": "is_screwed_to(chairnut1, chairseatbolt1)",
+    "difficulty": "medium",
+    "domain": "chair"
+  },
+  {
+    "sample_id": "lamp_medium_001",
+    "request_index": 54,
+    "target": "is_screwed_to(lampbulb, lampbase)",
+    "difficulty": "medium",
+    "domain": "lamp"
+  },
+  {
+    "sample_id": "chair_problem_001_subset",
+    "request_index": 55,
+    "target": "is_screwed_to(chairnut1, chairseatbolt1)",
+    "difficulty": "medium",
+    "domain": "chair"
+  },
+  {
+    "sample_id": "gearset1_problem_001_subset",
+    "request_index": 56,
+    "target": "is_inserted_to(shaft1, gearbase_hole1)",
+    "difficulty": "medium",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_003_subset",
+    "request_index": 57,
+    "target": "is_inserted_to(gear2, shaft2)",
+    "difficulty": "medium",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "gearset1_problem_016_subset",
+    "request_index": 58,
+    "target": "is_inserted_to(gear1, shaft1)",
+    "difficulty": "medium",
+    "domain": "gearset1"
+  },
+  {
+    "sample_id": "lamp_problem_000_subset",
+    "request_index": 59,
+    "target": "is_screwed_to(lampbulb, lampbase)",
+    "difficulty": "medium",
+    "domain": "lamp"
+  }
+]

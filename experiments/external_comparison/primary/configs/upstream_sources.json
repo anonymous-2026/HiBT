@@ -1,0 +1,30 @@
+{
+  "KIOS": {
+    "url": "https://github.com/ProNeverFake/kios",
+    "commit": "e9f16f5bd110ab647242077d55d5cb0a71e4fcd9",
+    "license": "MIT"
+  },
+  "LLM-BT": {
+    "url": "https://github.com/henryhaotian/LLM-BT",
+    "commit": "c69c18d0cf4b78f166ed352fc0fa8470823b32f6",
+    "license": "MIT (core)"
+  },
+  "BTGenBot": {
+    "commit": "fb6016f4f243bc71685a1df7d8272ff542e9863a",
+    "license": "MIT"
+  },
+  "LLM-OBTEA": {
+    "url": "https://github.com/DIDS-EI/LLM-OBTEA",
+    "commit": "52c52267b74b63db8e4003d0228b0819884f1e9f",
+    "license": "MIT"
+  },
+  "OpenPI": {
+    "url": "https://github.com/Physical-Intelligence/openpi",
+    "commit": "fdc03f527881cdfc8ae1a168ed6a20c60edbbbcc",
+    "policy": "pi05_libero"
+  },
+  "LIBERO": {
+    "url": "https://github.com/Lifelong-Robot-Learning/LIBERO",
+    "commit": "not recorded in extracted runtime source; do not substitute current HEAD"
+  }
+}

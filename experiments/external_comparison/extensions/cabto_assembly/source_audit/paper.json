@@ -1,0 +1,35 @@
+{
+  "title": "CABTO: Context-Aware Behavior Tree Grounding for Robot Manipulation",
+  "publication": {
+    "venue": "AAAI 2026",
+    "authors": [
+      "Yishuai Cai",
+      "Xinglin Chen",
+      "Yunxin Mao",
+      "Kun Hu",
+      "Minglong Li"
+    ],
+    "volume": 40,
+    "issue": 43,
+    "pages": "36180–36188",
+    "doi": "10.1609/aaai.v40i43.40936",
+    "published": "2026-03-14",
+    "url": "https://ojs.aaai.org/index.php/AAAI/article/view/40936",
+    "pdf": "https://ojs.aaai.org/index.php/AAAI/article/download/40936/44897"
+  },
+  "method_reading": {
+    "author_manuscript": "https://arxiv.org/html/2603.16809v2",
+    "version": "2603.16809v2",
+    "read": [
+      "Algorithm2",
+      "High-level Model Proposal",
+      "Low-Level Policy Sampling",
+      "Cross-Level Refinement",
+      "Definitions of completeness/consistency",
+      "Experimental Setup"
+    ]
+  },
+  "verification_note": "Publisher publication metadata/issue/citation API verified via primary-source search; direct publisher page/PDF browser access bot-blocked. Expanded v2 arXiv author list is separate from publisher citation.",
+  "source_branch": "last",
+  "source_commit": "4cc89d501080015334f7e331471724b7cf6da7bc"
+}

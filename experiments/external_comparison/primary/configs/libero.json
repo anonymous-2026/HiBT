@@ -1,0 +1,67 @@
+{
+  "phase": "formal",
+  "model_tags": [
+    "qwen"
+  ],
+  "methods": [
+    "hibt",
+    "llmbt",
+    "btgenbot",
+    "kios",
+    "obtea"
+  ],
+  "budget": {
+    "max_calls": 36,
+    "max_output_tokens": 4096,
+    "seed": 0,
+    "temperature": 0,
+    "intent_max_feedbacks": 5
+  },
+  "feedback_max_ticks": 128,
+  "suites": [
+    "libero_10"
+  ],
+  "tasks": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "init_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "max_steps": 650,
+  "stage_steps": 180,
+  "max_attempts": 3,
+  "chunk_steps": 5,
+  "settle_steps": 10,
+  "policy_seed": 0,
+  "camera_transform": "rotate180",
+  "prompt_mode": "task_prefix",
+  "max_runtime_updates": 128,
+  "method_budget": {
+    "max_calls": 36,
+    "max_output_tokens": 4096,
+    "seed": 0,
+    "temperature": 0,
+    "intent_max_feedbacks": 5
+  },
+  "online_adapter_checkpoint": null,
+  "expected_model_name": "Qwen2.5-7B-Instruct",
+  "protocol_frozen": false
+}

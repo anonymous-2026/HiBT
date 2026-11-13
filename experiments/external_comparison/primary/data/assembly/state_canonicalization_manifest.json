@@ -1,0 +1,7 @@
+{
+  "state_contract": "original_kios_state_canonicalization_v1",
+  "raw_requests_sha256": "aafe3a1275a7db2202c3bdc88c6dea5ea8254795d2cd578e9079bed66455346a",
+  "canonical_requests_sha256": "3052c59b07f7cbda2916b2a134f0efcf126a57ce22be7cee2ca01befa8aca55a",
+  "n_requests": 60,
+  "release_note": "Same canonical inputs and pure normalization; metadata paths made portable."
+}

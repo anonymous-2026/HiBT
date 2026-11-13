@@ -1,0 +1,1155 @@
+{
+  "scope": "Evaluation and analysis code, configurations, task/training inputs; no experimental outcomes or model weights.",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 166,
+      "sha256": "970c16c739df3d5620c0f1b2c19fac85552c6e429d87632294eb57cede431b57"
+    },
+    {
+      "path": "README.md",
+      "bytes": 987,
+      "sha256": "ce3151a5c3d2268e09cbeda99e9e58e426711de8e7b4de7db0817c5ffda46c28"
+    },
+    {
+      "path": "extensions/.gitignore",
+      "bytes": 96,
+      "sha256": "851efc5419f8d3d7d138408a887311ae8628dcd6ffa0b7d9788e518b6a750864"
+    },
+    {
+      "path": "extensions/README.md",
+      "bytes": 2848,
+      "sha256": "92b2163155a01bac4360b537935c0d8bd2ccf79a4876a077751fc44196fe1997"
+    },
+    {
+      "path": "extensions/THIRD_PARTY_NOTICES.md",
+      "bytes": 1499,
+      "sha256": "29a5581fac11da4ff04f25c6b5b4c971a8e5854710a5755f30cb3f0f781fc9dc"
+    },
+    {
+      "path": "extensions/assembly_artifact/data/world_definition.json",
+      "bytes": 3787,
+      "sha256": "56b5bdc1f6abb0dcf66645b44228db1721fcbda28e2709350ff20288c67b048f"
+    },
+    {
+      "path": "extensions/assembly_artifact/runtime/minimal_bt.py",
+      "bytes": 11355,
+      "sha256": "de2219c286a071632936fecbb43d8e6e335fc123235e66f59a38f78b2826283b"
+    },
+    {
+      "path": "extensions/cabto_assembly/adapter.py",
+      "bytes": 16942,
+      "sha256": "0a4f1fa283b7eeec8e5893a48d15dbcc42c2cafcbdb7f534c53c1ff3466607c3"
+    },
+    {
+      "path": "extensions/cabto_assembly/planner_bridge.py",
+      "bytes": 7211,
+      "sha256": "49e641af318a6410f67cb0f06581c3516007d28c559fb75df5480246ab1074ce"
+    },
+    {
+      "path": "extensions/cabto_assembly/programs.py",
+      "bytes": 5699,
+      "sha256": "fb1cb50e1076303fc5d7a225a12e0a41d7956d0f0c627249c234bb2bd97959f7"
+    },
+    {
+      "path": "extensions/cabto_assembly/run_cabto.py",
+      "bytes": 17622,
+      "sha256": "3865e8c2317c7f29b2c7ded3c248ac48cbec5f16a3851643077b956a509a8265"
+    },
+    {
+      "path": "extensions/cabto_assembly/source_audit/LICENSE_NOTICE.md",
+      "bytes": 814,
+      "sha256": "a3f9f34effaed4ac63d3b1fe07872a114b9089194bdf52e913cd1b67b7125fd7"
+    },
+    {
+      "path": "extensions/cabto_assembly/source_audit/paper.json",
+      "bytes": 1204,
+      "sha256": "9d7d6a947ca7b095239b9b2e4e7de42dfe4ff32411aa4c2e6d1fbbf3c6c85ef4"
+    },
+    {
+      "path": "extensions/cabto_assembly/source_audit/source_manifest.json",
+      "bytes": 765,
+      "sha256": "b9acac5c81613f2b980db0607af743d5c6ccf56cd294fe9f98cb5967b0514e94"
+    },
+    {
+      "path": "extensions/cabto_assembly/transport.py",
+      "bytes": 5409,
+      "sha256": "041c8f41f92996a5e9d3ef2834608f87608ec11b67ae02027e5e6fe7464aa2cd"
+    },
+    {
+      "path": "extensions/cabto_libero/adapter.py",
+      "bytes": 16942,
+      "sha256": "0a4f1fa283b7eeec8e5893a48d15dbcc42c2cafcbdb7f534c53c1ff3466607c3"
+    },
+    {
+      "path": "extensions/cabto_libero/execution_boundary.py",
+      "bytes": 1381,
+      "sha256": "a199429e5677b49683bdf4f4fa148e5f34082132ed12a34605a90ffd2031c142"
+    },
+    {
+      "path": "extensions/cabto_libero/planner_bridge.py",
+      "bytes": 7211,
+      "sha256": "49e641af318a6410f67cb0f06581c3516007d28c559fb75df5480246ab1074ce"
+    },
+    {
+      "path": "extensions/cabto_libero/programs.py",
+      "bytes": 5699,
+      "sha256": "fb1cb50e1076303fc5d7a225a12e0a41d7956d0f0c627249c234bb2bd97959f7"
+    },
+    {
+      "path": "extensions/cabto_libero/run_cabto.py",
+      "bytes": 19049,
+      "sha256": "c557e7f14c1aa35fd0cf3c0b7a4dddd6c0b38dfb228d7203362f19e199fd3938"
+    },
+    {
+      "path": "extensions/cabto_libero/source_audit/LICENSE_NOTICE.md",
+      "bytes": 814,
+      "sha256": "a3f9f34effaed4ac63d3b1fe07872a114b9089194bdf52e913cd1b67b7125fd7"
+    },
+    {
+      "path": "extensions/cabto_libero/source_audit/paper.json",
+      "bytes": 1204,
+      "sha256": "9d7d6a947ca7b095239b9b2e4e7de42dfe4ff32411aa4c2e6d1fbbf3c6c85ef4"
+    },
+    {
+      "path": "extensions/cabto_libero/source_audit/source_manifest.json",
+      "bytes": 765,
+      "sha256": "b9acac5c81613f2b980db0607af743d5c6ccf56cd294fe9f98cb5967b0514e94"
+    },
+    {
+      "path": "extensions/cabto_libero/tests/test_pipeline.py",
+      "bytes": 6389,
+      "sha256": "3c1e4ff2af6b7095bb006448bbee4bb4af7c92e60debc27c405aadc6e676a947"
+    },
+    {
+      "path": "extensions/cabto_libero/transport.py",
+      "bytes": 5409,
+      "sha256": "041c8f41f92996a5e9d3ef2834608f87608ec11b67ae02027e5e6fe7464aa2cd"
+    },
+    {
+      "path": "extensions/check_assets.py",
+      "bytes": 1670,
+      "sha256": "68d87643f1f7fb91a4b6ba8b13d9e54e9762271e0148bd27b61359b470e5e94f"
+    },
+    {
+      "path": "extensions/check_environment.py",
+      "bytes": 1516,
+      "sha256": "2da4eb22ca30295bc9408a3d0e73ea9e558e20b20b71222ccfacd135447abb7b"
+    },
+    {
+      "path": "extensions/common/assembly_registry.py",
+      "bytes": 10961,
+      "sha256": "44e07470e1a20655a784f9db3541616ccb38a98166d73b22063ec3c4984400b6"
+    },
+    {
+      "path": "extensions/common/assembly_state_canonicalization.py",
+      "bytes": 4530,
+      "sha256": "bcde7e04f4ec7009cd6911e226c6eb552ce978e089b9183a35ee3f9f7844f66b"
+    },
+    {
+      "path": "extensions/common/goal_contract.py",
+      "bytes": 7040,
+      "sha256": "6a8e219a9a125e02ee0a5a37e5ac11978c1c1c1dbad5ae8d52d10c5bab596804"
+    },
+    {
+      "path": "extensions/common/libero_registry.py",
+      "bytes": 8541,
+      "sha256": "ecdd4ef9ecf1d080b59c2c799644c01aeef4432f7ce78973c2c1d05a07817d20"
+    },
+    {
+      "path": "extensions/common/native_runtime.py",
+      "bytes": 9536,
+      "sha256": "565a14c1af1072148e3cee06c2d8741142ac13cc874b0df58347dd57b8854461"
+    },
+    {
+      "path": "extensions/common/prompt_registry.py",
+      "bytes": 425,
+      "sha256": "6f2095a06fc0671556d10f7b233e7999ded9ed41d0a4c7767495d9f286dee7b3"
+    },
+    {
+      "path": "extensions/common/run_assembly_comparison.py",
+      "bytes": 3595,
+      "sha256": "b0e3b03af192afc7f7d2f5ddd6a548ef2f25cdcd7442fafe036fd75a84c28e9f"
+    },
+    {
+      "path": "extensions/common/run_native_libero.py",
+      "bytes": 41576,
+      "sha256": "60ffc47c6ddeca13771e3bf27452cd57e75e7cbb128ac0100d0a2e83e4b2e507"
+    },
+    {
+      "path": "extensions/configs/cabto_assembly.json",
+      "bytes": 843,
+      "sha256": "bdd7298d55e583cae5e566545710e51268c0ea403e07f749e515ed59b9d278a8"
+    },
+    {
+      "path": "extensions/configs/cabto_libero.json",
+      "bytes": 1216,
+      "sha256": "ddc114ed5cfc847fbf0aa25ed4e3a678a9d17986442fb18b9128ab6738adfd44"
+    },
+    {
+      "path": "extensions/configs/maestro.json",
+      "bytes": 242,
+      "sha256": "845357c6d78daf9c14fe419edfa5605dd40f0d69289664dae26613b790e9aaab"
+    },
+    {
+      "path": "extensions/configs/native_physics.json",
+      "bytes": 227,
+      "sha256": "a64ffdd211a1bda733c8c0bc91df9a330e408170becf8cd8a6ca6b8b794883ed"
+    },
+    {
+      "path": "extensions/download_vlm.py",
+      "bytes": 808,
+      "sha256": "9ad64f563b3618a66928c46a517b3065afcc8eb860547fad0f0e365687679e09"
+    },
+    {
+      "path": "extensions/export_provenance.json",
+      "bytes": 11157,
+      "sha256": "ac028e51cfddd58d392bb607d0999cf4ba78a38700474cc7eab8c65f497d448e"
+    },
+    {
+      "path": "extensions/fetch_cabto.py",
+      "bytes": 1162,
+      "sha256": "0db9137071d8d966b3d770b499da76dee0c01c30cc804b269e9dcc7263a65c10"
+    },
+    {
+      "path": "extensions/inputs/assembly_formal_evaluators.json",
+      "bytes": 10835,
+      "sha256": "4fbee22aa9b177273b49ee755617acadd120061f40ca1bda9bfb32e39e08c9dd"
+    },
+    {
+      "path": "extensions/inputs/assembly_formal_requests.json",
+      "bytes": 1039767,
+      "sha256": "c75180f3b053b880aedb56af3758f28d5e9be2483c5ba0b017125a4c27d36741"
+    },
+    {
+      "path": "extensions/inputs/expected_libero_identities.json",
+      "bytes": 33623,
+      "sha256": "3c728f6875e836b4bbb85c07a9cebc754bffd72116a9f84be6bb21a29acab4e6"
+    },
+    {
+      "path": "extensions/inputs/libero_formal_requests.json",
+      "bytes": 312897,
+      "sha256": "cb599148eb73127a1e1a91fd53cdf52d6cebcd52348e441e19a4457226763d51"
+    },
+    {
+      "path": "extensions/inputs/manifest.json",
+      "bytes": 2720,
+      "sha256": "90b70dbc9be02bb3e81c0f8abaf8c5d36a1d785cf411cd397c3391ce1ababd72"
+    },
+    {
+      "path": "extensions/maestro/config.example.json",
+      "bytes": 242,
+      "sha256": "845357c6d78daf9c14fe419edfa5605dd40f0d69289664dae26613b790e9aaab"
+    },
+    {
+      "path": "extensions/maestro/maestro_benchmark/__init__.py",
+      "bytes": 250,
+      "sha256": "e85081225d590fcfbfd354397ec6626fbe578b7ad61ae0b2851da36766eb9458"
+    },
+    {
+      "path": "extensions/maestro/maestro_benchmark/cli.py",
+      "bytes": 14135,
+      "sha256": "3c94903a2771a044497bd5a774d4fe5167b4e5d2b2af78d58ad272713349736e"
+    },
+    {
+      "path": "extensions/maestro/maestro_benchmark/runner.py",
+      "bytes": 11026,
+      "sha256": "07048ce60ffea3b65e8cf12b961ff3fb00e52d358d52e4a126fdb11b39e73f30"
+    },
+    {
+      "path": "extensions/maestro/maestro_benchmark/sandbox.py",
+      "bytes": 15056,
+      "sha256": "ac819c18f3df2b1e458e304b9ca273b72b9a38572cba988e3dde9fdd56aa8d1e"
+    },
+    {
+      "path": "extensions/maestro/maestro_benchmark/tools.py",
+      "bytes": 9993,
+      "sha256": "1c9c869ffb7c9266688e9b27f2c39980d48f46626538eb7419c8a8860966cea9"
+    },
+    {
+      "path": "extensions/maestro/maestro_benchmark/transport.py",
+      "bytes": 4405,
+      "sha256": "4955e6ea8b187426bf60f9a43cb76864545ee3b50709bd33977000bb782ea974"
+    },
+    {
+      "path": "extensions/maestro/source_audit/official_manifest.json",
+      "bytes": 523,
+      "sha256": "9b4556a6b02a3048f7b66648bc862129cae2a6860ef261ae47ceeff896687688"
+    },
+    {
+      "path": "extensions/maestro/tests/test_cpu.py",
+      "bytes": 14930,
+      "sha256": "330c7e323b16643b881503175fa30fd7c69447270f699e2347d5906775824ea7"
+    },
+    {
+      "path": "extensions/maestro/upstream/LICENSE",
+      "bytes": 1076,
+      "sha256": "528ed6864dc410d7f623d1e341cce1f5ba9a5141999c6c002febb8dbd6b5c959"
+    },
+    {
+      "path": "extensions/maestro/upstream/NOTICE",
+      "bytes": 1561,
+      "sha256": "59ded049ecdebac5b40cb386a193a29be98ba4554a04622d05b7b257b5a5ca00"
+    },
+    {
+      "path": "extensions/maestro/upstream/maestro/prompts/maestro_prompt.txt",
+      "bytes": 29308,
+      "sha256": "0478cc6f3f05e1df467a26babfce19c72bd697c211314a67022ce44e25598cf9"
+    },
+    {
+      "path": "extensions/maestro/upstream/maestro/runner.py",
+      "bytes": 33056,
+      "sha256": "3d19b947dffbf2102a5b458d0262881b77e9fd8308f79aa79ef02359156d2711"
+    },
+    {
+      "path": "extensions/requirements-client.txt",
+      "bytes": 26,
+      "sha256": "1b6e436140c7c7218e3f6c7c120d7855431860b4cbc5262a5ba96aa1140c4191"
+    },
+    {
+      "path": "extensions/requirements-vlm.txt",
+      "bytes": 199,
+      "sha256": "c5904894f5408987daae14baaf023e653d95c6b6e91c9673b247062c1e70ae3e"
+    },
+    {
+      "path": "extensions/run.py",
+      "bytes": 3915,
+      "sha256": "7b919afd883f0b37668ce8798205d4a970e3293ad6d316ea8e24bbf059d90042"
+    },
+    {
+      "path": "extensions/services/serve_policy.py",
+      "bytes": 2338,
+      "sha256": "fd9ae7f4965bcbe3924e678dc0d2a582e1b60386e6f04e48567182b5af27fb21"
+    },
+    {
+      "path": "extensions/services/serve_vlm.py",
+      "bytes": 5568,
+      "sha256": "4ee763da9f36095df6704bc856cffed8bcf2606115439273f8e42f31b4797b99"
+    },
+    {
+      "path": "primary/PORTABILITY.md",
+      "bytes": 693,
+      "sha256": "b936020d50b0bcd159635113ed353125277f4fc469a157d36e8e323fb21f1626"
+    },
+    {
+      "path": "primary/README.md",
+      "bytes": 5899,
+      "sha256": "45a0c15bfe03257221c60498722478ebcf9461749793a6deda0ebb405092e9c4"
+    },
+    {
+      "path": "primary/configs/assembly.json",
+      "bytes": 487,
+      "sha256": "ca886a60cf159c9d8ca89178016c6ad4fab631f013eed558bfc4a1b03b2e25fa"
+    },
+    {
+      "path": "primary/configs/libero.json",
+      "bytes": 1002,
+      "sha256": "37e94ceb45b0b296ce7dcdbb4829d6e32c7928fb2d0c52c6c6ae24bb5758621c"
+    },
+    {
+      "path": "primary/configs/scientific_inputs_sha256.json",
+      "bytes": 165,
+      "sha256": "08ac438a9f73879870f49c86eb3ba5f97176c9dc11823196add03d2287326b5a"
+    },
+    {
+      "path": "primary/configs/services.example.json",
+      "bytes": 713,
+      "sha256": "c8b9d4be4c86f9ea341599bea8fda8e7c24eb28317517c7f0b8a3fc7f96b7044"
+    },
+    {
+      "path": "primary/configs/source_sha256.json",
+      "bytes": 10043,
+      "sha256": "262b2829b6c1a44ff6cbcc2fb97619eca922e485ae0de64dd082219c3c6a6a14"
+    },
+    {
+      "path": "primary/configs/upstream_sources.json",
+      "bytes": 899,
+      "sha256": "6ca0031653a3497763e82e168856f17fddbf6fb9151bf7509c60bb3b18bd2e1d"
+    },
+    {
+      "path": "primary/data/assembly/btgen_split_manifest.json",
+      "bytes": 48169,
+      "sha256": "37a7a8fbfdb11729d45643124fc173b4e503a9c4aa1bc63c59d6aa19c419252e"
+    },
+    {
+      "path": "primary/data/assembly/btgen_train.jsonl",
+      "bytes": 4266864,
+      "sha256": "e4c4d31db02b1c3fda553dd49be5db0bc59f98ff639cd8f259d4b1dc2bf9e2e9"
+    },
+    {
+      "path": "primary/data/assembly/btgen_validation.jsonl",
+      "bytes": 895989,
+      "sha256": "135efe2d54a87fc5796f06f4b3f6bc86bc93800961131f028f724dbc7296c439"
+    },
+    {
+      "path": "primary/data/assembly/demonstrations.json",
+      "bytes": 50039,
+      "sha256": "6df52985b74cb941dc3d252738db191b34bd3347d2e9c1c0f3c3e81e6257b572"
+    },
+    {
+      "path": "primary/data/assembly/evaluators.json",
+      "bytes": 10835,
+      "sha256": "4fbee22aa9b177273b49ee755617acadd120061f40ca1bda9bfb32e39e08c9dd"
+    },
+    {
+      "path": "primary/data/assembly/requests.json",
+      "bytes": 1043727,
+      "sha256": "3052c59b07f7cbda2916b2a134f0efcf126a57ce22be7cee2ca01befa8aca55a"
+    },
+    {
+      "path": "primary/data/assembly/requests_raw.json",
+      "bytes": 1029635,
+      "sha256": "aafe3a1275a7db2202c3bdc88c6dea5ea8254795d2cd578e9079bed66455346a"
+    },
+    {
+      "path": "primary/data/assembly/source_split_manifest.json",
+      "bytes": 50108,
+      "sha256": "60e08df956046212462957e244faa42621a94d274e9d6253457172507fc9ea69"
+    },
+    {
+      "path": "primary/data/assembly/state_canonicalization_manifest.json",
+      "bytes": 375,
+      "sha256": "2fbecd8d9769af6eabfe1b827768095f894fd979017a75e49a1ce1355e137385"
+    },
+    {
+      "path": "primary/data/libero/btgen_split_manifest.json",
+      "bytes": 5377,
+      "sha256": "9a132f0afde60eadf8cfe2e3d65cd04fafcf8c10fad38efd644b8c68936473e6"
+    },
+    {
+      "path": "primary/data/libero/btgen_train.jsonl",
+      "bytes": 289719,
+      "sha256": "a4d904bb7296e5116953341df6a89e1a00f7806917095bd0bee94c64ed49d55c"
+    },
+    {
+      "path": "primary/data/libero/btgen_validation.jsonl",
+      "bytes": 53009,
+      "sha256": "ba3f6a3e1894827b3223671463dc9409bce8cf5ebe7b7e3ec4e4fa069cfd78a2"
+    },
+    {
+      "path": "primary/data/libero/demonstrations.json",
+      "bytes": 41131,
+      "sha256": "210dd40055e59864622586e11968b3d322f021447291e7822c6f293c7c591979"
+    },
+    {
+      "path": "primary/data/libero/evaluators.json",
+      "bytes": 14187,
+      "sha256": "2184c05c5b63a0ad5e2a01a6432eeef102aa9104b33ce5b6242855625a1c2961"
+    },
+    {
+      "path": "primary/data/libero/manifest.json",
+      "bytes": 1121,
+      "sha256": "6e183043c81f2f594cdedc859342ecf457d3362085ee51103220d4414518438d"
+    },
+    {
+      "path": "primary/data/libero/requests.json",
+      "bytes": 8200520,
+      "sha256": "5585b0de78943eba337d32f3ddacfad7dbc430c14df708b9ebfbfb39494f7e1f"
+    },
+    {
+      "path": "primary/data/libero/source_split_manifest.json",
+      "bytes": 4351,
+      "sha256": "38c848bbc6b401c935ff0fe4a8fecfbaf3ddf917128531ac75c51df71acd91b0"
+    },
+    {
+      "path": "primary/data/teachers/assembly/split_manifest.json",
+      "bytes": 50108,
+      "sha256": "60e08df956046212462957e244faa42621a94d274e9d6253457172507fc9ea69"
+    },
+    {
+      "path": "primary/data/teachers/assembly/teacher_train.jsonl",
+      "bytes": 3403619,
+      "sha256": "e2f55815436f12f758a05a8ce8f63e770fde582bb4718e47390117278b6e9ed6"
+    },
+    {
+      "path": "primary/data/teachers/assembly/teacher_validation.jsonl",
+      "bytes": 746817,
+      "sha256": "76a6432580f075359799af3327c23f307fe2dc6735cad5d1cd8b973498d9845d"
+    },
+    {
+      "path": "primary/data/teachers/libero/split_manifest.json",
+      "bytes": 2681,
+      "sha256": "3f2bbfd7e7f93ff7635ec43b8e237b73446b80a94f5caa0830347a9c7c88d281"
+    },
+    {
+      "path": "primary/data/teachers/libero/teacher_augmentation.jsonl",
+      "bytes": 36010,
+      "sha256": "b13f7d8e5cdcc69cf680a8d80a9bcd8ae9ea905cc6c77a8cf24642dafb351765"
+    },
+    {
+      "path": "primary/data/teachers/libero/teacher_train.jsonl",
+      "bytes": 156242,
+      "sha256": "08b43a5d7913e9499b46039c3346b93b09b7821b9390c937e91a9276fe2df8cb"
+    },
+    {
+      "path": "primary/data/teachers/libero/teacher_validation.jsonl",
+      "bytes": 33686,
+      "sha256": "edfd25fcfc9664f9fc250797820b458d0c983fff934eae191fe08778231c978e"
+    },
+    {
+      "path": "primary/data/teachers/libero/train31.jsonl",
+      "bytes": 192252,
+      "sha256": "ed46acc4f958295d7624cc1d941fe637c91960c7908406e0f44f5e842e3e8583"
+    },
+    {
+      "path": "primary/export_plans.py",
+      "bytes": 905,
+      "sha256": "f57d23c10a101bd3874517fbcda6e2733975baae69c27d503ccc13edd7ba1043"
+    },
+    {
+      "path": "primary/fetch_ner.py",
+      "bytes": 1317,
+      "sha256": "aade3e97ffea3f2d811516f80732c5e3f5c070fac7ac6114a91b33c29108db7a"
+    },
+    {
+      "path": "primary/hibt_service_config.py",
+      "bytes": 1217,
+      "sha256": "4ce82b82b09c3d1842ad37e493bdd0f60dde6565a92230b2690bd2fee136ae39"
+    },
+    {
+      "path": "primary/prepare.py",
+      "bytes": 2795,
+      "sha256": "c0378de61dfd20b53214e30d30fc6e61f9c6e50d962cabe844aa004b9a03dbf4"
+    },
+    {
+      "path": "primary/requirements-cpu.txt",
+      "bytes": 28,
+      "sha256": "00840473794f5e0c8dff7df532161c9623b940733dd143d05664f90cdc074f01"
+    },
+    {
+      "path": "primary/requirements-neural.txt",
+      "bytes": 179,
+      "sha256": "30b1750ae81c59e2caeb3c87aa7a0a3078a528848ccd6f83e1bd86699050b30c"
+    },
+    {
+      "path": "primary/source_audit/btgenbot/LICENSE",
+      "bytes": 1078,
+      "sha256": "5270fcf1e18a9f9f196ca1df98c101989f8b812709018cff906e138d0904f0b6"
+    },
+    {
+      "path": "primary/source_audit/kios/LICENSE",
+      "bytes": 1066,
+      "sha256": "dc4cbeddbb38efe5bc7c7bbf405865bf54159bad0a0579d02d97002ce822476e"
+    },
+    {
+      "path": "primary/source_audit/kios/behaviortree.txt",
+      "bytes": 2294,
+      "sha256": "0e6446b78cc618d828cae0dce555c84cd21569e1f662a270b10751a05440eb8b"
+    },
+    {
+      "path": "primary/source_audit/kios/output_format.txt",
+      "bytes": 365,
+      "sha256": "fc1ff42ce48e2b83ed8cf2ce7388d116249b1719f22fbf37e6df75fc7c72c69c"
+    },
+    {
+      "path": "primary/source_audit/kios/system.txt",
+      "bytes": 76,
+      "sha256": "abefa94815244a209d3f888f0f3f8538e3ae69a2259abfa8dc25ab157796f993"
+    },
+    {
+      "path": "primary/source_audit/kios/task.txt",
+      "bytes": 852,
+      "sha256": "b0f2c04f16b5fbab8d532e71a14030ab9d123fcd0647ee4b3e532e7b50de4802"
+    },
+    {
+      "path": "primary/source_audit/llmbt/LICENSE",
+      "bytes": 1096,
+      "sha256": "63b5778ff0ba61175b8cc4875be74fae7e6709ec0fef121c587127d74e2308ee"
+    },
+    {
+      "path": "primary/source_audit/obtea/official/LICENSE",
+      "bytes": 1064,
+      "sha256": "4ebf70eca668e3261217742ec81400d53a0c1b683b247d03a50c68e4b0d1e6fc"
+    },
+    {
+      "path": "primary/source_audit/obtea/official/OBTEA/BehaviorTree.py",
+      "bytes": 5920,
+      "sha256": "5d74037bb41fd2d520dbc36fc06f6dde190267685e98021e9bf3641a618e68dd"
+    },
+    {
+      "path": "primary/source_audit/obtea/official/OBTEA/OptimalBTExpansionAlgorithm.py",
+      "bytes": 25220,
+      "sha256": "fe49b2ae2126944e15c1efd2a21b87516aaea03d3eb25dc6aa16b97bf8c692d0"
+    },
+    {
+      "path": "primary/src/assembly_registry.py",
+      "bytes": 11142,
+      "sha256": "e78db24b32c209d0fe36f33bf5071ba2719a6fb05815ab7ba82a27d49e68cfd1"
+    },
+    {
+      "path": "primary/src/assembly_state_canonicalization.py",
+      "bytes": 4530,
+      "sha256": "bcde7e04f4ec7009cd6911e226c6eb552ce978e089b9183a35ee3f9f7844f66b"
+    },
+    {
+      "path": "primary/src/cached_registry_lineage.json",
+      "bytes": 4385,
+      "sha256": "36a7325472fa6b2be3febdf08405599b1709d8be11e5b16d15d956b8dc9b6aaf"
+    },
+    {
+      "path": "primary/src/goal_contract.py",
+      "bytes": 7040,
+      "sha256": "6a8e219a9a125e02ee0a5a37e5ac11978c1c1c1dbad5ae8d52d10c5bab596804"
+    },
+    {
+      "path": "primary/src/libero_registry.py",
+      "bytes": 8541,
+      "sha256": "ecdd4ef9ecf1d080b59c2c799644c01aeef4432f7ce78973c2c1d05a07817d20"
+    },
+    {
+      "path": "primary/src/llm_transport.py",
+      "bytes": 2328,
+      "sha256": "0de599a112393298703236612cc5d2d33a0e3280e8bd69dc0c829aa4588b0ae8"
+    },
+    {
+      "path": "primary/src/methods/__init__.py",
+      "bytes": 50,
+      "sha256": "a19e6ff215b4298f25d27cd8a60a0815f4e822c4984f35a1b3cca3f165b92102"
+    },
+    {
+      "path": "primary/src/methods/btgenbot.py",
+      "bytes": 14716,
+      "sha256": "3207f84b78b47c1d6e51f4f48f456fcb1757f0d2d63b68fc1fc86604ffeeb1d8"
+    },
+    {
+      "path": "primary/src/methods/hibt.py",
+      "bytes": 3039,
+      "sha256": "e2eff144e30b323b281099f9425ca8237dead4af964666d19efda5b2e69f9d09"
+    },
+    {
+      "path": "primary/src/methods/kios.py",
+      "bytes": 25554,
+      "sha256": "8311191cac94c661f4f5fe9a8103e8a2a8e8bbd54c1ac18998110d7849f30509"
+    },
+    {
+      "path": "primary/src/methods/llmbt.py",
+      "bytes": 41049,
+      "sha256": "c85da96b4852b22112c9a6b75f12b37d3197fb50b2cf4ee5ff014624a87fb68f"
+    },
+    {
+      "path": "primary/src/methods/obtea.py",
+      "bytes": 20062,
+      "sha256": "acd4f4bb0fa7622671c30e3355fbd688809e0af7c40954f421564cbb45c4093d"
+    },
+    {
+      "path": "primary/src/native_runtime.py",
+      "bytes": 9723,
+      "sha256": "0086ab04bca4db93ee3ba42c8f5d47a8da1ba40cb49c089fc25537ecc54d5377"
+    },
+    {
+      "path": "primary/src/plan_libero_comparison.py",
+      "bytes": 13534,
+      "sha256": "6de63f5f40c4c846ad21efb123718052e4eebd6709fb9853c4b482a7b1b51164"
+    },
+    {
+      "path": "primary/src/prompt_registry.py",
+      "bytes": 425,
+      "sha256": "6f2095a06fc0671556d10f7b233e7999ded9ed41d0a4c7767495d9f286dee7b3"
+    },
+    {
+      "path": "primary/src/registry_lineage.py",
+      "bytes": 1514,
+      "sha256": "27543e9c6e274de8264bd58b6937af60dc497ccd7cad069dce38f64fab0306de"
+    },
+    {
+      "path": "primary/src/run_assembly_comparison.py",
+      "bytes": 34139,
+      "sha256": "be230635bc0ccb5440b5fc056102a1db9c70f59a2c4559b8d28de51eb57fc873"
+    },
+    {
+      "path": "primary/src/run_native_libero.py",
+      "bytes": 41636,
+      "sha256": "594a6a5db2e19c98f707ac00ca0dd13fe01ef733610724605147ec4597407860"
+    },
+    {
+      "path": "primary/src/serve_hibt.py",
+      "bytes": 6406,
+      "sha256": "8df3fdd8fad5e2b34c9efc77db75ebbb45ab795d8c1853a8f95bfb08280e8863"
+    },
+    {
+      "path": "primary/src/serve_llm.py",
+      "bytes": 4010,
+      "sha256": "4b8ba3451823f62f46ae7ac86c03d4f8d77a96007111db84d5c6e58ada17e0f0"
+    },
+    {
+      "path": "primary/src/serve_ner.py",
+      "bytes": 1839,
+      "sha256": "54f623ab14dbed02705880ef2c4a9045367d4539183258277bf926b9291aecaf"
+    },
+    {
+      "path": "primary/src/train_btgenbot.py",
+      "bytes": 13614,
+      "sha256": "4f5044d215ca50c8fd6be93ca6a756d42f4626791702d6bd55a2bff2f6759b56"
+    },
+    {
+      "path": "primary/src/train_llmbt_ner.py",
+      "bytes": 15152,
+      "sha256": "70c3ee1e8741e6216eb4c6dcb0efd3009cefdcf79405b37523a7ca2512616275"
+    },
+    {
+      "path": "primary/train.py",
+      "bytes": 5500,
+      "sha256": "aab2cfbb95686fa8f48b05a2083a9a3fe15f1ad72ee1ea7e30c5b9fa634e8527"
+    },
+    {
+      "path": "primary/training_sources/data/hibt_full_verified_v2/configs/mistral_builder.yml",
+      "bytes": 1570,
+      "sha256": "ec522938d263b0421bef35567335ebecbcd960879fa6fb19f668f74d227ba191"
+    },
+    {
+      "path": "primary/training_sources/data/hibt_full_verified_v2/configs/mistral_predictor.yml",
+      "bytes": 1339,
+      "sha256": "3ba66d99e106de314fad741edbd5b09f9b7b206bb7771604ae1440b774e36c21"
+    },
+    {
+      "path": "primary/training_sources/data/hibt_full_verified_v2/configs/qwen_builder.yml",
+      "bytes": 1565,
+      "sha256": "e5def1850b1998edfc36491cb656bdaa0d1c538038cfae938c0b7ab262dcabf6"
+    },
+    {
+      "path": "primary/training_sources/data/hibt_full_verified_v2/configs/qwen_predictor.yml",
+      "bytes": 1336,
+      "sha256": "c83824a387eb31ad89ed2971d73e4fe3840092c3d591cac0fa3ff06ca858e46f"
+    },
+    {
+      "path": "primary/training_sources/data/hibt_full_verified_v2/eval.jsonl",
+      "bytes": 513091,
+      "sha256": "0e82b01594b2689e0decb90535d58e1977288c0c8ae12a8b35ef37f393f6eacb"
+    },
+    {
+      "path": "primary/training_sources/data/hibt_full_verified_v2/manifest.json",
+      "bytes": 2188,
+      "sha256": "d40bb9bce46cbee6cf46127dd08f5e8e36e8e2d5d8cb792003a3a5528c863221"
+    },
+    {
+      "path": "primary/training_sources/data/hibt_full_verified_v2/train.jsonl",
+      "bytes": 2442154,
+      "sha256": "6cd1ab39533529e124a737158e48cf2e2d386ee7947c78557405872c8fe9b65d"
+    },
+    {
+      "path": "primary/training_sources/data/libero_shared/configs/qwen_builder.yml",
+      "bytes": 1547,
+      "sha256": "920e0a4fbde2c8eb52f4bd75e8bceedfd8c97874202dd57b0663802e6dfcf1e9"
+    },
+    {
+      "path": "primary/training_sources/data/libero_shared/configs/qwen_predictor.yml",
+      "bytes": 1318,
+      "sha256": "df24626d053fbec54627b00b356543b6e8cb59806f8824bdc48241ca0a1ef4b6"
+    },
+    {
+      "path": "primary/training_sources/data/libero_shared/eval.jsonl",
+      "bytes": 28392,
+      "sha256": "f77f2d08dfa070442bfb74136c649cce4b153af7593d77e9985730f53519ac70"
+    },
+    {
+      "path": "primary/training_sources/data/libero_shared/train.jsonl",
+      "bytes": 156607,
+      "sha256": "da446e23f2a12481488c1ebbbff586d6edf775ec1eb00db6bdff5ebfb84e82ba"
+    },
+    {
+      "path": "primary/training_sources/frozen/btgen_assembly_v3/data/assembly/split_manifest.json",
+      "bytes": 12681,
+      "sha256": "78e55d91bb2cf521e3836cdffc6be049df3ecea131bc2e6a36a53b9b46b2b58b"
+    },
+    {
+      "path": "primary/training_sources/frozen/btgen_assembly_v3/data/assembly/train.jsonl",
+      "bytes": 2794405,
+      "sha256": "23610e2fbdf6267ae0c93f25663ed7ff7745fe4f6684058e397e67c27c0101b7"
+    },
+    {
+      "path": "primary/training_sources/frozen/btgen_assembly_v3/data/assembly/validation.jsonl",
+      "bytes": 590454,
+      "sha256": "d137a71dc8260efc0f513a955d4c3bc628f9e36447e0bc57bcb204ccfd8b5ca8"
+    },
+    {
+      "path": "primary/training_sources/frozen/btgen_assembly_v3/src/assembly_registry.py",
+      "bytes": 7873,
+      "sha256": "cb1a45cd26206fd7f8c736566b98d2d788deb7cfbca37c12e876086dcd0e32fd"
+    },
+    {
+      "path": "primary/training_sources/frozen/btgen_assembly_v3/src/methods/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "primary/training_sources/frozen/btgen_assembly_v3/src/methods/btgenbot.py",
+      "bytes": 14551,
+      "sha256": "295acfde7b21fe3fc16fa6f25a8b1e2bbf55b7163986abdbb3633d9b6d18a8d8"
+    },
+    {
+      "path": "primary/training_sources/frozen/btgen_assembly_v3/src/prompt_registry.py",
+      "bytes": 425,
+      "sha256": "6f2095a06fc0671556d10f7b233e7999ded9ed41d0a4c7767495d9f286dee7b3"
+    },
+    {
+      "path": "primary/training_sources/frozen/btgen_assembly_v3/src/train_btgenbot.py",
+      "bytes": 13318,
+      "sha256": "f9fd138dc77f5a621a24cf20e644c5151d102f7bcc7dda78abd24af5f7a2f0b4"
+    },
+    {
+      "path": "primary/training_sources/frozen/btgen_joint_v1/data/assembly_full/split_manifest.json",
+      "bytes": 50108,
+      "sha256": "60e08df956046212462957e244faa42621a94d274e9d6253457172507fc9ea69"
+    },
+    {
+      "path": "primary/training_sources/frozen/btgen_joint_v1/data/assembly_full/train.jsonl",
+      "bytes": 4025364,
+      "sha256": "17e9af06ccbee31f06f771c3655439c987c104b9674c61c68dca6a439ba02801"
+    },
+    {
+      "path": "primary/training_sources/frozen/btgen_joint_v1/data/assembly_full/validation.jsonl",
+      "bytes": 846309,
+      "sha256": "2efa6b862ce0ad6653dff16c3e0773efea0b3fd149d96e03c92910b66af2eb64"
+    },
+    {
+      "path": "primary/training_sources/frozen/btgen_joint_v1/src/assembly_registry.py",
+      "bytes": 11142,
+      "sha256": "e78db24b32c209d0fe36f33bf5071ba2719a6fb05815ab7ba82a27d49e68cfd1"
+    },
+    {
+      "path": "primary/training_sources/frozen/btgen_joint_v1/src/methods/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "primary/training_sources/frozen/btgen_joint_v1/src/methods/btgenbot.py",
+      "bytes": 14551,
+      "sha256": "295acfde7b21fe3fc16fa6f25a8b1e2bbf55b7163986abdbb3633d9b6d18a8d8"
+    },
+    {
+      "path": "primary/training_sources/frozen/btgen_joint_v1/src/prompt_registry.py",
+      "bytes": 425,
+      "sha256": "6f2095a06fc0671556d10f7b233e7999ded9ed41d0a4c7767495d9f286dee7b3"
+    },
+    {
+      "path": "primary/training_sources/frozen/btgen_joint_v1/src/train_btgenbot.py",
+      "bytes": 13730,
+      "sha256": "f9eb8762f57042e2a03f6d0df9f8993a205d145f9e493104b869318a1447d357"
+    },
+    {
+      "path": "primary/training_sources/frozen/btgen_libero_v1/data/libero_shared/btgen_train.jsonl",
+      "bytes": 269506,
+      "sha256": "f93d02de29222075e4a4b347032f5803eec44d45f689bab5c89a3fd05f255599"
+    },
+    {
+      "path": "primary/training_sources/frozen/btgen_libero_v1/data/libero_shared/btgen_validation.jsonl",
+      "bytes": 49078,
+      "sha256": "84ffd21d2e75062d9c88d4b6ae4b85567eba6ff443255715f523b72ba08968d4"
+    },
+    {
+      "path": "primary/training_sources/frozen/btgen_libero_v1/data/libero_shared/split_manifest.json",
+      "bytes": 4351,
+      "sha256": "38c848bbc6b401c935ff0fe4a8fecfbaf3ddf917128531ac75c51df71acd91b0"
+    },
+    {
+      "path": "primary/training_sources/frozen/btgen_libero_v1/src/assembly_registry.py",
+      "bytes": 7873,
+      "sha256": "cb1a45cd26206fd7f8c736566b98d2d788deb7cfbca37c12e876086dcd0e32fd"
+    },
+    {
+      "path": "primary/training_sources/frozen/btgen_libero_v1/src/methods/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "primary/training_sources/frozen/btgen_libero_v1/src/methods/btgenbot.py",
+      "bytes": 14551,
+      "sha256": "295acfde7b21fe3fc16fa6f25a8b1e2bbf55b7163986abdbb3633d9b6d18a8d8"
+    },
+    {
+      "path": "primary/training_sources/frozen/btgen_libero_v1/src/prompt_registry.py",
+      "bytes": 425,
+      "sha256": "6f2095a06fc0671556d10f7b233e7999ded9ed41d0a4c7767495d9f286dee7b3"
+    },
+    {
+      "path": "primary/training_sources/frozen/btgen_libero_v1/src/train_btgenbot.py",
+      "bytes": 13730,
+      "sha256": "f9eb8762f57042e2a03f6d0df9f8993a205d145f9e493104b869318a1447d357"
+    },
+    {
+      "path": "primary/vendor/assembly/artifact/data/world_definition.json",
+      "bytes": 3787,
+      "sha256": "56b5bdc1f6abb0dcf66645b44228db1721fcbda28e2709350ff20288c67b048f"
+    },
+    {
+      "path": "primary/vendor/assembly/artifact/runtime/__init__.py",
+      "bytes": 167,
+      "sha256": "66a234cb2d74aff65bbe91e758afba86b6d67f47dc7ea7d65a20cfd1aada6793"
+    },
+    {
+      "path": "primary/vendor/assembly/artifact/runtime/minimal_bt.py",
+      "bytes": 11355,
+      "sha256": "de2219c286a071632936fecbb43d8e6e335fc123235e66f59a38f78b2826283b"
+    },
+    {
+      "path": "primary/vendor/assembly/artifact/runtime/simulation.py",
+      "bytes": 788,
+      "sha256": "8cb3e975f5aa75140d50ffd50791a8cf877a1390e06b7761054d5b689146e229"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/common_paths.py",
+      "bytes": 992,
+      "sha256": "9b987fb4b7f47d382063df95781ff41f33f73ef3f8ef1f917a694b68e8059848"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/configs/planner/train_builder_LLaMA-3-8B_planlocal_4level_v3_heldout.yml",
+      "bytes": 1661,
+      "sha256": "13ecedd7e0e8cffab9d956b628282216ca1a8edf39d11f10806f4cb8e399b2a2"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/configs/planner/train_builder_Mistral-7B_planlocal_4level_v3_heldout.yml",
+      "bytes": 1660,
+      "sha256": "a8f4eeca4c25fb1dec9444e4f0dbd4b521e0d940426dd5c641b95d4f45d86064"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/configs/planner/train_builder_Qwen2.5-7B_planlocal_4level_v3_heldout.yml",
+      "bytes": 1650,
+      "sha256": "8b6fc7d0780326b0494f4b5f908ed4335b074e213f0e3e6b5f172ce4fa2e4809"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/configs/planner/train_builder_Qwen3-8B_planlocal_4level_v3_heldout.yml",
+      "bytes": 1633,
+      "sha256": "315ab2307a77a4a1b98317fc6a7b1bb55065acac7be2c74f883509a28bb5806b"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/configs/planner/train_predictor_LLaMA-3-8B_planlocal_4level_shared_v3_heldout.yml",
+      "bytes": 1552,
+      "sha256": "642d57f1cd9acf650ce13406c832b66bcab44449f059b67813db302df6475b4d"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/configs/planner/train_predictor_Mistral-7B_planlocal_4level_shared_v3_heldout.yml",
+      "bytes": 1552,
+      "sha256": "a7e9a6084d5ebfdb91366c076a2252070d3d8a69cd850979a594ee68c1bc4c63"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/configs/planner/train_predictor_Qwen2.5-7B_planlocal_4level_shared_v3_heldout.yml",
+      "bytes": 1552,
+      "sha256": "328e3afef25b301e175d69fbc97f86d5025c9daf9ab31030f4dd6c0c5304cfa3"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/configs/planner/train_predictor_Qwen3-8B_planlocal_4level_shared_v3_heldout.yml",
+      "bytes": 1542,
+      "sha256": "29706f383d06baa42104afac4b57c3ce8efbeaa7885cf2847926d21b6845b724"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/data/world_definition.json",
+      "bytes": 3787,
+      "sha256": "56b5bdc1f6abb0dcf66645b44228db1721fcbda28e2709350ff20288c67b048f"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/eval/compile_plan_to_bt.py",
+      "bytes": 10560,
+      "sha256": "825a7137c7069ada158734f5220fb41467e187b862b4729c3d05b74ac866ad56"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/eval/evaluate_bt_batch.py",
+      "bytes": 20504,
+      "sha256": "c164420641e0cb59a5d4083904da7134319bb50dad97b4fb738c800b3d3a5c7c"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/eval/evaluate_bt_exec.py",
+      "bytes": 224,
+      "sha256": "b7478b9d918dcef493388c681e6e523cdfee24935373528f26c711d0e39e07fa"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/eval/evaluate_bt_lc.py",
+      "bytes": 237,
+      "sha256": "97eea27acf0c965adeaf6ae9f5d86df173b5a5afe51fb39cc804807bf1d26b85"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/eval/evaluate_bt_metric_common.py",
+      "bytes": 6610,
+      "sha256": "066fbbdb05cd87f1178c2deb6e870b0a760ad046f1a25610f918ac05ef8324e5"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/eval/evaluate_bt_sr.py",
+      "bytes": 226,
+      "sha256": "b721ad2579385be1fa54ace5c9931af3c59dc09d2ba83313a1e8fe3ac11104db"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/eval/evaluate_recursive_bt_batch.py",
+      "bytes": 24546,
+      "sha256": "8d120253cdc9ab70af419023cb868f07029d573657b1a06391f5c5672e6fc994"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/eval/generate_action_sequence_only.py",
+      "bytes": 5634,
+      "sha256": "f298a17369e076244881f96ceece4f10b85ac19871b4353fd80473ee4389055b"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/eval/generate_bt_only.py",
+      "bytes": 18771,
+      "sha256": "25353bbd21f368b8a5ea5108c2bfa557051c16a1486cbe19fdfd80720457ed36"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/planning/build_artifact_request_pool.py",
+      "bytes": 6783,
+      "sha256": "7749fda42240cc8dab8b44a14e616386a7c3822553f226bf2bc00fdcf1f893ea"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/planning/build_heldout_test_split.py",
+      "bytes": 6823,
+      "sha256": "1e0e6491f5abecd0b3136a2f25b848664a3ea0521dca550a5219da044667ea2e"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/planning/build_plan_bank.py",
+      "bytes": 6611,
+      "sha256": "1ad0575c1eb638f739c7eb805a1d5fd75a899ce74a9632c80d41e4019fdb0946"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/planning/build_plan_bank_excluding_requests.py",
+      "bytes": 7533,
+      "sha256": "70e5d6b7e0960ac9adda9cb818313b2b7a6fe294f3c8484f56773e65bcb337f7"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/planning/concept_backend.py",
+      "bytes": 17669,
+      "sha256": "51639f4c3bf56ae83fff370c333aca06c8a97752384123e8801ac3fa09eeda4f"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/planning/decode_plan_latents.py",
+      "bytes": 51016,
+      "sha256": "717f6fd221e5ad60c432aa8f9ee693fa331bb3b5683113c17709f0ed3a522b08"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/planning/evaluate_plan_decoder_batch.py",
+      "bytes": 8968,
+      "sha256": "d6b574b914e037be99b09c067471e960858e96c8a0064db2e23799d4dcd7f21d"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/planning/expand_plan_examples.py",
+      "bytes": 10695,
+      "sha256": "f95fac1abd45de05b7029eb3b2ee8ed94fd7ab7aefaff6a71854fd3851022aea"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/planning/export_plan_dataset.py",
+      "bytes": 9141,
+      "sha256": "404334e950163dad426351fbf3108ebcb5165708a34e5d6f4f382a0c4fcbb977"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/planning/generate_isolated_extra_dataset.py",
+      "bytes": 15618,
+      "sha256": "3d5edae117eb26e0a2462667c3d216ae0cf283b25873f1084439810409b0b070"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/planning/scan_full_task_candidates.py",
+      "bytes": 4587,
+      "sha256": "fd1a3203c47fa438d6bfd0acdb48571ffb0c5aa400ff898d650cad2076c80b13"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/runtime/__init__.py",
+      "bytes": 167,
+      "sha256": "66a234cb2d74aff65bbe91e758afba86b6d67f47dc7ea7d65a20cfd1aada6793"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/runtime/minimal_bt.py",
+      "bytes": 11355,
+      "sha256": "de2219c286a071632936fecbb43d8e6e335fc123235e66f59a38f78b2826283b"
+    },
+    {
+      "path": "primary/vendor/hibt/artifact/runtime/simulation.py",
+      "bytes": 788,
+      "sha256": "8cb3e975f5aa75140d50ffd50791a8cf877a1390e06b7761054d5b689146e229"
+    },
+    {
+      "path": "primary/vendor/hibt/planner/__init__.py",
+      "bytes": 231,
+      "sha256": "96b8a0a2726c57ecc3231237a4197785b4023ac7da66f17b820077a027d85701"
+    },
+    {
+      "path": "primary/vendor/hibt/planner/_resume_io.py",
+      "bytes": 15428,
+      "sha256": "48aa948a860d8208be7a0c49949ceee7a8c9e5389a02e8a5b1f67b9106226b15"
+    },
+    {
+      "path": "primary/vendor/hibt/planner/concept_builder.py",
+      "bytes": 63738,
+      "sha256": "ce2ef7da8a73bd859e973aaee19b08e310df9432e2bcda0be1f00f22e11796f0"
+    },
+    {
+      "path": "primary/vendor/hibt/planner/concept_predictor.py",
+      "bytes": 56959,
+      "sha256": "9561c7f96df210262d29b6faa58d7383f3de1164174933d6600e505911618269"
+    },
+    {
+      "path": "primary/vendor/hibt/planner/config_io.py",
+      "bytes": 3364,
+      "sha256": "7cc3a914a67a5fae20d69f4d4d836c46f3fde1ca939d268181793ae484067678"
+    },
+    {
+      "path": "primary/vendor/hibt/planner/data_loader.py",
+      "bytes": 3213,
+      "sha256": "50f80de7d6fd8eb9bad6be11f60f80e3455e5a4499df82cd31464ef2228040b3"
+    },
+    {
+      "path": "primary/vendor/hibt/planner/env_tools.py",
+      "bytes": 2655,
+      "sha256": "c608402d9033b5c8b6991c49e13ca8bfb8e982d223e2007ce5c029ecc515cf90"
+    },
+    {
+      "path": "primary/vendor/hibt/planner/eval_builder.py",
+      "bytes": 42378,
+      "sha256": "508f22eef1c38e8ae532aaefd07234e2d54f15e94113fba62bbd02be8e1da721"
+    },
+    {
+      "path": "primary/vendor/hibt/planner/eval_predictor.py",
+      "bytes": 33863,
+      "sha256": "7e3b6dfb640e41db3224a054e05dd47dd5240870f83ef3f2871e86c3ebcef0b0"
+    },
+    {
+      "path": "primary/vendor/hibt/planner/local_dataset.py",
+      "bytes": 2829,
+      "sha256": "3719b149419c150f2c693d1536ede3237618fbd7f90715c5276118e907be8ea8"
+    },
+    {
+      "path": "primary/vendor/hibt/planner/local_metrics.py",
+      "bytes": 926,
+      "sha256": "4091d4308475024c7c6bc35e7789b551b5971b6f46df7e15b09119c0a897703f"
+    },
+    {
+      "path": "primary/vendor/hibt/planner/losses.py",
+      "bytes": 15565,
+      "sha256": "8ed3aa05e5d149f5409d241122f306cf1e9413b0f52a985088f382553dc9361a"
+    },
+    {
+      "path": "primary/vendor/hibt/planner/registry.py",
+      "bytes": 622,
+      "sha256": "b98706aab9273a714667937688fe7b1be2affe6730a8a613c0c3a3da6f1a10a1"
+    },
+    {
+      "path": "primary/vendor/hibt/planner/train_builder.py",
+      "bytes": 45510,
+      "sha256": "24a57bfc545c8dcf013da9e459375145fbb0fca93aca79455a3bb2352cb76ef0"
+    },
+    {
+      "path": "primary/vendor/hibt/planner/train_predictor.py",
+      "bytes": 48819,
+      "sha256": "082ede360ef03c32a89257e25f1312a01aff967289929f8b0c49c005ab831290"
+    },
+    {
+      "path": "primary/vendor/hibt/planner/utils.py",
+      "bytes": 11371,
+      "sha256": "63f13c43b233ede5f2974ab0f27ed7be6a229dc79eeb70fbab54a3c05762909b"
+    },
+    {
+      "path": "primary/vendor/hibt/requirements.txt",
+      "bytes": 99,
+      "sha256": "bb3149b55c8479873443cda0911a606fac78d19ec545f6f7a35e25b12c0241e8"
+    },
+    {
+      "path": "primary/verify_release.py",
+      "bytes": 3075,
+      "sha256": "8c54b1a5e82c4855bc7281848555e8441eab83a5a9a0d47e7696cb7eab51e236"
+    },
+    {
+      "path": "summarize.py",
+      "bytes": 10523,
+      "sha256": "64717c225e3b094668ec82882eae86613897de80ceee567b1f45578c31808ad0"
+    },
+    {
+      "path": "verify_release.py",
+      "bytes": 1792,
+      "sha256": "288a341bea8c4eb78534d6fd032f6c8a289f53027340a4c90b7f932dfddbd364"
+    }
+  ]
+}

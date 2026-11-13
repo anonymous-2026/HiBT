@@ -1,0 +1,52 @@
+{
+  "status": "PREPARED_NOT_TRAINED",
+  "same_instance_pool_as_btgenbot": true,
+  "n_train": 360,
+  "n_validation": 72,
+  "source_teacher_train_sha256": "e2f55815436f12f758a05a8ce8f63e770fde582bb4718e47390117278b6e9ed6",
+  "source_teacher_validation_sha256": "76a6432580f075359799af3327c23f307fe2dc6735cad5d1cd8b973498d9845d",
+  "source_split_manifest_sha256": "60e08df956046212462957e244faa42621a94d274e9d6253457172507fc9ea69",
+  "train_sha256": "6cd1ab39533529e124a737158e48cf2e2d386ee7947c78557405872c8fe9b65d",
+  "eval_sha256": "0e82b01594b2689e0decb90535d58e1977288c0c8ae12a8b35ef37f393f6eacb",
+  "question_format": "Original ConceptBehaviorTreeGenerator._render_question via AST",
+  "cot_format": "Serialized four-level pyramid JSON",
+  "teacher_construction": "Original _build_pyramid_from_actions and PyramidCompiler; all trees execute successfully",
+  "original_question_source_sha256": "51639f4c3bf56ae83fff370c333aca06c8a97752384123e8801ac3fa09eeda4f",
+  "source_pool_isolation": "instance",
+  "configuration_adaptations": [
+    "One end-of-epoch full validation instead of every5training steps",
+    "Independent shared fresh-instance supervision; no original60test answer training"
+  ],
+  "configs": [
+    {
+      "file": "qwen_builder.yml",
+      "template_sha256": "a83c0d7ac489d7e510cd2c72db118ab65d810e39e36acc0761ade0bbef4047ee",
+      "hidden_dim": 3584,
+      "epochs": 1,
+      "eval_step_interval": 180
+    },
+    {
+      "file": "qwen_predictor.yml",
+      "template_sha256": "f8c04ccf06e5a421ac790767356f7bb8137b5a8fcd446410ca172bc620ba3e34",
+      "hidden_dim": null,
+      "epochs": 1,
+      "eval_step_interval": 360
+    },
+    {
+      "file": "mistral_builder.yml",
+      "template_sha256": "f164a2c5445debbcad60f8cea554fc1e3acf974d15eea94602c5c47fa5aeab1b",
+      "hidden_dim": 4096,
+      "epochs": 1,
+      "eval_step_interval": 180
+    },
+    {
+      "file": "mistral_predictor.yml",
+      "template_sha256": "292ec5732347d923bb09ed5640de45d5b6d5f5b0458ef740256a8d91c399dc31",
+      "hidden_dim": null,
+      "epochs": 1,
+      "eval_step_interval": 360
+    }
+  ],
+  "runtime_root": "external/external_comparison",
+  "model_paths_need_assignment": false
+}

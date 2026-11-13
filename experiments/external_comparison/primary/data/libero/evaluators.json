@@ -1,0 +1,676 @@
+[
+  {
+    "request_id": "libero_spatial:0",
+    "suite": "libero_spatial",
+    "task_id": 0,
+    "goal_predicates": [
+      {
+        "args": [
+          "akita_black_bowl_1",
+          "plate_1"
+        ],
+        "predicate": "On",
+        "raw": "(On akita_black_bowl_1 plate_1)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_spatial:1",
+    "suite": "libero_spatial",
+    "task_id": 1,
+    "goal_predicates": [
+      {
+        "args": [
+          "akita_black_bowl_1",
+          "plate_1"
+        ],
+        "predicate": "On",
+        "raw": "(On akita_black_bowl_1 plate_1)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_spatial:2",
+    "suite": "libero_spatial",
+    "task_id": 2,
+    "goal_predicates": [
+      {
+        "args": [
+          "akita_black_bowl_1",
+          "plate_1"
+        ],
+        "predicate": "On",
+        "raw": "(On akita_black_bowl_1 plate_1)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_spatial:3",
+    "suite": "libero_spatial",
+    "task_id": 3,
+    "goal_predicates": [
+      {
+        "args": [
+          "akita_black_bowl_1",
+          "plate_1"
+        ],
+        "predicate": "On",
+        "raw": "(On akita_black_bowl_1 plate_1)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_spatial:4",
+    "suite": "libero_spatial",
+    "task_id": 4,
+    "goal_predicates": [
+      {
+        "args": [
+          "akita_black_bowl_1",
+          "plate_1"
+        ],
+        "predicate": "On",
+        "raw": "(On akita_black_bowl_1 plate_1)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_spatial:5",
+    "suite": "libero_spatial",
+    "task_id": 5,
+    "goal_predicates": [
+      {
+        "args": [
+          "akita_black_bowl_1",
+          "plate_1"
+        ],
+        "predicate": "On",
+        "raw": "(On akita_black_bowl_1 plate_1)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_spatial:6",
+    "suite": "libero_spatial",
+    "task_id": 6,
+    "goal_predicates": [
+      {
+        "args": [
+          "akita_black_bowl_1",
+          "plate_1"
+        ],
+        "predicate": "On",
+        "raw": "(On akita_black_bowl_1 plate_1)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_spatial:7",
+    "suite": "libero_spatial",
+    "task_id": 7,
+    "goal_predicates": [
+      {
+        "args": [
+          "akita_black_bowl_1",
+          "plate_1"
+        ],
+        "predicate": "On",
+        "raw": "(On akita_black_bowl_1 plate_1)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_spatial:8",
+    "suite": "libero_spatial",
+    "task_id": 8,
+    "goal_predicates": [
+      {
+        "args": [
+          "akita_black_bowl_1",
+          "plate_1"
+        ],
+        "predicate": "On",
+        "raw": "(On akita_black_bowl_1 plate_1)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_spatial:9",
+    "suite": "libero_spatial",
+    "task_id": 9,
+    "goal_predicates": [
+      {
+        "args": [
+          "akita_black_bowl_1",
+          "plate_1"
+        ],
+        "predicate": "On",
+        "raw": "(On akita_black_bowl_1 plate_1)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_object:0",
+    "suite": "libero_object",
+    "task_id": 0,
+    "goal_predicates": [
+      {
+        "args": [
+          "alphabet_soup_1",
+          "basket_1_contain_region"
+        ],
+        "predicate": "In",
+        "raw": "(In alphabet_soup_1 basket_1_contain_region)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_object:1",
+    "suite": "libero_object",
+    "task_id": 1,
+    "goal_predicates": [
+      {
+        "args": [
+          "cream_cheese_1",
+          "basket_1_contain_region"
+        ],
+        "predicate": "In",
+        "raw": "(In cream_cheese_1 basket_1_contain_region)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_object:2",
+    "suite": "libero_object",
+    "task_id": 2,
+    "goal_predicates": [
+      {
+        "args": [
+          "salad_dressing_1",
+          "basket_1_contain_region"
+        ],
+        "predicate": "In",
+        "raw": "(In salad_dressing_1 basket_1_contain_region)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_object:3",
+    "suite": "libero_object",
+    "task_id": 3,
+    "goal_predicates": [
+      {
+        "args": [
+          "bbq_sauce_1",
+          "basket_1_contain_region"
+        ],
+        "predicate": "In",
+        "raw": "(In bbq_sauce_1 basket_1_contain_region)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_object:4",
+    "suite": "libero_object",
+    "task_id": 4,
+    "goal_predicates": [
+      {
+        "args": [
+          "ketchup_1",
+          "basket_1_contain_region"
+        ],
+        "predicate": "In",
+        "raw": "(In ketchup_1 basket_1_contain_region)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_object:5",
+    "suite": "libero_object",
+    "task_id": 5,
+    "goal_predicates": [
+      {
+        "args": [
+          "tomato_sauce_1",
+          "basket_1_contain_region"
+        ],
+        "predicate": "In",
+        "raw": "(In tomato_sauce_1 basket_1_contain_region)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_object:6",
+    "suite": "libero_object",
+    "task_id": 6,
+    "goal_predicates": [
+      {
+        "args": [
+          "butter_1",
+          "basket_1_contain_region"
+        ],
+        "predicate": "In",
+        "raw": "(In butter_1 basket_1_contain_region)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_object:7",
+    "suite": "libero_object",
+    "task_id": 7,
+    "goal_predicates": [
+      {
+        "args": [
+          "milk_1",
+          "basket_1_contain_region"
+        ],
+        "predicate": "In",
+        "raw": "(In milk_1 basket_1_contain_region)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_object:8",
+    "suite": "libero_object",
+    "task_id": 8,
+    "goal_predicates": [
+      {
+        "args": [
+          "chocolate_pudding_1",
+          "basket_1_contain_region"
+        ],
+        "predicate": "In",
+        "raw": "(In chocolate_pudding_1 basket_1_contain_region)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_object:9",
+    "suite": "libero_object",
+    "task_id": 9,
+    "goal_predicates": [
+      {
+        "args": [
+          "orange_juice_1",
+          "basket_1_contain_region"
+        ],
+        "predicate": "In",
+        "raw": "(In orange_juice_1 basket_1_contain_region)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_goal:0",
+    "suite": "libero_goal",
+    "task_id": 0,
+    "goal_predicates": [
+      {
+        "args": [
+          "wooden_cabinet_1_middle_region"
+        ],
+        "predicate": "Open",
+        "raw": "(Open wooden_cabinet_1_middle_region)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_goal:1",
+    "suite": "libero_goal",
+    "task_id": 1,
+    "goal_predicates": [
+      {
+        "args": [
+          "akita_black_bowl_1",
+          "flat_stove_1_cook_region"
+        ],
+        "predicate": "On",
+        "raw": "(On akita_black_bowl_1 flat_stove_1_cook_region)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_goal:2",
+    "suite": "libero_goal",
+    "task_id": 2,
+    "goal_predicates": [
+      {
+        "args": [
+          "wine_bottle_1",
+          "wooden_cabinet_1_top_side"
+        ],
+        "predicate": "On",
+        "raw": "(On wine_bottle_1 wooden_cabinet_1_top_side)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_goal:3",
+    "suite": "libero_goal",
+    "task_id": 3,
+    "goal_predicates": [
+      {
+        "args": [
+          "akita_black_bowl_1",
+          "wooden_cabinet_1_top_region"
+        ],
+        "predicate": "In",
+        "raw": "(In akita_black_bowl_1 wooden_cabinet_1_top_region)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_goal:4",
+    "suite": "libero_goal",
+    "task_id": 4,
+    "goal_predicates": [
+      {
+        "args": [
+          "akita_black_bowl_1",
+          "wooden_cabinet_1_top_side"
+        ],
+        "predicate": "On",
+        "raw": "(On akita_black_bowl_1 wooden_cabinet_1_top_side)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_goal:5",
+    "suite": "libero_goal",
+    "task_id": 5,
+    "goal_predicates": [
+      {
+        "args": [
+          "plate_1",
+          "main_table_stove_front_region"
+        ],
+        "predicate": "On",
+        "raw": "(On plate_1 main_table_stove_front_region)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_goal:6",
+    "suite": "libero_goal",
+    "task_id": 6,
+    "goal_predicates": [
+      {
+        "args": [
+          "cream_cheese_1",
+          "akita_black_bowl_1"
+        ],
+        "predicate": "On",
+        "raw": "(On cream_cheese_1 akita_black_bowl_1)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_goal:7",
+    "suite": "libero_goal",
+    "task_id": 7,
+    "goal_predicates": [
+      {
+        "args": [
+          "flat_stove_1"
+        ],
+        "predicate": "Turnon",
+        "raw": "(Turnon flat_stove_1)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_goal:8",
+    "suite": "libero_goal",
+    "task_id": 8,
+    "goal_predicates": [
+      {
+        "args": [
+          "akita_black_bowl_1",
+          "plate_1"
+        ],
+        "predicate": "On",
+        "raw": "(On akita_black_bowl_1 plate_1)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_goal:9",
+    "suite": "libero_goal",
+    "task_id": 9,
+    "goal_predicates": [
+      {
+        "args": [
+          "wine_bottle_1",
+          "wine_rack_1_top_region"
+        ],
+        "predicate": "On",
+        "raw": "(On wine_bottle_1 wine_rack_1_top_region)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_10:0",
+    "suite": "libero_10",
+    "task_id": 0,
+    "goal_predicates": [
+      {
+        "args": [
+          "alphabet_soup_1",
+          "basket_1_contain_region"
+        ],
+        "predicate": "In",
+        "raw": "(In alphabet_soup_1 basket_1_contain_region)"
+      },
+      {
+        "args": [
+          "tomato_sauce_1",
+          "basket_1_contain_region"
+        ],
+        "predicate": "In",
+        "raw": "(In tomato_sauce_1 basket_1_contain_region)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_10:1",
+    "suite": "libero_10",
+    "task_id": 1,
+    "goal_predicates": [
+      {
+        "args": [
+          "cream_cheese_1",
+          "basket_1_contain_region"
+        ],
+        "predicate": "In",
+        "raw": "(In cream_cheese_1 basket_1_contain_region)"
+      },
+      {
+        "args": [
+          "butter_1",
+          "basket_1_contain_region"
+        ],
+        "predicate": "In",
+        "raw": "(In butter_1 basket_1_contain_region)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_10:2",
+    "suite": "libero_10",
+    "task_id": 2,
+    "goal_predicates": [
+      {
+        "args": [
+          "flat_stove_1"
+        ],
+        "predicate": "Turnon",
+        "raw": "(Turnon flat_stove_1)"
+      },
+      {
+        "args": [
+          "moka_pot_1",
+          "flat_stove_1_cook_region"
+        ],
+        "predicate": "On",
+        "raw": "(On moka_pot_1 flat_stove_1_cook_region)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_10:3",
+    "suite": "libero_10",
+    "task_id": 3,
+    "goal_predicates": [
+      {
+        "args": [
+          "white_cabinet_1_bottom_region"
+        ],
+        "predicate": "Close",
+        "raw": "(Close white_cabinet_1_bottom_region)"
+      },
+      {
+        "args": [
+          "akita_black_bowl_1",
+          "white_cabinet_1_bottom_region"
+        ],
+        "predicate": "In",
+        "raw": "(In akita_black_bowl_1 white_cabinet_1_bottom_region)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_10:4",
+    "suite": "libero_10",
+    "task_id": 4,
+    "goal_predicates": [
+      {
+        "args": [
+          "porcelain_mug_1",
+          "plate_1"
+        ],
+        "predicate": "On",
+        "raw": "(On porcelain_mug_1 plate_1)"
+      },
+      {
+        "args": [
+          "white_yellow_mug_1",
+          "plate_2"
+        ],
+        "predicate": "On",
+        "raw": "(On white_yellow_mug_1 plate_2)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_10:5",
+    "suite": "libero_10",
+    "task_id": 5,
+    "goal_predicates": [
+      {
+        "args": [
+          "black_book_1",
+          "desk_caddy_1_back_contain_region"
+        ],
+        "predicate": "In",
+        "raw": "(In black_book_1 desk_caddy_1_back_contain_region)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_10:6",
+    "suite": "libero_10",
+    "task_id": 6,
+    "goal_predicates": [
+      {
+        "args": [
+          "porcelain_mug_1",
+          "plate_1"
+        ],
+        "predicate": "On",
+        "raw": "(On porcelain_mug_1 plate_1)"
+      },
+      {
+        "args": [
+          "chocolate_pudding_1",
+          "living_room_table_plate_right_region"
+        ],
+        "predicate": "On",
+        "raw": "(On chocolate_pudding_1 living_room_table_plate_right_region)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_10:7",
+    "suite": "libero_10",
+    "task_id": 7,
+    "goal_predicates": [
+      {
+        "args": [
+          "alphabet_soup_1",
+          "basket_1_contain_region"
+        ],
+        "predicate": "In",
+        "raw": "(In alphabet_soup_1 basket_1_contain_region)"
+      },
+      {
+        "args": [
+          "cream_cheese_1",
+          "basket_1_contain_region"
+        ],
+        "predicate": "In",
+        "raw": "(In cream_cheese_1 basket_1_contain_region)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_10:8",
+    "suite": "libero_10",
+    "task_id": 8,
+    "goal_predicates": [
+      {
+        "args": [
+          "moka_pot_1",
+          "flat_stove_1_cook_region"
+        ],
+        "predicate": "On",
+        "raw": "(On moka_pot_1 flat_stove_1_cook_region)"
+      },
+      {
+        "args": [
+          "moka_pot_2",
+          "flat_stove_1_cook_region"
+        ],
+        "predicate": "On",
+        "raw": "(On moka_pot_2 flat_stove_1_cook_region)"
+      },
+      {
+        "args": [
+          "flat_stove_1"
+        ],
+        "predicate": "Turnon",
+        "raw": "(Turnon flat_stove_1)"
+      }
+    ]
+  },
+  {
+    "request_id": "libero_10:9",
+    "suite": "libero_10",
+    "task_id": 9,
+    "goal_predicates": [
+      {
+        "args": [
+          "white_yellow_mug_1",
+          "microwave_1_heating_region"
+        ],
+        "predicate": "In",
+        "raw": "(In white_yellow_mug_1 microwave_1_heating_region)"
+      },
+      {
+        "args": [
+          "microwave_1"
+        ],
+        "predicate": "Close",
+        "raw": "(Close microwave_1)"
+      }
+    ]
+  }
+]

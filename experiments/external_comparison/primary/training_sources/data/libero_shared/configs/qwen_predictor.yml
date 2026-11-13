@@ -1,0 +1,56 @@
+data:
+  data_name: planlocal
+  data_path: CONFIGURE_AT_PREPARATION/libero_shared
+  split: train
+  shuffle: true
+  drop_last: false
+environment:
+  dotenv_path: .env
+  seed: 42
+  dataloader_num_workers: 0
+  device_map:
+    model:
+      device: cuda:0
+      priority: 1
+model:
+  builder:
+    config_path: CONFIGURE_AT_PREPARATION/qwen_builder.yml
+    checkpoint_path: CONFIGURE_AT_PREPARATION/builder_best.pt
+    strict_load: true
+  predictor:
+    use_shared_model: true
+    predictor_model_name: null
+    predictor_num_layers: null
+    dropout: 0.0
+training:
+  batch_size: 1
+  num_epochs: 1
+  learning_rate: 0.0001
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  gradient_clip: 1.0
+  predictor:
+    freeze: true
+    lora: null
+  loss_weights:
+    concept_loss_weight: 1.0
+    reasoning_loss_weight: 1.0
+log:
+  save_folder: CONFIGURE_AT_PREPARATION/predictor
+  checkpoint_path: CONFIGURE_AT_PREPARATION/checkpoints
+  log_path: CONFIGURE_AT_PREPARATION/logs
+  log_level: INFO
+  log_step_interval: 1
+  checkpoint_step_interval: 31
+  checkpoint_clean: false
+evaluation:
+  eval_step_interval: 31
+  mode: teacher_forced
+  generation_max_tokens: 128
+  intermediate_vector_save: 0
+  data:
+    data_name: planlocal
+    data_path: CONFIGURE_AT_PREPARATION/libero_shared
+    split: eval
+    log_num_samples: 2
+    eval_num_samples: 1.0

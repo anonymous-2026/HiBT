@@ -1,0 +1,24 @@
+{
+  "models": {
+    "qwen": "PATH_TO_Qwen2.5-7B-Instruct",
+    "mistral": "PATH_TO_Mistral-7B-Instruct-v0.3",
+    "ner_original": "PATH_TO_ORIGINAL_LLM_BT_NER"
+  },
+  "services": {
+    "qwen": "YOUR_QWEN_SERVICE_URL",
+    "mistral": "YOUR_MISTRAL_SERVICE_URL",
+    "hibt": "YOUR_HIBT_SERVICE_URL",
+    "ner": "YOUR_NER_SERVICE_URL"
+  },
+  "checkpoints": {
+    "ner": "PATH_TO_TRAINED_NER",
+    "btgen_qwen_assembly": "PATH_TO_TRAINED_QWEN_ASSEMBLY_ADAPTER",
+    "btgen_mistral_assembly": "PATH_TO_TRAINED_MISTRAL_ASSEMBLY_ADAPTER",
+    "btgen_qwen_libero": "PATH_TO_TRAINED_QWEN_LIBERO_ADAPTER"
+  },
+  "policy": {
+    "host": "YOUR_POLICY_HOST",
+    "port": null
+  },
+  "bddl_root": "PATH_TO_LIBERO_BDDL_FILES"
+}

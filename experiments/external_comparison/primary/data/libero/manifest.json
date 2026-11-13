@@ -1,0 +1,34 @@
+{
+  "goal_input_contract": "goal_specified_v1",
+  "n_requests": 40,
+  "formal_ids": [
+    "libero_10:0",
+    "libero_10:1",
+    "libero_10:2",
+    "libero_10:3",
+    "libero_10:4",
+    "libero_10:5",
+    "libero_10:6",
+    "libero_10:7",
+    "libero_10:8",
+    "libero_10:9"
+  ],
+  "development_ids": [
+    "libero_goal:2",
+    "libero_goal:6",
+    "libero_object:0",
+    "libero_object:4",
+    "libero_object:9",
+    "libero_spatial:6"
+  ],
+  "requests_sha256": "5585b0de78943eba337d32f3ddacfad7dbc430c14df708b9ebfbfb39494f7e1f",
+  "evaluators_sha256": "2184c05c5b63a0ad5e2a01a6432eeef102aa9104b33ce5b6242855625a1c2961",
+  "demonstrations_sha256": "210dd40055e59864622586e11968b3d322f021447291e7822c6f293c7c591979",
+  "btgen_train_sha256": "a4d904bb7296e5116953341df6a89e1a00f7806917095bd0bee94c64ed49d55c",
+  "btgen_validation_sha256": "ba3f6a3e1894827b3223671463dc9409bce8cf5ebe7b7e3ec4e4fa069cfd78a2",
+  "raw_instruction_preserved": true,
+  "planning_goal_is_public_task_input": true,
+  "VLA_prefix_uses_original_instruction": true,
+  "teacher_XML_outputs_unchanged": true,
+  "no_models_trained_or_evaluated": true
+}
